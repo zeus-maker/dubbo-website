@@ -16,22 +16,22 @@
 &lt;ul>
 &lt;li>&lt;strong>新的地址发现模型（应用级服务发现）。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="./migration-service-discovery.md">应用级服务发现的迁移步骤&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="./migration-service-discovery">应用级服务发现的迁移步骤&lt;/a>&lt;/li>
 &lt;li>查看&lt;a href="">应用级服务发现的使用方式&lt;/a>&lt;/li>
 &lt;li>查看&lt;a href="">应用级服务发现设计与实现&lt;/a>。&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>下一代基于 HTTP/2 的 Triple 协议。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="./migration-triple.md">Triple 协议迁移步骤&lt;/a>&lt;/li>
-&lt;li>查看 &lt;a href="../references/tri.md">Triple 协议使用方式&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="./migration-triple">Triple 协议迁移步骤&lt;/a>&lt;/li>
+&lt;li>查看 &lt;a href="../references/tri">Triple 协议使用方式&lt;/a>&lt;/li>
 &lt;li>查看 Triple 协议设计与实现。&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>统一的路由规则。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="./migration-routingrule.md">统一路由规则的迁移步骤&lt;/a>&lt;/li>
-&lt;li>查看&lt;a href="../references/routerule.md">统一路由规则使用方式&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="./migration-routingrule">统一路由规则的迁移步骤&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="../references/routerule">统一路由规则使用方式&lt;/a>&lt;/li>
 &lt;li>查看统一路由规则设计与实现&lt;/li>
 &lt;/ul>
 &lt;/li>
