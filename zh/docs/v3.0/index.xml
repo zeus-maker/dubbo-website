@@ -4,5 +4,5 @@
 &lt;p>快速体验 Dubbo3。&lt;/p></description></item><item><title>Docs: 功能参考手册</title><link>https://dubbo.apache.org/zh/docs/v3.0/references/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/v3.0/references/</guid><description>
 &lt;p>这篇文档详细讲解了 Dubbo3 的使用，基本涵盖 Dubbo3 的所有功能特性。如果你正依赖 Dubbo3 作为你业务工程的服务框架，这里可以作为你的参考手册。&lt;/p></description></item><item><title>Docs: 升级与兼容性</title><link>https://dubbo.apache.org/zh/docs/v3.0/migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/v3.0/migration/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;/div>
-&lt;div class="highlight">&lt;pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;p>在 3.0 版本的设计与开发之初，我们就定下了兼容老版本 Dubbo 用户（2.5、2.6、2.7）的目标。因此，往 3.0 版本的升级过程将会是完全透明的，用户接续无需做任何业务改造，就可以直接升级到 Dubbo 3.0。&lt;/p>
+&lt;/div></description></item></channel></rss>
