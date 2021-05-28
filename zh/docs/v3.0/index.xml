@@ -2,25 +2,7 @@
 &lt;p>这篇文档阐述了 Dubbo3 产生的背景及其核心架构，此部分对 Dubbo3 中的一些重要概念做了进一步的解释，不论你是 Dubbo2 的老用户还是新接触 Dubbo 的用户，
 如果想更深入的理解 Dubbo3 的运作原理，我们建议阅读这部分文档。如果你想快速体验 Dubbo3 的新功能，请参考示例一栏。&lt;/p></description></item><item><title>Docs: 示例</title><link>https://dubbo.apache.org/zh/docs/v3.0/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/v3.0/examples/</guid><description>
 &lt;p>快速体验 Dubbo3。&lt;/p></description></item><item><title>Docs: 功能参考手册</title><link>https://dubbo.apache.org/zh/docs/v3.0/references/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/v3.0/references/</guid><description>
-&lt;p>这篇文档详细讲解了 Dubbo3 的使用，基本涵盖 Dubbo3 的所有功能特性。如果你正依赖 Dubbo3 作为你业务工程的服务框架，这里可以作为你的参考手册。&lt;/p></description></item><item><title>Docs: Dubbo3.0 升级指南</title><link>https://dubbo.apache.org/zh/docs/v3.0/migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/v3.0/migration/</guid><description>
+&lt;p>这篇文档详细讲解了 Dubbo3 的使用，基本涵盖 Dubbo3 的所有功能特性。如果你正依赖 Dubbo3 作为你业务工程的服务框架，这里可以作为你的参考手册。&lt;/p></description></item><item><title>Docs: 升级与兼容性</title><link>https://dubbo.apache.org/zh/docs/v3.0/migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/v3.0/migration/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>&lt;strong>无需改动任何代码，直接升级到 Dubbo 3.0。&lt;/strong>&lt;/p>
-&lt;p>在 3.0 版本的设计与开发之初，我们就定下了兼容老版本 Dubbo 用户（2.5、2.6、2.7）的目标。因此，往 3.0 版本的升级过程将会是完全透明的，用户无需做任何业务改造，升级 3.x 后的框架行为将保持与 2.x 版本完全一致。&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>3.0.0&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
-&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>但也要注意，透明升级仅仅是通往 3.0 的第一步，因为 &amp;ldquo;框架行为保持一致&amp;rdquo; 也就意味着用户将无法体验到 3.0 的新特性。&lt;strong>如果要启用 3.0 的带来的新特性，用户则需要进行一定的改造，我们称这个过程为迁移，这是一个按需开启的过程。&lt;/strong>&lt;/p>
-&lt;p>因此，对老用户而言，有两条不同的迁移路径：&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>分两步走，先以兼容模式推动业务升级到 3.0 版本（无需改造），之后在某些时机按需启用新特性（按需改造）；&lt;/strong>&lt;/li>
-&lt;li>&lt;strong>升级与迁移同步完成，在业务升级到 3.0 版本的同时，完成改造并启用新特性；&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;p>Dubbo 3.0 提供的新特性包括：&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>新的地址发现模型（应用级服务发现）。&lt;/strong> 查看&lt;a href="./migration-service-discovery.md">应用级服务发现的迁移步骤&lt;/a>，查看&lt;a href="">应用级服务发现的使用方式&lt;/a>，查看&lt;a href="">应用级服务发现设计与实现&lt;/a>。&lt;/li>
-&lt;li>&lt;strong>下一代基于 HTTP/2 的 Triple 协议。&lt;/strong> 查看&lt;a href="./migration-triple.md">Triple 协议迁移步骤&lt;/a>，查看 &lt;a href="../references/tri.md">Triple 协议使用方式&lt;/a>，查看 Triple 协议设计与实现。&lt;/li>
-&lt;li>&lt;strong>统一的路由规则。&lt;/strong> 查看&lt;a href="./migration-routingrule.md">统一路由规则的迁移步骤&lt;/a>，查看&lt;a href="../references/routerule.md">统一路由规则使用方式&lt;/a>，查看统一路由规则设计与实现。&lt;/li>
-&lt;/ul>
-&lt;/div></description></item></channel></rss>
+&lt;/div>
+&lt;div class="highlight">&lt;pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
