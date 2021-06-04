@@ -6,7 +6,7 @@
 &lt;li>配置文件&lt;/li>
 &lt;/ul>
 &lt;h2 id="java">Java&lt;/h2>
-&lt;h2 id="go">GO&lt;/h2></description></item><item><title>Docs: 路由规则规范说明</title><link>https://dubbo.apache.org/zh/docs/v3.0/examples/routing-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/v3.0/examples/routing-rule/</guid><description>
+&lt;h2 id="go">GO&lt;/h2></description></item><item><title>Docs: 路由规则规</title><link>https://dubbo.apache.org/zh/docs/v3.0/examples/routing-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/v3.0/examples/routing-rule/</guid><description>
 &lt;h3 id="基本思想基于路由链采用-pipeline-的处理方式">基本思想：基于路由链，采用 Pipeline 的处理方式&lt;/h3>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/route-rule1.png" alt="route-rule1.png">&lt;/p>
 &lt;p>可以把路由链的逻辑简单的理解为 target = rn(&amp;hellip;r3(r2(r1(src))))。对于每一个 router 内部的逻辑，可以抽象为输入地址 addrs-in 与 router 中按全量地址 addrs-all 实现切分好的 n 个互不相交的地址池 addrs-pool-1 &amp;hellip; addrs-pool-n 按实现定义好的规则取交集作为输出 addrs-out。以此类推，完成整个路由链的计算。&lt;/p>
