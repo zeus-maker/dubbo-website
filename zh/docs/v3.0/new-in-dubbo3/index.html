@@ -18,10 +18,10 @@
 <meta property="og:description" content="Dubbo3 相比 2.7 版本进行了全面的升级，以下是新增的一些核心特性">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/zh/docs/v3.0/new-in-dubbo3/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-07-23T10:46:31+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2021-07-23T10:55:33+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="What's New in Dubbo3">
 <meta itemprop=description content="Dubbo3 相比 2.7 版本进行了全面的升级，以下是新增的一些核心特性">
-<meta itemprop=dateModified content="2021-07-23T10:46:31+08:00">
+<meta itemprop=dateModified content="2021-07-23T10:55:33+08:00">
 <meta itemprop=wordCount content="179">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="What's New in Dubbo3">
@@ -898,7 +898,7 @@ Dubbo 可支持集群规模步入百万实例层次。</li>
 <li>流式通信支持。Triple 协议支持 Request Stream、Response Stream、Bi-direction Stream</li>
 </ul>
 <h2 id=云原生>云原生</h2>
-<p>Dubbo3 构建的业务应用可直接部署在 VM、Container、Kubernetes 等平台，Dubbo3 很好的解决了 Dubbo 服务与调度平台之间的声明周期对齐，Dubbo 服务发现地址
+<p>Dubbo3 构建的业务应用可直接部署在 VM、Container、Kubernetes 等平台，Dubbo3 很好的解决了 Dubbo 服务与调度平台之间的生命周期对齐，Dubbo 服务发现地址
 与容器平台绑定的问题。</p>
 <p>在服务发现层面，Dubbo3 支持与 <a href>Kubernetes Native Service</a> 的融合，目前限于 Headless Service。</p>
 <p>Dubbo3 规划了两种形态的 Service Mesh 方案，在不同的业务场景、不同的迁移阶段、不同的基础设施保障情况下，Dubbo 都会有 Mesh 方案可供选择，
@@ -983,7 +983,7 @@ Sorry to hear that. Please <a href=https://github.com/apache/dubbo-website/issue
 </p>
 <script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
 <br>
-<div class="text-muted mt-5 pt-3 border-top">最后修改 July 23, 2021: <a href=https://github.com/apache/dubbo-website/commit/6d95619c8a4874dec763f1b529fdd26134f4b896>Fix requirement abort java version (#870) (6d95619)</a>
+<div class="text-muted mt-5 pt-3 border-top">最后修改 July 23, 2021: <a href=https://github.com/apache/dubbo-website/commit/d701768acdc84b18f0e19bcc3ff47083d1e41854>Update new-in-dubbo3.md (#872) (d701768)</a>
 </div>
 </div>
 </main>
