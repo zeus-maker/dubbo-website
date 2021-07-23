@@ -18,11 +18,11 @@
 <meta property="og:description" content="Dubbo 服务元数据参考手册">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/zh/docs/v3.0/references/metadata/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-07-23T11:01:38+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2021-07-23T11:11:08+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="元数据参考手册">
 <meta itemprop=description content="Dubbo 服务元数据参考手册">
-<meta itemprop=dateModified content="2021-07-23T11:01:38+08:00">
-<meta itemprop=wordCount content="955">
+<meta itemprop=dateModified content="2021-07-23T11:11:08+08:00">
+<meta itemprop=wordCount content="1030">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="元数据参考手册">
 <meta name=twitter:description content="Dubbo 服务元数据参考手册">
@@ -866,6 +866,7 @@
 <ul>
 <li><a href=#spi定义>SPI定义</a></li>
 <li><a href=#自定义元数据的存储>自定义元数据的存储</a></li>
+<li><a href=#数据存储>数据存储</a></li>
 </ul>
 </li>
 </ul>
@@ -896,6 +897,7 @@
 dubbo consumer中的配置项也有<a href=https://dubbo.apache.org/zh/docs/v2.7/user/references/xml/dubbo-consumer/>20+个配置项</a>。在注册中心之中，服务消费者列表中只需要关注application，version，group，ip，dubbo版本等少量配置，其他配置也可以以key-value形式持久化存储。
 这些数据是以服务为维度注册进入注册中心，导致了数据量的膨胀，进而引发注册中心(如zookeeper)的网络开销增大，性能降低。<br>
 除了上述配置项的存储之外，dubbo服务元数据信息也需要被存储下来。元数据信息包括服务接口，及接口的方法信息。这些信息将被用于服务mock，服务测试。</p>
+<p>以上的元数据都是基于接口级别。在3.0版本中，引入了应用元数据的概念，应用元数据描述的是整个应用的信息概览。并且引入了服务自省映射，用于应用级别的服务发现。</p>
 <h2 id=目标>目标</h2>
 <p>需要将注册中心原来的数据信息和元数据信息保存到独立的key-value的存储中，这个key-value可以是DB，redis或者其他持久化存储。核心代码中支持了zookeeper，redis, nacos(推荐)的默认支持。</p>
 <blockquote>
@@ -1183,7 +1185,9 @@ dubbo.config-center.address=zookeeper://127.0.0.1:2181
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>redis=org.apache.dubbo.metadata.store.redis.RedisMetadataReportFactory
 </code></pre></div><p>只要将上面的修改和project打包成jar包，然后配置元数据中心的url：redis://10.20.153.10:6379。</p>
 <p>至此，一个自定义的元数据存储就可以运行了。</p>
-<h4 id=zookeeper>Zookeeper</h4>
+<h3 id=数据存储>数据存储</h3>
+<h4 id=接口级别元数据>接口级别元数据</h4>
+<h5 id=zookeeper>Zookeeper</h5>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#268bd2>&lt;dubbo:metadata-report</span> address=<span style=color:#2aa198>&#34;zookeeper://127.0.0.1:2181&#34;</span><span style=color:#268bd2>/&gt;</span>
 </code></pre></div><p>Zookeeper 基于树形结构进行数据存储，它的元数据信息位于以下节点:</p>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>Provider: /dubbo/metadata/{interface name}/{version}/{group}/provider/{application name} 
@@ -1220,7 +1224,7 @@ Consumer: /dubbo/metadata/{interface name}/consumer/{application name}
 <span style=color:#268bd2>ephemeralOwner</span> <span style=color:#719e07>=</span> 0x0
 <span style=color:#268bd2>dataLength</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>219</span>
 <span style=color:#268bd2>numChildren</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>0</span>
-</code></pre></div><h4 id=redis>Redis</h4>
+</code></pre></div><h5 id=redis>Redis</h5>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#268bd2>&lt;dubbo:metadata-report</span> address=<span style=color:#2aa198>&#34;redis://127.0.0.1:6779&#34;</span><span style=color:#268bd2>/&gt;</span>
 </code></pre></div><p>在Redis中，使用string数据结构来进行存储元数据信息:</p>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>Provider: {service name}:{version}:{group}:provider:{application name}
@@ -1235,7 +1239,7 @@ Consumer: {service name}:::consumer:{application name}
 </code></pre></div><p>Consumer key:</p>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>127.0.0.1:6379&gt; get org.apache.dubbo.demo.DemoService:::consumer:demo-consumer
 <span style=color:#2aa198>&#34;{\&#34;side\&#34;:\&#34;consumer\&#34;,\&#34;interface\&#34;:\&#34;org.apache.dubbo.demo.DemoService\&#34;,\&#34;metadata-type\&#34;:\&#34;remote\&#34;,\&#34;application\&#34;:\&#34;demo-consumer\&#34;,\&#34;dubbo\&#34;:\&#34;2.0.2\&#34;,\&#34;release\&#34;:\&#34;\&#34;,\&#34;sticky\&#34;:\&#34;false\&#34;,\&#34;check\&#34;:\&#34;false\&#34;,\&#34;methods\&#34;:\&#34;sayHello,sayHelloAsync\&#34;}&#34;</span>
-</code></pre></div><h4 id=nacos>Nacos</h4>
+</code></pre></div><h5 id=nacos>Nacos</h5>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#268bd2>&lt;dubbo:metadata-report</span> address=<span style=color:#2aa198>&#34;nacos://127.0.0.1:8848&#34;</span><span style=color:#268bd2>/&gt;</span>
 </code></pre></div><p>在 Nacos 中，本身就存在配置中心这个概念，正好用于元数据存储。在配置中心的场景下，存在命名空间- namespace 的概念，在 namespace 之下，还存在 group 概念。即通过 namespace 和 group 以及 dataId 去定位一个配置项，在不指定 namespace 的情况下，默认使用 <code>public</code> 作为默认的命名空间。</p>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>Provider: namespace: &#39;public&#39;, dataId: &#39;{service name}:{version}:{group}:provider:{application name}&#39;, group: &#39;dubbo&#39;
@@ -1248,10 +1252,32 @@ Consumer: namespace: &#39;public&#39;, dataId: &#39;{service name}:::consumer:{a
 <img src=/imgs/user/nacos-metadata-report-provider-metadata.png alt=nacos-metadata-report-provider-metadata.png></p>
 <p>Consumer data:
 <img src=/imgs/user/nacos-metadata-report-consumer-metadata.png alt=nacos-metadata-report-consumer-metadata.png></p>
-<h4 id=服务自省映射--service-name-mapping>服务自省映射- Service Name Mapping</h4>
+<h4 id=应用级别元数据>应用级别元数据</h4>
+<p>应用级别元数据只有当一个应用定义服务之后，才会进行暴露。会根据当前应用的自身信息，以及接口信息，去计算出该应用的 revision 修订值，用于保存应用级别元数据，</p>
+<h5 id=zookeeper-1>Zookeeper</h5>
+<p>Zookeeper 的应用级别元数据位于 /dubbo/metadata/{application name}/{revision}</p>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#719e07>[</span>zk: localhost:2181<span style=color:#719e07>(</span>CONNECTED<span style=color:#719e07>)</span> 33<span style=color:#719e07>]</span> get /dubbo/metadata/demo-provider/da3be833baa2088c5f6776fb7ab1a436
+<span style=color:#719e07>{</span><span style=color:#2aa198>&#34;app&#34;</span>:<span style=color:#2aa198>&#34;demo-provider&#34;</span>,<span style=color:#2aa198>&#34;revision&#34;</span>:<span style=color:#2aa198>&#34;da3be833baa2088c5f6776fb7ab1a436&#34;</span>,<span style=color:#2aa198>&#34;services&#34;</span>:<span style=color:#719e07>{</span><span style=color:#2aa198>&#34;org.apache.dubbo.demo.DemoService:dubbo&#34;</span>:<span style=color:#719e07>{</span><span style=color:#2aa198>&#34;name&#34;</span>:<span style=color:#2aa198>&#34;org.apache.dubbo.demo.DemoService&#34;</span>,<span style=color:#2aa198>&#34;protocol&#34;</span>:<span style=color:#2aa198>&#34;dubbo&#34;</span>,<span style=color:#2aa198>&#34;path&#34;</span>:<span style=color:#2aa198>&#34;org.apache.dubbo.demo.DemoService&#34;</span>,<span style=color:#2aa198>&#34;params&#34;</span>:<span style=color:#719e07>{</span><span style=color:#2aa198>&#34;side&#34;</span>:<span style=color:#2aa198>&#34;provider&#34;</span>,<span style=color:#2aa198>&#34;release&#34;</span>:<span style=color:#2aa198>&#34;&#34;</span>,<span style=color:#2aa198>&#34;methods&#34;</span>:<span style=color:#2aa198>&#34;sayHello,sayHelloAsync&#34;</span>,<span style=color:#2aa198>&#34;deprecated&#34;</span>:<span style=color:#2aa198>&#34;false&#34;</span>,<span style=color:#2aa198>&#34;dubbo&#34;</span>:<span style=color:#2aa198>&#34;2.0.2&#34;</span>,<span style=color:#2aa198>&#34;pid&#34;</span>:<span style=color:#2aa198>&#34;38298&#34;</span>,<span style=color:#2aa198>&#34;interface&#34;</span>:<span style=color:#2aa198>&#34;org.apache.dubbo.demo.DemoService&#34;</span>,<span style=color:#2aa198>&#34;service-name-mapping&#34;</span>:<span style=color:#2aa198>&#34;true&#34;</span>,<span style=color:#2aa198>&#34;timeout&#34;</span>:<span style=color:#2aa198>&#34;3000&#34;</span>,<span style=color:#2aa198>&#34;generic&#34;</span>:<span style=color:#2aa198>&#34;false&#34;</span>,<span style=color:#2aa198>&#34;metadata-type&#34;</span>:<span style=color:#2aa198>&#34;remote&#34;</span>,<span style=color:#2aa198>&#34;delay&#34;</span>:<span style=color:#2aa198>&#34;5000&#34;</span>,<span style=color:#2aa198>&#34;application&#34;</span>:<span style=color:#2aa198>&#34;demo-provider&#34;</span>,<span style=color:#2aa198>&#34;dynamic&#34;</span>:<span style=color:#2aa198>&#34;true&#34;</span>,<span style=color:#2aa198>&#34;REGISTRY_CLUSTER&#34;</span>:<span style=color:#2aa198>&#34;registry1&#34;</span>,<span style=color:#2aa198>&#34;anyhost&#34;</span>:<span style=color:#2aa198>&#34;true&#34;</span>,<span style=color:#2aa198>&#34;timestamp&#34;</span>:<span style=color:#2aa198>&#34;1626887121829&#34;</span><span style=color:#719e07>}}</span>,<span style=color:#2aa198>&#34;org.apache.dubbo.demo.RestDemoService:1.0.0:rest&#34;</span>:<span style=color:#719e07>{</span><span style=color:#2aa198>&#34;name&#34;</span>:<span style=color:#2aa198>&#34;org.apache.dubbo.demo.RestDemoService&#34;</span>,<span style=color:#2aa198>&#34;version&#34;</span>:<span style=color:#2aa198>&#34;1.0.0&#34;</span>,<span style=color:#2aa198>&#34;protocol&#34;</span>:<span style=color:#2aa198>&#34;rest&#34;</span>,<span style=color:#2aa198>&#34;path&#34;</span>:<span style=color:#2aa198>&#34;org.apache.dubbo.demo.RestDemoService&#34;</span>,<span style=color:#2aa198>&#34;params&#34;</span>:<span style=color:#719e07>{</span><span style=color:#2aa198>&#34;side&#34;</span>:<span style=color:#2aa198>&#34;provider&#34;</span>,<span style=color:#2aa198>&#34;release&#34;</span>:<span style=color:#2aa198>&#34;&#34;</span>,<span style=color:#2aa198>&#34;methods&#34;</span>:<span style=color:#2aa198>&#34;getRemoteApplicationName,sayHello,hello,error&#34;</span>,<span style=color:#2aa198>&#34;deprecated&#34;</span>:<span style=color:#2aa198>&#34;false&#34;</span>,<span style=color:#2aa198>&#34;dubbo&#34;</span>:<span style=color:#2aa198>&#34;2.0.2&#34;</span>,<span style=color:#2aa198>&#34;pid&#34;</span>:<span style=color:#2aa198>&#34;38298&#34;</span>,<span style=color:#2aa198>&#34;interface&#34;</span>:<span style=color:#2aa198>&#34;org.apache.dubbo.demo.RestDemoService&#34;</span>,<span style=color:#2aa198>&#34;service-name-mapping&#34;</span>:<span style=color:#2aa198>&#34;true&#34;</span>,<span style=color:#2aa198>&#34;version&#34;</span>:<span style=color:#2aa198>&#34;1.0.0&#34;</span>,<span style=color:#2aa198>&#34;timeout&#34;</span>:<span style=color:#2aa198>&#34;5000&#34;</span>,<span style=color:#2aa198>&#34;generic&#34;</span>:<span style=color:#2aa198>&#34;false&#34;</span>,<span style=color:#2aa198>&#34;revision&#34;</span>:<span style=color:#2aa198>&#34;1.0.0&#34;</span>,<span style=color:#2aa198>&#34;metadata-type&#34;</span>:<span style=color:#2aa198>&#34;remote&#34;</span>,<span style=color:#2aa198>&#34;delay&#34;</span>:<span style=color:#2aa198>&#34;5000&#34;</span>,<span style=color:#2aa198>&#34;application&#34;</span>:<span style=color:#2aa198>&#34;demo-provider&#34;</span>,<span style=color:#2aa198>&#34;dynamic&#34;</span>:<span style=color:#2aa198>&#34;true&#34;</span>,<span style=color:#2aa198>&#34;REGISTRY_CLUSTER&#34;</span>:<span style=color:#2aa198>&#34;registry1&#34;</span>,<span style=color:#2aa198>&#34;anyhost&#34;</span>:<span style=color:#2aa198>&#34;true&#34;</span>,<span style=color:#2aa198>&#34;timestamp&#34;</span>:<span style=color:#2aa198>&#34;1626887120943&#34;</span><span style=color:#719e07>}}}}</span>
+<span style=color:#268bd2>cZxid</span> <span style=color:#719e07>=</span> 0x25b336
+<span style=color:#268bd2>ctime</span> <span style=color:#719e07>=</span> Thu Jul <span style=color:#2aa198>22</span> 01:05:55 CST <span style=color:#2aa198>2021</span>
+<span style=color:#268bd2>mZxid</span> <span style=color:#719e07>=</span> 0x25b336
+<span style=color:#268bd2>mtime</span> <span style=color:#719e07>=</span> Thu Jul <span style=color:#2aa198>22</span> 01:05:55 CST <span style=color:#2aa198>2021</span>
+<span style=color:#268bd2>pZxid</span> <span style=color:#719e07>=</span> 0x25b336
+<span style=color:#268bd2>cversion</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>0</span>
+<span style=color:#268bd2>dataVersion</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>0</span>
+<span style=color:#268bd2>aclVersion</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>0</span>
+<span style=color:#268bd2>ephemeralOwner</span> <span style=color:#719e07>=</span> 0x0
+<span style=color:#268bd2>dataLength</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>1286</span>
+<span style=color:#268bd2>numChildren</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>0</span>
+</code></pre></div><h4 id=redis-1>Redis</h4>
+<p>Redis 元数据中心目前还不支持应用级别元数据，但已提上日程，会在近期进行实现。</p>
+<h5 id=nacos-1>Nacos</h5>
+<p>Nacos 应用级别的元数据位于 namespace: &lsquo;public&rsquo;, dataId: &lsquo;{application name}&rsquo;, group: &lsquo;{revision}&rsquo;</p>
+<p><img src=/imgs/user/nacos-metadata-report-application-metadata.png alt=nacos-metadata-report-application-metadata.png></p>
+<h4 id=服务自省映射---service-name-mapping>服务自省映射 - Service Name Mapping</h4>
 <p>在Dubbo 3.0 中，默认使用了服务自省机制去实现服务发现，关于服务自省可以查看<a href=https://mercyblitz.github.io/2020/05/11/Apache-Dubbo-%E6%9C%8D%E5%8A%A1%E8%87%AA%E7%9C%81%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/>服务自省</a></p>
 <p>简而言之，服务自省机制需要能够通过 interface name 去找到对应的 application name，这个关系可以是一对多的，即一个 service name 可能会对应多个不同的 application name。在 3.0 中，元数据中心提供此项映射的能力。</p>
-<h4 id=zookeeper-1>Zookeeper</h4>
+<h5 id=zookeeper-2>Zookeeper</h5>
 <p>在上面提到，service name 和 application name 可能是一对多的，在 zookeeper 中，使用单个 key-value 进行保存，多个 application name 通过英文逗号<code>,</code>隔开。由于是单个 key-value 去保存数据，在多客户端的情况下可能会存在并发覆盖的问题。因此，我们使用 zookeeper 中的版本机制 version 去解决该问题。在 zookeeper 中，每一次对数据进行修改，dataVersion 都会进行增加，我们可以利用 version 这个机制去解决多个客户端同时更新映射的并发问题。不同客户端在更新之前，先去查一次 version，当作本地凭证。在更新时，把凭证 version 传到服务端比对 version, 如果不一致说明在次期间被其他客户端修改过，重新获取凭证再进行重试(CAS)。目前如果重试6次都失败的话，放弃本次更新映射行为。</p>
 <p>Curator api.</p>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>CuratorFramework client <span style=color:#719e07>=</span> <span style=color:#719e07>...</span> 
@@ -1272,9 +1298,9 @@ demo-provider,two-demo-provider,dubbo-demo-annotation-provider
 <span style=color:#268bd2>ephemeralOwner</span> <span style=color:#719e07>=</span> 0x0
 <span style=color:#268bd2>dataLength</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>62</span>
 <span style=color:#268bd2>numChildren</span> <span style=color:#719e07>=</span> <span style=color:#2aa198>0</span>
-</code></pre></div><h4 id=redis-1>Redis</h4>
+</code></pre></div><h5 id=redis-2>Redis</h5>
 <p>Redis 元数据中心目前还不支持服务自省映射，但已提上日程，会在近期进行实现。</p>
-<h4 id=nacos-1>Nacos</h4>
+<h5 id=nacos-2>Nacos</h5>
 <p>在上面提到，service name 和 application name 可能是一对多的，在 nacos 中，使用单个 key-value 进行保存，多个 application name 通过英文逗号<code>,</code>隔开。由于是单个 key-value 去保存数据，在多客户端的情况下可能会存在并发覆盖的问题。因此，我们使用 nacos 中 publishConfigCas 的能力去解决该问题。在 nacos 中，使用 publishConfigCas 会让用户传递一个参数 casMd5，该值的含义是之前配置内容的 md5 值。不同客户端在更新之前，先去查一次 nacos 的 content 的值，计算出 md5 值，当作本地凭证。在更新时，把凭证 md5 传到服务端比对 md5 值, 如果不一致说明在次期间被其他客户端修改过，重新获取凭证再进行重试(CAS)。目前如果重试6次都失败的话，放弃本次更新映射行为。</p>
 <p>Nacos api:</p>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>ConfigService configService <span style=color:#719e07>=</span> <span style=color:#719e07>...</span>
@@ -1294,7 +1320,7 @@ Sorry to hear that. Please <a href=https://github.com/apache/dubbo-website/issue
 </p>
 <script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
 <br>
-<div class="text-muted mt-5 pt-3 border-top">最后修改 July 23, 2021: <a href=https://github.com/apache/dubbo-website/commit/ac80e0745bde60bfbfc6e91631edcf525019b33e>Fix the typos. (#875) (ac80e07)</a>
+<div class="text-muted mt-5 pt-3 border-top">最后修改 July 23, 2021: <a href=https://github.com/apache/dubbo-website/commit/e71a2ba1778c9c7bf3f5589082b5686042ef7cad>update metadata doc, add application level metadata info. (#876) (e71a2ba)</a>
 </div>
 </div>
 </main>
