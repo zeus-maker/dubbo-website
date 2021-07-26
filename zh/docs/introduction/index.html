@@ -18,10 +18,10 @@
 <meta property="og:description" content="这篇文档是关于 Dubbo 的简单介绍，涵盖 Dubbo 的核心概念、基本使用方式以及 Dubbo3 核心功能，无论你是 Dubbo 的老用户还是新用户，都可以通过这篇 文档快速了解 Dubbo 及新版本带来的变化。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/zh/docs/introduction/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-07-26T16:19:55+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2021-07-26T16:31:17+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="Dubbo3 简介">
 <meta itemprop=description content="这篇文档是关于 Dubbo 的简单介绍，涵盖 Dubbo 的核心概念、基本使用方式以及 Dubbo3 核心功能，无论你是 Dubbo 的老用户还是新用户，都可以通过这篇 文档快速了解 Dubbo 及新版本带来的变化。">
-<meta itemprop=dateModified content="2021-07-26T16:19:55+08:00">
+<meta itemprop=dateModified content="2021-07-26T16:31:17+08:00">
 <meta itemprop=wordCount content="337">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Dubbo3 简介">
@@ -419,6 +419,16 @@ Releases
 </ul>
 <ul class="td-sidebar-nav__section pr-md-3">
 <li class=td-sidebar-nav__section-title>
+<a href=/zh/docs/references/graalvm/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">support graalvm</a>
+</li>
+<ul>
+<li class=collapse id=zhdocsreferencesgraalvm>
+<a class="td-sidebar-link td-sidebar-link__page" id=m-zhdocsreferencesgraalvmsupport-graalvm href=/zh/docs/references/graalvm/support-graalvm/></a>
+</li>
+</ul>
+</ul>
+<ul class="td-sidebar-nav__section pr-md-3">
+<li class=td-sidebar-nav__section-title>
 <a href=/zh/docs/references/routers/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">路由规则</a>
 </li>
 <ul>
@@ -572,9 +582,9 @@ Releases
 <p>为了解决 Sidecar 引入的相关成本问题，Dubbo 引入了另一种变相的 Mesh 架构 - Proxyless Mesh，顾名思义，Proxyless Mesh 就是指没有 Sidecar 的部署，转而由 Dubbo SDK 直接与控制面交互，其架构图如下</p>
 <p>可以设想，在不同的组织、不同的发展阶段，未来以 Dubbo 构建的微服务将会允许有三种部署架构：传统 SDK、基于 Sidecar 的 Service Mesh、脱离 Sidecar 的 Proxyless Mesh。基于 Sidecar 的 Service Mesh，即经典的 Mesh 架构，独立的 sidecar 运行时接管所有的流量，脱离 Sidecar 的 Proxyless Mesh，富 SDK 直接通过 xDS 与控制面通信。Dubbo 微服务允许部署在物理机、容器、Kubernetes 平台之上，能做到以 Admin 为控制面，以统一的流量治理规则进行治理。</p>
 <h2 id=了解更多>了解更多</h2>
-<p>What&rsquo;s New in Dubbo3</p>
-<p>体验 Dubbo3</p>
-<p>迁移到 Dubbo3</p>
+<p><a href=../new-in-dubbo3>What&rsquo;s New in Dubbo3</a></p>
+<p><a href=../quick-start>体验 Dubbo3</a></p>
+<p><a href=../migration>迁移到 Dubbo3</a></p>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
 <h2 class=feedback--title>Feedback</h2>
 <p class=feedback--question>Was this page helpful?</p>
@@ -588,7 +598,7 @@ Sorry to hear that. Please <a href=https://github.com/apache/dubbo-website/issue
 </p>
 <script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
 <br>
-<div class="text-muted mt-5 pt-3 border-top">最后修改 July 26, 2021: <a href=/commit/5713c11d4f78e673a5d867a89aea537d79b8b072>fix doc format (5713c11)</a>
+<div class="text-muted mt-5 pt-3 border-top">最后修改 July 26, 2021: <a href=/commit/5e5768411df09de63da589f69390c395858eaa86>update links (5e57684)</a>
 </div>
 </div>
 </main>

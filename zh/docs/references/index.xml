@@ -748,7 +748,7 @@ dubbo.application.qosAcceptForeignIp=false
 &lt;/li>
 &lt;/ol>
 &lt;/section></description></item><item><title>Docs: RPC协议</title><link>https://dubbo.apache.org/zh/docs/references/protocols/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/protocols/</guid><description>
-&lt;p>Dubbo 中目前支持的RPC协议&lt;/p></description></item><item><title>Docs: 路由规则</title><link>https://dubbo.apache.org/zh/docs/references/routers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/routers/</guid><description>
+&lt;p>Dubbo 中目前支持的RPC协议&lt;/p></description></item><item><title>Docs: 支持graalvm</title><link>https://dubbo.apache.org/zh/docs/references/graalvm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/graalvm/</guid><description/></item><item><title>Docs: 路由规则</title><link>https://dubbo.apache.org/zh/docs/references/routers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/routers/</guid><description>
 &lt;h3 id="基本思想">基本思想&lt;/h3>
 &lt;p>基于路由链，采用Pipeline的处理方式，如下图所示：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/route-rule1.png" alt="route-rule1.png">&lt;/p>

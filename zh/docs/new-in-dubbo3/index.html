@@ -18,11 +18,11 @@
 <meta property="og:description" content="Dubbo3 相比 2.7 版本进行了全面的升级，以下是新增的一些核心特性">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/zh/docs/new-in-dubbo3/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-07-26T16:19:55+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2021-07-26T16:31:17+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="What's New in Dubbo3">
 <meta itemprop=description content="Dubbo3 相比 2.7 版本进行了全面的升级，以下是新增的一些核心特性">
-<meta itemprop=dateModified content="2021-07-26T16:19:55+08:00">
-<meta itemprop=wordCount content="179">
+<meta itemprop=dateModified content="2021-07-26T16:31:17+08:00">
+<meta itemprop=wordCount content="217">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="What's New in Dubbo3">
 <meta name=twitter:description content="Dubbo3 相比 2.7 版本进行了全面的升级，以下是新增的一些核心特性">
@@ -419,6 +419,16 @@ Releases
 </ul>
 <ul class="td-sidebar-nav__section pr-md-3">
 <li class=td-sidebar-nav__section-title>
+<a href=/zh/docs/references/graalvm/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">support graalvm</a>
+</li>
+<ul>
+<li class=collapse id=zhdocsreferencesgraalvm>
+<a class="td-sidebar-link td-sidebar-link__page" id=m-zhdocsreferencesgraalvmsupport-graalvm href=/zh/docs/references/graalvm/support-graalvm/></a>
+</li>
+</ul>
+</ul>
+<ul class="td-sidebar-nav__section pr-md-3">
+<li class=td-sidebar-nav__section-title>
 <a href=/zh/docs/references/routers/ class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">路由规则</a>
 </li>
 <ul>
@@ -558,13 +568,24 @@ Dubbo 可支持集群规模步入百万实例层次。</li>
 <p>Dubbo3.0 的柔性增强以面向失败设计为理念，提供包括精准容量评估、自适应限流、自适应负载均衡的支持，自底向上的分步构建大规模可靠应用。
 从单一服务的视角看，服务是压不垮的，稳定的。从分布式视角看，复杂的拓扑不会带来性能的下降，分布式负载均衡能够以最优的方式动态分配流量，保证异构系统能够根据运行时的准确服务容量合理分配请求，从而达到性能最优。</p>
 <h2 id=全面的性能提升>全面的性能提升</h2>
-<blockquote>
-<p>更多官方压测数据</p>
-</blockquote>
+<p>对比 2.x 版本，Dubbo3 版本</p>
+<ul>
+<li>服务发现资源利用率显著提升。
+<ul>
+<li>对比接口级服务发现，单机常驻内存下降 50%，地址变更期 GC 消耗下降一个数量级 (百次 -> 十次)</li>
+<li>对比应用级服务发现，单机常驻内存下降 75%，GC 次数趋零</li>
+</ul>
+</li>
+<li>Dubbo 协议性能持平，Triple 协议在网关、Stream吞吐量方面更具优势。
+<ul>
+<li>Dubbo协议 （3.0 vs 2.x），3.0 实现较 2.x 总体 qps rt 持平，略有提升</li>
+<li>Triple协议 vs Dubbo协议，直连调用场景 Triple 性能并无优势，其优势在网关、Stream调用场景。</li>
+</ul>
+</li>
+</ul>
+<p>详情请参考<a href=../performance/benchmarking>Benchmark</a></p>
 <h2 id=native-image>Native Image</h2>
-<blockquote>
-<p>尚未发布</p>
-</blockquote>
+<p>详情请参考<a href=../references/graalvm/support-graalvm>使用 GraavlVM 构建 Dubbo Native Image</a></p>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
 <h2 class=feedback--title>Feedback</h2>
 <p class=feedback--question>Was this page helpful?</p>
@@ -578,7 +599,7 @@ Sorry to hear that. Please <a href=https://github.com/apache/dubbo-website/issue
 </p>
 <script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
 <br>
-<div class="text-muted mt-5 pt-3 border-top">最后修改 July 26, 2021: <a href=/commit/5713c11d4f78e673a5d867a89aea537d79b8b072>fix doc format (5713c11)</a>
+<div class="text-muted mt-5 pt-3 border-top">最后修改 July 26, 2021: <a href=/commit/5e5768411df09de63da589f69390c395858eaa86>update links (5e57684)</a>
 </div>
 </div>
 </main>
