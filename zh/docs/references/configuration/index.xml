@@ -18,6 +18,20 @@
 &lt;li>metrics: 指标配置&lt;/li>
 &lt;li>ssl: SSL/TLS配置&lt;/li>
 &lt;/ul>
+&lt;h3 id="consumer-与-reference的关系">consumer 与 reference的关系&lt;/h3>
+&lt;p>reference可以指定具体的consumer，如果没有指定consumer则会自动使用全局默认的consumer配置。&lt;/p>
+&lt;p>consumer的属性是reference属性的默认值，可以体现在两个地方：&lt;/p>
+&lt;ol>
+&lt;li>在刷新属性(属性覆盖)时，先提取其consumer的属性，然后提取reference自身的属性覆盖上去，叠加后的属性集合作为配置来源之一。&lt;/li>
+&lt;li>在组装reference的URL参数时，先附加其consumer的属性，然后附加reference自身的属性。&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>可以将consumer组件理解为reference组件的虚拟分组，根据需要可以定义多个不同的consumer，不同的consumer设置特定的默认值，
+然后在reference中指定consumer或者将&amp;lt;dubbo:reference /&amp;gt; 标签嵌套在&amp;lt;dubbo:consumer /&amp;gt;标签之中。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="provider-与-service的关系">provider 与 service的关系&lt;/h3>
+&lt;p>service可以指定具体的provider，如果没有指定则会自动使用全局默认的provider配置。
+provider的属性是service属性的默认值，覆盖规则类似上面的consumer与reference，也可以将provider理解为service的虚拟分组。&lt;/p>
 &lt;h2 id="配置来源">配置来源&lt;/h2>
 &lt;p>从Dubbo支持的配置来源说起，默认有6种配置来源：&lt;/p>
 &lt;ul>

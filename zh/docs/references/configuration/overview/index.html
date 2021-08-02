@@ -18,11 +18,11 @@
 <meta property="og:description" content="Dubbo配置介绍">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/zh/docs/references/configuration/overview/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-08-02T16:21:36+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2021-08-02T17:03:22+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="配置概述">
 <meta itemprop=description content="Dubbo配置介绍">
-<meta itemprop=dateModified content="2021-08-02T16:21:36+08:00">
-<meta itemprop=wordCount content="220">
+<meta itemprop=dateModified content="2021-08-02T17:03:22+08:00">
+<meta itemprop=wordCount content="237">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="配置概述">
 <meta name=twitter:description content="Dubbo配置介绍">
@@ -461,7 +461,12 @@ Releases
 <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#配置组件>配置组件</a></li>
+<li><a href=#配置组件>配置组件</a>
+<ul>
+<li><a href=#consumer-与-reference的关系>consumer 与 reference的关系</a></li>
+<li><a href=#provider-与-service的关系>provider 与 service的关系</a></li>
+</ul>
+</li>
 <li><a href=#配置来源>配置来源</a>
 <ul>
 <li><a href=#覆盖关系>覆盖关系</a></li>
@@ -523,6 +528,20 @@ Releases
 <li>metrics: 指标配置</li>
 <li>ssl: SSL/TLS配置</li>
 </ul>
+<h3 id=consumer-与-reference的关系>consumer 与 reference的关系</h3>
+<p>reference可以指定具体的consumer，如果没有指定consumer则会自动使用全局默认的consumer配置。</p>
+<p>consumer的属性是reference属性的默认值，可以体现在两个地方：</p>
+<ol>
+<li>在刷新属性(属性覆盖)时，先提取其consumer的属性，然后提取reference自身的属性覆盖上去，叠加后的属性集合作为配置来源之一。</li>
+<li>在组装reference的URL参数时，先附加其consumer的属性，然后附加reference自身的属性。</li>
+</ol>
+<blockquote>
+<p>可以将consumer组件理解为reference组件的虚拟分组，根据需要可以定义多个不同的consumer，不同的consumer设置特定的默认值，
+然后在reference中指定consumer或者将&lt;dubbo:reference /> 标签嵌套在&lt;dubbo:consumer />标签之中。</p>
+</blockquote>
+<h3 id=provider-与-service的关系>provider 与 service的关系</h3>
+<p>service可以指定具体的provider，如果没有指定则会自动使用全局默认的provider配置。
+provider的属性是service属性的默认值，覆盖规则类似上面的consumer与reference，也可以将provider理解为service的虚拟分组。</p>
 <h2 id=配置来源>配置来源</h2>
 <p>从Dubbo支持的配置来源说起，默认有6种配置来源：</p>
 <ul>
@@ -651,7 +670,7 @@ Sorry to hear that. Please <a href=https://github.com/apache/dubbo-website/issue
 </p>
 <script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
 <br>
-<div class="text-muted mt-5 pt-3 border-top">最后修改 August 2, 2021: <a href=/commit/4b4305c51c325304f9a2513a1a48c0211f0f68e8>fix unsupported configs in dubbo 3 (#884) (4b4305c)</a>
+<div class="text-muted mt-5 pt-3 border-top">最后修改 August 2, 2021: <a href=/commit/8eabe9dd545486b4540fbfabd0052363854c8b0c>consumer and reference relationship (#885) (8eabe9d)</a>
 </div>
 </div>
 </main>
