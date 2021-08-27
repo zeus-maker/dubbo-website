@@ -369,6 +369,8 @@
 &lt;li>&lt;code>org.apache.dubbo.rpc.cluster.loadbalance.RandomLoadBalance&lt;/code>&lt;/li>
 &lt;li>&lt;code>org.apache.dubbo.rpc.cluster.loadbalance.RoundRobinLoadBalance&lt;/code>&lt;/li>
 &lt;li>&lt;code>org.apache.dubbo.rpc.cluster.loadbalance.LeastActiveLoadBalance&lt;/code>&lt;/li>
+&lt;li>&lt;code>org.apache.dubbo.rpc.cluster.loadbalance.ConsistentHashLoadBalance&lt;/code>&lt;/li>
+&lt;li>&lt;code>org.apache.dubbo.rpc.cluster.loadbalance.ShortestResponseLoadBalance&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h2 id="extension-guide">Extension Guide&lt;/h2>
 &lt;p>Directory layout:&lt;/p>
