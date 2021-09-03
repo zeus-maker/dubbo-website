@@ -594,8 +594,8 @@ System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
-&lt;p>自 &lt;code>2.1.0&lt;/code> 版本开始支持, 如何使用可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/java/dubbo-samples-validation">dubbo 项目中的示例代码&lt;/a>&lt;/p>
-&lt;p>验证方式可扩展，扩展方式参见开发者手册中的&lt;a href="../../../dev/impls/validation">验证扩展&lt;/a>&lt;/p>
+&lt;p>自 &lt;code>2.1.0&lt;/code> 版本开始支持, 如何使用可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-validation">dubbo 项目中的示例代码&lt;/a>&lt;/p>
+&lt;p>验证方式可扩展，扩展方式参见开发者手册中的&lt;a href="../../references/spis/validation">验证扩展&lt;/a>&lt;/p>
 &lt;/div></description></item><item><title>Docs: 结果缓存</title><link>https://dubbo.apache.org/zh/docs/advanced/result-cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/advanced/result-cache/</guid><description>
 &lt;p>结果缓存，用于加速热门数据的访问速度，Dubbo 提供声明式缓存，以减少用户加缓存的工作量。&lt;/p>
 &lt;h2 id="缓存类型">缓存类型&lt;/h2>
