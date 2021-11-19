@@ -2,7 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.89.4">
 <meta name=ROBOTS content="INDEX, FOLLOW">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
@@ -20,11 +20,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/en/blog/2018/09/02/how-to-prepare-an-apache-release/"><meta property="article:section" content="blog">
 <meta property="article:published_time" content="2018-09-02T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-11-01T10:30:52+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2021-11-19T16:48:38+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="How to prepare an Apache Release">
 <meta itemprop=description content="This article introduces how to the Apache publish content and process
 "><meta itemprop=datePublished content="2018-09-02T00:00:00+00:00">
-<meta itemprop=dateModified content="2021-11-01T10:30:52+08:00">
+<meta itemprop=dateModified content="2021-11-19T16:48:38+08:00">
 <meta itemprop=wordCount content="2473">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="How to prepare an Apache Release">
@@ -410,7 +410,7 @@ $ mvn deploy
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ mvn release:clean
 $ mvn release:prepare -Prelease -Darguments<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;-Dmaven.test.skip=true&#34;</span> -DautoVersionSubmodules<span style=color:#719e07>=</span><span style=color:#b58900>true</span> -Dusername<span style=color:#719e07>=</span>YOUR GITHUB ID -DpushChanges<span style=color:#719e07>=</span><span style=color:#b58900>false</span>
 </code></pre></div><blockquote>
-<p>If you are promted to input password for pushing to GitHub (basically including adding new commits and tags), do not input your login password of GitHub. Use <code>Personal access tokens</code> instead. You can go to <a href=https://github.com/settings/profile,>https://github.com/settings/profile,</a> click <code>Developer settings</code> -> <code>Personal access tokens</code>, and generate a new token if not. Please refer to this <a href=https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>guide</a> for more infomation.
+<p>If you are promted to input password for pushing to GitHub (basically including adding new commits and tags), do not input your login password of GitHub. Use <code>Personal access tokens</code> instead. You can go to <a href=https://github.com/settings/profile>https://github.com/settings/profile</a>, click <code>Developer settings</code> -> <code>Personal access tokens</code>, and generate a new token if not. Please refer to this <a href=https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>guide</a> for more infomation.
 you need to choose the release artifactId, next artifactId and the release tag, the default tag is dubbo-parent-xxxx, you need to change it to dubbo-xxxx</p>
 </blockquote>
 <p>After executing the above commands, you will find that:</p>
@@ -632,7 +632,7 @@ The Apache Dubbo (Incubating) Team
 <li>Remove the the release file for the previous release under <a href=https://dist.apache.org/repos/dist/release/incubator/dubbo/>official release directory</a>, which will be archived and can be found <a href=https://archive.apache.org/dist/incubator/dubbo/>here</a></li>
 <li>Publish <a href=https://github.com/apache/dubbo/releases>release notes</a> on Github.</li>
 <li>Update the recommend dependency on <a href=https://github.com/apache/dubbo#maven-dependency>Github</a> to the latest version, also update the version in other place if necessary.</li>
-<li>Add the download link to official website <a href=http://dubbo.apache.org/en-us/blog/download.html,>http://dubbo.apache.org/en-us/blog/download.html,</a> using the ASF mirror system. The latest release download link should be something like <a href="https://www.apache.org/dyn/closer.cgi?path=incubator/dubbo/$VERSION/apache-dubbo-$VERSION-source-release.zip">this</a>. The download link for the previous release version should be changed like <a href=https://archive.apache.org/dist/incubator/dubbo/$VERSION/apache-dubbo-$VERSION-bin-release.zip>this</a>. Please refer to the <a href=https://github.com/apache/dubbo-website/blob/asf-site/blog/en-us/download.md>download page</a> for more details.</li>
+<li>Add the download link to official website <a href=http://dubbo.apache.org/en-us/blog/download.html>http://dubbo.apache.org/en-us/blog/download.html</a>, using the ASF mirror system. The latest release download link should be something like <a href="https://www.apache.org/dyn/closer.cgi?path=incubator/dubbo/$VERSION/apache-dubbo-$VERSION-source-release.zip">this</a>. The download link for the previous release version should be changed like <a href=https://archive.apache.org/dist/incubator/dubbo/$VERSION/apache-dubbo-$VERSION-bin-release.zip>this</a>. Please refer to the <a href=https://github.com/apache/dubbo-website/blob/asf-site/blog/en-us/download.md>download page</a> for more details.</li>
 <li>Make sure all the commits in the release branch are merged into master branch, and then remove the remote release branch. For example: <code>git push origin --delete 2.7.0-release</code></li>
 <li>Send mail to <a href=mailto:dev@dubbo.apache.org>dev@dubbo.apache.org</a> and <a href=mailto:general@incubator.apache.org>general@incubator.apache.org</a>, notify the community that the release is completed.
 The mail template to announce release:</li>
