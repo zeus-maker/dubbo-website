@@ -9104,11 +9104,11 @@ Save tom to Mysql&lt;/p>
 自适应扩展实例在Dubbo中的使用非常广泛，Dubbo中，每一个扩展都会有一个自适应类，如果我们没有提供，Dubbo会使用字节码工具为我们自动生成一个。所以我们基本感觉不到自适应类的存在。后面会有例子说明自适应类是怎么工作的。&lt;/li>
 &lt;/ul>
 &lt;h3 id="55-spi">5.5 @SPI&lt;/h3>
-&lt;p>@SPI注解作用于扩展点的接口上，表明该接口是一个扩展点。可以被Dubbo的ExtentionLoader加载。如果没有此ExtensionLoader调用会异常。&lt;/p>
+&lt;p>@SPI注解作用于扩展点的接口上，表明该接口是一个扩展点。可以被Dubbo的ExtensionLoader加载。如果没有此ExtensionLoader调用会异常。&lt;/p>
 &lt;h3 id="56-adaptive">5.6 @Adaptive&lt;/h3>
 &lt;p>@Adaptive注解用在扩展接口的方法上。表示该方法是一个自适应方法。Dubbo在为扩展点生成自适应实例时，如果方法有@Adaptive注解，会为该方法生成对应的代码。方法内部会根据方法的参数，来决定使用哪个扩展。
 @Adaptive注解用在类上代表实现一个装饰类，类似于设计模式中的装饰模式，它主要作用是返回指定类，目前在整个系统中AdaptiveCompiler、AdaptiveExtensionFactory这两个类拥有该注解。&lt;/p>
-&lt;h3 id="57-extentionloader">5.7 ExtentionLoader&lt;/h3>
+&lt;h3 id="57-extensionloader">5.7 ExtensionLoader&lt;/h3>
 &lt;p>类似于Java SPI的ServiceLoader，负责扩展的加载和生命周期维护。&lt;/p>
 &lt;h3 id="58-扩展别名">5.8 扩展别名&lt;/h3>
 &lt;p>和Java SPI不同，Dubbo中的扩展都有一个别名，用于在应用中引用它们。比如&lt;/p>
