@@ -503,8 +503,8 @@ org.apache.dubbo.config.MethodConfig
 org.apache.dubbo.config.ArgumentConfig
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>详细参见：&lt;a href="../../configuration/api">API配置&lt;/a>&lt;/p>
 &lt;h2 id="注解-api">注解 API&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">org.apache.dubbo.config.annotation.Service
-org.apache.dubbo.config.annotation.Reference
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">org.apache.dubbo.config.annotation.DubboService
+org.apache.dubbo.config.annotation.DubboReference
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>详细参见：&lt;a href="../../configuration/annotation">注解配置&lt;/a>&lt;/p>
 &lt;h2 id="模型-api">模型 API&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">org.apache.dubbo.common.URL
