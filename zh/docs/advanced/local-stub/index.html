@@ -18,10 +18,10 @@
 <meta property="og:description" content="在 Dubbo 中利用本地存根在客户端执行部分逻辑">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/zh/docs/advanced/local-stub/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-07T14:22:52+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2022-01-07T14:23:10+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="本地存根">
 <meta itemprop=description content="在 Dubbo 中利用本地存根在客户端执行部分逻辑">
-<meta itemprop=dateModified content="2022-01-07T14:22:52+08:00">
+<meta itemprop=dateModified content="2022-01-07T14:23:10+08:00">
 <meta itemprop=wordCount content="90">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="本地存根">
@@ -576,9 +576,9 @@ Releases
 <p>远程服务后，客户端通常只剩下接口，而实现全在服务器端，但提供方有些时候想在客户端也执行部分逻辑，比如：做 ThreadLocal 缓存，提前验证参数，调用失败后伪造容错数据等等，此时就需要在 API 中带上 Stub，客户端生成 Proxy 实例，会把 Proxy 通过构造函数传给 Stub <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>，然后把 Stub 暴露给用户，Stub 可以决定要不要去调 Proxy。</p>
 <p><img src=/imgs/user/stub.jpg alt=/user-guide/images/stub.jpg></p>
 <p>在 spring 配置文件中按以下方式配置：</p>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#268bd2>&lt;dubbo:service</span> interface=<span style=color:#2aa198>&#34;com.foo.BarService&#34;</span> stub=<span style=color:#2aa198>&#34;true&#34;</span> <span style=color:#268bd2>/&gt;</span>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#268bd2>&lt;dubbo:consumer</span> interface=<span style=color:#2aa198>&#34;com.foo.BarService&#34;</span> stub=<span style=color:#2aa198>&#34;true&#34;</span> <span style=color:#268bd2>/&gt;</span>
 </code></pre></div><p>或</p>
-<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#268bd2>&lt;dubbo:service</span> interface=<span style=color:#2aa198>&#34;com.foo.BarService&#34;</span> stub=<span style=color:#2aa198>&#34;com.foo.BarServiceStub&#34;</span> <span style=color:#268bd2>/&gt;</span>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#268bd2>&lt;dubbo:consumer</span> interface=<span style=color:#2aa198>&#34;com.foo.BarService&#34;</span> stub=<span style=color:#2aa198>&#34;com.foo.BarServiceStub&#34;</span> <span style=color:#268bd2>/&gt;</span>
 </code></pre></div><p>提供 Stub 的实现 <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>：</p>
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#719e07>package</span> com.foo<span style=color:#719e07>;</span>
 <span style=color:#268bd2>public</span> <span style=color:#268bd2>class</span> <span style=color:#268bd2>BarServiceStub</span> <span style=color:#268bd2>implements</span> BarService <span style=color:#719e07>{</span>
