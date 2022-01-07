@@ -18,10 +18,10 @@
 <meta property="og:description" content="Zookeeper 注册中心参考手册">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/zh/docs/references/registry/zookeeper/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-07T14:23:40+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2022-01-07T14:24:11+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="Zookeeper 注册中心">
 <meta itemprop=description content="Zookeeper 注册中心参考手册">
-<meta itemprop=dateModified content="2022-01-07T14:23:40+08:00">
+<meta itemprop=dateModified content="2022-01-07T14:24:11+08:00">
 <meta itemprop=wordCount content="242">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Zookeeper 注册中心">
@@ -668,7 +668,7 @@ Releases
 <div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#268bd2>&lt;dubbo:registry</span> id=<span style=color:#2aa198>&#34;chinaRegistry&#34;</span> protocol=<span style=color:#2aa198>&#34;zookeeper&#34;</span> address=<span style=color:#2aa198>&#34;10.20.153.10:2181&#34;</span> group=<span style=color:#2aa198>&#34;china&#34;</span> <span style=color:#268bd2>/&gt;</span>
 <span style=color:#268bd2>&lt;dubbo:registry</span> id=<span style=color:#2aa198>&#34;intlRegistry&#34;</span> protocol=<span style=color:#2aa198>&#34;zookeeper&#34;</span> address=<span style=color:#2aa198>&#34;10.20.153.10:2181&#34;</span> group=<span style=color:#2aa198>&#34;intl&#34;</span> <span style=color:#268bd2>/&gt;</span>
 </code></pre></div><h2 id=zookeeper-安装>zookeeper 安装</h2>
-<p>安装方式参见: <a href=../../../../admin/install/zookeeper>Zookeeper安装手册</a>，只需搭一个原生的 Zookeeper 服务器，并将 <a href=../../../quick-start>Quick Start</a> 中 Provider 和 Consumer 里的 <code>conf/dubbo.properties</code> 中的 <code>dubbo.registry.address</code> 的值改为 <code>zookeeper://127.0.0.1:2181</code> 即可使用。</p>
+<p>安装方式参见: <a href=../../../../docsv2.7/admin/install/zookeeper>Zookeeper安装手册</a>，只需搭一个原生的 Zookeeper 服务器，并将 <a href=../../../quick-start>Quick Start</a> 中 Provider 和 Consumer 里的 <code>conf/dubbo.properties</code> 中的 <code>dubbo.registry.address</code> 的值改为 <code>zookeeper://127.0.0.1:2181</code> 即可使用。</p>
 <h2 id=可靠性声明>可靠性声明</h2>
 <p>阿里内部并没有采用 Zookeeper 做为注册中心，而是使用自己实现的基于数据库的注册中心，即：Zookeeper 注册中心并没有在阿里内部长时间运行的可靠性保障，此 Zookeeper 桥接实现只为开源版本提供，其可靠性依赖于 Zookeeper 本身的可靠性。</p>
 <h2 id=兼容性声明>兼容性声明</h2>
