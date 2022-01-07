@@ -1321,6 +1321,16 @@ logger&lt;span style="color:#719e07">.&lt;/span>error&lt;span style="color:#719e
 &lt;td>是否启用JSR303标准注解验证，如果启用，将对方法参数上的注解进行校验&lt;/td>
 &lt;td>Dubbo2.1.0及其以上版本支持&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>version&lt;/td>
+&lt;td>version&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>可选&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>服务治理&lt;/td>
+&lt;td>在 Dubbo 中为同一个服务配置多个版本&lt;/td>
+&lt;td>Dubbo2.2.0及其以上版本支持&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docsv2.7: dubbo:consumer</title><link>https://dubbo.apache.org/zh/docsv2.7/user/references/xml/dubbo-consumer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docsv2.7/user/references/xml/dubbo-consumer/</guid><description>
 &lt;p>服务消费者缺省值配置。配置类： &lt;code>org.apache.dubbo.config.ConsumerConfig&lt;/code> 。同时该标签为 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 标签的缺省值设置。&lt;/p>
