@@ -18,10 +18,10 @@
 <meta property="og:description" content="通过 Dubbo 定义的路由规则，实现对流量分布的控制">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://dubbo.apache.org/zh/docs/concepts/traffic-management/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-07T14:23:31+08:00"><meta property="og:site_name" content="Apache Dubbo">
+<meta property="article:modified_time" content="2022-01-07T14:23:40+08:00"><meta property="og:site_name" content="Apache Dubbo">
 <meta itemprop=name content="服务流量管理">
 <meta itemprop=description content="通过 Dubbo 定义的路由规则，实现对流量分布的控制">
-<meta itemprop=dateModified content="2022-01-07T14:23:31+08:00">
+<meta itemprop=dateModified content="2022-01-07T14:23:40+08:00">
 <meta itemprop=wordCount content="24">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="服务流量管理">
@@ -589,7 +589,7 @@ Releases
 <p>其中：</p>
 <ul>
 <li>路由规则可以有多个，不同的路由规则之间存在优先级。如：Router(1) -> Router(2) -> …… -> Router(n)</li>
-<li>一个路由规则可以路由到多个不同的应用服务。如：Router(2)即可以路由到Service(1)也可以路由到Service(2)</li>
+<li>一个路由规则可以路由到多个不同的应用服务。如：Router(2)既可以路由到Service(1)也可以路由到Service(2)</li>
 <li>多个不同的路由规则可以路由到同一个应用服务。如：Router(1)和Router(2)都可以路由到Service(2)</li>
 <li>路由规则也可以不路由到任何应用服务。如：Router(m)没有路由到任何一个Service上，所有命中Router(m)的请求都会因为没有对应的应用服务处理而导致报错</li>
 <li>应用服务可以是单个的实例，也可以是一个应用集群。</li>
