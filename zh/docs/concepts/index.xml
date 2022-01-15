@@ -327,7 +327,7 @@ Dubbo 定义了一些中心化组件，这包括：&lt;/p>
 &lt;/ul>
 &lt;p>而注册中心并不依赖于配置中心和元数据中心，如下图所示：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/centers-registry.png" alt="//imgs/v3/concepts/centers-registry.png">&lt;/p>
-&lt;p>该图中没有部署配置中心和元数据中中心，在Dubbo中会默认将注册中心的实例同时作为配置中心和元数据中心，这是Dubbo的默认行为，如果确实不需要配置中心或者元数据中心的能力，可在配置中关闭，在注册中心的配置中有两个配置分别为use-as-config-center和use-as-metadata-center，将配置置为false即可。&lt;/p>
+&lt;p>该图中没有部署配置中心和元数据中心，在Dubbo中会默认将注册中心的实例同时作为配置中心和元数据中心，这是Dubbo的默认行为，如果确实不需要配置中心或者元数据中心的能力，可在配置中关闭，在注册中心的配置中有两个配置分别为use-as-config-center和use-as-metadata-center，将配置置为false即可。&lt;/p>
 &lt;h2 id="元数据中心">元数据中心&lt;/h2>
 &lt;p>元数据中心在2.7.x版本开始支持，随着应用级别的服务注册和服务发现在Dubbo中落地，元数据中心也变的越来越重要。在以下几种情况下会需要部署元数据中心：&lt;/p>
 &lt;ol>
@@ -339,7 +339,7 @@ Dubbo 定义了一些中心化组件，这包括：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/centers-metadata.png" alt="//imgs/v3/concepts/centers-metadata.png">&lt;/p>
 &lt;p>该图中不配备配置中心，意味着可以不需要全局管理配置的能力。该图中不配备注册中心，意味着可能采用了Dubbo mesh的方案，也可能不需要进行服务注册，仅仅接收直连模式的服务调用。&lt;/p>
 &lt;h2 id="配置中心">配置中心&lt;/h2>
-&lt;p>配置中心与其他两大中心不同，它无关于接口级还是应用级，它与接口并没有对应关系，它仅仅与配置数据有关，即时没有部署注册中心和元数据中心，配置中心也能直接被接入到Dubbo应用服务中。在整个部署架构中，整个集群内的实例（无论是Provider还是Consumer）都将会共享该配置中心集群中的配置，如下图所示：
+&lt;p>配置中心与其他两大中心不同，它无关于接口级还是应用级，它与接口并没有对应关系，它仅仅与配置数据有关，即使没有部署注册中心和元数据中心，配置中心也能直接被接入到Dubbo应用服务中。在整个部署架构中，整个集群内的实例（无论是Provider还是Consumer）都将会共享该配置中心集群中的配置，如下图所示：
 &lt;img src="https://dubbo.apache.org/imgs/v3/concepts/centers-config.png" alt="//imgs/v3/concepts/centers-config.png">&lt;/p>
 &lt;p>该图中不配备注册中心，意味着可能采用了Dubbo mesh的方案，也可能不需要进行服务注册，仅仅接收直连模式的服务调用。&lt;/p>
 &lt;p>该图中不配备元数据中心，意味着Consumer可以从Provider暴露的MetadataService获取服务元数据，从而实现RPC调用&lt;/p>
