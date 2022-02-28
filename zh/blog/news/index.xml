@@ -1,4 +1,171 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 技术分享</title><link>https://dubbo.apache.org/zh/blog/news/</link><description>Recent content in 技术分享 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/blog/news/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Dubbo3 应用级服务发现</title><link>https://dubbo.apache.org/zh/blog/2021/06/02/dubbo3-%E5%BA%94%E7%94%A8%E7%BA%A7%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link><pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2021/06/02/dubbo3-%E5%BA%94%E7%94%A8%E7%BA%A7%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 技术分享</title><link>https://dubbo.apache.org/zh/blog/news/</link><description>Recent content in 技术分享 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/blog/news/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: 从原理到操作，让你在 Apache APISIX 中代理 Dubbo 服务更便捷</title><link>https://dubbo.apache.org/zh/blog/2022/01/18/%E4%BB%8E%E5%8E%9F%E7%90%86%E5%88%B0%E6%93%8D%E4%BD%9C%E8%AE%A9%E4%BD%A0%E5%9C%A8-apache-apisix-%E4%B8%AD%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1%E6%9B%B4%E4%BE%BF%E6%8D%B7/</link><pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/01/18/%E4%BB%8E%E5%8E%9F%E7%90%86%E5%88%B0%E6%93%8D%E4%BD%9C%E8%AE%A9%E4%BD%A0%E5%9C%A8-apache-apisix-%E4%B8%AD%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1%E6%9B%B4%E4%BE%BF%E6%8D%B7/</guid><description>
+&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>&lt;a href="https://dubbo.apache.org/zh/">Apache Dubbo&lt;/a> 是由阿里巴巴开源并捐赠给 Apache 的微服务开发框架，它提供了 RPC 通信与微服务治理两大关键能力。不仅经过了阿里电商场景中海量流量的验证，也在国内的技术公司中被广泛落地。&lt;/p>
+&lt;p>在实际应用场景中，Apache Dubbo 一般会作为后端系统间 RPC 调用的实现框架，当需要提供 HTTP 接口给到前端时，会通过一个「胶水层」将 Dubbo Service 包装成 HTTP 接口，再交付到前端系统。&lt;/p>
+&lt;p>&lt;a href="https://apisix.apache.org/">Apache APISIX&lt;/a> 是 Apache 软件基金会的顶级开源项目，也是当前最活跃的开源网关项目。作为一个动态、实时、高性能的开源 API 网关，Apache APISIX 提供了负载均衡、动态上游、灰度发布、服务熔断、身份认证、可观测性等丰富的流量管理功能。&lt;/p>
+&lt;p>得益于 Apache Dubbo 的应用场景优势，Apache APISIX 基于开源项目 tengine/mod_dubbo 模块为 Apache Dubbo 服务配备了HTTP 网关能力。通过 dubbo-proxy 插件，可以轻松地将 Dubbo Service 发布为 HTTP 服务。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/apisix-plugin/1.png" alt="架构图">&lt;/p>
+&lt;h2 id="如何使用">如何使用&lt;/h2>
+&lt;h3 id="入门篇安装使用">入门篇：安装使用&lt;/h3>
+&lt;blockquote>
+&lt;p>这里我们建议使用 Apache APISIX 2.11 版本镜像进行安装。该版本的 APISIX-Base 中已默认编译了 Dubbo 模块，可直接使用 &lt;code>dubbo-proxy&lt;/code> 插件。&lt;/p>
+&lt;/blockquote>
+&lt;p>在接下来的操作中，我们将使用 &lt;a href="https://github.com/apache/dubbo-samples">&lt;code>dubbo-samples&lt;/code>&lt;/a> 项目进行部分展示。该项目是一些使用 Apache Dubbo 实现的 Demo 应用，本文中我们采用其中的一个子模块作为 Dubbo Provider。&lt;/p>
+&lt;p>在进入正式操作前，我们先简单看下 Dubbo 接口的定义、配置以及相关实现。&lt;/p>
+&lt;h4 id="接口实现一览">接口实现一览&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">DemoService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#586e75">/**
+&lt;/span>&lt;span style="color:#586e75"> * standard samples dubbo infterace demo
+&lt;/span>&lt;span style="color:#586e75"> * @param context pass http infos
+&lt;/span>&lt;span style="color:#586e75"> * @return Map&amp;lt;String, Object&amp;gt;&amp;lt;/&amp;gt; pass to response http
+&lt;/span>&lt;span style="color:#586e75"> **/&lt;/span>
+Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">apisixDubbo&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> httpRequestContext&lt;span style="color:#719e07">);&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>如上所示，Dubbo 接口的定义是固定的。即方法参数中 &lt;code>Map&lt;/code> 表示 APISIX 传递给 Dubbo Provider 关于 HTTP request 的一些信息（如：header、body&amp;hellip;)。而方法返回值的 &lt;code>Map&lt;/code> 表示 Dubbo Provider 传递给 APISIX 要如何返回 HTTP response 的一些信息。&lt;/p>
+&lt;p>接口信息配置好之后可通过 XML 配置方式发布 DemoService。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#586e75">&amp;lt;!-- service implementation, as same as regular local bean --&amp;gt;&lt;/span>
+&lt;span style="color:#268bd2">&amp;lt;bean&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> class=&lt;span style="color:#2aa198">&amp;#34;org.apache.dubbo.samples.provider.DemoServiceImpl&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;span style="color:#586e75">&amp;lt;!-- declare the service interface to be exported --&amp;gt;&lt;/span>
+&lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;org.apache.dubbo.samples.apisix.DemoService&amp;#34;&lt;/span> ref=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过上述配置后，Consumer 可通过 &lt;code>org.apache.dubbo.samples.apisix.DemoService&lt;/code> 访问其中的&lt;code>apisixDubbo&lt;/code> 方法。具体接口实现如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">DemoServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> DemoService &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#268bd2">@Override&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">apisixDubbo&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> httpRequestContext&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">.&lt;/span>Entry&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> entry &lt;span style="color:#719e07">:&lt;/span> httpRequestContext&lt;span style="color:#719e07">.&lt;/span>entrySet&lt;span style="color:#719e07">())&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;Key = &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> entry&lt;span style="color:#719e07">.&lt;/span>getKey&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">+&lt;/span> &lt;span style="color:#2aa198">&amp;#34;, Value = &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> entry&lt;span style="color:#719e07">.&lt;/span>getValue&lt;span style="color:#719e07">());&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> ret &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> HashMap&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;();&lt;/span>
+ret&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;body&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;dubbo success\n&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span> &lt;span style="color:#586e75">// http response body
+&lt;/span>&lt;span style="color:#586e75">&lt;/span> ret&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;200&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span> &lt;span style="color:#586e75">// http response status
+&lt;/span>&lt;span style="color:#586e75">&lt;/span> ret&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;test&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span> &lt;span style="color:#586e75">// http response header
+&lt;/span>&lt;span style="color:#586e75">&lt;/span>
+&lt;span style="color:#719e07">return&lt;/span> ret&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>上述代码中，&lt;code>DemoServiceImpl&lt;/code> 会打印接收到的 &lt;code>httpRequestContext&lt;/code>，并通过返回包含有指定 Key 的 Map 对象去描述该 Dubbo 请求的 HTTP 响应。&lt;/p>
+&lt;h4 id="操作步骤">操作步骤&lt;/h4>
+&lt;ol>
+&lt;li>启动 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-tengine#install-dubbo">&lt;code>dubbo-samples&lt;/code>&lt;/a>。&lt;/li>
+&lt;li>在 &lt;code>config.yaml&lt;/code> 文件中进行 &lt;code>dubbo-proxy&lt;/code> 插件启用。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#586e75"># Add this in config.yaml&lt;/span>
+&lt;span style="color:#268bd2">plugins&lt;/span>:
+- ... &lt;span style="color:#586e75"># plugin you need&lt;/span>
+- dubbo-proxy
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>创建指向 Dubbo Provider 的 Upstream。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl http://127.0.0.1:9180/apisix/admin/upstreams/1 -H &lt;span style="color:#2aa198">&amp;#39;X-API-KEY: edd1c9f034335f136f87ad84b625c8f1&amp;#39;&lt;/span> -X PUT -d &lt;span style="color:#2aa198">&amp;#39;
+&lt;/span>&lt;span style="color:#2aa198">{
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;nodes&amp;#34;: {
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;127.0.0.1:20880&amp;#34;: 1
+&lt;/span>&lt;span style="color:#2aa198"> },
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;type&amp;#34;: &amp;#34;roundrobin&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198">}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>为 DemoService 暴露一个 HTTP 路由。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl http://127.0.0.1:9180/apisix/admin/routes/1 -H &lt;span style="color:#2aa198">&amp;#39;X-API-KEY: edd1c9f034335f136f87ad84b625c8f1&amp;#39;&lt;/span> -X PUT -d &lt;span style="color:#2aa198">&amp;#39;
+&lt;/span>&lt;span style="color:#2aa198">{
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;host&amp;#34;: &amp;#34;example.org&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;uris&amp;#34;: [
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;/demo&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198"> ],
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;plugins&amp;#34;: {
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;dubbo-proxy&amp;#34;: {
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;service_name&amp;#34;: &amp;#34;org.apache.dubbo.samples.apisix.DemoService&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;service_version&amp;#34;: &amp;#34;0.0.0&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;method&amp;#34;: &amp;#34;apisixDubbo&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198"> }
+&lt;/span>&lt;span style="color:#2aa198"> },
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;upstream_id&amp;#34;: 1
+&lt;/span>&lt;span style="color:#2aa198">}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="5">
+&lt;li>使用 curl 命令请求 Apache APISIX，并查看返回结果。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl http://127.0.0.1:9080/demo -H &lt;span style="color:#2aa198">&amp;#34;Host: example.org&amp;#34;&lt;/span> -X POST --data &lt;span style="color:#2aa198">&amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;hello&amp;#34;}&amp;#39;&lt;/span>
+&amp;lt; HTTP/1.1 &lt;span style="color:#2aa198">200&lt;/span> OK
+&amp;lt; Date: Sun, &lt;span style="color:#2aa198">26&lt;/span> Dec &lt;span style="color:#2aa198">2021&lt;/span> 11:33:27 GMT
+&amp;lt; Content-Type: text/plain; &lt;span style="color:#268bd2">charset&lt;/span>&lt;span style="color:#719e07">=&lt;/span>utf-8
+&amp;lt; Content-Length: &lt;span style="color:#2aa198">14&lt;/span>
+&amp;lt; Connection: keep-alive
+&amp;lt; test: &lt;span style="color:#2aa198">123&lt;/span>
+&amp;lt; Server: APISIX/2.11.0
+&amp;lt;
+dubbo success
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>:::note 说明
+上述代码返回中包含了 &lt;code>test: 123&lt;/code> Header，以及 &lt;code>dubbo success&lt;/code> 字符串作为 Body 体。这与我们在 &lt;code>DemoServiceImpl&lt;/code> 编码的预期效果一致。
+:::&lt;/p>
+&lt;ol start="6">
+&lt;li>查看 Dubbo Provider 的日志。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">Key = content-length, Value = 17
+Key = host, Value = example.org
+Key = content-type, Value = application/x-www-form-urlencoded
+Key = body, Value = [B@70754265
+Key = accept, Value = */*
+Key = user-agent, Value = curl/7.80.0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>:::note 说明
+通过 &lt;code>httpRequestContext&lt;/code> 可以拿到 HTTP 请求的 Header 和 Body。其中 Header 会作为 Map 元素，而 Body 中 Key 值是固定的字符串&amp;quot;body&amp;quot;，Value 则代表 Byte 数组。
+:::&lt;/p>
+&lt;h3 id="进阶篇复杂场景示例">进阶篇：复杂场景示例&lt;/h3>
+&lt;p>在上述的简单用例中可以看出，我们确实通过 Apache APISIX 将 Dubbo Service 发布为一个 HTTP 服务，但是在使用过程中的限制也非常明显。比如：接口的参数和返回值都必须要是 &lt;code>Map&amp;lt;String, Object&amp;gt;&lt;/code>。&lt;/p>
+&lt;p>那么，如果项目中出现已经定义好、但又不符合上述限制的接口，该如何通过 Apache APISIX 来暴露 HTTP 服务呢？&lt;/p>
+&lt;h4 id="操作步骤-1">操作步骤&lt;/h4>
+&lt;p>针对上述场景，我们可以通过 HTTP Request Body 描述要调用的 Service 和 Method 以及对应参数，再利用 Java 的反射机制实现目标方法的调用。最后将返回值序列化为 JSON，并写入到 HTTP Response Body 中。&lt;/p>
+&lt;p>这样就可以将 Apache APISIX 的 「HTTP to Dubbo」 能力进一步加强，并应用到所有已存在的 Dubbo Service 中。具体操作可参考下方：&lt;/p>
+&lt;ol>
+&lt;li>为已有项目增加一个 Dubbo Service 用来统一处理 HTTP to Dubbo 的转化。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">DubboInvocationParameter&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> String type&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> String value&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">DubboInvocation&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> String service&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> String method&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> DubboInvocationParameter&lt;span style="color:#719e07">[]&lt;/span> parameters&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">HTTP2DubboService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">invoke&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> context&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> Exception&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#268bd2">@Component&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">HTTP2DubboServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> HTTP2DubboService &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#268bd2">@Autowired&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> ApplicationContext appContext&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#268bd2">@Override&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">invoke&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> context&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> Exception &lt;span style="color:#719e07">{&lt;/span>
+DubboInvocation invocation &lt;span style="color:#719e07">=&lt;/span> JSONObject&lt;span style="color:#719e07">.&lt;/span>parseObject&lt;span style="color:#719e07">((&lt;/span>&lt;span style="color:#dc322f">byte&lt;/span>&lt;span style="color:#719e07">[])&lt;/span> context&lt;span style="color:#719e07">.&lt;/span>get&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;body&amp;#34;&lt;/span>&lt;span style="color:#719e07">),&lt;/span> DubboInvocation&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">);&lt;/span>
+Object&lt;span style="color:#719e07">[]&lt;/span> args &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> Object&lt;span style="color:#719e07">[&lt;/span>invocation&lt;span style="color:#719e07">.&lt;/span>getParameters&lt;span style="color:#719e07">().&lt;/span>size&lt;span style="color:#719e07">()];&lt;/span>
+&lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#dc322f">int&lt;/span> i &lt;span style="color:#719e07">=&lt;/span> 0&lt;span style="color:#719e07">;&lt;/span> i &lt;span style="color:#719e07">&amp;lt;&lt;/span> args&lt;span style="color:#719e07">.&lt;/span>length&lt;span style="color:#719e07">;&lt;/span> i&lt;span style="color:#719e07">++)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+DubboInvocationParameter parameter &lt;span style="color:#719e07">=&lt;/span> invocation&lt;span style="color:#719e07">.&lt;/span>getParameters&lt;span style="color:#719e07">().&lt;/span>get&lt;span style="color:#719e07">(&lt;/span>i&lt;span style="color:#719e07">);&lt;/span>
+args&lt;span style="color:#719e07">[&lt;/span>i&lt;span style="color:#719e07">]&lt;/span> &lt;span style="color:#719e07">=&lt;/span> JSONObject&lt;span style="color:#719e07">.&lt;/span>parseObject&lt;span style="color:#719e07">(&lt;/span>parameter&lt;span style="color:#719e07">.&lt;/span>getValue&lt;span style="color:#719e07">(),&lt;/span> Class&lt;span style="color:#719e07">.&lt;/span>forName&lt;span style="color:#719e07">(&lt;/span>parameter&lt;span style="color:#719e07">.&lt;/span>getType&lt;span style="color:#719e07">()));&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+Object svc &lt;span style="color:#719e07">=&lt;/span> appContext&lt;span style="color:#719e07">.&lt;/span>getBean&lt;span style="color:#719e07">(&lt;/span>Class&lt;span style="color:#719e07">.&lt;/span>forName&lt;span style="color:#719e07">(&lt;/span>invocation&lt;span style="color:#719e07">.&lt;/span>getService&lt;span style="color:#719e07">()));&lt;/span>
+Object result &lt;span style="color:#719e07">=&lt;/span> svc&lt;span style="color:#719e07">.&lt;/span>getClass&lt;span style="color:#719e07">().&lt;/span>getMethod&lt;span style="color:#719e07">(&lt;/span>invocation&lt;span style="color:#719e07">.&lt;/span>getMethod&lt;span style="color:#719e07">()).&lt;/span>invoke&lt;span style="color:#719e07">(&lt;/span>args&lt;span style="color:#719e07">);&lt;/span>
+Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> httpResponse &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> HashMap&lt;span style="color:#719e07">&amp;lt;&amp;gt;();&lt;/span>
+httpResponse&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> 200&lt;span style="color:#719e07">);&lt;/span>
+httpResponse&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;body&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> JSONObject&lt;span style="color:#719e07">.&lt;/span>toJSONString&lt;span style="color:#719e07">(&lt;/span>result&lt;span style="color:#719e07">));&lt;/span>
+&lt;span style="color:#719e07">return&lt;/span> httpResponse&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>通过如下命令请求来发起相关调用。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl http://127.0.0.1:9080/demo -H &lt;span style="color:#2aa198">&amp;#34;Host: example.org&amp;#34;&lt;/span> -X POST --data &lt;span style="color:#2aa198">&amp;#39;
+&lt;/span>&lt;span style="color:#2aa198">{
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;service&amp;#34;: &amp;#34;org.apache.dubbo.samples.apisix.DemoService&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;method&amp;#34;: &amp;#34;createUser&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;parameters&amp;#34;: [
+&lt;/span>&lt;span style="color:#2aa198"> {
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;type&amp;#34;: &amp;#34;org.apache.dubbo.samples.apisix.User&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;value&amp;#34;: &amp;#34;{&amp;#39;&lt;/span>name&lt;span style="color:#2aa198">&amp;#39;: &amp;#39;&lt;/span>hello&lt;span style="color:#2aa198">&amp;#39;}&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198"> }
+&lt;/span>&lt;span style="color:#2aa198"> ]
+&lt;/span>&lt;span style="color:#2aa198">}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>本文为大家介绍了如何借助 Apache APISIX 实现 Dubbo Service 的代理，通过引入 &lt;code>dubbo-proxy&lt;/code> 插件便可为 Dubbo 框架的后端系统构建更简单更高效的流量链路。&lt;/p>
+&lt;p>希望通过上述操作步骤和用例场景分享，能为大家在相关场景的使用提供借鉴思路。更多关于 &lt;code>dubbo-proxy&lt;/code> 插件的介绍与使用可参考&lt;a href="https://apisix.apache.org/docs/apisix/plugins/dubbo-proxy/">官方文档&lt;/a>。&lt;/p></description></item><item><title>Blog: Dubbo3 应用级服务发现</title><link>https://dubbo.apache.org/zh/blog/2021/06/02/dubbo3-%E5%BA%94%E7%94%A8%E7%BA%A7%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</link><pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2021/06/02/dubbo3-%E5%BA%94%E7%94%A8%E7%BA%A7%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0/</guid><description>
 &lt;h2 id="1-服务发现service-discovery-概述">1 服务发现（Service Discovery） 概述&lt;/h2>
 &lt;p>从 Internet 刚开始兴起，如何动态感知后端服务的地址变化就是一个必须要面对的问题，为此人们定义了 DNS 协议，基于此协议，调用方只需要记住由固定字符串组成的域名，就能轻松完成对后端服务的访问，而不用担心流量最终会访问到哪些机器 IP，因为有代理组件会基于 DNS 地址解析后的地址列表，将流量透明的、均匀的分发到不同的后端机器上。&lt;/p>
 &lt;p>在使用微服务构建复杂的分布式系统时，如何感知 backend 服务实例的动态上下线，也是微服务框架最需要关心并解决的问题之一。业界将这个问题称之为 - 微服务的地址发现（Service Discovery），业界比较有代表性的微服务框架如 SpringCloud、Dubbo 等都抽象了强大的动态地址发现能力，并且为了满足微服务业务场景的需求，绝大多数框架的地址发现都是基于自己设计的一套机制来实现，因此在能力、灵活性上都要比传统 DNS 丰富得多。如 SpringCloud 中常用的 Eureka， Dubbo 中常用的 Zookeeper、Nacos 等，这些注册中心实现不止能够传递地址（IP + Port），还包括一些微服务的 Metadata 信息，如实例序列化类型、实例方法列表、各个方法级的定制化配置等。&lt;/p>
@@ -9294,270 +9461,4 @@ TestBenchMarks.benchSiwtch 1000000 thrpt 100 576.745 ± 6.806 ops/s
 &lt;ul>
 &lt;li>switch对于CPU来说难以做分支预测&lt;/li>
 &lt;li>某些switch条件如果概率比较高，可以考虑单独提前if判断，充分利用CPU的分支预测机制&lt;/li>
-&lt;/ul></description></item><item><title>Blog: 当Dubbo遇上Arthas：排查问题的实践</title><link>https://dubbo.apache.org/zh/blog/2019/02/02/%E5%BD%93dubbo%E9%81%87%E4%B8%8Aarthas%E6%8E%92%E6%9F%A5%E9%97%AE%E9%A2%98%E7%9A%84%E5%AE%9E%E8%B7%B5/</link><pubDate>Sat, 02 Feb 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2019/02/02/%E5%BD%93dubbo%E9%81%87%E4%B8%8Aarthas%E6%8E%92%E6%9F%A5%E9%97%AE%E9%A2%98%E7%9A%84%E5%AE%9E%E8%B7%B5/</guid><description>
-&lt;p>Apache Dubbo是Alibaba开源的高性能RPC框架，在国内有非常多的用户。&lt;/p>
-&lt;ul>
-&lt;li>Github: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a>&lt;/li>
-&lt;li>文档：http://dubbo.apache.org/zh-cn/&lt;/li>
-&lt;/ul>
-&lt;p>Arthas是Alibaba开源的应用诊断利器，9月份开源以来，Github Star数三个月超过6000。&lt;/p>
-&lt;ul>
-&lt;li>Github: &lt;a href="https://github.com/alibaba/arthas">https://github.com/alibaba/arthas&lt;/a>&lt;/li>
-&lt;li>文档：https://alibaba.github.io/arthas/&lt;/li>
-&lt;li>Arthas开源交流QQ群: 916328269&lt;/li>
-&lt;li>Arthas开源交流钉钉群: 21965291&lt;/li>
-&lt;/ul>
-&lt;p>当Dubbo遇上Arthas，会碰撞出什么样的火花呢？下面来分享Arthas排查Dubbo问题的一些经验。&lt;/p>
-&lt;h3 id="dubbo-arthas-demo">dubbo-arthas-demo&lt;/h3>
-&lt;p>下面的排查分享基于这个&lt;code>dubbo-arthas-demo&lt;/code>，非常简单的一个应用，浏览器请求从Spring MVC到Dubbo Client，再发送到Dubbo Server。&lt;/p>
-&lt;p>Demo里有两个spring boot应用，可以先启动&lt;code>server-demo&lt;/code>，再启动&lt;code>client-demo&lt;/code>。&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/hengyunabc/dubbo-arthas-demo">https://github.com/hengyunabc/dubbo-arthas-demo&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback"> /user/{id} -&amp;gt; UserService -&amp;gt; UserServiceImpl
-Browser Dubbo Client Dubbo Server
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Client端：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#268bd2">@RestController&lt;/span>
-&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">UserController&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#268bd2">@Reference&lt;/span>&lt;span style="color:#719e07">(&lt;/span>version &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
-&lt;span style="color:#268bd2">private&lt;/span> UserService userService&lt;span style="color:#719e07">;&lt;/span>
-&lt;span style="color:#268bd2">@GetMapping&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;/user/{id}&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
-&lt;span style="color:#268bd2">public&lt;/span> User &lt;span style="color:#268bd2">findUserById&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#268bd2">@PathVariable&lt;/span> Integer id&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">return&lt;/span> userService&lt;span style="color:#719e07">.&lt;/span>findUser&lt;span style="color:#719e07">(&lt;/span>id&lt;span style="color:#719e07">);&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Server端：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#268bd2">@Service&lt;/span>&lt;span style="color:#719e07">(&lt;/span>version &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
-&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">UserServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> UserService &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#268bd2">@Override&lt;/span>
-&lt;span style="color:#268bd2">public&lt;/span> User &lt;span style="color:#268bd2">findUser&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#dc322f">int&lt;/span> id&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>id &lt;span style="color:#719e07">&amp;lt;&lt;/span> 1&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">throw&lt;/span> &lt;span style="color:#719e07">new&lt;/span> IllegalArgumentException&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;user id &amp;lt; 1, id: &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> id&lt;span style="color:#719e07">);&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>User user &lt;span style="color:#719e07">:&lt;/span> users&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>user&lt;span style="color:#719e07">.&lt;/span>getId&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">==&lt;/span> id&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">return&lt;/span> user&lt;span style="color:#719e07">;&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">throw&lt;/span> &lt;span style="color:#719e07">new&lt;/span> RuntimeException&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;Can not find user, id: &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> id&lt;span style="color:#719e07">);&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="arthas快速开始">Arthas快速开始&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://alibaba.github.io/arthas/install-detail.html">https://alibaba.github.io/arthas/install-detail.html&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ wget https://alibaba.github.io/arthas/arthas-boot.jar
-$ java -jar arthas-boot.jar
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动后，会列出所有的java进程，选择1，然后回车，就会连接上&lt;code>ServerDemoApplication&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ java -jar arthas-boot.jar
-* &lt;span style="color:#719e07">[&lt;/span>1&lt;span style="color:#719e07">]&lt;/span>: &lt;span style="color:#2aa198">43523&lt;/span> ServerDemoApplication
-&lt;span style="color:#719e07">[&lt;/span>2&lt;span style="color:#719e07">]&lt;/span>: &lt;span style="color:#2aa198">22342&lt;/span>
-&lt;span style="color:#719e07">[&lt;/span>3&lt;span style="color:#719e07">]&lt;/span>: &lt;span style="color:#2aa198">44108&lt;/span> ClientDemoApplication
-&lt;span style="color:#2aa198">1&lt;/span>
-&lt;span style="color:#719e07">[&lt;/span>INFO&lt;span style="color:#719e07">]&lt;/span> arthas home: /Users/hengyunabc/.arthas/lib/3.0.5/arthas
-&lt;span style="color:#719e07">[&lt;/span>INFO&lt;span style="color:#719e07">]&lt;/span> Try to attach process &lt;span style="color:#2aa198">43523&lt;/span>
-&lt;span style="color:#719e07">[&lt;/span>INFO&lt;span style="color:#719e07">]&lt;/span> Attach process &lt;span style="color:#2aa198">43523&lt;/span> success.
-&lt;span style="color:#719e07">[&lt;/span>INFO&lt;span style="color:#719e07">]&lt;/span> arthas-client connect 127.0.0.1 &lt;span style="color:#2aa198">3658&lt;/span>
-,---. ,------. ,--------.,--. ,--. ,---. ,---.
-/ O &lt;span style="color:#cb4b16">\ &lt;/span>| .--. &lt;span style="color:#2aa198">&amp;#39;&amp;#39;&lt;/span>--. .--&lt;span style="color:#2aa198">&amp;#39;| &amp;#39;&lt;/span>--&lt;span style="color:#2aa198">&amp;#39; | / O \ &amp;#39;&lt;/span> .-&lt;span style="color:#2aa198">&amp;#39;
-&lt;/span>&lt;span style="color:#2aa198">| .-. || &amp;#39;&lt;/span>--&lt;span style="color:#2aa198">&amp;#39;.&amp;#39;&lt;/span> | | | .--. &lt;span style="color:#719e07">||&lt;/span> .-. |&lt;span style="color:#586e75">`&lt;/span>. &lt;span style="color:#586e75">`&lt;/span>-.
-| | | &lt;span style="color:#719e07">||&lt;/span> |&lt;span style="color:#cb4b16">\ &lt;/span> &lt;span style="color:#cb4b16">\ &lt;/span> | | | | | &lt;span style="color:#719e07">||&lt;/span> | | |.-&lt;span style="color:#2aa198">&amp;#39; |
-&lt;/span>&lt;span style="color:#2aa198">`--&amp;#39;&lt;/span> &lt;span style="color:#586e75">`&lt;/span>--&lt;span style="color:#2aa198">&amp;#39;`--&amp;#39;&lt;/span> &lt;span style="color:#2aa198">&amp;#39;--&amp;#39;&lt;/span> &lt;span style="color:#586e75">`&lt;/span>--&lt;span style="color:#2aa198">&amp;#39; `--&amp;#39;&lt;/span> &lt;span style="color:#586e75">`&lt;/span>--&lt;span style="color:#2aa198">&amp;#39;`--&amp;#39;&lt;/span> &lt;span style="color:#586e75">`&lt;/span>--&lt;span style="color:#2aa198">&amp;#39;`-----&amp;#39;&lt;/span>
-wiki: https://alibaba.github.io/arthas
-version: 3.0.5
-pid: &lt;span style="color:#2aa198">43523&lt;/span>
-time: 2018-12-05 16:23:52
-$
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="dubbo线上服务抛出异常怎么获取调用参数">Dubbo线上服务抛出异常，怎么获取调用参数？&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://alibaba.github.io/arthas/watch.html">https://alibaba.github.io/arthas/watch.html&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>当线上服务抛出异常时，最着急的是什么参数导致了抛异常？&lt;/p>
-&lt;p>在demo里，访问 http://localhost:8080/user/0 ，&lt;code>UserServiceImpl&lt;/code>就会抛出一个异常，因为user id不合法。&lt;/p>
-&lt;p>在Arthas里执行 &lt;code>watch com.example.UserService * -e -x 2 '{params,throwExp}'&lt;/code> ，然后再次访问，就可以看到watch命令把参数和异常都打印出来了。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">$ watch com.example.UserService * -e -x 2 &amp;#39;{params,throwExp}&amp;#39;
-Press Ctrl+C to abort.
-Affect(class-cnt:1 , method-cnt:4) cost in 230 ms.
-ts=2018-12-05 16:26:44; [cost=3.905523ms] result=@ArrayList[
-@Object[][
-@Integer[0],
-],
-java.lang.IllegalArgumentException: user id &amp;lt; 1, id: 0
-at com.example.UserServiceImpl.findUser(UserServiceImpl.java:24)
-at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java)
-at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:45)
-at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:71)
-at com.alibaba.dubbo.config.invoker.DelegateProviderMetaDataInvoker.invoke(DelegateProviderMetaDataInvoker.java:48)
-at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:52)
-at com.alibaba.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:61)
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="怎样线上调试dubbo服务代码">怎样线上调试Dubbo服务代码?&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://alibaba.github.io/arthas/redefine.html">https://alibaba.github.io/arthas/redefine.html&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>在本地开发时，可能会用到热部署工具，直接改代码，不需要重启应用。但是在线上环境，有没有办法直接动态调试代码？比如增加日志。&lt;/p>
-&lt;p>在Arthas里，可以通过&lt;code>redefine&lt;/code>命令来达到线上不重启，动态更新代码的效果。&lt;/p>
-&lt;p>比如我们修改下&lt;code>UserServiceImpl&lt;/code>，用&lt;code>System.out&lt;/code>打印出具体的&lt;code>User&lt;/code>对象来：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java"> &lt;span style="color:#268bd2">public&lt;/span> User &lt;span style="color:#268bd2">findUser&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#dc322f">int&lt;/span> id&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>id &lt;span style="color:#719e07">&amp;lt;&lt;/span> 1&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">throw&lt;/span> &lt;span style="color:#719e07">new&lt;/span> IllegalArgumentException&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;user id &amp;lt; 1, id: &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> id&lt;span style="color:#719e07">);&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>User user &lt;span style="color:#719e07">:&lt;/span> users&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>user&lt;span style="color:#719e07">.&lt;/span>getId&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">==&lt;/span> id&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>user&lt;span style="color:#719e07">);&lt;/span>
-&lt;span style="color:#719e07">return&lt;/span> user&lt;span style="color:#719e07">;&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">throw&lt;/span> &lt;span style="color:#719e07">new&lt;/span> RuntimeException&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;Can not find user, id: &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> id&lt;span style="color:#719e07">);&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>本地编绎后，把&lt;code>server-demo/target/classes/com/example/UserServiceImpl.class&lt;/code>传到线上服务器，然后用&lt;code>redefine&lt;/code>命令来更新代码：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">$ redefine -p /tmp/UserServiceImpl.class
-redefine success, size: 1
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样子更新成功之后，访问 http://localhost:8080/user/1 ，在&lt;code>ServerDemoApplication&lt;/code>的控制台里就可以看到打印出了user信息。&lt;/p>
-&lt;h3 id="怎样动态修改dubbo的logger级别">怎样动态修改Dubbo的logger级别?&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://alibaba.github.io/arthas/ognl.html">https://alibaba.github.io/arthas/ognl.html&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://alibaba.github.io/arthas/sc.html">https://alibaba.github.io/arthas/sc.html&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://commons.apache.org/proper/commons-ognl/language-guide.html">https://commons.apache.org/proper/commons-ognl/language-guide.html&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>在排查问题时，需要查看到更多的信息，如果可以把logger级别修改为&lt;code>DEBUG&lt;/code>，就非常有帮助。&lt;/p>
-&lt;p>&lt;code>ognl&lt;/code>是apache开源的一个轻量级表达式引擎。下面通过Arthas里的&lt;code>ognl&lt;/code>命令来动态修改logger级别。&lt;/p>
-&lt;p>首先获取Dubbo里&lt;code>TraceFilter&lt;/code>的一个logger对象，看下它的实现类，可以发现是log4j。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ ognl &lt;span style="color:#2aa198">&amp;#39;@com.alibaba.dubbo.rpc.protocol.dubbo.filter.TraceFilter@logger.logger&amp;#39;&lt;/span>
-@Log4jLogger&lt;span style="color:#719e07">[&lt;/span>
-&lt;span style="color:#268bd2">FQCN&lt;/span>&lt;span style="color:#719e07">=&lt;/span>@String&lt;span style="color:#719e07">[&lt;/span>com.alibaba.dubbo.common.logger.support.FailsafeLogger&lt;span style="color:#719e07">]&lt;/span>,
-&lt;span style="color:#268bd2">logger&lt;/span>&lt;span style="color:#719e07">=&lt;/span>@Logger&lt;span style="color:#719e07">[&lt;/span>org.apache.log4j.Logger@2f19bdcf&lt;span style="color:#719e07">]&lt;/span>,
-&lt;span style="color:#719e07">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>再用&lt;code>sc&lt;/code>命令来查看具体从哪个jar包里加载的：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ sc -d org.apache.log4j.Logger
-class-info org.apache.log4j.Logger
-code-source /Users/hengyunabc/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.25/log4j-over-slf4j-1.7.25.jar
-name org.apache.log4j.Logger
-isInterface &lt;span style="color:#b58900">false&lt;/span>
-isAnnotation &lt;span style="color:#b58900">false&lt;/span>
-isEnum &lt;span style="color:#b58900">false&lt;/span>
-isAnonymousClass &lt;span style="color:#b58900">false&lt;/span>
-isArray &lt;span style="color:#b58900">false&lt;/span>
-isLocalClass &lt;span style="color:#b58900">false&lt;/span>
-isMemberClass &lt;span style="color:#b58900">false&lt;/span>
-isPrimitive &lt;span style="color:#b58900">false&lt;/span>
-isSynthetic &lt;span style="color:#b58900">false&lt;/span>
-simple-name Logger
-modifier public
-annotation
-interfaces
-super-class +-org.apache.log4j.Category
-+-java.lang.Object
-class-loader +-sun.misc.Launcher&lt;span style="color:#268bd2">$AppClassLoader&lt;/span>@5c647e05
-+-sun.misc.Launcher&lt;span style="color:#268bd2">$ExtClassLoader&lt;/span>@59878d35
-classLoaderHash 5c647e05
-Affect&lt;span style="color:#719e07">(&lt;/span>row-cnt:1&lt;span style="color:#719e07">)&lt;/span> cost in &lt;span style="color:#2aa198">126&lt;/span> ms.
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>可以看到log4j是通过slf4j代理的。&lt;/strong>&lt;/p>
-&lt;p>那么通过&lt;code>org.slf4j.LoggerFactory&lt;/code>获取&lt;code>root&lt;/code> logger，再修改它的level：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">$ ognl &amp;#39;@org.slf4j.LoggerFactory@getLogger(&amp;#34;root&amp;#34;).setLevel(@ch.qos.logback.classic.Level@DEBUG)&amp;#39;
-null
-$ ognl &amp;#39;@org.slf4j.LoggerFactory@getLogger(&amp;#34;root&amp;#34;).getLevel().toString()&amp;#39;
-@String[DEBUG]
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以看到修改之后，&lt;code>root&lt;/code> logger的level变为&lt;code>DEBUG&lt;/code>。&lt;/p>
-&lt;h3 id="怎样减少测试小姐姐重复发请求的麻烦">怎样减少测试小姐姐重复发请求的麻烦?&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://alibaba.github.io/arthas/tt.html">https://alibaba.github.io/arthas/tt.html&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>在平时开发时，可能需要测试小姐姐发请求过来联调，但是我们在debug时，可能不小心直接跳过去了。这样子就尴尬了，需要测试小姐姐再发请求过来。&lt;/p>
-&lt;p>Arthas里提供了&lt;code>tt&lt;/code>命令，可以减少这种麻烦，可以直接重放请求。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ tt -t com.example.UserServiceImpl findUser
-Press Ctrl+C to abort.
-Affect&lt;span style="color:#719e07">(&lt;/span>class-cnt:1 , method-cnt:1&lt;span style="color:#719e07">)&lt;/span> cost in &lt;span style="color:#2aa198">145&lt;/span> ms.
-INDEX TIMESTAMP COST&lt;span style="color:#719e07">(&lt;/span>ms&lt;span style="color:#719e07">)&lt;/span> IS-RET IS-EXP OBJECT CLASS METHOD
-----------------------------------------------------------------------------------------------------------------
-&lt;span style="color:#2aa198">1000&lt;/span> 2018-12-05 17:47:52 1.56523 &lt;span style="color:#b58900">true&lt;/span> &lt;span style="color:#b58900">false&lt;/span> 0x3233483 UserServiceImpl findUser
-&lt;span style="color:#2aa198">1001&lt;/span> 2018-12-05 17:48:03 0.286176 &lt;span style="color:#b58900">false&lt;/span> &lt;span style="color:#b58900">true&lt;/span> 0x3233483 UserServiceImpl findUser
-&lt;span style="color:#2aa198">1002&lt;/span> 2018-12-05 17:48:11 90.324335 &lt;span style="color:#b58900">true&lt;/span> &lt;span style="color:#b58900">false&lt;/span> 0x3233483 UserServiceImpl findUser
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>上面的&lt;code>tt -t&lt;/code>命令捕获到了3个请求。然后通过&lt;code>tt --play&lt;/code>可以重放请求：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ tt --play -i &lt;span style="color:#2aa198">1000&lt;/span>
-RE-INDEX &lt;span style="color:#2aa198">1000&lt;/span>
-GMT-REPLAY 2018-12-05 17:55:50
-OBJECT 0x3233483
-CLASS com.example.UserServiceImpl
-METHOD findUser
-PARAMETERS&lt;span style="color:#719e07">[&lt;/span>0&lt;span style="color:#719e07">]&lt;/span> @Integer&lt;span style="color:#719e07">[&lt;/span>1&lt;span style="color:#719e07">]&lt;/span>
-IS-RETURN &lt;span style="color:#b58900">true&lt;/span>
-IS-EXCEPTION &lt;span style="color:#b58900">false&lt;/span>
-RETURN-OBJ @User&lt;span style="color:#719e07">[&lt;/span>
-&lt;span style="color:#268bd2">id&lt;/span>&lt;span style="color:#719e07">=&lt;/span>@Integer&lt;span style="color:#719e07">[&lt;/span>1&lt;span style="color:#719e07">]&lt;/span>,
-&lt;span style="color:#268bd2">name&lt;/span>&lt;span style="color:#719e07">=&lt;/span>@String&lt;span style="color:#719e07">[&lt;/span>Deanna Borer&lt;span style="color:#719e07">]&lt;/span>,
-&lt;span style="color:#719e07">]&lt;/span>
-Time fragment&lt;span style="color:#719e07">[&lt;/span>1000&lt;span style="color:#719e07">]&lt;/span> successfully replayed.
-Affect&lt;span style="color:#719e07">(&lt;/span>row-cnt:1&lt;span style="color:#719e07">)&lt;/span> cost in &lt;span style="color:#2aa198">4&lt;/span> ms.
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="dubbo运行时有哪些filter-耗时是多少">Dubbo运行时有哪些Filter? 耗时是多少?&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://alibaba.github.io/arthas/trace.html">https://alibaba.github.io/arthas/trace.html&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>Dubbo运行时会加载很多的Filter，那么一个请求会经过哪些Filter处理，Filter里的耗时又是多少呢？&lt;/p>
-&lt;p>通过Arthas的&lt;code>trace&lt;/code>命令，可以很方便地知道Filter的信息，可以看到详细的调用栈和耗时。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ trace com.alibaba.dubbo.rpc.Filter *
-Press Ctrl+C to abort.
-Affect&lt;span style="color:#719e07">(&lt;/span>class-cnt:19 , method-cnt:59&lt;span style="color:#719e07">)&lt;/span> cost in &lt;span style="color:#2aa198">1441&lt;/span> ms.
-&lt;span style="color:#586e75">`&lt;/span>---ts&lt;span style="color:#719e07">=&lt;/span>2018-12-05 19:07:26;&lt;span style="color:#268bd2">thread_name&lt;/span>&lt;span style="color:#719e07">=&lt;/span>DubboServerHandler-30.5.125.152:20880-thread-10;&lt;span style="color:#268bd2">id&lt;/span>&lt;span style="color:#719e07">=&lt;/span>3e;&lt;span style="color:#268bd2">is_daemon&lt;/span>&lt;span style="color:#719e07">=&lt;/span>true;&lt;span style="color:#268bd2">priority&lt;/span>&lt;span style="color:#719e07">=&lt;/span>5;&lt;span style="color:#268bd2">TCCL&lt;/span>&lt;span style="color:#719e07">=&lt;/span>sun.misc.Launcher&lt;span style="color:#268bd2">$AppClassLoader&lt;/span>@5c647e05
-&lt;span style="color:#586e75">`&lt;/span>---&lt;span style="color:#719e07">[&lt;/span>8.435844ms&lt;span style="color:#719e07">]&lt;/span> com.alibaba.dubbo.rpc.filter.EchoFilter:invoke&lt;span style="color:#719e07">()&lt;/span>
-+---&lt;span style="color:#719e07">[&lt;/span>0.124572ms&lt;span style="color:#719e07">]&lt;/span> com.alibaba.dubbo.rpc.Invocation:getMethodName&lt;span style="color:#719e07">()&lt;/span>
-+---&lt;span style="color:#719e07">[&lt;/span>0.065123ms&lt;span style="color:#719e07">]&lt;/span> java.lang.String:equals&lt;span style="color:#719e07">()&lt;/span>
-&lt;span style="color:#586e75">`&lt;/span>---&lt;span style="color:#719e07">[&lt;/span>7.762928ms&lt;span style="color:#719e07">]&lt;/span> com.alibaba.dubbo.rpc.Invoker:invoke&lt;span style="color:#719e07">()&lt;/span>
-&lt;span style="color:#586e75">`&lt;/span>---&lt;span style="color:#719e07">[&lt;/span>7.494124ms&lt;span style="color:#719e07">]&lt;/span> com.alibaba.dubbo.rpc.filter.ClassLoaderFilter:invoke&lt;span style="color:#719e07">()&lt;/span>
-+---&lt;span style="color:#719e07">[&lt;/span>&lt;span style="color:#268bd2">min&lt;/span>&lt;span style="color:#719e07">=&lt;/span>0.00355ms,max&lt;span style="color:#719e07">=&lt;/span>0.049922ms,total&lt;span style="color:#719e07">=&lt;/span>0.057637ms,count&lt;span style="color:#719e07">=&lt;/span>3&lt;span style="color:#719e07">]&lt;/span> java.lang.Thread:currentThread&lt;span style="color:#719e07">()&lt;/span>
-+---&lt;span style="color:#719e07">[&lt;/span>0.0126ms&lt;span style="color:#719e07">]&lt;/span> java.lang.Thread:getContextClassLoader&lt;span style="color:#719e07">()&lt;/span>
-+---&lt;span style="color:#719e07">[&lt;/span>0.02188ms&lt;span style="color:#719e07">]&lt;/span> com.alibaba.dubbo.rpc.Invoker:getInterface&lt;span style="color:#719e07">()&lt;/span>
-+---&lt;span style="color:#719e07">[&lt;/span>0.004115ms&lt;span style="color:#719e07">]&lt;/span> java.lang.Class:getClassLoader&lt;span style="color:#719e07">()&lt;/span>
-+---&lt;span style="color:#719e07">[&lt;/span>&lt;span style="color:#268bd2">min&lt;/span>&lt;span style="color:#719e07">=&lt;/span>0.003906ms,max&lt;span style="color:#719e07">=&lt;/span>0.014058ms,total&lt;span style="color:#719e07">=&lt;/span>0.017964ms,count&lt;span style="color:#719e07">=&lt;/span>2&lt;span style="color:#719e07">]&lt;/span> java.lang.Thread:setContextClassLoader&lt;span style="color:#719e07">()&lt;/span>
-&lt;span style="color:#586e75">`&lt;/span>---&lt;span style="color:#719e07">[&lt;/span>7.033486ms&lt;span style="color:#719e07">]&lt;/span> com.alibaba.dubbo.rpc.Invoker:invoke&lt;span style="color:#719e07">()&lt;/span>
-&lt;span style="color:#586e75">`&lt;/span>---&lt;span style="color:#719e07">[&lt;/span>6.869488ms&lt;span style="color:#719e07">]&lt;/span> com.alibaba.dubbo.rpc.filter.GenericFilter:invoke&lt;span style="color:#719e07">()&lt;/span>
-+---&lt;span style="color:#719e07">[&lt;/span>0.01481ms&lt;span style="color:#719e07">]&lt;/span> com.alibaba.dubbo.rpc.Invocation:getMethodName&lt;span style="color:#719e07">()&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="dubbo动态代理是怎样实现的">Dubbo动态代理是怎样实现的?&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://alibaba.github.io/arthas/jad.html">https://alibaba.github.io/arthas/jad.html&lt;/a>&lt;/li>
-&lt;li>com.alibaba.dubbo.common.bytecode.Wrapper&lt;/li>
-&lt;/ul>
-&lt;p>通过Arthas的&lt;code>jad&lt;/code>命令，可以看到Dubbo通过javaassist动态生成的Wrappr类的代码：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">$ jad com&lt;span style="color:#719e07">.&lt;/span>alibaba&lt;span style="color:#719e07">.&lt;/span>dubbo&lt;span style="color:#719e07">.&lt;/span>common&lt;span style="color:#719e07">.&lt;/span>bytecode&lt;span style="color:#719e07">.&lt;/span>Wrapper1
-ClassLoader:
-&lt;span style="color:#719e07">+-&lt;/span>sun&lt;span style="color:#719e07">.&lt;/span>misc&lt;span style="color:#719e07">.&lt;/span>Launcher$AppClassLoader&lt;span style="color:#268bd2">@5c647e05&lt;/span>
-&lt;span style="color:#719e07">+-&lt;/span>sun&lt;span style="color:#719e07">.&lt;/span>misc&lt;span style="color:#719e07">.&lt;/span>Launcher$ExtClassLoader&lt;span style="color:#268bd2">@59878d35&lt;/span>
-Location:
-&lt;span style="color:#719e07">/&lt;/span>Users&lt;span style="color:#719e07">/&lt;/span>hengyunabc&lt;span style="color:#719e07">/.&lt;/span>m2&lt;span style="color:#719e07">/&lt;/span>repository&lt;span style="color:#719e07">/&lt;/span>com&lt;span style="color:#719e07">/&lt;/span>alibaba&lt;span style="color:#719e07">/&lt;/span>dubbo&lt;span style="color:#719e07">/&lt;/span>2&lt;span style="color:#719e07">.&lt;/span>5&lt;span style="color:#719e07">.&lt;/span>10&lt;span style="color:#719e07">/&lt;/span>dubbo&lt;span style="color:#719e07">-&lt;/span>2&lt;span style="color:#719e07">.&lt;/span>5&lt;span style="color:#719e07">.&lt;/span>10&lt;span style="color:#719e07">.&lt;/span>jar
-&lt;span style="color:#719e07">package&lt;/span> com.alibaba.dubbo.common.bytecode&lt;span style="color:#719e07">;&lt;/span>
-&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">Wrapper1&lt;/span>
-&lt;span style="color:#268bd2">extends&lt;/span> Wrapper
-&lt;span style="color:#268bd2">implements&lt;/span> ClassGenerator&lt;span style="color:#719e07">.&lt;/span>DC &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#268bd2">public&lt;/span> Object &lt;span style="color:#268bd2">invokeMethod&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Object object&lt;span style="color:#719e07">,&lt;/span> String string&lt;span style="color:#719e07">,&lt;/span> Class&lt;span style="color:#719e07">[]&lt;/span> arrclass&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">[]&lt;/span> arrobject&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> InvocationTargetException &lt;span style="color:#719e07">{&lt;/span>
-UserServiceImpl userServiceImpl&lt;span style="color:#719e07">;&lt;/span>
-&lt;span style="color:#719e07">try&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-userServiceImpl &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">(&lt;/span>UserServiceImpl&lt;span style="color:#719e07">)&lt;/span>object&lt;span style="color:#719e07">;&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">catch&lt;/span> &lt;span style="color:#719e07">(&lt;/span>Throwable throwable&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">throw&lt;/span> &lt;span style="color:#719e07">new&lt;/span> IllegalArgumentException&lt;span style="color:#719e07">(&lt;/span>throwable&lt;span style="color:#719e07">);&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">try&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;findUser&amp;#34;&lt;/span>&lt;span style="color:#719e07">.&lt;/span>equals&lt;span style="color:#719e07">(&lt;/span>string&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> arrclass&lt;span style="color:#719e07">.&lt;/span>length &lt;span style="color:#719e07">==&lt;/span> 1&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">return&lt;/span> userServiceImpl&lt;span style="color:#719e07">.&lt;/span>findUser&lt;span style="color:#719e07">(((&lt;/span>Number&lt;span style="color:#719e07">)&lt;/span>arrobject&lt;span style="color:#719e07">[&lt;/span>0&lt;span style="color:#719e07">]).&lt;/span>intValue&lt;span style="color:#719e07">());&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;listUsers&amp;#34;&lt;/span>&lt;span style="color:#719e07">.&lt;/span>equals&lt;span style="color:#719e07">(&lt;/span>string&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> arrclass&lt;span style="color:#719e07">.&lt;/span>length &lt;span style="color:#719e07">==&lt;/span> 0&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">return&lt;/span> userServiceImpl&lt;span style="color:#719e07">.&lt;/span>listUsers&lt;span style="color:#719e07">();&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;findUserByName&amp;#34;&lt;/span>&lt;span style="color:#719e07">.&lt;/span>equals&lt;span style="color:#719e07">(&lt;/span>string&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> arrclass&lt;span style="color:#719e07">.&lt;/span>length &lt;span style="color:#719e07">==&lt;/span> 1&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;span style="color:#719e07">return&lt;/span> userServiceImpl&lt;span style="color:#719e07">.&lt;/span>findUserByName&lt;span style="color:#719e07">((&lt;/span>String&lt;span style="color:#719e07">)&lt;/span>arrobject&lt;span style="color:#719e07">[&lt;/span>0&lt;span style="color:#719e07">]);&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;span style="color:#719e07">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="获取spring-context">获取Spring context&lt;/h3>
-&lt;p>除了上面介绍的一些排查技巧，下面分享一个获取Spring Context，然后“为所欲为”的例子。&lt;/p>
-&lt;p>在Dubbo里有一个扩展&lt;code>com.alibaba.dubbo.config.spring.extension.SpringExtensionFactory&lt;/code>，把Spring Context保存到了里面。
-因此，我们可以通过&lt;code>ognl&lt;/code>命令获取到。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ ognl &lt;span style="color:#2aa198">&amp;#39;#context=@com.alibaba.dubbo.config.spring.extension.SpringExtensionFactory@contexts.iterator.next, #context.getBean(&amp;#34;userServiceImpl&amp;#34;).findUser(1)&amp;#39;&lt;/span>
-@User&lt;span style="color:#719e07">[&lt;/span>
-&lt;span style="color:#268bd2">id&lt;/span>&lt;span style="color:#719e07">=&lt;/span>@Integer&lt;span style="color:#719e07">[&lt;/span>1&lt;span style="color:#719e07">]&lt;/span>,
-&lt;span style="color:#268bd2">name&lt;/span>&lt;span style="color:#719e07">=&lt;/span>@String&lt;span style="color:#719e07">[&lt;/span>Deanna Borer&lt;span style="color:#719e07">]&lt;/span>,
-&lt;span style="color:#719e07">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>&lt;code>SpringExtensionFactory@contexts.iterator.next&lt;/code> 获取到&lt;code>SpringExtensionFactory&lt;/code>里保存的spring context对象&lt;/li>
-&lt;li>&lt;code>#context.getBean(&amp;quot;userServiceImpl&amp;quot;).findUser(1)&lt;/code> 获取到&lt;code>userServiceImpl&lt;/code>再执行一次调用&lt;/li>
-&lt;/ul>
-&lt;p>只要充分发挥想像力，组合Arthas里的各种命令，可以发挥出神奇的效果。&lt;/p>
-&lt;h2 id="总结">总结&lt;/h2>
-&lt;p>本篇文章来自杭州Dubbo Meetup的分享《当DUBBO遇上Arthas - 排查问题的实践》，希望对大家线上排查Dubbo问题有帮助。&lt;/p>
-&lt;p>分享的PDF可以在 &lt;a href="https://github.com/alibaba/arthas/issues/327">https://github.com/alibaba/arthas/issues/327&lt;/a> 里下载。&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item></channel></rss>

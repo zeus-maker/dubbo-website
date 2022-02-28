@@ -1,4 +1,173 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Apache Dubbo Blog</title><link>https://dubbo.apache.org/en/blog/</link><description>Recent content in Apache Dubbo Blog on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/en/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: 2.7.14 Release Note</title><link>https://dubbo.apache.org/en/blog/2021/09/20/2.7.14-release-note/</link><pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2021/09/20/2.7.14-release-note/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Apache Dubbo Blog</title><link>https://dubbo.apache.org/en/blog/</link><description>Recent content in Apache Dubbo Blog on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/en/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Makes it More Convenient for You to Proxy Dubbo Services in Apache APISIX</title><link>https://dubbo.apache.org/en/blog/2022/01/18/makes-it-more-convenient-for-you-to-proxy-dubbo-services-in-apache-apisix/</link><pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2022/01/18/makes-it-more-convenient-for-you-to-proxy-dubbo-services-in-apache-apisix/</guid><description>
+&lt;h2 id="background">Background&lt;/h2>
+&lt;p>&lt;a href="https://dubbo.apache.org/en/">Apache Dubbo&lt;/a> is a MicroService development framework open sourced by Alibaba and donated to Apache, which provides two key capabilities of RPC communication and microservice governance. It has not only been validated by Ali&amp;rsquo;s massive traffic in e-commerce scenario, but also been widely implemented in domestic technology companies.&lt;/p>
+&lt;p>In practical application scenarios, Apache Dubbo is generally used as the implementation framework for RPC calls between back-end systems, and when HTTP interfaces need to be provided to the front-end, the Dubbo Service is packaged as an HTTP interface through a &amp;ldquo;glue layer&amp;rdquo; and then delivered to the front-end system.&lt;/p>
+&lt;p>&lt;a href="https://apisix.apache.org/">Apache APISIX&lt;/a> is the top open source project of Apache Software Foundation and the most active open source gateway project today. As a dynamic, real-time, high-performance open source API gateway, Apache APISIX provides rich traffic management features such as load balancing, dynamic upstream, grayscale publishing, service meltdown, authentication, observability, and more.&lt;/p>
+&lt;p>Benefiting from the advantages of Apache Dubbo application scenarios, Apache APISIX is based on the open source project tengine/mod_dubbo module to equip Apache Dubbo services with HTTP gateway capabilities. Dubbo Service can be easily published as an HTTP service via the dubbo-proxy plugin.&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/apisix-plugin/1.png" alt="Architecture Diagram">&lt;/p>
+&lt;h2 id="how-to-use">How to use&lt;/h2>
+&lt;h3 id="getting-started-installation-and-use">Getting Started: Installation and Use&lt;/h3>
+&lt;blockquote>
+&lt;p>Here we recommend using the Apache APISIX version 2.11 image for installation. This version of APISIX-Base has the Dubbo module compiled by default, so you can use the &lt;code>dubbo-proxy&lt;/code> plugin directly.&lt;/p>
+&lt;/blockquote>
+&lt;p>In the next steps, we will use the &lt;a href="https://github.com/apache/dubbo-samples">&lt;code>dubbo-samples&lt;/code>&lt;/a> project for a partial demonstration. This project is a demo application implemented using Apache Dubbo, and in this article we use one of the sub-modules as the Dubbo Provider.&lt;/p>
+&lt;p>Before we get into the action, let&amp;rsquo;s take a brief look at the definition, configuration, and implementation of the Dubbo interface.&lt;/p>
+&lt;h4 id="interface-implementation">Interface implementation&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">DemoService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#586e75">/**
+&lt;/span>&lt;span style="color:#586e75"> * standard samples dubbo infterace demo
+&lt;/span>&lt;span style="color:#586e75"> * @param context pass http infos
+&lt;/span>&lt;span style="color:#586e75"> * @return Map&amp;lt;String, Object&amp;gt;&amp;lt;/&amp;gt; pass to response http
+&lt;/span>&lt;span style="color:#586e75"> **/&lt;/span>
+Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">apisixDubbo&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> httpRequestContext&lt;span style="color:#719e07">);&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>As shown above, the Dubbo interface is defined in a fixed way. The &lt;code>Map&lt;/code> of method parameters represents the information passed by APISIX to the Dubbo Provider about the HTTP request (e.g. header, body, &amp;hellip;). The &lt;code>Map&lt;/code> of the method return value indicates how the Dubbo Provider passes some information to APISIX about the HTTP response to be returned.&lt;/p>
+&lt;p>After the interface information, the DemoService can be published via XML configuration.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#586e75">&amp;lt;!-- service implementation, as same as regular local bean --&amp;gt;&lt;/span>
+&lt;span style="color:#268bd2">&amp;lt;bean&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> class=&lt;span style="color:#2aa198">&amp;#34;org.apache.dubbo.samples.provider.DemoServiceImpl&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;span style="color:#586e75">&amp;lt;!-- declare the service interface to be exported --&amp;gt;&lt;/span>
+&lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;org.apache.dubbo.samples.apisix.DemoService&amp;#34;&lt;/span> ref=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>After the above configuration, the Consumer can access the &lt;code>apisixDubbo&lt;/code> method through &lt;code>org.apache.dubbo.samples.apisix.DemoService&lt;/code> The specific interface implementation is as follows.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">DemoServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> DemoService &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#268bd2">@Override&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">apisixDubbo&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> httpRequestContext&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">.&lt;/span>Entry&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> entry &lt;span style="color:#719e07">:&lt;/span> httpRequestContext&lt;span style="color:#719e07">.&lt;/span>entrySet&lt;span style="color:#719e07">())&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;Key = &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> entry&lt;span style="color:#719e07">.&lt;/span>getKey&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">+&lt;/span> &lt;span style="color:#2aa198">&amp;#34;, Value = &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> entry&lt;span style="color:#719e07">.&lt;/span>getValue&lt;span style="color:#719e07">());&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> ret &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> HashMap&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;();&lt;/span>
+ret&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;body&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;dubbo success\n&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span> &lt;span style="color:#586e75">// http response body
+&lt;/span>&lt;span style="color:#586e75">&lt;/span> ret&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;200&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span> &lt;span style="color:#586e75">// http response status
+&lt;/span>&lt;span style="color:#586e75">&lt;/span> ret&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;test&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;123&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span> &lt;span style="color:#586e75">// http response header
+&lt;/span>&lt;span style="color:#586e75">&lt;/span>
+&lt;span style="color:#719e07">return&lt;/span> ret&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>:::note
+In the above code, &lt;code>DemoServiceImpl&lt;/code> prints the received &lt;code>httpRequestContext&lt;/code> and describes the HTTP response to the Dubbo request by returning a Map object with the specified Key.
+:::&lt;/p>
+&lt;h4 id="operation-steps">Operation steps&lt;/h4>
+&lt;ol>
+&lt;li>Start &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-tengine#install-dubbo">&lt;code>dubbo-samples&lt;/code>&lt;/a>.&lt;/li>
+&lt;li>Enable the &lt;code>dubbo-proxy&lt;/code> plugin in the &lt;code>config.yaml&lt;/code> file.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#586e75"># Add this in config.yaml&lt;/span>
+&lt;span style="color:#268bd2">plugins&lt;/span>:
+- ... &lt;span style="color:#586e75"># plugin you need&lt;/span>
+- dubbo-proxy
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Create an Upstream that points to the Dubbo Provider.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl http://127.0.0.1:9180/apisix/admin/upstreams/1 -H &lt;span style="color:#2aa198">&amp;#39;X-API-KEY: edd1c9f034335f136f87ad84b625c8f1&amp;#39;&lt;/span> -X PUT -d &lt;span style="color:#2aa198">&amp;#39;
+&lt;/span>&lt;span style="color:#2aa198">{
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;nodes&amp;#34;: {
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;127.0.0.1:20880&amp;#34;: 1
+&lt;/span>&lt;span style="color:#2aa198"> },
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;type&amp;#34;: &amp;#34;roundrobin&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198">}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>Expose an HTTP route for the DemoService.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl http://127.0.0.1:9180/apisix/admin/routes/1 -H &lt;span style="color:#2aa198">&amp;#39;X-API-KEY: edd1c9f034335f136f87ad84b625c8f1&amp;#39;&lt;/span> -X PUT -d &lt;span style="color:#2aa198">&amp;#39;
+&lt;/span>&lt;span style="color:#2aa198">{
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;host&amp;#34;: &amp;#34;example.org&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;uris&amp;#34;: [
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;/demo&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198"> ],
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;plugins&amp;#34;: {
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;dubbo-proxy&amp;#34;: {
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;service_name&amp;#34;: &amp;#34;org.apache.dubbo.samples.apisix.DemoService&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;service_version&amp;#34;: &amp;#34;0.0.0&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;method&amp;#34;: &amp;#34;apisixDubbo&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198"> }
+&lt;/span>&lt;span style="color:#2aa198"> },
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;upstream_id&amp;#34;: 1
+&lt;/span>&lt;span style="color:#2aa198">}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="5">
+&lt;li>Use the curl command to request Apache APISIX and view the returned results.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl http://127.0.0.1:9080/demo -H &lt;span style="color:#2aa198">&amp;#34;Host: example.org&amp;#34;&lt;/span> -X POST --data &lt;span style="color:#2aa198">&amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;hello&amp;#34;}&amp;#39;&lt;/span>
+&amp;lt; HTTP/1.1 &lt;span style="color:#2aa198">200&lt;/span> OK
+&amp;lt; Date: Sun, &lt;span style="color:#2aa198">26&lt;/span> Dec &lt;span style="color:#2aa198">2021&lt;/span> 11:33:27 GMT
+&amp;lt; Content-Type: text/plain; &lt;span style="color:#268bd2">charset&lt;/span>&lt;span style="color:#719e07">=&lt;/span>utf-8
+&amp;lt; Content-Length: &lt;span style="color:#2aa198">14&lt;/span>
+&amp;lt; Connection: keep-alive
+&amp;lt; test: &lt;span style="color:#2aa198">123&lt;/span>
+&amp;lt; Server: APISIX/2.11.0
+&amp;lt;
+dubbo success
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>:::note
+The above code returns the &lt;code>test: 123&lt;/code> Header, and the &lt;code>dubbo success&lt;/code> string as the body. This is the same as what we expected in the &lt;code>DemoServiceImpl&lt;/code> code.
+:::&lt;/p>
+&lt;ol start="6">
+&lt;li>You can view the logs of the Dubbo Provider.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">Key = content-length, Value = 17
+Key = host, Value = example.org
+Key = content-type, Value = application/x-www-form-urlencoded
+Key = body, Value = [B@70754265
+Key = accept, Value = */*
+Key = user-agent, Value = curl/7.80.0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>:::note
+The Header and Body of the HTTP request are available through the &lt;code>httpRequestContext&lt;/code>, where the Header is used as a Map element, while the Body has a fixed string &amp;ldquo;body&amp;rdquo; as the Key value and a Byte array as the Value.
+:::&lt;/p>
+&lt;h3 id="advanced-complex-scenario-example">Advanced: Complex Scenario Example&lt;/h3>
+&lt;p>As you can see in the simple use case above, we do publish Dubbo Service as an HTTP service via Apache APISIX, but there are obvious limitations in its use. For example, the parameters and return values of the interface must be &lt;code>Map&amp;lt;String, Object&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>So, how do you expose the HTTP service through Apache APISIX if there is an interface in your project that is already defined, but does not meet the above restrictions?&lt;/p>
+&lt;h4 id="operation-steps-1">Operation steps&lt;/h4>
+&lt;p>For the above scenario, we can use the HTTP Request Body to describe the Service and Method to be invoked and the corresponding parameters, and then use the reflection mechanism of Java to realize the invocation of the target method. Finally, the return value is serialized to JSON and written to the HTTP Response Body.&lt;/p>
+&lt;p>This will further enhance the &amp;ldquo;HTTP to Dubbo&amp;rdquo; capability of Apache APISIX and apply it to all existing Dubbo services. For details, see the following.&lt;/p>
+&lt;ol>
+&lt;li>Add a Dubbo Service for existing projects to handle HTTP to Dubbo conversions in a unified way.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">DubboInvocationParameter&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> String type&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> String value&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">DubboInvocation&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> String service&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> String method&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> DubboInvocationParameter&lt;span style="color:#719e07">[]&lt;/span> parameters&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">HTTP2DubboService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">invoke&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> context&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> Exception&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#268bd2">@Component&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">HTTP2DubboServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> HTTP2DubboService &lt;span style="color:#719e07">{&lt;/span>
+&lt;span style="color:#268bd2">@Autowired&lt;/span>
+&lt;span style="color:#268bd2">private&lt;/span> ApplicationContext appContext&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#268bd2">@Override&lt;/span>
+&lt;span style="color:#268bd2">public&lt;/span> Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">invoke&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> context&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> Exception &lt;span style="color:#719e07">{&lt;/span>
+DubboInvocation invocation &lt;span style="color:#719e07">=&lt;/span> JSONObject&lt;span style="color:#719e07">.&lt;/span>parseObject&lt;span style="color:#719e07">((&lt;/span>&lt;span style="color:#dc322f">byte&lt;/span>&lt;span style="color:#719e07">[])&lt;/span> context&lt;span style="color:#719e07">.&lt;/span>get&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;body&amp;#34;&lt;/span>&lt;span style="color:#719e07">),&lt;/span> DubboInvocation&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">);&lt;/span>
+Object&lt;span style="color:#719e07">[]&lt;/span> args &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> Object&lt;span style="color:#719e07">[&lt;/span>invocation&lt;span style="color:#719e07">.&lt;/span>getParameters&lt;span style="color:#719e07">().&lt;/span>size&lt;span style="color:#719e07">()];&lt;/span>
+&lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#dc322f">int&lt;/span> i &lt;span style="color:#719e07">=&lt;/span> 0&lt;span style="color:#719e07">;&lt;/span> i &lt;span style="color:#719e07">&amp;lt;&lt;/span> args&lt;span style="color:#719e07">.&lt;/span>length&lt;span style="color:#719e07">;&lt;/span> i&lt;span style="color:#719e07">++)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+DubboInvocationParameter parameter &lt;span style="color:#719e07">=&lt;/span> invocation&lt;span style="color:#719e07">.&lt;/span>getParameters&lt;span style="color:#719e07">().&lt;/span>get&lt;span style="color:#719e07">(&lt;/span>i&lt;span style="color:#719e07">);&lt;/span>
+args&lt;span style="color:#719e07">[&lt;/span>i&lt;span style="color:#719e07">]&lt;/span> &lt;span style="color:#719e07">=&lt;/span> JSONObject&lt;span style="color:#719e07">.&lt;/span>parseObject&lt;span style="color:#719e07">(&lt;/span>parameter&lt;span style="color:#719e07">.&lt;/span>getValue&lt;span style="color:#719e07">(),&lt;/span> Class&lt;span style="color:#719e07">.&lt;/span>forName&lt;span style="color:#719e07">(&lt;/span>parameter&lt;span style="color:#719e07">.&lt;/span>getType&lt;span style="color:#719e07">()));&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+Object svc &lt;span style="color:#719e07">=&lt;/span> appContext&lt;span style="color:#719e07">.&lt;/span>getBean&lt;span style="color:#719e07">(&lt;/span>Class&lt;span style="color:#719e07">.&lt;/span>forName&lt;span style="color:#719e07">(&lt;/span>invocation&lt;span style="color:#719e07">.&lt;/span>getService&lt;span style="color:#719e07">()));&lt;/span>
+Object result &lt;span style="color:#719e07">=&lt;/span> svc&lt;span style="color:#719e07">.&lt;/span>getClass&lt;span style="color:#719e07">().&lt;/span>getMethod&lt;span style="color:#719e07">(&lt;/span>invocation&lt;span style="color:#719e07">.&lt;/span>getMethod&lt;span style="color:#719e07">()).&lt;/span>invoke&lt;span style="color:#719e07">(&lt;/span>args&lt;span style="color:#719e07">);&lt;/span>
+Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> httpResponse &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> HashMap&lt;span style="color:#719e07">&amp;lt;&amp;gt;();&lt;/span>
+httpResponse&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;status&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> 200&lt;span style="color:#719e07">);&lt;/span>
+httpResponse&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;body&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> JSONObject&lt;span style="color:#719e07">.&lt;/span>toJSONString&lt;span style="color:#719e07">(&lt;/span>result&lt;span style="color:#719e07">));&lt;/span>
+&lt;span style="color:#719e07">return&lt;/span> httpResponse&lt;span style="color:#719e07">;&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;span style="color:#719e07">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Initiate the relevant call with the following command request.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">curl http://127.0.0.1:9080/demo -H &lt;span style="color:#2aa198">&amp;#34;Host: example.org&amp;#34;&lt;/span> -X POST --data &lt;span style="color:#2aa198">&amp;#39;
+&lt;/span>&lt;span style="color:#2aa198">{
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;service&amp;#34;: &amp;#34;org.apache.dubbo.samples.apisix.DemoService&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;method&amp;#34;: &amp;#34;createUser&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;parameters&amp;#34;: [
+&lt;/span>&lt;span style="color:#2aa198"> {
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;type&amp;#34;: &amp;#34;org.apache.dubbo.samples.apisix.User&amp;#34;,
+&lt;/span>&lt;span style="color:#2aa198"> &amp;#34;value&amp;#34;: &amp;#34;{&amp;#39;&lt;/span>name&lt;span style="color:#2aa198">&amp;#39;: &amp;#39;&lt;/span>hello&lt;span style="color:#2aa198">&amp;#39;}&amp;#34;
+&lt;/span>&lt;span style="color:#2aa198"> }
+&lt;/span>&lt;span style="color:#2aa198"> ]
+&lt;/span>&lt;span style="color:#2aa198">}&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>In this article, we introduced how to use Apache APISIX to implement a proxy for Dubbo Service. By introducing the &lt;code>dubbo-proxy&lt;/code> plugin, you can build a simpler and more efficient traffic link for the back-end system of Dubbo framework.&lt;/p>
+&lt;p>We hope that the above steps and use cases will provide you with ideas for using it in relevant scenarios. For more information about the &lt;code>dubbo-proxy&lt;/code> plugin, please refer to the &lt;a href="https://apisix.apache.org/docs/apisix/plugins/dubbo-proxy/">official documentation&lt;/a>.&lt;/p></description></item><item><title>Blog: 2.7.14 Release Note</title><link>https://dubbo.apache.org/en/blog/2021/09/20/2.7.14-release-note/</link><pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2021/09/20/2.7.14-release-note/</guid><description>
 &lt;h2 id="change-lists">Change Lists&lt;/h2>
 &lt;ul>
 &lt;li>add Dynamic Configuration Override Support For ServiceDiscovery. (#8389)&lt;/li>
