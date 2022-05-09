@@ -1,4 +1,286 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 技术分享</title><link>https://dubbo.apache.org/zh/blog/news/</link><description>Recent content in 技术分享 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/blog/news/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: 从原理到操作，让你在 Apache APISIX 中代理 Dubbo 服务更便捷</title><link>https://dubbo.apache.org/zh/blog/2022/01/18/%E4%BB%8E%E5%8E%9F%E7%90%86%E5%88%B0%E6%93%8D%E4%BD%9C%E8%AE%A9%E4%BD%A0%E5%9C%A8-apache-apisix-%E4%B8%AD%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1%E6%9B%B4%E4%BE%BF%E6%8D%B7/</link><pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/01/18/%E4%BB%8E%E5%8E%9F%E7%90%86%E5%88%B0%E6%93%8D%E4%BD%9C%E8%AE%A9%E4%BD%A0%E5%9C%A8-apache-apisix-%E4%B8%AD%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1%E6%9B%B4%E4%BE%BF%E6%8D%B7/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 技术分享</title><link>https://dubbo.apache.org/zh/blog/news/</link><description>Recent content in 技术分享 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/blog/news/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: 如何通过 Apache ShenYu 网关代理 Dubbo 服务</title><link>https://dubbo.apache.org/zh/blog/2022/05/04/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87-apache-shenyu-%E7%BD%91%E5%85%B3%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1/</link><pubDate>Wed, 04 May 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/05/04/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87-apache-shenyu-%E7%BD%91%E5%85%B3%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1/</guid><description>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/ApacheShenYu-Dubbo-zh.png" alt="">&lt;/p>
+&lt;h2 id="1-介绍">1. 介绍&lt;/h2>
+&lt;ul>
+&lt;li>Apache ShenYu&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/shenyu.png" alt="">&lt;/p>
+&lt;p>&lt;a href="https://shenyu.apache.org/zh/docs/index">Apache ShenYu(Incubating)&lt;/a> 是一个异步的，高性能的，跨语言的，响应式的 &lt;code>API&lt;/code> 网关。兼容各种主流框架体系，支持热插拔，用户可以定制化开发，满足用户各种场景的现状和未来需求，经历过大规模场景的锤炼。&lt;/p>
+&lt;p>2021年5月，&lt;code>ShenYu&lt;/code>捐献给 &lt;code>Apache&lt;/code> 软件基金会，Apache 基金会全票通过，顺利进入孵化器。&lt;/p>
+&lt;ul>
+&lt;li>Apache Dubbo&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>Apache Dubbo&lt;/code> 是一款微服务开发框架，它提供了 &lt;code>RPC&lt;/code> 通信 与 微服务治理 两大关键能力。这意味着，使用 &lt;code>Dubbo&lt;/code> 开发的微服务，将具备相互之间的远程发现与通信能力， 同时利用 Dubbo 提供的丰富服务治理能力，可以实现诸如服务发现、负载均衡、流量调度等服务治理诉求。同时 &lt;code>Dubbo&lt;/code> 是高度可扩展的，用户几乎可以在任意功能点去定制自己的实现，以改变框架的默认行为来满足自己的业务需求。&lt;/p>
+&lt;h2 id="2-dubbo快速开始">2. Dubbo快速开始&lt;/h2>
+&lt;p>本小节介绍如何将&lt;code>Dubbo&lt;/code>服务接入到&lt;code>ShenYu&lt;/code>网关，您可以直接在工程下找到本小节的&lt;a href="https://github.com/apache/incubator-shenyu/tree/master/shenyu-examples/shenyu-examples-dubbo/shenyu-examples-apache-dubbo-service">示例代码&lt;/a> 。&lt;/p>
+&lt;h3 id="21-启动shenyu-admin">2.1 启动shenyu-admin&lt;/h3>
+&lt;p>&lt;code>shenyu-admin&lt;/code>是&lt;code>Apache ShenYu&lt;/code>后台管理系统， 启动的方式有多种，本文通过 &lt;a href="https://shenyu.apache.org/zh/docs/deployment/deployment-local">本地部署&lt;/a> 的方式启动。启动成功后，需要在基础配置&lt;code>-&amp;gt;&lt;/code>插件管理中，把&lt;code>dubbo&lt;/code> 插件设置为开启，并设置你的注册地址，请确保注册中心已经开启。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-enable-zh.png" alt="">&lt;/p>
+&lt;h3 id="22-启动shenyu网关">2.2 启动shenyu网关&lt;/h3>
+&lt;p>在这里通过 &lt;a href="https://github.com/apache/incubator-shenyu/tree/master/shenyu-bootstrap">源码&lt;/a> 的方式启动，直接运行&lt;code>shenyu-bootstrap&lt;/code>中的&lt;code>ShenyuBootstrapApplication&lt;/code>。&lt;/p>
+&lt;p>在启动前，请确保网关已经引入相关依赖。如果客户端是&lt;code>apache dubbo&lt;/code>，注册中心使用&lt;code>zookeeper&lt;/code>，请参考如下配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;!--&lt;/span> apache shenyu apache dubbo plugin start&lt;span style="color:#719e07">--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>shenyu&lt;span style="color:#719e07">&amp;lt;/&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>shenyu&lt;span style="color:#719e07">-&lt;/span>spring&lt;span style="color:#719e07">-&lt;/span>boot&lt;span style="color:#719e07">-&lt;/span>starter&lt;span style="color:#719e07">-&lt;/span>plugin&lt;span style="color:#719e07">-&lt;/span>apache&lt;span style="color:#719e07">-&lt;/span>dubbo&lt;span style="color:#719e07">&amp;lt;/&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>$&lt;span style="color:#719e07">{&lt;/span>project&lt;span style="color:#719e07">.&lt;/span>version&lt;span style="color:#719e07">}&amp;lt;/&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;/&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>dubbo&lt;span style="color:#719e07">&amp;lt;/&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>dubbo&lt;span style="color:#719e07">&amp;lt;/&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>2&lt;span style="color:#719e07">.&lt;/span>7&lt;span style="color:#719e07">.&lt;/span>5&lt;span style="color:#719e07">&amp;lt;/&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;/&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;!--&lt;/span> Dubbo zookeeper registry dependency start &lt;span style="color:#719e07">--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>curator&lt;span style="color:#719e07">&amp;lt;/&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>curator&lt;span style="color:#719e07">-&lt;/span>client&lt;span style="color:#719e07">&amp;lt;/&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>4&lt;span style="color:#719e07">.&lt;/span>0&lt;span style="color:#719e07">.&lt;/span>1&lt;span style="color:#719e07">&amp;lt;/&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>exclusions&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>exclusion&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>log4j&lt;span style="color:#719e07">&amp;lt;/&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>log4j&lt;span style="color:#719e07">&amp;lt;/&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;/&lt;/span>exclusion&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;/&lt;/span>exclusions&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;/&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>curator&lt;span style="color:#719e07">&amp;lt;/&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>curator&lt;span style="color:#719e07">-&lt;/span>framework&lt;span style="color:#719e07">&amp;lt;/&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>4&lt;span style="color:#719e07">.&lt;/span>0&lt;span style="color:#719e07">.&lt;/span>1&lt;span style="color:#719e07">&amp;lt;/&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;/&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>curator&lt;span style="color:#719e07">&amp;lt;/&lt;/span>groupId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>curator&lt;span style="color:#719e07">-&lt;/span>recipes&lt;span style="color:#719e07">&amp;lt;/&lt;/span>artifactId&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>4&lt;span style="color:#719e07">.&lt;/span>0&lt;span style="color:#719e07">.&lt;/span>1&lt;span style="color:#719e07">&amp;lt;/&lt;/span>version&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;/&lt;/span>dependency&lt;span style="color:#719e07">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;!--&lt;/span> Dubbo zookeeper registry dependency end &lt;span style="color:#719e07">--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;!--&lt;/span> apache dubbo plugin end&lt;span style="color:#719e07">--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="23-启动shenyu-examples-dubbo">2.3 启动shenyu-examples-dubbo&lt;/h3>
+&lt;p>以官网提供的例子为例 &lt;a href="https://github.com/apache/incubator-shenyu/tree/master/shenyu-examples/shenyu-examples-dubbo/shenyu-examples-apache-dubbo-service">shenyu-examples-dubbo&lt;/a> 。 假如&lt;code>dubbo&lt;/code>服务定义如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;beans&lt;/span> /* ...... * &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:application&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;test-dubbo-service&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;${dubbo.registry.address}&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;dubbo&amp;#34;&lt;/span> port=&lt;span style="color:#2aa198">&amp;#34;20888&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> timeout=&lt;span style="color:#2aa198">&amp;#34;10000&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;org.apache.shenyu.examples.dubbo.api.service.DubboTestService&amp;#34;&lt;/span> ref=&lt;span style="color:#2aa198">&amp;#34;dubboTestService&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>声明应用服务名称，注册中心地址，使用&lt;code>dubbo&lt;/code>协议，声明服务接口，对应接口实现类：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> * DubboTestServiceImpl.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@Service&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;dubboTestService&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">DubboTestServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> DubboTestService &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@ShenyuDubboClient&lt;/span>&lt;span style="color:#719e07">(&lt;/span>path &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;/findById&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> desc &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;Query by Id&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> DubboTest &lt;span style="color:#268bd2">findById&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#268bd2">final&lt;/span> String id&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#719e07">new&lt;/span> DubboTest&lt;span style="color:#719e07">(&lt;/span>id&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;hello world shenyu Apache, findById&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//......
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在接口实现类中，使用注解&lt;code>@ShenyuDubboClient&lt;/code>向&lt;code>shenyu-admin&lt;/code>注册服务。&lt;/p>
+&lt;p>在配置文件&lt;code>application.yml&lt;/code>中的配置信息：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">server&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: &lt;span style="color:#2aa198">8011&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">address&lt;/span>: &lt;span style="color:#2aa198">0.0.0.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">servlet&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">context-path&lt;/span>: /
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">spring&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">main&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">allow-bean-definition-overriding&lt;/span>: &lt;span style="color:#cb4b16">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">dubbo&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">registry&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">address&lt;/span>: zookeeper://localhost:2181 &lt;span style="color:#586e75"># dubbo使用的注册中心&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">shenyu&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">register&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">registerType&lt;/span>: http &lt;span style="color:#586e75">#注册方式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">serverLists&lt;/span>: http://localhost:9095 &lt;span style="color:#586e75">#注册地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">props&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">username&lt;/span>: admin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">password&lt;/span>: &lt;span style="color:#2aa198">123456&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">client&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">dubbo&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">props&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">contextPath&lt;/span>: /dubbo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">appName&lt;/span>: dubbo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在配置文件中，声明&lt;code>dubbo&lt;/code>使用的注册中心地址，&lt;code>dubbo&lt;/code>服务向&lt;code>shenyu-admin&lt;/code>注册，使用的方式是&lt;code>http&lt;/code>，注册地址是&lt;code>http://localhost:9095&lt;/code>。&lt;/p>
+&lt;p>关于注册方式的使用，请参考 &lt;a href="https://shenyu.apache.org/docs/design/register-center-design/">应用客户端接入&lt;/a> 。&lt;/p>
+&lt;h3 id="24-调用dubbo服务">2.4 调用dubbo服务&lt;/h3>
+&lt;p>&lt;code>shenyu-examples-dubbo&lt;/code>项目成功启动之后会自动把加 &lt;code>@ShenyuDubboClient&lt;/code> 注解的接口方法注册到网关。&lt;/p>
+&lt;p>打开 &lt;code>插件列表 -&amp;gt; Proxy -&amp;gt; dubbo&lt;/code> 可以看到插件规则配置列表：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-service-list-zh.png" alt="">&lt;/p>
+&lt;p>注册成功的选择器信息：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-selector-zh.png" alt="">&lt;/p>
+&lt;p>注册成功的规则信息：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-rule-zh.png" alt="">&lt;/p>
+&lt;blockquote>
+&lt;p>选择器和规则是 &lt;code>Apache ShenYu&lt;/code> 网关中最灵魂的东西。掌握好它，你可以对任何流量进行管理。对应为选择器与规则里面的匹配条件(conditions)，根据不同的流量筛选规则，我们可以处理各种复杂的场景。流量筛选可以从&lt;code>Header&lt;/code>, &lt;code>URI&lt;/code>, &lt;code>Query&lt;/code>, &lt;code>Cookie&lt;/code> 等等Http请求获取数据。&lt;/p>
+&lt;p>然后可以采用 &lt;code>Match&lt;/code>，&lt;code>=&lt;/code>，&lt;code>Regex&lt;/code>，&lt;code>Groovy&lt;/code>，&lt;code>Exclude&lt;/code>等匹配方式，匹配出你所预想的数据。多组匹配添加可以使用&lt;code>And/Or&lt;/code>的匹配策略。&lt;/p>
+&lt;p>具体的介绍与使用请看: &lt;a href="https://shenyu.apache.org/zh/docs/design/user-guide/admin-usage/selector-and-rule">选择器与规则管理&lt;/a> 。&lt;/p>
+&lt;/blockquote>
+&lt;p>发起&lt;code>GET&lt;/code>请求，通过&lt;code>ShenYu&lt;/code>网关调用&lt;code>dubbo&lt;/code>服务：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>GET http://localhost:9195/dubbo/findById?id=100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Accept: application/json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>成功响应之后，结果如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;name&amp;#34;: &amp;#34;hello world shenyu Apache, findById&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;id&amp;#34;: &amp;#34;100&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>至此，就成功的通过&lt;code>http&lt;/code>请求访问&lt;code>dubbo&lt;/code>服务了，&lt;code>ShenYu&lt;/code>网关通过&lt;code>shenyu-plugin-dubbo&lt;/code>模块将&lt;code>http&lt;/code>协议转成了&lt;code>dubbo&lt;/code>协议。&lt;/p>
+&lt;h2 id="3-深入理解dubbo插件">3. 深入理解Dubbo插件&lt;/h2>
+&lt;p>在运行上述&lt;code>demo&lt;/code>的过程中，是否存在一些疑问：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>dubbo&lt;/code>服务是如何注册到&lt;code>shenyu-admin&lt;/code>？&lt;/li>
+&lt;li>&lt;code>shenyu-admin&lt;/code>是如何将数据同步到&lt;code>ShenYu&lt;/code>网关？&lt;/li>
+&lt;li>&lt;code>DubboPlugin&lt;/code>是如何将&lt;code>http&lt;/code>协议转换到到dubbo协议？&lt;/li>
+&lt;/ul>
+&lt;p>带着这些疑问，来深入理解&lt;code>dubbo&lt;/code>插件。&lt;/p>
+&lt;h3 id="31-应用客户端接入">3.1 应用客户端接入&lt;/h3>
+&lt;p>应用客户端接入是指将微服务接入到&lt;code>Apache ShenYu&lt;/code>网关，当前支持&lt;code>Http&lt;/code>、 &lt;code>Dubbo&lt;/code>、 &lt;code>Spring Cloud&lt;/code>、 &lt;code>gRPC&lt;/code>、 &lt;code>Motan&lt;/code>、 &lt;code>Sofa&lt;/code>、 &lt;code>Tars&lt;/code>等协议的接入。&lt;/p>
+&lt;p>将应用客户端接入到&lt;code>Apache ShenYu&lt;/code>网关是通过注册中心来实现的，涉及到客户端注册和服务端同步数据。注册中心支持&lt;code>Http&lt;/code>、&lt;code>Zookeeper&lt;/code>、&lt;code>Etcd&lt;/code>、&lt;code>Consul&lt;/code>和&lt;code>Nacos&lt;/code>。默认是通过&lt;code>Http&lt;/code>方式注册。&lt;/p>
+&lt;p>客户端接入的相关配置请参考 &lt;a href="https://shenyu.apache.org/zh/docs/user-guide/register-center-access">客户端接入配置&lt;/a> 。&lt;/p>
+&lt;h4 id="311-客户端注册">3.1.1 客户端注册&lt;/h4>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/register-client.png" alt="">&lt;/p>
+&lt;p>在你的微服务配置中声明注册中心客户端类型，如&lt;code>Http&lt;/code>或&lt;code>Zookeeper&lt;/code>。
+应用程序启动时使用&lt;code>SPI&lt;/code>方式加载并初始化对应注册中心客户端，通过实现&lt;code>Spring Bean&lt;/code>相关的后置处理器接口，在其中获取需要进行注册的服务接口信息，将获取的信息放入&lt;code>Disruptor&lt;/code>中。&lt;/p>
+&lt;p>注册中心客户端从&lt;code>Disruptor&lt;/code>中读取数据，并将接口信息注册到&lt;code>shenyu-admin&lt;/code>，&lt;code>Disruptor&lt;/code>在其中起数据与操作解耦的作用，利于扩展。&lt;/p>
+&lt;h4 id="312-服务端注册">3.1.2 服务端注册&lt;/h4>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/register-server.png" alt="">&lt;/p>
+&lt;p>在&lt;code>shenyu-admin&lt;/code>配置中声明注册中心服务端类型，如&lt;code>Http&lt;/code>或&lt;code>Zookeeper&lt;/code>。当&lt;code>shenyu-admin&lt;/code>启动时，读取配置类型，加载并初始化对应的注册中心服务端，注册中心服务端收到&lt;code>shenyu-client&lt;/code>注册的接口信息后，将其放入&lt;code>Disruptor&lt;/code>中，然后会触发注册处理逻辑，将服务接口信息更新并发布同步事件。&lt;/p>
+&lt;p>&lt;code>Disruptor&lt;/code>在其中起到数据与操作解耦，利于扩展。如果注册请求过多，导致注册异常，也有数据缓冲作用。&lt;/p>
+&lt;h3 id="32-数据同步原理">3.2 数据同步原理&lt;/h3>
+&lt;p>数据同步是指在 &lt;code>shenyu-admin&lt;/code> 后台操作数据以后，使用何种策略将数据同步到 &lt;code>Apache ShenYu&lt;/code> 网关。&lt;code>Apache ShenYu&lt;/code> 网关当前支持&lt;code>ZooKeeper&lt;/code>、&lt;code>WebSocket&lt;/code>、&lt;code>Http长轮询&lt;/code>、&lt;code>Nacos&lt;/code> 、&lt;code>Etcd&lt;/code> 和 &lt;code>Consul&lt;/code> 进行数据同步。默认是通过&lt;code>WebSocket&lt;/code>进行数据同步。&lt;/p>
+&lt;p>数据同步的相关配置请参考 &lt;a href="https://shenyu.apache.org/zh/docs/user-guide/use-data-sync">数据同步配置&lt;/a> 。&lt;/p>
+&lt;h4 id="321-数据同步的意义">3.2.1 数据同步的意义&lt;/h4>
+&lt;p>网关是流量请求的入口，在微服务架构中承担了非常重要的角色，网关高可用的重要性不言而喻。在使用网关的过程中，为了满足业务诉求，经常需要变更配置，比如流控规则、路由规则等等。因此，网关动态配置是保障网关高可用的重要因素。&lt;/p>
+&lt;p>当前数据同步特性如下：&lt;/p>
+&lt;ul>
+&lt;li>所有的配置都缓存在 &lt;code>Apache ShenYu&lt;/code> 网关内存中，每次请求都使用本地缓存，速度非常快。&lt;/li>
+&lt;li>用户可以在 &lt;code>shenyu-admin&lt;/code> 后台任意修改数据，并马上同步到网关内存。&lt;/li>
+&lt;li>支持 &lt;code>Apache ShenYu&lt;/code> 的插件、选择器、规则数据、元数据、签名数据等数据同步。&lt;/li>
+&lt;li>所有插件的选择器，规则都是动态配置，立即生效，不需要重启服务。&lt;/li>
+&lt;li>数据同步方式支持 &lt;code>Zookeeper&lt;/code>、&lt;code>Http 长轮询&lt;/code>、&lt;code>Websocket&lt;/code>、&lt;code>Nacos&lt;/code>、&lt;code>Etcd&lt;/code> 和 &lt;code>Consul&lt;/code>。&lt;/li>
+&lt;/ul>
+&lt;h4 id="322-数据同步原理分析">3.2.2 数据同步原理分析&lt;/h4>
+&lt;p>下图展示了 &lt;code>Apache ShenYu&lt;/code> 数据同步的流程，&lt;code>Apache ShenYu&lt;/code> 网关在启动时，会从配置服务同步配置数据，并且支持推拉模式获取配置变更信息，然后更新本地缓存。管理员可以在管理后台（&lt;code>shenyu-admin&lt;/code>），变更用户权限、规则、插件、流量配置，通过推拉模式将变更信息同步给 &lt;code>Apache ShenYu&lt;/code> 网关，具体是 &lt;code>push&lt;/code> 模式，还是 &lt;code>pull&lt;/code> 模式取决于使用哪种同步方式。&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/data-sync.png" alt="">&lt;/p>
+&lt;p>在最初的版本中，配置服务依赖 &lt;code>Zookeeper&lt;/code> 实现，管理后台将变更信息 &lt;code>push&lt;/code> 给网关。而现在可以支持 &lt;code>WebSocket&lt;/code>、&lt;code>Http长轮询&lt;/code>、&lt;code>Zookeeper&lt;/code>、&lt;code>Nacos&lt;/code>、&lt;code>Etcd&lt;/code> 和 &lt;code>Consul&lt;/code>，通过在配置文件中设置 &lt;code>shenyu.sync.${strategy}&lt;/code> 指定对应的同步策略，默认使用 &lt;code>webosocket&lt;/code> 同步策略，可以做到秒级数据同步。但是，有一点需要注意的是，&lt;code>Apache ShenYu&lt;/code>网关 和 &lt;code>shenyu-admin&lt;/code> 必须使用相同的同步策略。&lt;/p>
+&lt;p>如下图所示，&lt;code>shenyu-admin&lt;/code> 在用户发生配置变更之后，会通过 &lt;code>EventPublisher&lt;/code> 发出配置变更通知，由 &lt;code>EventDispatcher&lt;/code> 处理该变更通知，然后根据配置的同步策略(&lt;code>http、weboscket、zookeeper、naocs、etcd、consul&lt;/code>)，将配置发送给对应的事件处理器。&lt;/p>
+&lt;ul>
+&lt;li>如果是 &lt;code>websocket&lt;/code> 同步策略，则将变更后的数据主动推送给 &lt;code>shenyu-web&lt;/code>，并且在网关层，会有对应的 &lt;code>WebsocketDataHandler&lt;/code> 处理器来处理 &lt;code>shenyu-admin&lt;/code> 的数据推送。&lt;/li>
+&lt;li>如果是 &lt;code>zookeeper&lt;/code> 同步策略，将变更数据更新到 &lt;code>zookeeper&lt;/code>，而 &lt;code>ZookeeperSyncCache&lt;/code> 会监听到 &lt;code>zookeeper&lt;/code> 的数据变更，并予以处理。&lt;/li>
+&lt;li>如果是 &lt;code>http&lt;/code> 同步策略，由网关主动发起长轮询请求，默认有 &lt;code>90s&lt;/code> 超时时间，如果 &lt;code>shenyu-admin&lt;/code> 没有数据变更，则会阻塞 &lt;code>http&lt;/code> 请求，如果有数据发生变更则响应变更的数据信息，如果超过 &lt;code>60s&lt;/code> 仍然没有数据变更则响应空数据，网关层接到响应后，继续发起 &lt;code>http&lt;/code> 请求，反复同样的请求。&lt;/li>
+&lt;/ul>
+&lt;h3 id="33-流程分析">3.3 流程分析&lt;/h3>
+&lt;p>流程分析是从源码的角度，展示服务注册流程，数据同步流程和服务调用流程。&lt;/p>
+&lt;h4 id="331-服务注册流程">3.3.1 服务注册流程&lt;/h4>
+&lt;ul>
+&lt;li>读取dubbo服务&lt;/li>
+&lt;/ul>
+&lt;p>使用注解&lt;code>@ShenyuDubboClient&lt;/code>标记需要注册到网关的&lt;code>dubbo&lt;/code>服务。&lt;/p>
+&lt;p>注解扫描通过&lt;code>ApacheDubboServiceBeanListener&lt;/code>完成，它实现了&lt;code>ApplicationListener&amp;lt;ContextRefreshedEvent&amp;gt;&lt;/code>接口，在&lt;code>Spring&lt;/code>容器启动过程中，发生上下文刷新事件时，开始执行事件处理方法&lt;code>onApplicationEvent()&lt;/code>。在重写的方法逻辑中，读取&lt;code>Dubbo&lt;/code>服务&lt;code>ServiceBean&lt;/code>，构建元数据对象和&lt;code>URI&lt;/code>对象，并向&lt;code>shenyu-admin&lt;/code>注册。&lt;/p>
+&lt;p>具体的注册逻辑由注册中心实现，请参考 &lt;a href="https://shenyu.apache.org/zh/docs/design/register-center-design/">客户端接入原理&lt;/a> 。&lt;/p>
+&lt;ul>
+&lt;li>处理注册信息&lt;/li>
+&lt;/ul>
+&lt;p>客户端通过注册中心注册的元数据和&lt;code>URI&lt;/code>数据，在&lt;code>shenyu-admin&lt;/code>端进行处理，负责存储到数据库和同步给&lt;code>shenyu&lt;/code>网关。&lt;code>Dubbo&lt;/code>插件的客户端注册处理逻辑在&lt;code>ShenyuClientRegisterDubboServiceImpl&lt;/code>中。继承关系如下：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/ShenyuClientRegisterDubboServiceImpl.png" alt="">&lt;/p>
+&lt;ul>
+&lt;li>ShenyuClientRegisterService：客户端注册服务，顶层接口；&lt;/li>
+&lt;li>FallbackShenyuClientRegisterService：注册失败，提供重试操作；&lt;/li>
+&lt;li>AbstractShenyuClientRegisterServiceImpl：抽象类，实现部分公共注册逻辑；&lt;/li>
+&lt;li>ShenyuClientRegisterDubboServiceImpl：实现&lt;code>Dubbo&lt;/code>插件的注册；&lt;/li>
+&lt;/ul>
+&lt;p>注册信息包括选择器，规则和元数据。&lt;/p>
+&lt;p>整体的&lt;code>dubbo&lt;/code>服务注册流程如下：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-register-zh.png" alt="">&lt;/p>
+&lt;h4 id="332-数据同步流程">3.3.2 数据同步流程&lt;/h4>
+&lt;ul>
+&lt;li>admin更新数据&lt;/li>
+&lt;/ul>
+&lt;p>假设在在后台管理系统中，新增一条选择器数据，请求会进入&lt;code>SelectorController&lt;/code>类中的&lt;code>createSelector()&lt;/code>方法，它负责数据的校验，添加或更新数据，返回结果信息。&lt;/p>
+&lt;p>在&lt;code>SelectorServiceImpl&lt;/code>类中通过&lt;code>createOrUpdate()&lt;/code>方法完成数据的转换，保存到数据库，发布事件，更新&lt;code>upstream&lt;/code>。&lt;/p>
+&lt;p>在&lt;code>Service&lt;/code>类完成数据的持久化操作，即保存数据到数据库。发布变更数据通过&lt;code>eventPublisher.publishEvent()&lt;/code>完成，这个&lt;code>eventPublisher&lt;/code>对象是一个&lt;code>ApplicationEventPublisher&lt;/code>类，这个类的全限定名是&lt;code>org.springframework.context.ApplicationEventPublisher&lt;/code>，发布数据的功能正是是通过&lt;code>Spring&lt;/code>相关的功能来完成的。&lt;/p>
+&lt;p>当事件发布完成后，会自动进入到&lt;code>DataChangedEventDispatcher&lt;/code>类中的&lt;code>onApplicationEvent()&lt;/code>方法，根据不同数据类型和数据同步方式进行事件处理。&lt;/p>
+&lt;ul>
+&lt;li>网关数据同步&lt;/li>
+&lt;/ul>
+&lt;p>网关在启动时，根据指定的数据同步方式加载不同的配置类，初始化数据同步相关类。&lt;/p>
+&lt;p>在接收到数据后，进行反序列化操作，读取数据类型和操作类型。不同的数据类型，有不同的数据处理方式，所以有不同的实现类。但是它们之间也有相同的处理逻辑，所以可以通过模板方法设计模式来实现。相同的逻辑放在抽象类&lt;code>AbstractDataHandler&lt;/code>中的&lt;code>handle()&lt;/code>方法中，不同逻辑就交给各自的实现类。&lt;/p>
+&lt;p>新增一条选择器数据，是新增操作，会进入到&lt;code>SelectorDataHandler.doUpdate()&lt;/code>具体的数据处理逻辑中。&lt;/p>
+&lt;p>在通用插件数据订阅者&lt;code>CommonPluginDataSubscriber&lt;/code>，负责处理所有插件、选择器和规则信息&lt;/p>
+&lt;p>将数据保存到网关的内存中，&lt;code>BaseDataCache&lt;/code>是最终缓存数据的类，通过单例模式实现。选择器数据就存到了&lt;code>SELECTOR_MAP&lt;/code>这个&lt;code>Map&lt;/code>中。在后续使用的时候，也是从这里拿数据。&lt;/p>
+&lt;p>上述逻辑用流程图表示如下：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/data-sync-seq-zh.png" alt="">&lt;/p>
+&lt;h4 id="333-服务调用流程">3.3.3 服务调用流程&lt;/h4>
+&lt;p>在&lt;code>Dubbo&lt;/code>插件体系中，类继承关系如下：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/ApacheDubboPlugin.png" alt="">&lt;/p>
+&lt;blockquote>
+&lt;p>ShenyuPlugin：顶层接口，定义接口方法；&lt;/p>
+&lt;p>AbstractShenyuPlugin：抽象类，实现插件共有逻辑；&lt;/p>
+&lt;p>AbstractDubboPlugin：dubbo插件抽象类，实现&lt;code>dubbo&lt;/code>共有逻辑（ShenYu网关支持ApacheDubbo和AlibabaDubbo）；&lt;/p>
+&lt;p>ApacheDubboPlugin：ApacheDubbo插件。&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>org.apache.shenyu.web.handler.ShenyuWebHandler.DefaultShenyuPluginChain#execute()&lt;/li>
+&lt;/ul>
+&lt;p>通过&lt;code>ShenYu&lt;/code>网关代理后，请求入口是&lt;code>ShenyuWebHandler&lt;/code>，它实现了&lt;code>org.springframework.web.server.WebHandler&lt;/code>接口，通过责任链设计模式将所有插件连接起来。&lt;/p>
+&lt;ul>
+&lt;li>org.apache.shenyu.plugin.base.AbstractShenyuPlugin#execute()&lt;/li>
+&lt;/ul>
+&lt;p>当请求到网关时，判断某个插件是否执行，是通过指定的匹配逻辑来完成。在&lt;code>execute()&lt;/code>方法中执行选择器和规则的匹配逻辑。&lt;/p>
+&lt;ul>
+&lt;li>org.apache.shenyu.plugin.global.GlobalPlugin#execute()&lt;/li>
+&lt;/ul>
+&lt;p>最先被执行的是&lt;code>GlobalPlugin&lt;/code> ，它是一个全局插件，在&lt;code>execute()&lt;/code>方法中构建上下文信息。&lt;/p>
+&lt;ul>
+&lt;li>org.apache.shenyu.plugin.base.RpcParamTransformPlugin#execute()&lt;/li>
+&lt;/ul>
+&lt;p>接着被执行的是&lt;code>RpcParamTransformPlugin&lt;/code> ， 它负责从&lt;code>http&lt;/code>请求中读取参数，保存到&lt;code>exchange&lt;/code>中，传递给&lt;code>rpc&lt;/code>服务。在&lt;code>execute()&lt;/code>方法中，执行该插件的核心逻辑：从&lt;code>exchange&lt;/code>中获取请求信息，根据请求传入的内容形式处理参数。&lt;/p>
+&lt;ul>
+&lt;li>org.apache.shenyu.plugin.dubbo.common.AbstractDubboPlugin&lt;/li>
+&lt;/ul>
+&lt;p>然后被执行的是&lt;code>DubboPlugin&lt;/code> 。在&lt;code>doExecute()&lt;/code>方法中，主要是检查元数据和参数。在&lt;code>doDubboInvoker()&lt;/code>方法中设置特殊的上下文信息，然后开始&lt;code>dubbo&lt;/code>的泛化调用。&lt;/p>
+&lt;p>在&lt;code>genericInvoker()&lt;/code>方法中：&lt;/p>
+&lt;ul>
+&lt;li>获取&lt;code>ReferenceConfig&lt;/code>对象；&lt;/li>
+&lt;li>获取泛化服务&lt;code>GenericService&lt;/code>对象；&lt;/li>
+&lt;li>构造请求参数&lt;code>pair&lt;/code>对象；&lt;/li>
+&lt;li>发起异步的泛化调用。&lt;/li>
+&lt;/ul>
+&lt;p>通过泛化调用就可以实现在网关调用&lt;code>dubbo&lt;/code>服务了。&lt;/p>
+&lt;p>&lt;code>ReferenceConfig&lt;/code>对象是支持泛化调用的关键对象 ，它的初始化操作是在数据同步的时候完成的。&lt;/p>
+&lt;ul>
+&lt;li>org.apache.shenyu.plugin.response.ResponsePlugin#execute()&lt;/li>
+&lt;/ul>
+&lt;p>最后被执行的是&lt;code>ResponsePlugin&lt;/code> ，它统一处理网关的响应结果信息。处理类型由&lt;code>MessageWriter&lt;/code>决定，类继承关系如下：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/MessageWriter.png" alt="">&lt;/p>
+&lt;blockquote>
+&lt;p>MessageWriter：接口，定义消息处理方法；&lt;/p>
+&lt;p>NettyClientMessageWriter：处理&lt;code>Netty&lt;/code>调用结果；&lt;/p>
+&lt;p>RPCMessageWriter：处理&lt;code>RPC&lt;/code>调用结果；&lt;/p>
+&lt;p>WebClientMessageWriter：处理&lt;code>WebClient&lt;/code>调用结果；&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;code>Dubbo&lt;/code>服务调用，处理结果是&lt;code>RPCMessageWriter&lt;/code>。&lt;/p>
+&lt;ul>
+&lt;li>org.apache.shenyu.plugin.response.strategy.RPCMessageWriter#writeWith()&lt;/li>
+&lt;/ul>
+&lt;p>在&lt;code>writeWith()&lt;/code>方法中处理响应结果，获取结果或处理异常。&lt;/p>
+&lt;p>分析至此，关于&lt;code>Dubbo&lt;/code>插件的源码分析就完成了，分析流程图如下：&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-execute-zh.png" alt="">&lt;/p>
+&lt;h2 id="4-小结">4. 小结&lt;/h2>
+&lt;p>本文从实际案例出发，由浅入深分析了&lt;code>ShenYu&lt;/code>网关对Dubbo服务的代理过程。涉及到的主要知识点如下：&lt;/p>
+&lt;ul>
+&lt;li>通过责任链设计模式执行插件；&lt;/li>
+&lt;li>使用模板方法设计模式实现&lt;code>AbstractShenyuPlugin&lt;/code>，处理通用的操作类型；&lt;/li>
+&lt;li>使用单例设计模式实现缓存数据类&lt;code>BaseDataCache&lt;/code>；&lt;/li>
+&lt;li>通过&lt;code>springboot starter&lt;/code>即可引入不同的注册中心和数同步方式，扩展性很好；&lt;/li>
+&lt;li>通过&lt;code>admin&lt;/code>支持规则热更新，方便流量管控；&lt;/li>
+&lt;li>&lt;code>Disruptor&lt;/code>队列是为了数据与操作解耦，以及数据缓冲。&lt;/li>
+&lt;/ul></description></item><item><title>Blog: 从原理到操作，让你在 Apache APISIX 中代理 Dubbo 服务更便捷</title><link>https://dubbo.apache.org/zh/blog/2022/01/18/%E4%BB%8E%E5%8E%9F%E7%90%86%E5%88%B0%E6%93%8D%E4%BD%9C%E8%AE%A9%E4%BD%A0%E5%9C%A8-apache-apisix-%E4%B8%AD%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1%E6%9B%B4%E4%BE%BF%E6%8D%B7/</link><pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2022/01/18/%E4%BB%8E%E5%8E%9F%E7%90%86%E5%88%B0%E6%93%8D%E4%BD%9C%E8%AE%A9%E4%BD%A0%E5%9C%A8-apache-apisix-%E4%B8%AD%E4%BB%A3%E7%90%86-dubbo-%E6%9C%8D%E5%8A%A1%E6%9B%B4%E4%BE%BF%E6%8D%B7/</guid><description>
 &lt;h2 id="背景">背景&lt;/h2>
 &lt;p>&lt;a href="https://dubbo.apache.org/zh/">Apache Dubbo&lt;/a> 是由阿里巴巴开源并捐赠给 Apache 的微服务开发框架，它提供了 RPC 通信与微服务治理两大关键能力。不仅经过了阿里电商场景中海量流量的验证，也在国内的技术公司中被广泛落地。&lt;/p>
 &lt;p>在实际应用场景中，Apache Dubbo 一般会作为后端系统间 RPC 调用的实现框架，当需要提供 HTTP 接口给到前端时，会通过一个「胶水层」将 Dubbo Service 包装成 HTTP 接口，再交付到前端系统。&lt;/p>
@@ -7389,7 +7671,7 @@ Reactive Stream 引入 RPC，带来更丰富的通信语义和 API 编程模型�
 &lt;li>该规则作用在客户端&lt;/li>
 &lt;li>当错误发送时，对服务的调用返回默认值 &lt;em>configured-mock-value&lt;/em>&lt;/li>
 &lt;/ol>
-&lt;p>启动服务端 &lt;em>MockProvider&lt;/em> 之后，再执行例子&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>中的 &lt;em>Configurator&lt;/em> 完成对服务降级规则的配置，然后再执行 &lt;em>MockConsumer&lt;/em> 就可以看到下面的结果：&lt;/p>
+&lt;p>启动服务端 &lt;em>MockProvider&lt;/em> 之后，再执行例子&lt;sup id="fnref1:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>中的 &lt;em>Configurator&lt;/em> 完成对服务降级规则的配置，然后再执行 &lt;em>MockConsumer&lt;/em> 就可以看到下面的结果：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">[&lt;/span>09/04/19 02:19:01:001 CST&lt;span style="color:#719e07">]&lt;/span> main INFO integration.AbstractConfiguratorListener: &lt;span style="color:#719e07">[&lt;/span>DUBBO&lt;span style="color:#719e07">]&lt;/span> Notification of overriding rule, change &lt;span style="color:#b58900">type&lt;/span> is: MODIFIED, raw config content is:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>configVersion: v2.7
@@ -7424,20 +7706,20 @@ Reactive Stream 引入 RPC，带来更丰富的通信语义和 API 编程模型�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">[&lt;/span>09/04/19 02:19:04:004 CST&lt;span style="color:#719e07">]&lt;/span> main INFO mock.MockConsumer: result: configured-mock-value
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="总结">总结&lt;/h2>
 &lt;p>本文介绍了 Dubbo 中本地存根和本地伪装的概念和用法。从本质来讲，本地存根和本地伪装等同于面向切面编程中的概念，通过诸如 Spring 框架提供的 &lt;em>AOP&lt;/em> 编程可以达到同样的目的。通过本文如何开发一个本地存根和本地伪装的示例，读者可以直观的感受到通过框架提供的机制更加方便快捷。同时，对于很多简单的场景和动态配置推送的场景，框架提供了仅通过配置而无需编码的方式来满足，进一步提升了框架使用者的效率。&lt;/p>
-&lt;section class="footnotes" role="doc-endnotes">
+&lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
+&lt;li id="fn:1">
 &lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-stub">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-stub&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:2" role="doc-endnote">
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mock">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mock&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;li id="fn:2">
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mock">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mock&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:3" role="doc-endnote">
+&lt;li id="fn:3">
 &lt;p>&lt;a href="http://dubbo.apache.org/zh-cn/docs/user/demos/local-mock.html">http://dubbo.apache.org/zh-cn/docs/user/demos/local-mock.html&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Blog: Dubbo 中的 URL 统一模型</title><link>https://dubbo.apache.org/zh/blog/2019/10/17/dubbo-%E4%B8%AD%E7%9A%84-url-%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/</link><pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2019/10/17/dubbo-%E4%B8%AD%E7%9A%84-url-%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/</guid><description>
+&lt;/div></description></item><item><title>Blog: Dubbo 中的 URL 统一模型</title><link>https://dubbo.apache.org/zh/blog/2019/10/17/dubbo-%E4%B8%AD%E7%9A%84-url-%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/</link><pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2019/10/17/dubbo-%E4%B8%AD%E7%9A%84-url-%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/</guid><description>
 &lt;h3 id="定义">定义&lt;/h3>
 &lt;p>在不谈及 dubbo 时，我们大多数人对 URL 这个概念并不会感到陌生。统一资源定位器 (&lt;a href="https://www.ietf.org/rfc/rfc1738.txt">RFC1738&lt;/a>――Uniform Resource Locators (URL)）应该是最广为人知的一个 RFC 规范，它的定义也非常简单&lt;/p>
 &lt;blockquote>
@@ -8775,26 +9057,26 @@ Reactive Stream 引入 RPC，带来更丰富的通信语义和 API 编程模型�
 &lt;h2 id="总结">总结&lt;/h2>
 &lt;p>本文主要关注了在 Dubbo 中支持 REST 协议的情况。首先探索了 REST 概念的起源，澄清了 REST 是一种适合互联网的软件架构风格，进一步的说明了 REST 风格的架构可以与 HTTP 协议无关，但是 HTTP 协议的确是 REST 风格架构的最常用甚至是最佳的组合和搭档。然后讨论了如何在 Dubbo 中开发 REST HTTP 的几种典型用法，其中包括了通过不同的配置，如传统的 Spring XML，完全通过 annotation 来配置两种典型的用法，本文中没有涉及到的还有纯 API 编程方式，Spring Boot 配置方式也是完全可以的，因为篇幅原因没有提及；还讨论了如何通过不同的 REST server 来暴露 REST HTTP 服务，包括了 embedded tomcat，netty，以及外置的 servlet 容器等几种用法。最后，在外置的 servlet 容器的基础上，进一步的讨论了如何通过 Swagger 暴露 openAPI 以及集成 Swagger UI 的方法。&lt;/p>
 &lt;p>本文没有涉及的内容包含但不限于国际化支持、Dubbo REST 更高阶的注入扩展的用法、以及 Dubbo REST 支持未来的规划。其中 Dubbo REST 扩展的支持可以参考 &lt;a href="https://github.com/beiwei30/dubbo-rest-samples/tree/master/extensions">https://github.com/beiwei30/dubbo-rest-samples/tree/master/extensions&lt;/a> 中的演示。以后有机会会开专门的篇幅来探讨更高级的 Swagger 的支持、以及对未来的展望。&lt;/p>
-&lt;section class="footnotes" role="doc-endnotes">
+&lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
+&lt;li id="fn:1">
 &lt;p>&lt;a href="http://en.wikipedia.org/wiki/Roy_Fielding">http://en.wikipedia.org/wiki/Roy_Fielding&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:2" role="doc-endnote">
+&lt;li id="fn:2">
 &lt;p>&lt;a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:3" role="doc-endnote">
+&lt;li id="fn:3">
 &lt;p>&lt;a href="https://martinfowler.com/articles/richardsonMaturityModel.html">https://martinfowler.com/articles/richardsonMaturityModel.html&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:4" role="doc-endnote">
+&lt;li id="fn:4">
 &lt;p>&lt;a href="https://github.com/dangdangdotcom/dubbox">https://github.com/dangdangdotcom/dubbox&lt;/a>&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:5" role="doc-endnote">
+&lt;li id="fn:5">
 &lt;p>&lt;a href="https://www.webjars.org/documentation#servlet3">https://www.webjars.org/documentation#servlet3&lt;/a>&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Blog: 使用 Dubbo 连接异构微服务体系</title><link>https://dubbo.apache.org/zh/blog/2019/06/22/%E4%BD%BF%E7%94%A8-dubbo-%E8%BF%9E%E6%8E%A5%E5%BC%82%E6%9E%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB/</link><pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2019/06/22/%E4%BD%BF%E7%94%A8-dubbo-%E8%BF%9E%E6%8E%A5%E5%BC%82%E6%9E%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB/</guid><description>
+&lt;/div></description></item><item><title>Blog: 使用 Dubbo 连接异构微服务体系</title><link>https://dubbo.apache.org/zh/blog/2019/06/22/%E4%BD%BF%E7%94%A8-dubbo-%E8%BF%9E%E6%8E%A5%E5%BC%82%E6%9E%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB/</link><pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2019/06/22/%E4%BD%BF%E7%94%A8-dubbo-%E8%BF%9E%E6%8E%A5%E5%BC%82%E6%9E%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB/</guid><description>
 &lt;p>从编程开发的角度来说，Dubbo 首先是一款 RPC 服务框架，它最大的优势在于提供了面向接口代理的服务编程模型，对开发者屏蔽了底层的远程通信细节。同时 Dubbo 也是一款服务治理框架，它为分布式部署的微服务提供了服务发现、流量调度等服务治理解决方案。&lt;/p>
 &lt;p>在这篇文章中，我们将以以上基础能力为背景，尝试突破 Dubbo 体系自身，探索如何利用 Dubbo 对多协议、多服务发现模型的支持，来实现异构微服务体系间的互联互通。在实际业务场景中，这可以用来解决异构技术体系共存场景下的通信问题，帮助公司实现在异构技术体系间作平滑迁移，解决大规模跨区域、多集群部署场景的地址发现及流量调度等问题。&lt;/p>
 &lt;h2 id="面向接口代理的透明服务开发框架">面向接口代理的透明服务开发框架&lt;/h2>
@@ -9697,120 +9979,4 @@ random的定义在配置文件&lt;code>META-INF/dubbo/internal/com.alibaba.dubbo
 &lt;li>Dubbo的扩展机制能很好的支持第三方IoC容器，默认支持Spring Bean，可自己扩展来支持其他容器，比如Google的Guice。&lt;/li>
 &lt;li>切换扩展点的实现，只需要在配置文件中修改具体的实现，不需要改代码。使用方便。&lt;/li>
 &lt;/ul>
-&lt;p>下一篇，我们将会一起深入Dubbo的源码，更深入的了解Dubbo的可扩展机制。&lt;/p></description></item><item><title>Blog: 提前if判断帮助CPU分支预测</title><link>https://dubbo.apache.org/zh/blog/2019/02/03/%E6%8F%90%E5%89%8Dif%E5%88%A4%E6%96%AD%E5%B8%AE%E5%8A%A9cpu%E5%88%86%E6%94%AF%E9%A2%84%E6%B5%8B/</link><pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/blog/2019/02/03/%E6%8F%90%E5%89%8Dif%E5%88%A4%E6%96%AD%E5%B8%AE%E5%8A%A9cpu%E5%88%86%E6%94%AF%E9%A2%84%E6%B5%8B/</guid><description>
-&lt;h2 id="分支预测">分支预测&lt;/h2>
-&lt;p>在stackoverflow上有一个非常有名的问题：&lt;a href="https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array">为什么处理有序数组要比非有序数组快？&lt;/a>，可见分支预测对代码运行效率有非常大的影响。&lt;/p>
-&lt;p>现代CPU都支持分支预测(branch prediction)和指令流水线(instruction pipeline)，这两个结合可以极大提高CPU效率。对于像简单的if跳转，CPU是可以比较好地做分支预测的。但是对于switch跳转，CPU则没有太多的办法。switch本质上是据索引，从地址数组里取地址再跳转。&lt;/p>
-&lt;p>要提高代码执行效率，一个重要的原则就是尽量避免CPU把流水线清空，那么提高分支预测的成功率就非常重要。&lt;/p>
-&lt;p>那么对于代码里，如果某个switch分支概率很高，是否可以考虑代码层面帮CPU把判断提前，来提高代码执行效率呢？&lt;/p>
-&lt;h2 id="dubbo里channeleventrunnable的switch判断">Dubbo里ChannelEventRunnable的switch判断&lt;/h2>
-&lt;p>在&lt;code>ChannelEventRunnable&lt;/code>里有一个switch来判断channel state，然后做对应的逻辑：&lt;a href="https://github.com/hengyunabc/dubbo/blob/dubbo-2.6.1/dubbo-remoting/dubbo-remoting-api/src/main/java/com/alibaba/dubbo/remoting/transport/dispatcher/ChannelEventRunnable.java#L54">查看&lt;/a>&lt;/p>
-&lt;p>一个channel建立起来之后，超过99.9%情况它的state都是&lt;code>ChannelState.RECEIVED&lt;/code>，那么可以考虑把这个判断提前。&lt;/p>
-&lt;h2 id="benchmark验证">benchmark验证&lt;/h2>
-&lt;p>下面通过jmh来验证下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">TestBenchMarks&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">enum&lt;/span> ChannelState &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CONNECTED&lt;span style="color:#719e07">,&lt;/span> DISCONNECTED&lt;span style="color:#719e07">,&lt;/span> SENT&lt;span style="color:#719e07">,&lt;/span> RECEIVED&lt;span style="color:#719e07">,&lt;/span> CAUGHT
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@State&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Scope&lt;span style="color:#719e07">.&lt;/span>Benchmark&lt;span style="color:#719e07">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">static&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">ExecutionPlan&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Param&lt;/span>&lt;span style="color:#719e07">({&lt;/span> &lt;span style="color:#2aa198">&amp;#34;1000000&amp;#34;&lt;/span> &lt;span style="color:#719e07">})&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">int&lt;/span> size&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> ChannelState&lt;span style="color:#719e07">[]&lt;/span> states &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Setup&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">setUp&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ChannelState&lt;span style="color:#719e07">[]&lt;/span> values &lt;span style="color:#719e07">=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>values&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> states &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ChannelState&lt;span style="color:#719e07">[&lt;/span>size&lt;span style="color:#719e07">];&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Random random &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> Random&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">new&lt;/span> Date&lt;span style="color:#719e07">().&lt;/span>getTime&lt;span style="color:#719e07">());&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#dc322f">int&lt;/span> i &lt;span style="color:#719e07">=&lt;/span> 0&lt;span style="color:#719e07">;&lt;/span> i &lt;span style="color:#719e07">&amp;lt;&lt;/span> size&lt;span style="color:#719e07">;&lt;/span> i&lt;span style="color:#719e07">++)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#dc322f">int&lt;/span> nextInt &lt;span style="color:#719e07">=&lt;/span> random&lt;span style="color:#719e07">.&lt;/span>nextInt&lt;span style="color:#719e07">(&lt;/span>1000000&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>nextInt &lt;span style="color:#719e07">&amp;gt;&lt;/span> 100&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> states&lt;span style="color:#719e07">[&lt;/span>i&lt;span style="color:#719e07">]&lt;/span> &lt;span style="color:#719e07">=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>RECEIVED&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span> &lt;span style="color:#719e07">else&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> states&lt;span style="color:#719e07">[&lt;/span>i&lt;span style="color:#719e07">]&lt;/span> &lt;span style="color:#719e07">=&lt;/span> values&lt;span style="color:#719e07">[&lt;/span>nextInt &lt;span style="color:#719e07">%&lt;/span> values&lt;span style="color:#719e07">.&lt;/span>length&lt;span style="color:#719e07">];&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Fork&lt;/span>&lt;span style="color:#719e07">(&lt;/span>value &lt;span style="color:#719e07">=&lt;/span> 5&lt;span style="color:#719e07">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Benchmark&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@BenchmarkMode&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Mode&lt;span style="color:#719e07">.&lt;/span>Throughput&lt;span style="color:#719e07">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">benchSiwtch&lt;/span>&lt;span style="color:#719e07">(&lt;/span>ExecutionPlan plan&lt;span style="color:#719e07">,&lt;/span> Blackhole bh&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#dc322f">int&lt;/span> result &lt;span style="color:#719e07">=&lt;/span> 0&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#dc322f">int&lt;/span> i &lt;span style="color:#719e07">=&lt;/span> 0&lt;span style="color:#719e07">;&lt;/span> i &lt;span style="color:#719e07">&amp;lt;&lt;/span> plan&lt;span style="color:#719e07">.&lt;/span>size&lt;span style="color:#719e07">;&lt;/span> &lt;span style="color:#719e07">++&lt;/span>i&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">switch&lt;/span> &lt;span style="color:#719e07">(&lt;/span>plan&lt;span style="color:#719e07">.&lt;/span>states&lt;span style="color:#719e07">[&lt;/span>i&lt;span style="color:#719e07">])&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> CONNECTED&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>CONNECTED&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> DISCONNECTED&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>DISCONNECTED&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> SENT&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>SENT&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> RECEIVED&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>RECEIVED&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> CAUGHT&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>CAUGHT&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bh&lt;span style="color:#719e07">.&lt;/span>consume&lt;span style="color:#719e07">(&lt;/span>result&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Fork&lt;/span>&lt;span style="color:#719e07">(&lt;/span>value &lt;span style="color:#719e07">=&lt;/span> 5&lt;span style="color:#719e07">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Benchmark&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@BenchmarkMode&lt;/span>&lt;span style="color:#719e07">(&lt;/span>Mode&lt;span style="color:#719e07">.&lt;/span>Throughput&lt;span style="color:#719e07">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">benchIfAndSwitch&lt;/span>&lt;span style="color:#719e07">(&lt;/span>ExecutionPlan plan&lt;span style="color:#719e07">,&lt;/span> Blackhole bh&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#dc322f">int&lt;/span> result &lt;span style="color:#719e07">=&lt;/span> 0&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#dc322f">int&lt;/span> i &lt;span style="color:#719e07">=&lt;/span> 0&lt;span style="color:#719e07">;&lt;/span> i &lt;span style="color:#719e07">&amp;lt;&lt;/span> plan&lt;span style="color:#719e07">.&lt;/span>size&lt;span style="color:#719e07">;&lt;/span> &lt;span style="color:#719e07">++&lt;/span>i&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ChannelState state &lt;span style="color:#719e07">=&lt;/span> plan&lt;span style="color:#719e07">.&lt;/span>states&lt;span style="color:#719e07">[&lt;/span>i&lt;span style="color:#719e07">];&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>state &lt;span style="color:#719e07">==&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>RECEIVED&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>RECEIVED&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span> &lt;span style="color:#719e07">else&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">switch&lt;/span> &lt;span style="color:#719e07">(&lt;/span>state&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> CONNECTED&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>CONNECTED&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> SENT&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>SENT&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> DISCONNECTED&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>DISCONNECTED&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> CAUGHT&lt;span style="color:#719e07">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#719e07">+=&lt;/span> ChannelState&lt;span style="color:#719e07">.&lt;/span>CAUGHT&lt;span style="color:#719e07">.&lt;/span>ordinal&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">break&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bh&lt;span style="color:#719e07">.&lt;/span>consume&lt;span style="color:#719e07">(&lt;/span>result&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>benchSiwtch里是纯switch判断&lt;/li>
-&lt;li>benchIfAndSwitch 里用一个if提前判断state是否&lt;code>ChannelState.RECEIVED&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>benchmark结果是：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Result &amp;#34;io.github.hengyunabc.jmh.TestBenchMarks.benchSiwtch&amp;#34;:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 576.745 ±(99.9%) 6.806 ops/s [Average]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (min, avg, max) = (490.348, 576.745, 618.360), stdev = 20.066
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CI (99.9%): [569.939, 583.550] (assumes normal distribution)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Run complete. Total time: 00:06:48
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Benchmark (size) Mode Cnt Score Error Units
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TestBenchMarks.benchIfAndSwitch 1000000 thrpt 100 1535.867 ± 61.212 ops/s
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TestBenchMarks.benchSiwtch 1000000 thrpt 100 576.745 ± 6.806 ops/s
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以看到提前if判断的确提高了代码效率，这种技巧可以放在性能要求严格的地方。&lt;/p>
-&lt;p>Benchmark代码：https://github.com/hengyunabc/jmh-demo&lt;/p>
-&lt;h2 id="总结">总结&lt;/h2>
-&lt;ul>
-&lt;li>switch对于CPU来说难以做分支预测&lt;/li>
-&lt;li>某些switch条件如果概率比较高，可以考虑单独提前if判断，充分利用CPU的分支预测机制&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>下一篇，我们将会一起深入Dubbo的源码，更深入的了解Dubbo的可扩展机制。&lt;/p></description></item></channel></rss>
