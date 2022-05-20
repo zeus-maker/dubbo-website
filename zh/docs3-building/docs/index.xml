@@ -44,25 +44,25 @@
 &lt;/div>
 &lt;/div>
 &lt;/section></description></item><item><title>Docs3-Building: 3.0 速览</title><link>https://dubbo.apache.org/zh/docs3-building/docs/whatsnew/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/whatsnew/</guid><description>
-&lt;p>&lt;a href="background.md">背景&lt;/a> 部分带你快速了解 Dubbo3 的设计背景、总体架构与核心特性、与典型用户如阿里巴巴 HSF2 的关系等。也可以通过如下部分了解更多：&lt;/p>
+&lt;p>&lt;a href="background">背景&lt;/a> 部分带你快速了解 Dubbo3 的设计背景、总体架构与核心特性、与典型用户如阿里巴巴 HSF2 的关系等。也可以通过如下部分了解更多：&lt;/p>
 &lt;ul>
 &lt;li>小白用户，&lt;strong>快速浏览 Dubbo3 核心特性：&lt;/strong>
 &lt;ul>
-&lt;li>&lt;a href="triple.md">下一代通信协议 - Triple&lt;/a>&lt;/li>
-&lt;li>&lt;a href="servicediscovery3.md">百万实例集群的秘密 - 应用级服务发现&lt;/a>&lt;/li>
-&lt;li>&lt;a href="mesh.md">Dubbo Mesh&lt;/a>&lt;/li>
+&lt;li>&lt;a href="triple">下一代通信协议 - Triple&lt;/a>&lt;/li>
+&lt;li>&lt;a href="service-discovery">百万实例集群的秘密 - 应用级服务发现&lt;/a>&lt;/li>
+&lt;li>&lt;a href="mesh">Dubbo Mesh&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Dubbo3 的兼容性与迁移成本?
 &lt;ul>
-&lt;li>&lt;a href="../../java-sdk/">Java - 迁移指南&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../java-sdk/upgrades-and-compatibility">Java - 迁移指南&lt;/a>&lt;/li>
 &lt;li>&lt;a href="../../golang-sdk/">Golang - 迁移指南&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>其他 &lt;strong>Dubbo3 相关资源：&lt;/strong>
 &lt;ul>
 &lt;li>更多资料，如性能指标、高级特性说明等请参考 &lt;a href="../mannual/">多语言 SDK 实现&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../../activities/">演讲与线下活动&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">演讲与线下活动&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul></description></item><item><title>Docs3-Building: 示例实践</title><link>https://dubbo.apache.org/zh/docs3-building/docs/tasks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/tasks/</guid><description/></item><item><title>Docs3-Building: 用户手册</title><link>https://dubbo.apache.org/zh/docs3-building/docs/mannual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/mannual/</guid><description>
