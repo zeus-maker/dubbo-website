@@ -51,8 +51,8 @@
 &lt;p>我们正看到越来越多的异构微服务体系互通的诉求，典型如 Dubbo、Spring Cloud、gRPC 等。有些是因为技术栈迁移，有些是组织合并后需要实现业务互调，Dubbo3 借助于新的服务发现模型以及可灵活扩展的 RPC 协议，可以成为&lt;/p></description></item><item><title>Docs3-Building: Triple 协议</title><link>https://dubbo.apache.org/zh/docs3-building/docs/whatsnew/triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/whatsnew/triple/</guid><description/></item><item><title>Docs3-Building: 应用级服务发现</title><link>https://dubbo.apache.org/zh/docs3-building/docs/whatsnew/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/whatsnew/service-discovery/</guid><description/></item><item><title>Docs3-Building: Dubbo Mesh</title><link>https://dubbo.apache.org/zh/docs3-building/docs/whatsnew/mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/whatsnew/mesh/</guid><description>
 &lt;p>通过以下示例快速查看使用&amp;amp;部署示例&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="../tasks/dubbo-mesh-sidecar">Dubbo Sidecar Mesh&lt;/a>&lt;/li>
-&lt;li>&lt;a href="../tasks/dubbo-mesh-sidecar">Dubbo Proxyless Mesh&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../tasks/dubbo-mesh-sidecar">Dubbo Sidecar Mesh&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../tasks/dubbo-mesh-sidecar">Dubbo Proxyless Mesh&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="service-mesh">Service Mesh&lt;/h2>
 &lt;p>在云原生背景下，如果我们将 Service Mesh 理解为底层基础设施，则在 Mesh 架构中，以往耦合在业务进程中的微服务治理部分能力正被 Mesh 接管，传统微服务框架更注重 RPC 协议与编程模型。以下是时下流行的 Mesh 产品 Istio 的架构图：&lt;/p>
