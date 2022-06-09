@@ -324,9 +324,6 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 &lt;p>&lt;code>stub&lt;/code> 用一种统一的使用方式帮我们屏蔽了不同调用方式的细节。不过目前 &lt;code>Dubbo3&lt;/code> 暂时只支持传统定义接口并进行调用的使用方式。&lt;/p>
 &lt;p>在不久的未来，&lt;code>Triple&lt;/code> 也将实现各种常用的 &lt;code>Stub&lt;/code>，让用户写一份&lt;code>proto&lt;/code>文件，通过 &lt;code>comipler&lt;/code> 可以在任意场景方便的使用，请拭目以待。&lt;/p></description></item><item><title>Docs3-Building: 接口级服务发现迁移至应用级服务发现指南</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/upgrades-and-compatibility/migration-service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/upgrades-and-compatibility/migration-service-discovery/</guid><description>
 &lt;p>&lt;strong>总体上来说，在地址注册与发现环节，3.x 是完全兼容 2.x 版本的，这意味着，用户可以选择将集群内任意数量的应用或机器升级到 3.x，同时在这个过程中保持与 2.x 版本的互操作性。&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="">迁移规则详情与工作原理&lt;/a>&lt;/li>
-&lt;/ul>
 &lt;h2 id="1-快速升级步骤">1 快速升级步骤&lt;/h2>
 &lt;p>简单的修改 pom.xml 到最新版本就可以完成升级，如果要迁移到应用级地址，只需要调整开关控制 3.x 版本的默认行为。&lt;/p>
 &lt;ol>
