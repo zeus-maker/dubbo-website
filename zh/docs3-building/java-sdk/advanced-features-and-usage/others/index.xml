@@ -139,7 +139,54 @@ dubbo 支持多协议，如果一个应用同时暴露多个不同协议服务�
 &lt;ol>
 &lt;li>&lt;a href="https://github.com/apache/dubbo/issues/2043">Proposal: support hostname or domain in service discovery.&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-docker">dubbo通过环境变量设置host&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Docs3-Building: 日志框架适配及运行时管理</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/others/logger-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/others/logger-management/</guid><description>
+&lt;/ol></description></item><item><title>Docs3-Building: Kubernetes 生命周期探针</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/</guid><description>
+&lt;h2 id="特性说明">特性说明&lt;/h2>
+&lt;p>&lt;a href="https://kubernetes.io/zh/docs/concepts/workloads/pods/pod-lifecycle/">Pod 的生命周期&lt;/a> 与服务调度息息相关，通过对 Kubernetes 官方探针的实现，能够使 Dubbo3 乃至整个应用的生命周期与 Pod 的生命周期，在 Pod 的整个生命周期中，影响到 Pod 的就只有健康检查这一部分, 我们可以通过配置 liveness probe（存活探针）和 readiness probe（可读性探针）来影响容器的生命周期。&lt;/p>
+&lt;p>通过 Dubbo3 的 SPI 机制，在内部实现多种“探针”，基于 Dubbo3 QOS 运维模块的 HTTP 服务，使容器探针能够获取到应用内对应探针的状态。另外，SPI 的实现机制也利于用户自行拓展内部“探针”，使整个应用的生命周期更有效的进行管控&lt;/p>
+&lt;h2 id="dobbo3-spi-接口探针">Dobbo3 SPI 接口探针&lt;/h2>
+&lt;p>三种探针对应的 SPI 接口如下：&lt;/p>
+&lt;ul>
+&lt;li>livenessProbe: &lt;code>org.apache.dubbo.qos.probe.LivenessProbe&lt;/code>&lt;/li>
+&lt;li>readinessProbe: &lt;code>org.apache.dubbo.qos.probe.ReadinessProbe&lt;/code>&lt;/li>
+&lt;li>startupProbe: &lt;code>org.apache.dubbo.qos.probe.StartupProbe&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>接口将自动获取当前应用所有 SPI 的实现，对应接口的 SPI 实现均成功就绪则接口返回成功。
+SPI的介绍见&lt;a href="https://dubbo.apache.org/zh/docs3-building/java-sdk/reference-manual/spi/description/">Dubbo SPI扩展&lt;/a>&lt;/p>
+&lt;h4 id="存活检测httpsdubboapacheorgzhdocsreferenceslifecyclebriefe5ad98e6b4bbe6a380e6b58b">存活检测&lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/brief/#%E5%AD%98%E6%B4%BB%E6%A3%80%E6%B5%8B">&lt;/a>&lt;/h4>
+&lt;p>对于 livenessProbe 存活检测，由于 Dubbo3 框架本身无法获取到应用的存活状态，因此本接口无默认实现，且默认返回成功。开发者可以根据 SPI 定义对此 SPI 接口进行拓展，从应用层次对是否存活进行判断。&lt;/p>
+&lt;h4 id="就绪检测httpsdubboapacheorgzhdocsreferenceslifecyclebriefe5b0b1e7bbaae6a380e6b58b">就绪检测&lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/brief/#%E5%B0%B1%E7%BB%AA%E6%A3%80%E6%B5%8B">&lt;/a>&lt;/h4>
+&lt;p>对于 readinessProbe 就绪检测，目前 Dubbo3 默认提供了两个检测维度，一是对 Dubbo3 服务自身是否启停做判断，另外是对所有服务是否存在已注册接口，如果所有服务均已从注册中心下线（可以通过 QOS 运维进行操作）将返回未就绪的状态。&lt;/p>
+&lt;h4 id="启动检测httpsdubboapacheorgzhdocsreferenceslifecyclebriefe590afe58aa8e6a380e6b58b">启动检测&lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/brief/#%E5%90%AF%E5%8A%A8%E6%A3%80%E6%B5%8B">&lt;/a>&lt;/h4>
+&lt;p>对于 startupProbe 启动检测，目前 Dubbo3 默认提供了一个检测维度，即是在所有启动流程（接口暴露、注册中心写入等）均结束后返回已就绪状态。&lt;/p>
+&lt;p>关于 &lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/liveness/">liveness 存活探针&lt;/a> 扩展示例&lt;/p>
+&lt;p>关于 &lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/readiness/">readiness 就绪探针&lt;/a> 扩展示例&lt;/p>
+&lt;p>关于 &lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/startup/">startup 启动探针&lt;/a> 扩展示例&lt;/p>
+&lt;h2 id="使用场景">使用场景&lt;/h2>
+&lt;h2 id="使用方式">使用方式：&lt;/h2>
+&lt;p>步骤一：需要先配置 &lt;code>参考示例&lt;/code>，保证 Kubernetes 集群的 Pod 健康检查。&lt;/p>
+&lt;p>步骤二：为了使 Kubernetes 集群能够正常访问到探针，需要开启 QOS 允许远程访问，此操作有可能带来安全风险，请仔细评估后再打开。&lt;/p>
+&lt;h4 id="说明">说明：&lt;/h4>
+&lt;p>QOS 当计算节点检测到内存压力时，kuberentes 会 BestEffort -&amp;gt; Burstable -&amp;gt; Guaranteed 依次驱逐 Pod&lt;/p>
+&lt;h3 id="参考示例">参考示例&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">livenessProbe&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">httpGet&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">path&lt;/span>: /live
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: &lt;span style="color:#2aa198">22222&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">initialDelaySeconds&lt;/span>: &lt;span style="color:#2aa198">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">periodSeconds&lt;/span>: &lt;span style="color:#2aa198">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">readinessProbe&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">httpGet&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">path&lt;/span>: /ready
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: &lt;span style="color:#2aa198">22222&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">initialDelaySeconds&lt;/span>: &lt;span style="color:#2aa198">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">periodSeconds&lt;/span>: &lt;span style="color:#2aa198">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">startupProbe&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">httpGet&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">path&lt;/span>: /startup
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: &lt;span style="color:#2aa198">22222&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">failureThreshold&lt;/span>: &lt;span style="color:#2aa198">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">periodSeconds&lt;/span>: &lt;span style="color:#2aa198">10&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>目前三种探针均有对应的接口，路径为 QOS 中的命令，端口信息请根据 QOS 配置进行对应修改（默认端口为 22222）。其他参数请参考&lt;a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/">Kubernetes官方文档说明&lt;/a>。&lt;/p></description></item><item><title>Docs3-Building: 日志框架适配及运行时管理</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/others/logger-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/others/logger-management/</guid><description>
 &lt;h2 id="日志框架适配">日志框架适配&lt;/h2>
 &lt;p>自 &lt;code>2.2.1&lt;/code> 开始，dubbo 开始内置 log4j、slf4j、jcl、jdk 这些日志框架的适配[1]，也可以通过以下方式显式配置日志输出策略：&lt;/p>
 &lt;ol start="0">
@@ -215,53 +262,4 @@ dubbo 支持多协议，如果一个应用同时暴露多个不同协议服务�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OK
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;loggerInfo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Available logger adapters: [jcl, slf4j, log4j, jdk]. Current Adapter: [slf4j]. Log level: INFO
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-Building: Kubernetes 生命周期探针</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/</guid><description>
-&lt;h1 id="dubbo-using-kubernetes-probe">Dubbo using Kubernetes probe&lt;/h1>
-&lt;p>了解 Dubbo 与 Kubernetes 生命周期对齐探针的扩展与应用场景&lt;/p>
-&lt;h2 id="特性说明">特性说明&lt;/h2>
-&lt;p>&lt;a href="https://kubernetes.io/zh/docs/concepts/workloads/pods/pod-lifecycle/">Pod 的生命周期&lt;/a> 与服务调度息息相关，通过对 Kubernetes 官方探针的实现，能够使 Dubbo 乃至整个应用的生命周期与 Pod 的生命周期，在 Pod 的整个生命周期中，影响到 Pod 的就只有健康检查这一部分, 我们可以通过配置 liveness probe（存活探针）和 readiness probe（可读性探针）来影响容器的生命周期。&lt;/p>
-&lt;p>通过 Dubbo 的 SPI 机制，在内部实现多种“探针”，基于 Dubbo QOS 运维模块的 HTTP 服务，使容器探针能够获取到应用内对应探针的状态。另外，SPI 的实现机制也利于用户自行拓展内部“探针”，使整个应用的生命周期更有效的进行管控&lt;/p>
-&lt;h2 id="dobbo-spi-接口探针">Dobbo SPI 接口探针&lt;/h2>
-&lt;p>三种探针对应的 SPI 接口如下：&lt;/p>
-&lt;ul>
-&lt;li>livenessProbe: &lt;code>org.apache.dubbo.qos.probe.LivenessProbe&lt;/code>&lt;/li>
-&lt;li>readinessProbe: &lt;code>org.apache.dubbo.qos.probe.ReadinessProbe&lt;/code>&lt;/li>
-&lt;li>startupProbe: &lt;code>org.apache.dubbo.qos.probe.StartupProbe&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>接口将自动获取当前应用所有 SPI 的实现，对应接口的 SPI 实现均成功就绪则接口返回成功。
-SPI的介绍见&lt;a href="https://dubbo.apache.org/zh/docs3-building/java-sdk/reference-manual/spi/description/">Dubbo SPI扩展&lt;/a>&lt;/p>
-&lt;h4 id="存活检测httpsdubboapacheorgzhdocsreferenceslifecyclebriefe5ad98e6b4bbe6a380e6b58b">存活检测&lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/brief/#%E5%AD%98%E6%B4%BB%E6%A3%80%E6%B5%8B">&lt;/a>&lt;/h4>
-&lt;p>对于 livenessProbe 存活检测，由于 Dubbo 框架本身无法获取到应用的存活状态，因此本接口无默认实现，且默认返回成功。开发者可以根据 SPI 定义对此 SPI 接口进行拓展，从应用层次对是否存活进行判断。&lt;/p>
-&lt;h4 id="就绪检测httpsdubboapacheorgzhdocsreferenceslifecyclebriefe5b0b1e7bbaae6a380e6b58b">就绪检测&lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/brief/#%E5%B0%B1%E7%BB%AA%E6%A3%80%E6%B5%8B">&lt;/a>&lt;/h4>
-&lt;p>对于 readinessProbe 就绪检测，目前 Dubbo 默认提供了两个检测维度，一是对 Dubbo 服务自身是否启停做判断，另外是对所有服务是否存在已注册接口，如果所有服务均已从注册中心下线（可以通过 QOS 运维进行操作）将返回未就绪的状态。&lt;/p>
-&lt;h4 id="启动检测httpsdubboapacheorgzhdocsreferenceslifecyclebriefe590afe58aa8e6a380e6b58b">启动检测&lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/brief/#%E5%90%AF%E5%8A%A8%E6%A3%80%E6%B5%8B">&lt;/a>&lt;/h4>
-&lt;p>对于 startupProbe 启动检测，目前Dubbo 默认提供了一个检测维度，即是在所有启动流程（接口暴露、注册中心写入等）均结束后返回已就绪状态。&lt;/p>
-&lt;p>关于 &lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/liveness/">liveness 存活探针&lt;/a> 扩展示例&lt;/p>
-&lt;p>关于 &lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/readiness/">readiness 就绪探针&lt;/a> 扩展示例&lt;/p>
-&lt;p>关于 &lt;a href="https://dubbo.apache.org/zh/docs/references/lifecycle/startup/">startup 启动探针&lt;/a> 扩展示例&lt;/p>
-&lt;h2 id="使用场景">使用场景&lt;/h2>
-&lt;h2 id="使用方式">使用方式：&lt;/h2>
-&lt;p>步骤一：需要先配置 &lt;code>参考示例&lt;/code>，保证 Kubernetes 集群的 Pod 健康检查。&lt;/p>
-&lt;p>步骤二：为了使 Kubernetes 集群能够正常访问到探针，需要开启 QOS 允许远程访问，此操作有可能带来安全风险，请仔细评估后再打开。&lt;/p>
-&lt;h4 id="说明">说明：&lt;/h4>
-&lt;p>QOS 当计算节点检测到内存压力时，kuberentes 会 BestEffort -&amp;gt; Burstable -&amp;gt; Guaranteed 依次驱逐 Pod&lt;/p>
-&lt;h3 id="参考示例">参考示例&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">livenessProbe&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">httpGet&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">path&lt;/span>: /live
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: &lt;span style="color:#2aa198">22222&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">initialDelaySeconds&lt;/span>: &lt;span style="color:#2aa198">5&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">periodSeconds&lt;/span>: &lt;span style="color:#2aa198">5&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">readinessProbe&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">httpGet&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">path&lt;/span>: /ready
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: &lt;span style="color:#2aa198">22222&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">initialDelaySeconds&lt;/span>: &lt;span style="color:#2aa198">5&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">periodSeconds&lt;/span>: &lt;span style="color:#2aa198">5&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">startupProbe&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">httpGet&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">path&lt;/span>: /startup
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: &lt;span style="color:#2aa198">22222&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">failureThreshold&lt;/span>: &lt;span style="color:#2aa198">30&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">periodSeconds&lt;/span>: &lt;span style="color:#2aa198">10&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>目前三种探针均有对应的接口，路径为 QOS 中的命令，端口信息请根据 QOS 配置进行对应修改（默认端口为 22222）。其他参数请参考&lt;a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/">Kubernetes官方文档说明&lt;/a>。&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
