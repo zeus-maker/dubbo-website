@@ -184,7 +184,7 @@ Dubbo 默认支持 hibernate-validator 版本 &amp;lt;=6.x，若使用 hibernate
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
 &lt;p>自 &lt;code>2.1.0&lt;/code> 版本开始支持, 如何使用可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-validation">dubbo 项目中的示例代码&lt;/a>&lt;/p>
-&lt;p>验证方式可扩展，扩展方式参见开发者手册中的&lt;a href="../../references/spis/validation">验证扩展&lt;/a>&lt;/p>
+&lt;p>验证方式可扩展，扩展方式参见开发者手册中的&lt;a href="../../../java-sdk/reference-manual/spi/description/validation">验证扩展&lt;/a>&lt;/p>
 &lt;/div></description></item><item><title>Docs3-Building: 异步调用</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/rpc/async-call/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/rpc/async-call/</guid><description>
 &lt;p>从 2.7.0 开始，Dubbo 的所有异步编程接口开始以 &lt;a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html">CompletableFuture&lt;/a> 为基础&lt;/p>
 &lt;p>基于 NIO 的非阻塞实现并行调用，客户端不需要启动多线程即可完成并行调用多个远程服务，相对多线程开销较小。&lt;/p>
