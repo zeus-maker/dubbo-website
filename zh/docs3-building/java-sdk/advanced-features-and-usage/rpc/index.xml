@@ -794,6 +794,7 @@ Dubbo 默认支持 hibernate-validator 版本 &amp;lt;=6.x，若使用 hibernate
 &lt;li>服务接口&lt;/li>
 &lt;/ul>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
+&lt;p>回调函数通知客户端执行结果，或发送通知，在方法执行时间比较长时，类似异步调用，审批工作流中回调客户端审批结果。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h4 id="服务接口示例">服务接口示例&lt;/h4>
 &lt;h6 id="callbackservicejava">CallbackService.java&lt;/h6>
