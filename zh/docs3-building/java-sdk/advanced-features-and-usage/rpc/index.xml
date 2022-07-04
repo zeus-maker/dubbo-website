@@ -711,6 +711,7 @@ Dubbo 默认支持 hibernate-validator 版本 &amp;lt;=6.x，若使用 hibernate
 &lt;h4 id="提示">提示：&lt;/h4>
 &lt;p>支持版本：&lt;code>2.0.7&lt;/code> 之后&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
+&lt;p>调用服务方法前我们可以记录开始时间，调用结束后统计整个调用耗费，发生异常时我们可以告警或打印错误日志或者调用服务前后记录请求日志、响应日志等。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h4 id="服务提供者与消费者共享服务接口">服务提供者与消费者共享服务接口&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">IDemoService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
