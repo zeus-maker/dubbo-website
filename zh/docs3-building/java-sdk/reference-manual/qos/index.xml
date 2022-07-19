@@ -327,6 +327,8 @@
 &lt;p>参考链接：&lt;a href="../../../advanced-features-and-usage/observability/router-snapshot/">路由状态采集&lt;/a>&lt;/p>
 &lt;h2 id="getroutersnapshot-命令">getRouterSnapshot 命令&lt;/h2>
 &lt;p>获取当前的每层路由的分组状态。（仅支持 StateRouter）&lt;/p>
+&lt;p>命令：&lt;code>getRouterSnapshot {serviceName}&lt;/code>&lt;/p>
+&lt;p>&lt;code>serviceName&lt;/code> 为需要采集的服务名，支持匹配&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;getRouterSnapshot com.dubbo.dubbointegration.BackendService
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>com.dubbo.dubbointegration.BackendService@2c2e824a
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[ All Invokers:2 ] [ Valid Invokers: 2 ]
@@ -370,7 +372,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="getrecentroutersnapshot-命令">getRecentRouterSnapshot 命令&lt;/h2>
-&lt;p>通过 qos 命令获取历史的路由状态。&lt;/p>
+&lt;p>通过 qos 命令获取历史的路由状态。（最多存储 32 个结果）&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;getRecentRouterSnapshot
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1658224330156 - Router snapshot service com.dubbo.dubbointegration.BackendService from registry 172.18.111.184 on the consumer 172.18.111.184 using the dubbo version 3.0.9 is below:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[ Parent (Input: 2) (Current Node Output: 2) (Chain Node Output: 2) ] Input: 172.18.111.187:20880,172.18.111.183:20880 -&amp;gt; Chain Node Output: 172.18.111.187:20880,172.18.111.183:20880
