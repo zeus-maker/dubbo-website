@@ -5975,7 +5975,341 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>user&lt;span style="color:#719e07">.&lt;/span>getId&lt;span style="color:#719e07">());&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-Building: Java SDK</title><link>https://dubbo.apache.org/zh/docs3-building/docs/mannual/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/mannual/java/</guid><description/></item><item><title>Docs: Nacos 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/nacos/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-Building: Java SDK</title><link>https://dubbo.apache.org/zh/docs3-building/docs/mannual/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/mannual/java/</guid><description/></item><item><title>Docs3-Building: Java SDK</title><link>https://dubbo.apache.org/zh/docs3-building/docs/release/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/release/java/</guid><description>
+&lt;h2 id="验证">验证&lt;/h2>
+&lt;p>可以按照这里的&lt;a href="https://www.apache.org/info/verification">步骤&lt;/a>, 利用&lt;a href="https://downloads.apache.org/dubbo/KEYS">KEYS&lt;/a>文件来验证下载。&lt;/p>
+&lt;h2 id="apache-dubbo">Apache Dubbo&lt;/h2>
+&lt;p>请点击了解各&lt;a href="https://dubbo.apache.org/zh/docs/v2.7/user/versions/">版本详情和升级注意事项&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>GitHub: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a> &lt;br>
+发布说明: &lt;a href="https://github.com/apache/dubbo/releases">https://github.com/apache/dubbo/releases&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="309-2022-06-23">3.0.9 (2022-06-23)&lt;/h3>
+&lt;h4 id="source-release">Source Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.9/apache-dubbo-3.0.9-src.zip">source&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.9/apache-dubbo-3.0.9-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/3.0.9/apache-dubbo-3.0.9-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="maven-release">Maven Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://search.maven.org/artifact/org.apache.dubbo/dubbo/3.0.9/jar">org.apache.dubbo:dubbo:3.0.9&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>3.0.9&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2716-2022-07-06">2.7.16 (2022-07-06)&lt;/h3>
+&lt;h4 id="source-release-1">Source Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip">source&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.7.16/apache-dubbo-2.7.16-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="maven-release-1">Maven Release&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://search.maven.org/artifact/org.apache.dubbo/dubbo/2.7.16/jar">org.apache.dubbo:dubbo:2.7.16&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>2.7.16&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-Building: Java SDK</title><link>https://dubbo.apache.org/zh/docs3-building/docs/release/past-releases/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/release/past-releases/java/</guid><description>
+&lt;h2 id="验证">验证&lt;/h2>
+&lt;p>可以按照这里的&lt;a href="https://www.apache.org/info/verification">步骤&lt;/a>, 利用&lt;a href="https://downloads.apache.org/dubbo/KEYS">KEYS&lt;/a>文件来验证下载。&lt;/p>
+&lt;p>请点击了解各&lt;a href="https://dubbo.apache.org/zh/docs/v2.7/user/versions/">版本详情和升级注意事项&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>GitHub: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a> &lt;br>
+发布说明: &lt;a href="https://github.com/apache/dubbo/releases">https://github.com/apache/dubbo/releases&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="308-2022-05-11">3.0.8 (2022-05-11)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.8/apache-dubbo-3.0.8-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.8/apache-dubbo-3.0.8-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.8/apache-dubbo-3.0.8-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="307-2022-04-01">3.0.7 (2022-04-01)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.7/apache-dubbo-3.0.7-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.7/apache-dubbo-3.0.7-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.7/apache-dubbo-3.0.7-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="306-2022-02-28">3.0.6 (2022-02-28)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.6/apache-dubbo-3.0.6-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.6/apache-dubbo-3.0.6-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.6/apache-dubbo-3.0.6-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="305-2021-12-30">3.0.5 (2021-12-30)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.5/apache-dubbo-3.0.5-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.5/apache-dubbo-3.0.5-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.5/apache-dubbo-3.0.5-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2715-2021-12-29">2.7.15 (2021-12-29)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.15/apache-dubbo-2.7.15-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.15/apache-dubbo-2.7.15-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.15/apache-dubbo-2.7.15-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2612-2021-12-29">2.6.12 (2021-12-29)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.6.12/apache-dubbo-2.6.12-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.6.12/apache-dubbo-v-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.6.12/apache-dubbo-2.6.12-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="304-2021-10-24">3.0.4 (2021-10-24)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.4/apache-dubbo-3.0.4-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.4/apache-dubbo-3.0.4-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.4/apache-dubbo-3.0.4-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="303-2021-09-27">3.0.3 (2021-09-27)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.3/apache-dubbo-3.0.3-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.3/apache-dubbo-3.0.3-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.3/apache-dubbo-3.0.3-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2714-2021-09-20">2.7.14 (2021-09-20)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.14/apache-dubbo-2.7.14-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.14/apache-dubbo-2.7.14-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.14/apache-dubbo-2.7.14-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2611-2021-09-18">2.6.11 (2021-09-18)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.6.11/apache-dubbo-2.6.11-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.6.11/apache-dubbo-2.6.11-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.6.11/apache-dubbo-2.6.11-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="3021-2021-08-23">3.0.2.1 (2021-08-23)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.2.1/apache-dubbo-3.0.2.1-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.2.1/apache-dubbo-3.0.2.1-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.2.1/apache-dubbo-3.0.2.1-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="302-2021-08-16">3.0.2 (2021-08-16)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.2/apache-dubbo-3.0.2-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.2/apache-dubbo-3.0.2-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.2/apache-dubbo-3.0.2-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2713-2021-08-05">2.7.13 (2021-08-05)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.13/apache-dubbo-2.7.13-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.13/apache-dubbo-2.7.13-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.13/apache-dubbo-2.7.13-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="301-2021-07-02">3.0.1 (2021-07-02)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.1/apache-dubbo-3.0.1-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.1/apache-dubbo-3.0.1-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.1/apache-dubbo-3.0.1-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="300-2021-06-16">3.0.0 (2021-06-16)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/3.0.0/apache-dubbo-3.0.0-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.0/apache-dubbo-3.0.0-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/3.0.0/apache-dubbo-3.0.0-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2712-2021-06-11">2.7.12 (2021-06-11)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.12/apache-dubbo-2.7.12-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.12/apache-dubbo-2.7.12-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.12/apache-dubbo-2.7.12-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="26101-2021-05-30">2.6.10.1 (2021-05-30)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.6.10.1/apache-dubbo-2.6.10.1-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.6.10.1/apache-dubbo-2.6.10.1-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.6.10.1/apache-dubbo-2.6.10.1-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2711-2021-05-12">2.7.11 (2021-05-12)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.11/apache-dubbo-2.7.11-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.11/apache-dubbo-2.7.11-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.11/apache-dubbo-2.7.11-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2710-2021-04-08">2.7.10 (2021-04-08)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.10/apache-dubbo-2.7.10-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.10/apache-dubbo-2.7.10-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.10/apache-dubbo-2.7.10-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="279-2020-02-23">2.7.9 (2020-02-23)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.9/apache-dubbo-2.7.9-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.9/apache-dubbo-2.7.9-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.9/apache-dubbo-2.7.9-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="278-2020-07-28">2.7.8 (2020-07-28)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.8/apache-dubbo-2.7.8-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.8/apache-dubbo-2.7.8-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.8/apache-dubbo-2.7.8-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="277-2020-05-18">2.7.7 (2020-05-18)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.7/apache-dubbo-2.7.7-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.7/apache-dubbo-2.7.7-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.7/apache-dubbo-2.7.7-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="275-2019-12-29">2.7.5 (2019-12-29)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.5/apache-dubbo-2.7.5-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.5/apache-dubbo-2.7.5-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.5/apache-dubbo-2.7.5-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2741-2019-10-27">2.7.4.1 (2019-10-27)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.4.1/apache-dubbo-2.7.4.1-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.4.1/apache-dubbo-2.7.4.1-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.4.1/apache-dubbo-2.7.4.1-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="274-2019-10-19">2.7.4 (2019-10-19)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.4/apache-dubbo-2.7.4-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.4/apache-dubbo-2.7.4-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.4/apache-dubbo-2.7.4-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="273-2019-07-19">2.7.3 (2019-07-19)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.3/apache-dubbo-2.7.3-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.3/apache-dubbo-2.7.3-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.3/apache-dubbo-2.7.3-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="272-2019-06-06">2.7.2 (2019-06-06)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/dubbo/2.7.2/apache-dubbo-2.7.2-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.2/apache-dubbo-2.7.2-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/dubbo/2.7.2/apache-dubbo-2.7.2-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="271-2019-03-26">2.7.1 (2019-03-26)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.1/apache-dubbo-incubating-2.7.1-src.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.1/apache-dubbo-incubating-2.7.1-src.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.1/apache-dubbo-incubating-2.7.1-src.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.1/apache-dubbo-incubating-2.7.1-bin.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.1/apache-dubbo-incubating-2.7.1-bin.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.1/apache-dubbo-incubating-2.7.1-bin.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="270-2019-01-29">2.7.0 (2019-01-29)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.0/apache-dubbo-incubating-2.7.0-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.0/apache-dubbo-incubating-2.7.0-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.0/apache-dubbo-incubating-2.7.0-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.0/apache-dubbo-incubating-2.7.0-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.0/apache-dubbo-incubating-2.7.0-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.7.0/apache-dubbo-incubating-2.7.0-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="267-2019-07-15">2.6.7 (2019-07-15)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.6.7/apache-dubbo-2.6.7-source-release.zip">source&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.6.7/apache-dubbo-2.6.7-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.6.7/apache-dubbo-2.6.7-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.6.7/apache-dubbo-2.6.7-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.6.7/apache-dubbo-2.6.7-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/dubbo/2.6.7/apache-dubbo-2.6.7-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="266-2019-03-07">2.6.6 (2019-03-07)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/2.6.6/apache-dubbo-incubating-2.6.6-source-release.zip">source&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/2.6.6/apache-dubbo-incubating-2.6.6-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/2.6.6/apache-dubbo-incubating-2.6.6-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/2.6.6/apache-dubbo-incubating-2.6.6-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/2.6.6/apache-dubbo-incubating-2.6.6-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/2.6.6/apache-dubbo-incubating-2.6.6-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="265-2018-11-23">2.6.5 (2018-11-23)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.5/apache-dubbo-incubating-2.6.5-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.5/apache-dubbo-incubating-2.6.5-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.5/apache-dubbo-incubating-2.6.5-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.5/apache-dubbo-incubating-2.6.5-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.5/apache-dubbo-incubating-2.6.5-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.5/apache-dubbo-incubating-2.6.5-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="264-2018-10-08">2.6.4 (2018-10-08)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.4/apache-dubbo-incubating-2.6.4-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.4/apache-dubbo-incubating-2.6.4-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.4/apache-dubbo-incubating-2.6.4-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.4/apache-dubbo-incubating-2.6.4-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.4/apache-dubbo-incubating-2.6.4-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.4/apache-dubbo-incubating-2.6.4-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="263-2018-09-11">2.6.3 (2018-09-11)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.3/apache-dubbo-incubating-2.6.3-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.3/apache-dubbo-incubating-2.6.3-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.3/apache-dubbo-incubating-2.6.3-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.3/apache-dubbo-incubating-2.6.3-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.3/apache-dubbo-incubating-2.6.3-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.3/apache-dubbo-incubating-2.6.3-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="262-2018-06-07">2.6.2 (2018-06-07)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.2/dubbo-incubating-2.6.2-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.2/dubbo-incubating-2.6.2-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.2/dubbo-incubating-2.6.2-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.2/dubbo-incubating-2.6.2-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.2/dubbo-incubating-2.6.2-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/2.6.2/dubbo-incubating-2.6.2-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="dubbo-spring-boot-starter">Dubbo Spring Boot Starter&lt;/h2>
+&lt;blockquote>
+&lt;p>GitHub: &lt;a href="https://github.com/apache/incubator-dubbo-spring-boot-project">https://github.com/apache/incubator-dubbo-spring-boot-project&lt;/a> &lt;br>
+发布说明：https://github.com/apache/incubator-dubbo-spring-boot-project/releases&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="271-2019-04-09">2.7.1 (2019-04-09)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/spring-boot-project/2.7.1/apache-dubbo-spring-boot-project-incubating-2.7.1-source-release.zip">source&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/spring-boot-project/2.7.1/apache-dubbo-spring-boot-project-incubating-2.7.1-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/spring-boot-project/2.7.1/apache-dubbo-spring-boot-project-incubating-2.7.1-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/spring-boot-project/2.7.1/apache-dubbo-spring-boot-project-incubating-2.7.1-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/spring-boot-project/2.7.1/apache-dubbo-spring-boot-project-incubating-2.7.1-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://www.apache.org/dyn/closer.lua/incubator/dubbo/spring-boot-project/2.7.1/apache-dubbo-spring-boot-project-incubating-2.7.1-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="270-2019-02-14">2.7.0 (2019-02-14)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/2.7.0/apache-dubbo-spring-boot-project-incubating-2.7.0-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/2.7.0/apache-dubbo-spring-boot-project-incubating-2.7.0-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/2.7.0/apache-dubbo-spring-boot-project-incubating-2.7.0-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/2.7.0/apache-dubbo-spring-boot-project-incubating-2.7.0-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/2.7.0/apache-dubbo-spring-boot-project-incubating-2.7.0-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/2.7.0/apache-dubbo-spring-boot-project-incubating-2.7.0-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="021-2019-01-27">0.2.1 (2019-01-27)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.2.1/apache-dubbo-spring-boot-project-incubating-0.2.1-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.2.1/apache-dubbo-spring-boot-project-incubating-0.2.1-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.2.1/apache-dubbo-spring-boot-project-incubating-0.2.1-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.2.1/apache-dubbo-spring-boot-project-incubating-0.2.1-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.2.1/apache-dubbo-spring-boot-project-incubating-0.2.1-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.2.1/apache-dubbo-spring-boot-project-incubating-0.2.1-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="012-2019-01-27">0.1.2 (2019-01-27)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.1.2/apache-dubbo-spring-boot-project-incubating-0.1.2-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.1.2/apache-dubbo-spring-boot-project-incubating-0.1.2-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.1.2/apache-dubbo-spring-boot-project-incubating-0.1.2-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.1.2/apache-dubbo-spring-boot-project-incubating-0.1.2-bin-release.zip">binary&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.1.2/apache-dubbo-spring-boot-project-incubating-0.1.2-bin-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/spring-boot-project/0.1.2/apache-dubbo-spring-boot-project-incubating-0.1.2-bin-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="dubbo-admin">Dubbo Admin&lt;/h2>
+&lt;blockquote>
+&lt;p>GitHub: &lt;a href="https://github.com/apache/incubator-dubbo-admin">https://github.com/apache/incubator-dubbo-admin&lt;/a> &lt;br>
+发布说明：https://github.com/apache/incubator-dubbo-admin/releases&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="01-2019-02-15">0.1 (2019-02-15)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip">source&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip.asc">asc&lt;/a> |
+&lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Nacos 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/nacos/</guid><description>
 &lt;p>Nacos 是 Dubbo 生态系统中重要的注册中心实现，其中 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">&lt;code>dubbo-registry-nacos&lt;/code>&lt;/a> 则是 Dubbo 融合 Nacos 注册中心的实现。&lt;/p>
 &lt;h2 id="预备工作">预备工作&lt;/h2>
 &lt;p>当您将 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">dubbo-registry-nacos&lt;/a> 整合到您的 Dubbo 工程之前，请确保后台已经启动 Nacos 服务。如果您尚且不熟悉 Nacos 的基本使用的话，可先行参考 &lt;a href="https://nacos.io/en-us/docs/quick-start.html">Nacos 快速入门&lt;/a>。建议使用 Nacos &lt;code>1.0.0&lt;/code> 及以上的版本。&lt;/p>
@@ -7045,44 +7379,4 @@ consumer端同样执行编译，在consumer的target下也会生成二进制文�
 &lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ kubectl delete hpa istiod -n istio-system
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>安装完成后，可以在 istio-system 命名空间下看到一个 istiod pod 在正常运行。&lt;/p></description></item><item><title>Docs3-Building: 查看 RPC 调用的监控信息</title><link>https://dubbo.apache.org/zh/docs3-building/golang-sdk/tasks/rpc/rpc_metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/golang-sdk/tasks/rpc/rpc_metrics/</guid><description>
-&lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
-&lt;ul>
-&lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>
-&lt;li>创建一个新的 demo 应用&lt;/li>
-&lt;/ul>
-&lt;h2 id="2-修改客户端逻辑重复发起调用">2. 修改客户端逻辑，重复发起调用&lt;/h2>
-&lt;p>go-client/cmd/client.go&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">func&lt;/span> &lt;span style="color:#268bd2">main&lt;/span>() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config.&lt;span style="color:#268bd2">SetConsumerService&lt;/span>(grpcGreeterImpl)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> err &lt;span style="color:#719e07">:=&lt;/span> config.&lt;span style="color:#268bd2">Load&lt;/span>(); err &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">panic&lt;/span>(err)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#268bd2">Info&lt;/span>(&lt;span style="color:#2aa198">&amp;#34;start to test dubbo&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> req &lt;span style="color:#719e07">:=&lt;/span> &lt;span style="color:#719e07">&amp;amp;&lt;/span>api.HelloRequest{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Name: &lt;span style="color:#2aa198">&amp;#34;laurence&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span>{ &lt;span style="color:#586e75">// 重复发起调用
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> reply, err &lt;span style="color:#719e07">:=&lt;/span> grpcGreeterImpl.&lt;span style="color:#268bd2">SayHello&lt;/span>(context.&lt;span style="color:#268bd2">Background&lt;/span>(), req)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> err &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">nil&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#268bd2">Error&lt;/span>(err)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#268bd2">Infof&lt;/span>(&lt;span style="color:#2aa198">&amp;#34;client response result: %v\n&amp;#34;&lt;/span>, reply)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="3-查看请求-rt-信息">3. 查看请求 RT 信息&lt;/h2>
-&lt;p>先后启动服务端、客户端服务应用。浏览器查看 localhost:9090/metrics, 搜索 &amp;ldquo;dubbo&amp;rdquo;, 即可查看服务端暴露接口的请求时延，单位 ns。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$ curl localhost:9090/metrics | grep dubbo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># HELP dubbo_provider_service_rt
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># TYPE dubbo_provider_service_rt gauge
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo_provider_service_rt{group=&amp;#34;&amp;#34;,method=&amp;#34;SayHello&amp;#34;,service=&amp;#34;api.Greeter&amp;#34;,timeout=&amp;#34;&amp;#34;,version=&amp;#34;3.0.0&amp;#34;} 41084
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可看到当前最近一次请求 rt 为 41084 ns。&lt;/p></description></item><item><title>Docs3-Building: 如何成为 Dubbo Committer</title><link>https://dubbo.apache.org/zh/docs3-building/docs/contact/contributor/become-a-committer_dev/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/contact/contributor/become-a-committer_dev/</guid><description>
-&lt;p>每个人都可以成为 Apache 项目的贡献者。作为一个贡献者只是意味着你对项目感兴趣并以某种方式做出贡献，从提出合理的问题（这些问题记录了项目并向开发人员提供反馈）到提供新的特性作为补丁。&lt;/p>
-&lt;p>如果你成为对一个项目有价值的贡献者，你有可能被邀请成为一个 committer。committer 是 ASF（Apache软件基金会）中用来表示提交特定项目的人的术语。它给你带来对项目仓库和资源写的权限。&lt;/p>
-&lt;p>在 Dubbo 社区，如果一个 committer 获得大量的优秀成绩，就可以被邀请加入项目管理委员会（PMC）。&lt;/p>
-&lt;p>当您不熟悉ASF使用的开源的开发过程时，有时难以理解的一点，就是我们更重视社区而不是代码。一个强大而健康的社区将受到尊重，成为一个有趣和有益的地方。更重要的是，一个多元化和健康的社区可以长时间的持续支持代码，即使个别公司在这个领域来来往往，也是如此。&lt;/p>
-&lt;p>更多详细信息可以在&lt;a href="https://community.apache.org/contributors/">这里&lt;/a>找到。&lt;/p>
-&lt;h3 id="我可以贡献什么">我可以贡献什么？&lt;/h3>
-&lt;p>请参阅&lt;a href="https://dubbo.apache.org/zh/docs/contribution-guidelines/contributor/new-contributor-guide_dev">新的贡献者指南&lt;/a>。&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>安装完成后，可以在 istio-system 命名空间下看到一个 istiod pod 在正常运行。&lt;/p></description></item></channel></rss>

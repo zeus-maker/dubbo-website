@@ -98,7 +98,7 @@
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;/section></description></item><item><title>Docs3-Building: 联系社区</title><link>https://dubbo.apache.org/zh/docs3-building/docs/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/contact/</guid><description>
+&lt;/section></description></item><item><title>Docs3-Building: 版本发布</title><link>https://dubbo.apache.org/zh/docs3-building/docs/release/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/release/</guid><description/></item><item><title>Docs3-Building: 公告栏</title><link>https://dubbo.apache.org/zh/docs3-building/docs/notices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/notices/</guid><description/></item><item><title>Docs3-Building: 联系社区</title><link>https://dubbo.apache.org/zh/docs3-building/docs/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/docs/contact/</guid><description>
 &lt;h2 id="为-dubbo-做贡献">为 Dubbo 做贡献&lt;/h2>
 &lt;p>Dubbo 是在非限制性的 Apache 2.0 许可下发布的，遵循标准的 Github 开发流程，使用Github追踪处理问题，并将 pull request 合并到 master 中。如果您想为 Dubbo 做贡献（即便是一些微小的），请不要犹豫，遵循下面的指导方针。&lt;/p>
 &lt;h3 id="联系我们">联系我们&lt;/h3>
