@@ -281,8 +281,10 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注：&lt;strong>必须每次都设置，而且设置后必须马上发起调用&lt;/strong>，如果出现拦截器报错（Dubbo 框架内 remove 此值是在选址过程进行的）建议设置 null 以避免 ThreadLocal 内存泄漏导致影响后续调用。&lt;/p></description></item><item><title>Docs3-Building: 一致性哈希选址</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/service/consistent-hash/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/service/consistent-hash/</guid><description>
+&lt;h2 id="特性说明">特性说明&lt;/h2>
+&lt;p>&lt;a href="https://dubbo.apache.org/zh/blog/2019/05/01/dubbo-%E4%B8%80%E8%87%B4%E6%80%A7hash%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%AE%9E%E7%8E%B0%E5%89%96%E6%9E%90/">Dubbo 一致性Hash负载均衡实现剖析&lt;/a>&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
-&lt;p>在有多台服务端的时候根据请求参数的进行一致性哈希 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 散列选择服务端。&lt;/p>
+&lt;p>在有多台服务端的时候根据请求参数的进行一致性哈希散列选择服务端。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;p>配置一致性哈希的方式有很多，最常见的是：&lt;/p>
 &lt;p>注解：&lt;/p>
@@ -310,12 +312,4 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>referenceConfig&lt;span style="color:#719e07">.&lt;/span>setParameters&lt;span style="color:#719e07">(&lt;/span>parameters&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>referenceConfig&lt;span style="color:#719e07">.&lt;/span>setLoadBalance&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;consistenthash&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>referenceConfig&lt;span style="color:#719e07">.&lt;/span>get&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1">
-&lt;p>&lt;a href="https://dubbo.apache.org/zh/blog/2019/05/01/dubbo-%E4%B8%80%E8%87%B4%E6%80%A7hash%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%AE%9E%E7%8E%B0%E5%89%96%E6%9E%90/">Dubbo 一致性Hash负载均衡实现剖析
-&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
