@@ -149,17 +149,68 @@
 &lt;h3 id="提示">提示&lt;/h3>
 &lt;p>总是&lt;strong>只调&lt;/strong>一个可用组的实现&lt;/p></description></item><item><title>Docs3-Building: 服务降级</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/service/service-downgrade/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/service/service-downgrade/</guid><description>
 &lt;p>推荐使用相关限流降级组件（如 &lt;a href="https://sentinelguard.io/zh-cn/docs/open-source-framework-integrations.html">Sentinel&lt;/a>）以达到最佳体验。&lt;/p>
+&lt;h2 id="特性说明">特性说明&lt;/h2>
+&lt;p>服务降级是指服务在非正常情况下进行降级应急处理。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
-&lt;p>可以通过服务降级功能临时屏蔽某个出错的非关键服务，并定义降级后的返回策略。&lt;/p>
-&lt;h2 id="使用方式">使用方式&lt;/h2>
-&lt;p>向注册中心写入动态配置覆盖规则：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>RegistryFactory registryFactory &lt;span style="color:#719e07">=&lt;/span> ExtensionLoader&lt;span style="color:#719e07">.&lt;/span>getExtensionLoader&lt;span style="color:#719e07">(&lt;/span>RegistryFactory&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">).&lt;/span>getAdaptiveExtension&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Registry registry &lt;span style="color:#719e07">=&lt;/span> registryFactory&lt;span style="color:#719e07">.&lt;/span>getRegistry&lt;span style="color:#719e07">(&lt;/span>URL&lt;span style="color:#719e07">.&lt;/span>valueOf&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;zookeeper://10.20.153.10:2181&amp;#34;&lt;/span>&lt;span style="color:#719e07">));&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>registry&lt;span style="color:#719e07">.&lt;/span>register&lt;span style="color:#719e07">(&lt;/span>URL&lt;span style="color:#719e07">.&lt;/span>valueOf&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;override://0.0.0.0/com.foo.BarService?category=configurators&amp;amp;dynamic=false&amp;amp;application=foo&amp;amp;mock=force:return+null&amp;#34;&lt;/span>&lt;span style="color:#719e07">));&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中：&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>mock=force:return+null&lt;/code> 表示消费方对该服务的方法调用都直接返回 null 值，不发起远程调用。用来屏蔽不重要服务不可用时对调用方的影响。&lt;/li>
-&lt;li>还可以改为 &lt;code>mock=fail:return+null&lt;/code> 表示消费方对该服务的方法调用在失败后，再返回 null 值，不抛异常。用来容忍不重要服务不稳定时对调用方的影响。&lt;/li>
+&lt;li>
+&lt;p>某服务或接口负荷超出最大承载能力范围，需要进行降级应急处理，避免系统崩溃&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>调用的某非关键服务或接口暂时不可用时，返回模拟数据或空，业务还能继续可用&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>降级非核心业务的服务或接口，腾出系统资源，尽量保证核心业务的正常运行&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>某上游基础服务超时或不可用时，执行能快速响应的降级预案，避免服务整体雪崩&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用方式">使用方式&lt;/h2>
+&lt;p>以xml配置为例：（通过注解方式配置类似）&lt;/p>
+&lt;p>1.配置&lt;code>mock=&amp;quot;true&amp;quot;&lt;/code>
+例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoService&amp;#34;&lt;/span> mock=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这种方式需要在相同包下有类名 + &lt;code>Mock&lt;/code>后缀的实现类，即&lt;code>com.xxx.service&lt;/code>包下有&lt;code>DemoServiceMock&lt;/code>类。&lt;/p>
+&lt;p>2.配置&lt;code>mock=&amp;quot;com.xxx.service.DemoServiceMock&amp;quot;&lt;/code>
+例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoService&amp;#34;&lt;/span> mock=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoServiceMock&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这种方式指定Mock类的全路径。&lt;/p>
+&lt;p>3.配置&lt;code>mock=&amp;quot;[fail|force]return|throw xxx&amp;quot;&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>fail或force关键字可选，表示调用失败或不调用强制执行mock方法，如果不指定关键字默认为fail&lt;/li>
+&lt;li>return表示指定返回结果，throw表示抛出指定异常&lt;/li>
+&lt;li>xxx根据接口的返回类型解析，可以指定返回值或抛出自定义的异常&lt;/li>
+&lt;/ul>
+&lt;p>例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoService&amp;#34;&lt;/span> mock=&lt;span style="color:#2aa198">&amp;#34;return&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoService&amp;#34;&lt;/span> mock=&lt;span style="color:#2aa198">&amp;#34;return null&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoService&amp;#34;&lt;/span> mock=&lt;span style="color:#2aa198">&amp;#34;fail:return aaa&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoService&amp;#34;&lt;/span> mock=&lt;span style="color:#2aa198">&amp;#34;force:return true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoService&amp;#34;&lt;/span> mock=&lt;span style="color:#2aa198">&amp;#34;fail:throw&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;demoService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.service.DemoService&amp;#34;&lt;/span> mock=&lt;span style="color:#2aa198">&amp;#34;force:throw java.lang.NullPointException&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>4.配合dubbo-admin使用&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>应用消费端引入&lt;a href="https://github.com/apache/dubbo-spi-extensions/tree/master/dubbo-mock-extensions" target="_blank">&lt;code>dubbo-mock-admin&lt;/code>&lt;/a>依赖&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>应用消费端启动时设置JVM参数，&lt;code>-Denable.dubbo.admin.mock=true&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>启动dubbo-admin，在服务Mock-&amp;gt;规则配置菜单下设置Mock规则&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>以服务方法的维度设置规则，设置返回模拟数据，动态启用/禁用规则&lt;/p>
+&lt;h2 id="注意事项">注意事项&lt;/h2>
+&lt;p>Dubbo启动时会检查配置，当mock属性值配置有误时会启动失败，可根据错误提示信息进行排查：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>配置格式错误，如&lt;code>return+null&lt;/code>会报错，被当做mock类型处理，&lt;code>return&lt;/code>后面可省略不写或者跟空格后再跟返回值&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>类型找不到错误，如自定义mock类、throw自定义异常，请检查类型是否存在或是否有拼写错误&lt;/p>
+&lt;/li>
 &lt;/ul></description></item><item><title>Docs3-Building: 流式通信</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/service/streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/service/streaming/</guid><description>
 &lt;p>TBD&lt;/p></description></item><item><title>Docs3-Building: 指定 IP 调用</title><link>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/service/specify-ip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-building/java-sdk/advanced-features-and-usage/service/specify-ip/</guid><description>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
