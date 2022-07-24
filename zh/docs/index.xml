@@ -401,6 +401,9 @@
 &lt;h2 id="4总结">4.总结&lt;/h2>
 &lt;p>本篇文章简单分别介绍了 Java SPI 与 Dubbo SPI 用法，并对 Dubbo SPI 的加载拓展类的过程进行了分析。另外，在 Dubbo SPI 中还有一块重要的逻辑这里没有进行分析，即 Dubbo SPI 的扩展点自适应机制。该机制的逻辑较为复杂，我们将会在下一篇文章中进行详细的分析。&lt;/p>
 &lt;p>好了，本篇文章就先到这里了。如果文章中有错误不妥之处，欢迎大家提 issue 进行反馈，或者提 pull request 进行修正。让我们携手共建 Dubbo 社区。&lt;/p></description></item><item><title>Docs: dubbo 协议</title><link>https://dubbo.apache.org/zh/docs/references/protocols/dubbo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/protocols/dubbo/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/protocol/dubbo/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据量大并发的服务调用，以及服务消费者机器数远大于服务提供者机器数的情况。&lt;/p>
 &lt;p>反之，Dubbo 缺省协议不适合传送大数据量的服务，比如传文件，传视频等，除非请求量很低。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/dubbo-protocol.jpg" alt="dubbo-protocol.jpg">&lt;/p>
@@ -621,6 +624,9 @@
 &lt;/li>
 &lt;/ol>
 &lt;/div></description></item><item><title>Docs: dubbo:application</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-application/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#application">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>应用信息配置。对应的配置类：&lt;code>org.apache.dubbo.config.ApplicationConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -825,6 +831,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:argument</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-argument/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-argument/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#argument">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>方法参数配置。对应的配置类： &lt;code>org.apache.dubbo.config.ArgumentConfig&lt;/code>。该标签为 &lt;code>&amp;lt;dubbo:method&amp;gt;&lt;/code> 的子标签，用于方法参数的特征描述，比如：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;findXxx&amp;#34;&lt;/span> timeout=&lt;span style="color:#2aa198">&amp;#34;3000&amp;#34;&lt;/span> retries=&lt;span style="color:#2aa198">&amp;#34;2&amp;#34;&lt;/span>&lt;span style="color:#268bd2">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:argument&lt;/span> index=&lt;span style="color:#2aa198">&amp;#34;0&amp;#34;&lt;/span> callback=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
@@ -925,6 +934,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:config-center</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-config-center/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-config-center/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#config-center">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>配置中心。对应的配置类：&lt;code>org.apache.dubbo.config.ConfigCenterConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1191,6 +1203,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:consumer</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-consumer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-consumer/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#consumer">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>服务消费者缺省值配置。配置类： &lt;code>org.apache.dubbo.config.ConsumerConfig&lt;/code> 。同时该标签为 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 标签的缺省值设置。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1595,6 +1610,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:method</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-method/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#method">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>方法级配置。对应的配置类： &lt;code>org.apache.dubbo.config.MethodConfig&lt;/code>。同时该标签为 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 或 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 的子标签，用于控制到方法级。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1959,6 +1977,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;findXxx&amp;#34;&lt;/span> timeout=&lt;span style="color:#2aa198">&amp;#34;3000&amp;#34;&lt;/span> retries=&lt;span style="color:#2aa198">&amp;#34;2&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:reference&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: dubbo:module</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-module/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#module">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>模块信息配置。对应的配置类 &lt;code>org.apache.dubbo.config.ModuleConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2073,6 +2094,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:monitor</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-monitor/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#monitor">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>监控中心配置。对应的配置类： &lt;code>org.apache.dubbo.config.MonitorConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2147,6 +2171,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:parameter</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-parameter/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#parameter">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>选项参数配置。对应的配置类：&lt;code>java.util.Map&lt;/code>。同时该标签为&lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:provider&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:consumer&amp;gt;&lt;/code>的子标签，用于配置自定义参数，该配置项将作为扩展点设置自定义参数使用。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2235,6 +2262,9 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>也可以：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;jms&amp;#34;&lt;/span> p:queue=&lt;span style="color:#2aa198">&amp;#34;xxx&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: dubbo:protocol</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-protocol/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#protocol">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>服务提供者协议配置。对应的配置类： &lt;code>org.apache.dubbo.config.ProtocolConfig&lt;/code>。同时，如果需要支持多协议，可以声明多个 &lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code> 标签，并在 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 中通过 &lt;code>protocol&lt;/code> 属性指定使用的协议。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2749,6 +2779,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:provider</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-provider/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#provider">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>服务提供者缺省值配置。对应的配置类： &lt;code>org.apache.dubbo.config.ProviderConfig&lt;/code>。同时该标签为 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 和 &lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code> 标签的缺省值设置。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -3663,6 +3696,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:reference</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-reference/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#reference">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>服务消费者引用服务配置。对应的配置类： &lt;code>org.apache.dubbo.config.ReferenceConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -4237,6 +4273,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:registry</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-registry/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>注册中心配置。对应的配置类： &lt;code>org.apache.dubbo.config.RegistryConfig&lt;/code>。同时如果有多个不同的注册中心，可以声明多个 &lt;code>&amp;lt;dubbo:registry&amp;gt;&lt;/code> 标签，并在 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 或 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 的 &lt;code>registry&lt;/code> 属性指定使用的注册中心。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -4631,6 +4670,9 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: dubbo:service</title><link>https://dubbo.apache.org/zh/docs/references/xml/dubbo-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/xml/dubbo-service/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#service">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>服务提供者暴露服务配置。对应的配置类：&lt;code>org.apache.dubbo.config.ServiceConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -6342,6 +6384,9 @@
 &lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip.asc">asc&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Nacos 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/nacos/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/nacos/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>Nacos 是 Dubbo 生态系统中重要的注册中心实现，其中 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">&lt;code>dubbo-registry-nacos&lt;/code>&lt;/a> 则是 Dubbo 融合 Nacos 注册中心的实现。&lt;/p>
 &lt;h2 id="预备工作">预备工作&lt;/h2>
 &lt;p>当您将 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">dubbo-registry-nacos&lt;/a> 整合到您的 Dubbo 工程之前，请确保后台已经启动 Nacos 服务。如果您尚且不熟悉 Nacos 的基本使用的话，可先行参考 &lt;a href="https://nacos.io/en-us/docs/quick-start.html">Nacos 快速入门&lt;/a>。建议使用 Nacos &lt;code>1.0.0&lt;/code> 及以上的版本。&lt;/p>
@@ -6516,6 +6561,9 @@
 &lt;code>preserved.register.source&lt;/code> : 保留键，目前未使用。&lt;/p>
 &lt;p>该功能将在Dubbo@&lt;code>2.7.10&lt;/code>开始支持，通过在address中增加参数来进行配置.
 例如: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&amp;amp;preserved.ip.delete.timeout=30000&amp;amp;preserved.heart.beat.interval=10000&lt;/code>&lt;/p></description></item><item><title>Docs: 使用 GraalVM 打包 Native Image</title><link>https://dubbo.apache.org/zh/docs/references/graalvm/support-graalvm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/graalvm/support-graalvm/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/performance/support-graalvm/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>dubbo3.0支持native-image文档&lt;/p>
 &lt;h2 id="概述">概述&lt;/h2>
 &lt;p>本文档将介绍将dubbo3.0项目接入GraalVM，进行native-image编译为二进制的流程。&lt;/p>
@@ -7105,6 +7153,9 @@ consumer端同样执行编译，在consumer的target下也会生成二进制文�
 &lt;/li>
 &lt;/ol>
 &lt;/div></description></item><item><title>Docs: Zookeeper 注册中心</title><link>https://dubbo.apache.org/zh/docs/references/registry/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/references/registry/zookeeper/</guid><description>
+&lt;div class="pageinfo pageinfo-primary">
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/zookeeper/">最新版本&lt;/a>。&lt;/p>
+&lt;/div>
 &lt;p>&lt;a href="http://zookeeper.apache.org">Zookeeper&lt;/a> 是 Apache Hadoop 的子项目，是一个树型的目录服务，支持变更推送，适合作为 Dubbo 服务的注册中心，工业强度较高，可用于生产环境，并推荐使用 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/zookeeper.jpg" alt="/user-guide/images/zookeeper.jpg">&lt;/p>
 &lt;p>流程说明：&lt;/p>
