@@ -19,7 +19,7 @@
 &lt;p>Dubbo3 中引入了 &lt;a href="https://dubbo.apache.org/zh/overview/whatsnew/service-discovery/">应用级服务发现机制&lt;/a> 用来解决异构微服务体系互通与大规模集群实践的性能问题，应用级服务发现将全面取代 2.x 是时代的接口级服务发现。
 同时为了保持 Dubbo 面向服务/接口的易用性、服务治理的灵活性，Dubbo 围绕应用级服务发现构建了一套元数据机制，即 &lt;code>接口 - 应用映射关系&lt;/code> 与 &lt;code>接口配置元数据&lt;/code>。&lt;/p>
 &lt;h3 id="11-接口---应用映射关系">1.1 接口 - 应用映射关系&lt;/h3>
-&lt;p>Dubbo 一直以来都能做到精确的地址发现，即只订阅 Consumer 声明要关心的服务及相关的地址列表，相比于拉取/订阅全量地址列表，这样觉有很好的性能优势。
+&lt;p>Dubbo 一直以来都能做到精确的地址发现，即只订阅 Consumer 声明要关心的服务及相关的地址列表，相比于拉取/订阅全量地址列表，这样做有很好的性能优势。
 在应用级服务发现模型中，想做到精确地址订阅并不容易，因为 Dubbo Consumer 只声明了要消费的接口列表，Consumer 需要能够将接口转换为 Provider 应用名才能进行精准服务订阅，&lt;/p>
 &lt;p>为此，Dubbo 需要在元数据中心维护这一份 &lt;code>接口名-&amp;gt;应用名&lt;/code> 的对应关系，Dubbo3 中通过 provider 启动的时主动向元数据中心上报实现。
 接口 (service name) - 应用 (Provider application name) 的映射关系可以是一对多的，即一个 service name 可能会对应多个不同的 application name。&lt;/p>
@@ -32,8 +32,9 @@
 &lt;li>多个应用名通过英文逗号 &lt;code>,&lt;/code> 隔开&lt;/li>
 &lt;/ol>
 &lt;h3 id="12-接口配置元数据">1.2 接口配置元数据&lt;/h3>
-&lt;p>&lt;code>接口级配置元数据&lt;/code>是作为地址发现的补充，只有当才会进行暴露。会根据当前应用的自身信息，以及接口信息，去计算出该应用的 revision 修订值，用于保存应用级别元数据，&lt;/p>
-&lt;p>以 Zookeeper 为例，接口配置元数据保存在以下位置：&lt;/p>
+&lt;p>&lt;code>接口级配置元数据&lt;/code>是作为地址发现的补充，相比于 Spring Cloud 等地址发现模型只能同步 ip、port 信息，Dubbo 的服务发现机制可以同步接口列表、接口定义、接口级参数配置等信息。
+这部分内容根据当前应用的自身信息、以及接口信息计算而来，并且从性能角度出发，还根据元数据生成 revision，以实现不同机器实例间的元数据聚合。&lt;/p>
+&lt;p>以 Zookeeper 为例，接口配置元数据保存在以下位置，如果多个实例生成的 revision 相同，则最终会共享同一份元数据配置：&lt;/p>
 &lt;p>/dubbo/metadata/{application name}/{revision}&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">[&lt;/span>zk: localhost:2181&lt;span style="color:#719e07">(&lt;/span>CONNECTED&lt;span style="color:#719e07">)&lt;/span> 33&lt;span style="color:#719e07">]&lt;/span> get /dubbo/metadata/demo-provider/da3be833baa2088c5f6776fb7ab1a436
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
