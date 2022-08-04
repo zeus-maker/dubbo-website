@@ -551,6 +551,7 @@
 &lt;/li>
 &lt;/ul></description></item><item><title>Docs3-V2: 流式通信</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/streaming/</guid><description>
 &lt;p>TBD&lt;/p></description></item><item><title>Docs3-V2: 动态指定 IP 调用</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/specify-ip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/specify-ip/</guid><description>
+&lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>发起请求的时候需要指定本次调用的服务端，如消息回调、流量隔离等。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
