@@ -310,7 +310,7 @@
 &lt;p>由于 seata-server 支持计算与存储分离模式,并支持暴露服务地址至多种注册中心,仅需按照第六步配置完毕后水平扩展即可&lt;/p>
 &lt;p>详情请访问:https://seata.io/&lt;/p></description></item><item><title>Docs3-V2: 服务分版本</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-versions/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
-&lt;p>&lt;strong>按照以下的步骤进行版本迁移：&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>按照以下的步骤进行版本迁移&lt;/strong>&lt;/p>
 &lt;ol>
 &lt;li>在低压力时间段，先升级一半提供者为新版本&lt;/li>
 &lt;li>再将所有消费者升级为新版本&lt;/li>
@@ -318,25 +318,26 @@
 &lt;/ol>
 &lt;h4 id="配置">配置&lt;/h4>
 &lt;ul>
-&lt;li>新旧版本服务提供者&lt;/li>
-&lt;li>新旧版本服务消费者&lt;/li>
+&lt;li>新老版本服务提供者&lt;/li>
+&lt;li>新老版本服务消费者&lt;/li>
 &lt;/ul>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>当一个接口实现，出现不兼容升级时，可以用版本号过渡，版本号不同的服务相互间不引用。&lt;/p>
 &lt;h2 id="参考用例">参考用例&lt;/h2>
 &lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-version">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-version&lt;/a>&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
-&lt;h4 id="服务提供者">服务提供者&lt;/h4>
-&lt;p>老版本服务提供者配置：&lt;/p>
+&lt;h3 id="服务提供者">服务提供者&lt;/h3>
+&lt;p>老版本服务提供者配置&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.BarService&amp;#34;&lt;/span> version=&lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>新版本服务提供者配置：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>新版本服务提供者配置&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.BarService&amp;#34;&lt;/span> version=&lt;span style="color:#2aa198">&amp;#34;2.0.0&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="服务消费者">服务消费者&lt;/h4>
-&lt;p>老版本服务消费者配置：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="服务消费者">服务消费者&lt;/h3>
+&lt;p>老版本服务消费者配置&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;barService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.BarService&amp;#34;&lt;/span> version=&lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>新版本服务消费者配置：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>新版本服务消费者配置&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;barService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.BarService&amp;#34;&lt;/span> version=&lt;span style="color:#2aa198">&amp;#34;2.0.0&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果不需要区分版本，可以按照以下的方式配置：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="不区分版本">不区分版本&lt;/h3>
+&lt;p>如果不需要区分版本，可以按照以下的方式配置&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;barService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.BarService&amp;#34;&lt;/span> version=&lt;span style="color:#2aa198">&amp;#34;*&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 启动时检查</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/preflight-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/preflight-check/</guid><description>
 &lt;p>Dubbo 缺省会在启动时检查依赖的服务是否可用，不可用时会抛出异常，阻止 Spring 初始化完成，以便上线时，能及早发现问题，默认 &lt;code>check=&amp;quot;true&amp;quot;&lt;/code>。&lt;/p>
