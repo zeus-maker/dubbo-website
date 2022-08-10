@@ -189,4 +189,175 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 关闭自动注入sidecar&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl label namespace &lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">your&lt;/span> namespace&lt;span style="color:#2aa198">}&lt;/span> istio-injection&lt;span style="color:#719e07">=&lt;/span>disabled --overwrite
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: Istio + Proxyless</title><link>https://dubbo.apache.org/zh/overview/tasks/mesh/proxyless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/mesh/proxyless/</guid><description/></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: Istio + Proxyless</title><link>https://dubbo.apache.org/zh/overview/tasks/mesh/proxyless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/mesh/proxyless/</guid><description>
+&lt;p>Proxyless 模式是指 Dubbo 直接与 Istiod 通信，通过 xDS 协议实现服务发现和服务治理等能力。
+本示例中将通过一个简单的示例来演示如何使用 Proxyless 模式。&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-xds">示例地址&lt;/a>&lt;/p>
+&lt;h2 id="代码架构">代码架构&lt;/h2>
+&lt;p>本小节中主要介绍本文所使用的示例的代码架构，通过模仿本示例中的相关配置改造已有的项目代码可以使已有的项目快速跑在 Proxyless Mesh 模式下。&lt;/p>
+&lt;h3 id="1-接口定义">1. 接口定义&lt;/h3>
+&lt;p>为了示例足够简单，这里使用了一个简单的接口定义，仅对参数做拼接进行返回。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">GreetingService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String &lt;span style="color:#268bd2">sayHello&lt;/span>&lt;span style="color:#719e07">(&lt;/span>String name&lt;span style="color:#719e07">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-接口实现">2. 接口实现&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@DubboService&lt;/span>&lt;span style="color:#719e07">(&lt;/span>version &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">AnnotatedGreetingService&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> GreetingService &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> String &lt;span style="color:#268bd2">sayHello&lt;/span>&lt;span style="color:#719e07">(&lt;/span>String name&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;greeting service received: &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> name&lt;span style="color:#719e07">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#2aa198">&amp;#34;hello, &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> name &lt;span style="color:#719e07">+&lt;/span> &lt;span style="color:#2aa198">&amp;#34;! from host: &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> NetUtils&lt;span style="color:#719e07">.&lt;/span>getLocalHost&lt;span style="color:#719e07">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-客户端订阅方式">3. 客户端订阅方式&lt;/h3>
+&lt;p>&lt;strong>由于原生 xDS 协议无法支持获取从接口到应用名的映射，因此需要配置 &lt;code>providedBy&lt;/code> 参数来标记此服务来自哪个应用。&lt;/strong>&lt;/p>
+&lt;p>未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务映射&lt;/a>关系获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@Component&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;annotatedConsumer&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">GreetingServiceConsumer&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@DubboReference&lt;/span>&lt;span style="color:#719e07">(&lt;/span>version &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> providedBy &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;dubbo-samples-xds-provider&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">private&lt;/span> GreetingService greetingService&lt;span style="color:#719e07">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> String &lt;span style="color:#268bd2">doSayHello&lt;/span>&lt;span style="color:#719e07">(&lt;/span>String name&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> greetingService&lt;span style="color:#719e07">.&lt;/span>sayHello&lt;span style="color:#719e07">(&lt;/span>name&lt;span style="color:#719e07">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="4-服务端配置">4. 服务端配置&lt;/h3>
+&lt;p>服务端配置注册中心为 istio 的地址，协议为 xds。&lt;/p>
+&lt;p>我们建议将 &lt;code>protocol&lt;/code> 配置为 tri 协议（全面兼容 grpc 协议），以获得在 istio 体系下更好的体验。&lt;/p>
+&lt;p>为了使 Kubernetes 感知到应用的状态，需要配置 &lt;code>qosAcceptForeignIp&lt;/code> 参数，以便 Kubernetes 可以获得正确的应用状态，&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/">对齐生命周期&lt;/a>。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```properties
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.name=dubbo-samples-xds-provider
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort=20885
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address=xds://istiod.istio-system.svc:15012
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.name=tri
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.port=50052
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosAcceptForeignIp=true
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="5-客户端配置">5. 客户端配置&lt;/h3>
+&lt;p>客户端配置注册中心为 istio 的地址，协议为 xds。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.name=dubbo-samples-xds-consumer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort=20885
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address=xds://istiod.istio-system.svc:15012
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosAcceptForeignIp=true
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="快速开始">快速开始&lt;/h2>
+&lt;h3 id="step-1-搭建-kubernetes-环境">Step 1: 搭建 Kubernetes 环境&lt;/h3>
+&lt;p>目前 Dubbo 仅支持在 Kubernetes 环境下的 Mesh 部署，所以在运行启动本示例前需要先搭建 Kubernetes 环境。&lt;/p>
+&lt;p>搭建参考文档：&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://kubernetes.io/zh-cn/docs/tutorials/hello-minikube/">minikube(https://kubernetes.io/zh-cn/docs/tutorials/hello-minikube/)&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/">kubeadm(https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/)&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://k3s.io/">k3s(https://k3s.io/)&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="step-2-搭建-istio-环境">Step 2: 搭建 Istio 环境&lt;/h3>
+&lt;p>搭建 Istio 环境参考文档：&lt;/p>
+&lt;p>&lt;a href="https://istio.io/latest/docs/setup/getting-started/">Istio 安装文档(https://istio.io/latest/docs/setup/getting-started/)&lt;/a>&lt;/p>
+&lt;p>注：安装 Istio 的时候&lt;strong>需要开启 &lt;a href="https://istio.io/latest/docs/ops/best-practices/security/#configure-third-party-service-account-tokens">first-party-jwt 支持&lt;/a>（使用 &lt;code>istioctl&lt;/code> 工具安装的时候加上 &lt;code>--set values.global.jwtPolicy=first-party-jwt&lt;/code> 参数）&lt;/strong>，否则将导致客户端认证失败的问题。&lt;/p>
+&lt;p>附安装命令参考：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -L https://istio.io/downloadIstio | sh -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> istio-1.xx.x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">export&lt;/span> &lt;span style="color:#268bd2">PATH&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#268bd2">$PWD&lt;/span>/bin:&lt;span style="color:#268bd2">$PATH&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>istioctl install --set &lt;span style="color:#268bd2">profile&lt;/span>&lt;span style="color:#719e07">=&lt;/span>demo --set values.global.jwtPolicy&lt;span style="color:#719e07">=&lt;/span>first-party-jwt -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-拉取代码并构建">Step 3: 拉取代码并构建&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/apache/dubbo-samples.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> dubbo-samples/dubbo-samples-xds
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mvn clean package -DskipTests
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-构建镜像">Step 4: 构建镜像&lt;/h3>
+&lt;p>由于 Kubernetes 采用容器化部署，需要将代码打包在镜像中再进行部署。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> ./dubbo-samples-xds-provider/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># dubbo-samples-xds/dubbo-samples-xds-provider/Dockerfile&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker build -t dubboteam/dubbo-samples-xds-provider:1.0.0 .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> ../dubbo-samples-xds-consumer/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># dubbo-samples-xds/dubbo-samples-xds-consumer/Dockerfile&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker build -t dubboteam/dubbo-samples-xds-consumer:1.0.0 .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> ../
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-部署容器">Step 5: 部署容器&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> ./dubbo-samples-xds-provider/src/main/resources/k8s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># dubbo-samples-xds/dubbo-samples-xds-provider/src/main/resources/k8s/Deployment.yml&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># dubbo-samples-xds/dubbo-samples-xds-provider/src/main/resources/k8s/Service.yml&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl apply -f Deployment.yml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl apply -f Service.yml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> ../../../../../dubbo-samples-xds-consumer/src/main/resources/k8s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># dubbo-samples-xds/dubbo-samples-xds-consumer/src/main/resources/k8s/Deployment.yml&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl apply -f Deployment.yml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> ../../../../../
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查看 consumer 的日志可以观察到如下的日志：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>result: hello, xDS Consumer! from host: 172.17.0.5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>result: hello, xDS Consumer! from host: 172.17.0.5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>result: hello, xDS Consumer! from host: 172.17.0.6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>result: hello, xDS Consumer! from host: 172.17.0.6
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="常见问题">常见问题&lt;/h2>
+&lt;ol>
+&lt;li>配置独立的 Istio 集群 &lt;code>clusterId&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>通常在 Kubernetes 体系下 Istio 的 &lt;code>clusterId&lt;/code> 是 &lt;code>Kubernetes&lt;/code>，如果你使用的是自建的 istio 生产集群或者云厂商提供的集群则可能需要配置 &lt;code>clusterId&lt;/code>。&lt;/p>
+&lt;p>配置方式：指定 &lt;code>ISTIO_META_CLUSTER_ID&lt;/code> 环境变量为所需的 &lt;code>clusterId&lt;/code>。&lt;/p>
+&lt;p>参考配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">apiVersion&lt;/span>: apps/v1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">kind&lt;/span>: Deployment
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">metadata&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">name&lt;/span>: dubbo-samples-xds-consumer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">selector&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">matchLabels&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">demo&lt;/span>: consumer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">replicas&lt;/span>: &lt;span style="color:#2aa198">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">template&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">metadata&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">labels&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">demo&lt;/span>: consumer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">containers&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#268bd2">env&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#268bd2">name&lt;/span>: ISTIO_META_CLUSTER_ID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">value&lt;/span>: Kubernetes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#268bd2">name&lt;/span>: dubbo-samples-xds-provider
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">image&lt;/span>: xxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>clusterId&lt;/code> 获取方式：&lt;/p>
+&lt;blockquote>
+&lt;p>kubectl describe pod -n istio-system istiod-58b4f65df9-fq2ks
+读取环境变量中 &lt;code>CLUSTER_ID&lt;/code> 的值&lt;/p>
+&lt;/blockquote>
+&lt;ol start="2">
+&lt;li>Istio 认证失败&lt;/li>
+&lt;/ol>
+&lt;p>由于当前 Dubbo 版本还不支持 istio 的 &lt;code>third-party-jwt&lt;/code> 认证，所以需要配置 &lt;code>jwtPolicy&lt;/code> 为 &lt;code>first-party-jwt&lt;/code>。&lt;/p>
+&lt;ol start="3">
+&lt;li>providedBy&lt;/li>
+&lt;/ol>
+&lt;p>由于当前 Dubbo 版本受限于 istio 的通信模型无法获取接口所对应的应用名，因此需要配置 &lt;code>providedBy&lt;/code> 参数来标记此服务来自哪个应用。
+未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务映射&lt;/a>关系获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
+&lt;ol start="4">
+&lt;li>protocol name&lt;/li>
+&lt;/ol>
+&lt;p>Proxyless 模式下应用级服务发现通过 &lt;code>Kubernetes Native Service&lt;/code> 来进行应用服务发现，而由于 istio 的限制，目前只支持 &lt;code>http&lt;/code> 协议和 &lt;code>grpc&lt;/code> 协议的流量拦截转发，所以 &lt;code>Kubernetes Service&lt;/code> 在配置的时候需要指定 &lt;code>spec.ports.name&lt;/code> 属性为 &lt;code>http&lt;/code> 或者 &lt;code>grpc&lt;/code> 开头。
+因此我们建议使用 triple 协议（完全兼容 grpc 协议）。此处即使 &lt;code>name&lt;/code> 配置为 &lt;code>grpc&lt;/code> 开头，但是实际上是 &lt;code>dubbo&lt;/code> 协议也可以正常服务发现，但是影响流量路由的功能。&lt;/p>
+&lt;p>参考配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">apiVersion&lt;/span>: v1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">kind&lt;/span>: Service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">metadata&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">name&lt;/span>: dubbo-samples-xds-provider
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">clusterIP&lt;/span>: None
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">selector&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">demo&lt;/span>: provider
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">ports&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#268bd2">name&lt;/span>: grpc-tri
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">protocol&lt;/span>: TCP
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: &lt;span style="color:#2aa198">50052&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">targetPort&lt;/span>: &lt;span style="color:#2aa198">50052&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="5">
+&lt;li>metadataServicePort&lt;/li>
+&lt;/ol>
+&lt;p>由于 Dubbo 3 应用级服务发现的元数据无法从 istio 中获取，需要走服务自省模式。这要求了 &lt;code>Dubbo MetadataService&lt;/code> 的端口在全集群的是统一的。&lt;/p>
+&lt;p>参考配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort=20885
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务元数据&lt;/a>获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
+&lt;ol start="6">
+&lt;li>qosAcceptForeignIp&lt;/li>
+&lt;/ol>
+&lt;p>由于 Kubernetes probe 探活机制的工作原理限制，探活请求的发起方不是 &lt;code>localhost&lt;/code>，所以需要配置 &lt;code>qosAcceptForeignIp&lt;/code> 参数开启允许全局访问。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qosAcceptForeignIp=true
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>注：qos 端口存在危险命令，请先评估网络的安全性。即使 qos 不开放也仅影响 Kubernetes 无法获取 Dubbo 的生命周期状态。&lt;/p>
+&lt;ol start="7">
+&lt;li>不需要开启注入&lt;/li>
+&lt;/ol>
+&lt;p>Proxyless 模式下 pod 不需要再开启 envoy 注入，请确认 namespace 中没有 &lt;code>istio-injection=enabled&lt;/code> 的标签。&lt;/p></description></item></channel></rss>
