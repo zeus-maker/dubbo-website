@@ -195,9 +195,9 @@
 &lt;div class="h-100 card shadow" href="#">
 &lt;div class="card-body">
 &lt;h4 class="card-title">
-&lt;a href='https://dubbo.apache.org/zh/overview/tasks/triple/wrap/'>Wrapped 序列化兼容模式&lt;/a>
+&lt;a href='https://dubbo.apache.org/zh/overview/tasks/triple/wrap/'>Pojo 序列化兼容模式&lt;/a>
 &lt;/h4>
-&lt;p>Wrapped 序列化兼容模式&lt;/p>
+&lt;p>Pojo 序列化兼容模式&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
@@ -208,16 +208,6 @@
 &lt;a href='https://dubbo.apache.org/zh/overview/tasks/triple/streaming/'>Streaming 通信&lt;/a>
 &lt;/h4>
 &lt;p>Stream 通信模式&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;div class="col-sm col-md-6 mb-4 mb-md-0">
-&lt;div class="h-100 card shadow" href="#">
-&lt;div class="card-body">
-&lt;h4 class="card-title">
-&lt;a href='https://dubbo.apache.org/zh/overview/tasks/triple/grpc/'>Triple 与 gRPC 通信&lt;/a>
-&lt;/h4>
-&lt;p>Triple 与 gRPC 通信&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
