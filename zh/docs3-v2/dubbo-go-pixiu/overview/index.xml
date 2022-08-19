@@ -29,15 +29,11 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;p>Cluter 代表相同服务的集群，Endpoint 则代表服务集群中的单一服务实例。&lt;/p>
 &lt;h3 id="adapter-适配器">Adapter 适配器&lt;/h3>
 &lt;p>Adapter 则代表 Pixiu 和外界进行元数据获取的能力。能够根据服务中的服务元数据，进行路由和集群信息的动态获取。目前 Pixiu 支持两宽 Adapter，分别是从 Dubbo 集群和 Springcloud 集群获取信息。&lt;/p></description></item><item><title>Docs3-V2: Pixiu 常见问题</title><link>https://dubbo.apache.org/zh/docs3-v2/dubbo-go-pixiu/overview/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/dubbo-go-pixiu/overview/faq/</guid><description>
-&lt;h1 id="常见问题">常见问题&lt;/h1>
-&lt;p>&lt;a href="#1" target="_self">1.Pixiu 目前可以用于生产环境吗&lt;/a>&lt;/p>
-&lt;p>&lt;a href="#2" target="_self">2.Pixiu 目前支持高可用吗？&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h3 id='1'>Q: 1.Pixiu 目前可以用于生产环境吗？&lt;/h3>
+&lt;h3 id="常见问题-q1">常见问题 Q1&lt;/h3>
+&lt;p>&lt;strong>Pixiu 目前可以用于生产环境吗？&lt;/strong>&lt;/p>
 &lt;p>&lt;strong>A:&lt;/strong>
-0.4.0版本之后就可以上生产环境，欢迎已经在使用的企业参与此issue:&lt;a href="https://github.com/apache/dubbo-go-pixiu/issues/64">who&amp;rsquo;s using Pixiu&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h3 id='2'>Q: 2.Pixiu 目前支持高可用吗？&lt;/h3>
-&lt;p>&lt;strong>A:&lt;/strong>&lt;/p>
-&lt;p>目前 Pixiu 仅支持单实例部署，可以和 Nginx 组成无状态多实例集群。&lt;/p>
-&lt;hr></description></item></channel></rss>
+0.4.0版本之后就可以上生产环境，欢迎已经在使用的企业参与此 issue: &lt;a href="https://github.com/apache/dubbo-go-pixiu/issues/64">who&amp;rsquo;s using Pixiu&lt;/a>&lt;/p>
+&lt;h3 id="常见问题-q2">常见问题 Q2&lt;/h3>
+&lt;p>&lt;strong>Pixiu 目前支持高可用吗？&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>A:&lt;/strong>
+目前 Pixiu 仅支持单实例部署，可以和 Nginx 组成无状态多实例集群。&lt;/p></description></item></channel></rss>
