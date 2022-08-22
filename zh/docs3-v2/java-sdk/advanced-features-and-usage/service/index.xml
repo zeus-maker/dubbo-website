@@ -1267,23 +1267,20 @@ Dubbo 中的 RpcContext 是一个 ThreadLocal 的临时状态记录器，当接�
 消费端的 Invocation 经过序列化后通过网络传输发送给服务端，服务端解析 Invocation 生成 Method Invoke 的参数和 RpcServerAttachment，然后发起真实调用。
 在服务端处理结束之后，Method Response 结果会连同 RpcServiceContext 一起生成 Result 对象。
 服务端的 Result 结果对象经过序列化后通过网络传输发送回消费端，消费端解析 Result 生成 Method Response 结果和 RpcServiceContext，返回真实调用结果和上下文给消费端。&lt;/p>
-&lt;h4 id="注意">注意：&lt;/h4>
+&lt;blockquote>
 &lt;p>path, group, version, dubbo, token, timeout 几个 key 是保留字段，请使用其它值。&lt;/p>
-&lt;h4 id="隐式参数配置">隐式参数配置：&lt;/h4>
-&lt;ul>
-&lt;li>服务消费方&lt;/li>
-&lt;li>服务提供方&lt;/li>
-&lt;/ul>
+&lt;/blockquote>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>内部系统通过 Dubbo 调用时, traceId 如何透传到服务提供方。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
-&lt;h4 id="注意-1">注意：&lt;/h4>
+&lt;blockquote>
 &lt;p>&lt;code>setAttachment&lt;/code> 设置的 KV 对，在完成下面一次远程调用会被清空，即多次远程调用要多次设置。&lt;/p>
-&lt;h4 id="在服务消费方端设置隐式参数">在服务消费方端设置隐式参数&lt;/h4>
+&lt;/blockquote>
+&lt;h3 id="在服务消费方端设置隐式参数">在服务消费方端设置隐式参数&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>RpcContext&lt;span style="color:#719e07">.&lt;/span>getClientAttachment&lt;span style="color:#719e07">().&lt;/span>setAttachment&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;index&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;1&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span> &lt;span style="color:#586e75">// 隐式传参，后面的远程调用都会隐式将这些参数发送到服务器端，类似cookie，用于框架集成，不建议常规业务使用
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>xxxService&lt;span style="color:#719e07">.&lt;/span>xxx&lt;span style="color:#719e07">();&lt;/span> &lt;span style="color:#586e75">// 远程调用
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// ...
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="在服务提供方端获取隐式参数">在服务提供方端获取隐式参数&lt;/h4>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="在服务提供方端获取隐式参数">在服务提供方端获取隐式参数&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">XxxServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> XxxService &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">xxx&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -1291,7 +1288,7 @@ Dubbo 中的 RpcContext 是一个 ThreadLocal 的临时状态记录器，当接�
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> String index &lt;span style="color:#719e07">=&lt;/span> RpcContext&lt;span style="color:#719e07">.&lt;/span>getServerAttachment&lt;span style="color:#719e07">().&lt;/span>getAttachment&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;index&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="在服务提供方写入回传参数">在服务提供方写入回传参数&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="在服务提供方写入回传参数">在服务提供方写入回传参数&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">XxxServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> XxxService &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">xxx&lt;/span>&lt;span style="color:#719e07">()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -1299,7 +1296,7 @@ Dubbo 中的 RpcContext 是一个 ThreadLocal 的临时状态记录器，当接�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> RpcContext&lt;span style="color:#719e07">.&lt;/span>getServerContext&lt;span style="color:#719e07">().&lt;/span>setAttachment&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;result&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> index&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="在消费端获取回传参数">在消费端获取回传参数&lt;/h4>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="在消费端获取回传参数">在消费端获取回传参数&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>xxxService&lt;span style="color:#719e07">.&lt;/span>xxx&lt;span style="color:#719e07">();&lt;/span> &lt;span style="color:#586e75">// 远程调用
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>String result &lt;span style="color:#719e07">=&lt;/span> RpcContext&lt;span style="color:#719e07">.&lt;/span>getServerContext&lt;span style="color:#719e07">().&lt;/span>getAttachment&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;result&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// ...
