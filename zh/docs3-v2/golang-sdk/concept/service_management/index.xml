@@ -1,5 +1,4 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 服务治理</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/concept/service_management/</link><description>Recent content in 服务治理 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/docs3-v2/golang-sdk/concept/service_management/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: AOP 与可扩展机制</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/concept/service_management/aop_and_extension/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/concept/service_management/aop_and_extension/</guid><description>
-&lt;h1 id="组件加载与可扩展性">组件加载与可扩展性&lt;/h1>
 &lt;h2 id="1-extension-模块与-init-方法">1. extension 模块与 init 方法&lt;/h2>
 &lt;h3 id="11-接口与实现">1.1 接口与实现&lt;/h3>
 &lt;p>golang 中的一个接口往往伴随多个实现类，dubbo-go 提供了针对接口实现类的可插拔可扩展机制。降低模块之间的耦合性，方便开发者引入、自定义组件。&lt;/p>
@@ -65,6 +64,8 @@
 &lt;/li>
 &lt;li>
 &lt;p>框架启动，加载配置，配置中获取需要加载的模块key，根据key获取实例化对象。&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>用户也可以手动调用 extension 的 Get 方法，获取实例化对象并直接使用。&lt;/p>
 &lt;/li>
 &lt;/ol>
