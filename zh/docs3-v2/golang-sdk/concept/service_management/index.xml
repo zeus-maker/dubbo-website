@@ -76,13 +76,12 @@
 &lt;p>在 Dubbo-go 服务框架中，许多接口是基于 AOP 的思路进行设计的。例如 Invoker、Filter、LoadBalance、Router。&lt;/p>
 &lt;p>这些接口的多种实现往往组成一组调用链，单个实现类只处理自己所关注的逻辑。&lt;/p>
 &lt;p>相关阅读：&lt;a href="https://en.wikipedia.org/wiki/Aspect-oriented_programming">【AOP wikipedia】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 服务注册发现</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/concept/service_management/registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/concept/service_management/registry/</guid><description>
-&lt;h1 id="服务注册发现">服务注册发现&lt;/h1>
 &lt;h2 id="1-dubbo-的注册中心">1. Dubbo 的注册中心&lt;/h2>
 &lt;p>注册中心在 RPC 场景下负责保存服务端应用的信息。&lt;/p>
 &lt;p>服务端注册接口信息和到自身地址到注册中心，客户端从注册中心读取和订阅需要调用的地址列表。整个架构如图所示：&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/architecture.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://dubbo.apache.org/imgs/architecture.png" alt="img">&lt;/p>
 &lt;p>关于 Dubbo 服务发现细节，详情可参考 &lt;a href="https://dubbo.apache.org/zh/docs/concepts/service-discovery/">Dubbo 官网的概念介绍&lt;/a>&lt;/p>
-&lt;h2 id="2-概念">2. 概念&lt;/h2>
+&lt;h2 id="2-服务发现概念">2. 服务发现概念&lt;/h2>
 &lt;p>Dubbo 生态中，服务发现有以下主要概念：&lt;/p>
 &lt;ul>
 &lt;li>
@@ -139,7 +138,7 @@
 &lt;p>服务网格元数据是接口名到主机名到映射，用于客户端查询所需接口的主机名信息。&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="3-dubbo-go-支持的注册中心类型">3. Dubbo-go 支持的注册中心类型&lt;/h2>
+&lt;h2 id="3-dubbo-go-注册中心">3. Dubbo-go 注册中心&lt;/h2>
 &lt;p>Dubbo-go 支持的注册中心类型如下：&lt;/p>
 &lt;table>
 &lt;thead>
