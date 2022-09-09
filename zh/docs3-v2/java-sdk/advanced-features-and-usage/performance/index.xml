@@ -923,13 +923,17 @@ consumer端同样执行编译，在consumer的target下也会生成二进制文�
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo3.0-graalvm-support/resources.jpg" alt="">
 （可能会有缺漏没有生成的类信息，需要根据编译或运行时的报错信息手动添加。）&lt;/p>
 &lt;p>&lt;strong>完成以上几步后就可以进行项目的编译了。&lt;/strong>&lt;/p></description></item><item><title>Docs3-V2: 导出线程堆栈</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/performance/dump/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/performance/dump/</guid><description>
-&lt;p>当业务线程池满时，我们需要知道线程都在等待哪些资源、条件，以找到系统的瓶颈点或异常点。dubbo 通过 Jstack 自动导出线程堆栈来保留现场，方便排查问题。&lt;/p>
-&lt;p>默认策略:&lt;/p>
+&lt;h2 id="特性说明">特性说明&lt;/h2>
+&lt;p>dubbo 通过 Jstack 自动导出线程堆栈来保留现场，方便排查问题。&lt;/p>
+&lt;p>默认策略&lt;/p>
 &lt;ul>
 &lt;li>导出路径，user.home标识的用户主目录&lt;/li>
 &lt;li>导出间隔，最短间隔允许每隔10分钟导出一次&lt;/li>
 &lt;/ul>
-&lt;p>指定导出路径：&lt;/p>
+&lt;h2 id="使用场景">使用场景&lt;/h2>
+&lt;p>当业务线程池满时，我们需要知道线程都在等待哪些资源、条件，以找到系统的瓶颈点或异常点。&lt;/p>
+&lt;h2 id="使用方式">使用方式&lt;/h2>
+&lt;h3 id="指定导出路径">指定导出路径&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># dubbo.properties
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.dump.directory=/tmp
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:application&lt;/span> ...&lt;span style="color:#268bd2">&amp;gt;&lt;/span>
