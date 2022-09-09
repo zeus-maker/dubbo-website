@@ -755,18 +755,17 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;sayHello&amp;#34;&lt;/span> sticky=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:reference&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 支持 Graal VM</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/performance/support-graalvm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/performance/support-graalvm/</guid><description>
-&lt;p>dubbo3.0支持native-image文档&lt;/p>
-&lt;h2 id="概述">概述&lt;/h2>
-&lt;p>本文档将介绍将dubbo3.0项目接入GraalVM，进行native-image编译为二进制的流程。&lt;/p>
-&lt;p>关于GraalVm的更多信息可以阅读 &lt;a href="https://www.graalvm.org/docs/getting-started/container-images/">https://www.graalvm.org/docs/getting-started/container-images/&lt;/a> 此文档。&lt;/p>
-&lt;h2 id="使用样例">使用样例&lt;/h2>
+&lt;p>dubbo3.0 支持 native-image 文档&lt;/p>
+&lt;h2 id="特性说明">特性说明&lt;/h2>
+&lt;p>本文档将介绍将 dubbo3.0 项目接入 GraalVM，进行 native-image 编译为二进制的流程。&lt;/p>
+&lt;p>关于 GraalVm 的更多信息可以阅读 &lt;a href="https://www.graalvm.org/docs/getting-started/container-images/">https://www.graalvm.org/docs/getting-started/container-images/&lt;/a> 此文档。&lt;/p>
+&lt;h2 id="使用场景">使用场景&lt;/h2>
+&lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;p>在编译我们的dubbo项目之前，需要确保我们正基于graalVm的环境。&lt;/p>
-&lt;ol>
-&lt;li>安装GraalVM&lt;/li>
-&lt;/ol>
-&lt;p>进入https://www.graalvm.org/ 官网根据自己的系统选取最新版本安装：&lt;/p>
+&lt;h3 id="安装graalvm">安装GraalVM&lt;/h3>
+&lt;p>进入 &lt;a href="https://www.graalvm.org/">https://www.graalvm.org/&lt;/a> 官网根据自己的系统选取最新版本安装：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo3.0-graalvm-support/graalvmgw.jpg" alt="">&lt;/p>
-&lt;p>安装完成后，修改配置JAVA_HOME的路径，生效后查看本地jdk可以看到如下：&lt;/p>
+&lt;p>安装完成后，修改配置 JAVA_HOME 的路径，生效后查看本地 jdk 可以看到如下：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo3.0-graalvm-support/graalvm_env.jpg" alt="">
 这里我们使用的基于jdk1.8版本的GraalVM。&lt;/p>
 &lt;ul>
@@ -779,17 +778,13 @@
 &lt;p>由于目前编译native-image不支持代码动态生成编译，所以有关代码动态生成的部分需要我们手动先生成，这里提供了工具函数：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo3.0-graalvm-support/code_generator.jpg" alt="">
 执行CodeGenerator即可在dubbo-native模块下生成SPI代码。&lt;/p>
-&lt;ol>
-&lt;li>在根目录下执行install&lt;/li>
-&lt;/ol>
+&lt;h3 id="在根目录下执行install">在根目录下执行install&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>MacdeMacBook&lt;span style="color:#719e07">-&lt;/span>pro&lt;span style="color:#719e07">-&lt;/span>&lt;span style="color:#2aa198">3&lt;/span>:incubator&lt;span style="color:#719e07">-&lt;/span>dubbo mac$ pwd
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">/&lt;/span>Users&lt;span style="color:#719e07">/&lt;/span>mac&lt;span style="color:#719e07">/&lt;/span>Documents&lt;span style="color:#719e07">/&lt;/span>Mi&lt;span style="color:#719e07">/&lt;/span>project&lt;span style="color:#719e07">/&lt;/span>incubator&lt;span style="color:#719e07">-&lt;/span>dubbo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MacdeMacBook&lt;span style="color:#719e07">-&lt;/span>pro&lt;span style="color:#719e07">-&lt;/span>&lt;span style="color:#2aa198">3&lt;/span>:incubator&lt;span style="color:#719e07">-&lt;/span>dubbo mac$ mvn clean &lt;span style="color:#719e07">package&lt;/span> install &lt;span style="color:#719e07">-&lt;/span>Dmaven.test.skip=&lt;span style="color:#cb4b16">true&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
-&lt;li>编译demo项目&lt;/li>
-&lt;/ol>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="编译demo项目">编译demo项目&lt;/h3>
 &lt;p>这里我们提供了可直接进行编译的示例项目，dubbo-demo/dubbo-demo-native。上面步骤install完成后，先到dubbo-demo-native的provider下，执行native-image编译：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span> mvn clean &lt;span style="color:#719e07">package&lt;/span> &lt;span style="color:#719e07">-&lt;/span>P native &lt;span style="color:#719e07">-&lt;/span>Dmaven.test.skip=&lt;span style="color:#cb4b16">true&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里由于我们在maven中引入了native-image插件，所以直接-P native即可执行该插件。&lt;/p>
