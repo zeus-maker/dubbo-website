@@ -743,15 +743,13 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ## service default version
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dubbo.provider.version=1.0.0
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>接下来，我们就围绕这个示例，分别从配置格式、配置来源、加载流程三个方面对 Dubbo 配置的工作原理进行分析。&lt;/p>
-&lt;h2 id="配置格式">配置格式&lt;/h2>
+&lt;h2 id="1-配置格式">1 配置格式&lt;/h2>
 &lt;p>目前Dubbo支持的所有配置都是&lt;code>.properties&lt;/code>格式的，包括&lt;code>-D&lt;/code>、&lt;code>Externalized Configuration&lt;/code>等，&lt;code>.properties&lt;/code>中的所有配置项遵循一种&lt;code>path-based&lt;/code>的配置格式。&lt;/p>
 &lt;p>在Spring应用中也可以将属性配置放到&lt;code>application.yml&lt;/code>中，其树层次结构的方式可读性更好一些。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># 应用级配置
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>（无id）
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># 应用级配置（无id）
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.{config-type}.{config-item}={config-item-value}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 实例级配置
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>（指定id或name）
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 实例级配置（指定id或name）
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.{config-type}s.{config-id}.{config-item}={config-item-value}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.{config-type}s.{config-name}.{config-item}={config-item-value}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -765,13 +763,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 方法argument配置
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.reference.{interface-name}.{method-name}.{argument-index}.{config-item}={config-item-value}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="应用级与实例级">应用级与实例级&lt;/h2>
-&lt;h3 id="应用级配置">应用级配置&lt;/h3>
-&lt;blockquote>
-&lt;p>无id&lt;/p>
-&lt;/blockquote>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="11-应用级配置无id">1.1 应用级配置（无id）&lt;/h3>
 &lt;p>应用级配置的格式为：配置类型单数前缀，无id/name。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>## 应用级配置
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># 应用级配置（无id）
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.{config-type}.{config-item}={config-item-value}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>类似 &lt;code>application&lt;/code>、&lt;code>monitor&lt;/code>、&lt;code>metrics&lt;/code> 等都属于应用级别组件，因此仅允许配置单个实例；而 &lt;code>protocol&lt;/code>、&lt;code>registry&lt;/code> 等允许配置多个的组件，在仅需要进行单例配置时，可采用此节描述的格式。常见示例如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.name=demo-provider
@@ -781,10 +775,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.name=dubbo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocol.port=-1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="实例级配置">实例级配置&lt;/h3>
-&lt;blockquote>
-&lt;p>指定id或name&lt;/p>
-&lt;/blockquote>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="12-实例级配置指定id或name">1.2 实例级配置（指定id或name）&lt;/h3>
 &lt;p>针对某个实例的属性配置需要指定id或者name，其前缀格式为：配置类型复数前缀 + id/name。适用于 &lt;code>protocol&lt;/code>、&lt;code>registry&lt;/code> 等支持多例配置的组件。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># 实例级配置（指定id或name）
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.{config-type}s.{config-id}.{config-item}={config-item-value}
@@ -803,8 +794,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocols.hessian.name=hessian
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.protocols.hessian.port=8089
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="其他配置">其他配置&lt;/h2>
-&lt;h3 id="服务接口配置">服务接口配置&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="13-服务接口配置">1.3 服务接口配置&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.service.org.apache.dubbo.samples.api.DemoService.timeout=5000
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.reference.org.apache.dubbo.samples.api.DemoService.timeout=6000
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="方法配置">方法配置&lt;/h3>
@@ -828,11 +818,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:argument&lt;/span> index=&lt;span style="color:#2aa198">&amp;#34;0&amp;#34;&lt;/span> callback=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;/dubbo:method&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:reference&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="参数配置">参数配置&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="14-参数配置">1.4 参数配置&lt;/h3>
 &lt;p>parameters参数为map对象，支持xxx.parameters=[{key:value},{key:value}]方式进行配置。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.parameters=[{item1:value1},{item2:value2}]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.reference.org.apache.dubbo.samples.api.DemoService.parameters=[{item3:value3}]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="传输层配置">传输层配置&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="15-传输层配置">1.5 传输层配置&lt;/h3>
 &lt;p>triple协议采用Http2做底层通信协议，允许使用者自定义Http2的&lt;a href="https://datatracker.ietf.org/doc/html/rfc7540#section-6.5.2">6个settings参数&lt;/a>&lt;/p>
 &lt;p>配置格式如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># 通知对端header压缩索引表的上限个数
@@ -862,8 +852,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">initial-window-size&lt;/span>: &lt;span style="color:#2aa198">1048576&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">max-frame-size&lt;/span>: &lt;span style="color:#2aa198">32768&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">max-header-list-size&lt;/span>: &lt;span style="color:#2aa198">8192&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="配置说明">配置说明&lt;/h2>
-&lt;h3 id="属性与-xml-配置映射规则">属性与 XML 配置映射规则&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="16-属性与xml配置映射规则">1.6 属性与XML配置映射规则&lt;/h3>
 &lt;p>可以将 xml 的 tag 名和属性名组合起来，用 ‘.’ 分隔。每行一个属性。&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>dubbo.application.name=foo&lt;/code> 相当于 &lt;code>&amp;lt;dubbo:application name=&amp;quot;foo&amp;quot; /&amp;gt;&lt;/code>&lt;/li>
@@ -874,7 +863,7 @@
 &lt;li>&lt;code>dubbo.protocols.rmi.port=1099&lt;/code> 相当于 &lt;code>&amp;lt;dubbo:protocol id=&amp;quot;rmi&amp;quot; name=&amp;quot;rmi&amp;quot; port=&amp;quot;1099&amp;quot; /&amp;gt; &lt;/code>&lt;/li>
 &lt;li>&lt;code>dubbo.registries.china.address=10.20.153.10:9090&lt;/code> 相当于 &lt;code>&amp;lt;dubbo:registry id=&amp;quot;china&amp;quot; address=&amp;quot;10.20.153.10:9090&amp;quot; /&amp;gt;&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3 id="配置项单复数对照表">配置项单复数对照表&lt;/h3>
+&lt;h3 id="17-配置项单复数对照表">1.7 配置项单复数对照表&lt;/h3>
 &lt;p>复数配置的命名与普通单词变复数的规则相同：&lt;/p>
 &lt;ol>
 &lt;li>字母y结尾时，去掉y，改为ies&lt;/li>
@@ -967,7 +956,7 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="配置来源">配置来源&lt;/h3>
+&lt;h2 id="2-配置来源">2 配置来源&lt;/h2>
 &lt;p>Dubbo 默认支持 6 种配置来源：&lt;/p>
 &lt;ul>
 &lt;li>JVM System Properties，JVM -D 参数&lt;/li>
@@ -982,25 +971,25 @@
 &lt;li>如果在 classpath 下有超过一个 dubbo.properties 文件，比如，两个 jar 包都各自包含了 dubbo.properties，dubbo 将随机选择一个加载，并且打印错误日志。&lt;/li>
 &lt;li>Dubbo 可以自动加载 classpath 根目录下的 dubbo.properties，但是你同样可以使用 JVM 参数来指定路径：&lt;code>-Ddubbo.properties.file=xxx.properties&lt;/code>。&lt;/li>
 &lt;/ol>
-&lt;h3 id="覆盖关系">覆盖关系&lt;/h3>
+&lt;h3 id="21-覆盖关系">2.1 覆盖关系&lt;/h3>
 &lt;p>如果通过多种配置来源指定了相同的配置项，则会出现配置项的互相覆盖，具体覆盖关系和优先级请参考下一小节。&lt;/p>
-&lt;h2 id="配置加载流程">配置加载流程&lt;/h2>
-&lt;h3 id="处理流程">处理流程&lt;/h3>
+&lt;h2 id="3-配置加载流程">3 配置加载流程&lt;/h2>
+&lt;h3 id="31-处理流程">3.1 处理流程&lt;/h3>
 &lt;p>Dubbo 配置加载大概分为两个阶段：&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/config/config-load.svg" alt="配置加载流程">&lt;/p>
 &lt;ul>
 &lt;li>第一阶段为DubboBootstrap初始化之前，在Spring context启动时解析处理XML配置/注解配置/Java-config 或者是执行API配置代码，创建config bean并且加入到ConfigManager中。&lt;/li>
 &lt;li>第二阶段为DubboBootstrap初始化过程，从配置中心读取外部配置，依次处理实例级属性配置和应用级属性配置，最后刷新所有配置实例的属性，也就是&lt;a href="../principle#32-%E5%B1%9E%E6%80%A7%E8%A6%86%E7%9B%96">属性覆盖&lt;/a>。&lt;/li>
 &lt;/ul>
-&lt;h2 id="属性覆盖">属性覆盖&lt;/h2>
+&lt;h3 id="32-属性覆盖">3.2 属性覆盖&lt;/h3>
 &lt;p>发生属性覆盖可能有两种情况，并且二者可能是会同时发生的：&lt;/p>
 &lt;ol>
 &lt;li>不同配置源配置了相同的配置项&lt;/li>
 &lt;li>相同配置源，但在不同层次指定了相同的配置项&lt;/li>
 &lt;/ol>
-&lt;h3 id="不同配置源">不同配置源&lt;/h3>
+&lt;h4 id="321-不同配置源">3.2.1 不同配置源&lt;/h4>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/configuration.jpg" alt="覆盖关系">&lt;/p>
-&lt;h3 id="相同配置源">相同配置源&lt;/h3>
+&lt;h4 id="321-相同配置源">3.2.1 相同配置源&lt;/h4>
 &lt;p>属性覆盖是指用配置的属性值覆盖config bean实例的属性，类似Spring &lt;a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/config/PropertyOverrideConfigurer.html">PropertyOverrideConfigurer&lt;/a> 的作用。&lt;/p>
 &lt;blockquote>
 &lt;p>Property resource configurer that overrides bean property values in an application context definition. It pushes values from a properties file into bean definitions.
@@ -1019,7 +1008,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>属性覆盖处理流程：&lt;/p>
 &lt;p>按照优先级从高到低依次查找，如果找到此前缀开头的属性，则选定使用这个前缀提取属性，忽略后面的配置。&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/config/properties-override.svg" alt="属性覆盖流程">&lt;/p>
-&lt;h2 id="外部化配置">外部化配置&lt;/h2>
+&lt;h3 id="33-外部化配置">3.3 外部化配置&lt;/h3>
 &lt;p>外部化配置目的之一是实现配置的集中式管理，这部分业界已经有很多成熟的专业配置系统如 Apollo, Nacos 等，Dubbo 所做的主要是保证能配合这些系统正常工作。&lt;/p>
 &lt;p>外部化配置和其他本地配置在内容和格式上并无区别，可以简单理解为 &lt;code>dubbo.properties&lt;/code> 的外部化存储，配置中心更适合将一些公共配置如注册中心、元数据中心配置等抽取以便做集中管理。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># 将注册中心地址、元数据中心地址等配置集中管理，可以做到统一环境、减少开发侧感知。
@@ -1042,7 +1031,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 外部化配置有全局和应用两个级别，全局配置是所有应用共享的，应用级配置是由每个应用自己维护且只对自身可见的。当前已支持的扩展实现有 Zookeeper、Apollo、Nacos。&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="外部化配置使用方式">外部化配置使用方式&lt;/h3>
+&lt;h4 id="331-外部化配置使用方式">3.3.1 外部化配置使用方式&lt;/h4>
 &lt;ol>
 &lt;li>增加 config-center 配置&lt;/li>
 &lt;/ol>
@@ -1064,7 +1053,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">name&lt;/span>: demo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config-center
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">address&lt;/span>: nacos://127.0.0.1:8848
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="自行加载外部化配置">自行加载外部化配置&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="332-自行加载外部化配置">3.3.2 自行加载外部化配置&lt;/h4>
 &lt;p>所谓 Dubbo 对配置中心的支持，本质上就是把 &lt;code>.properties&lt;/code> 从远程拉取到本地，然后和本地的配置做一次融合。理论上只要 Dubbo 框架能拿到需要的配置就可以正常的启动，它并不关心这些配置是自己加载到的还是应用直接塞给它的，所以Dubbo还提供了以下API，让用户将自己组织好的配置塞给 Dubbo 框架（配置加载的过程是用户要完成的），这样 Dubbo 框架就不再直接和 Apollo 或 Zookeeper 做读取配置交互。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// 应用自行加载配置
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> String&lt;span style="color:#719e07">&amp;gt;&lt;/span> dubboConfigurations &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> HashMap&lt;span style="color:#719e07">&amp;lt;&amp;gt;();&lt;/span>
