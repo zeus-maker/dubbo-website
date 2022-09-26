@@ -38,9 +38,9 @@
 &lt;p>安装:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/apache/dubbo.git
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> dubbo/dubbo-demo/dubbo-demo-xml
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>运行 dubbo-demo-xml-consumer 中的 org.apache.dubbo.demo.consumer.Application
-请确保先启动 Provider，如果使用 Intellij Idea 请加上 -Djava.net.preferIPv4Stack=true&lt;/p>
-&lt;p>配置:&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>运行 dubbo-demo-xml-consumer 中的 org.apache.dubbo.demo.consumer.Application
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>请确保先启动 Provider，如果使用 Intellij Idea 请加上 -Djava.net.preferIPv4Stack&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#b58900">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>resources/spring/dubbo-consumer.xml
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>修改其中的dubbo:registry，替换成Provider提供的注册中心地址, 如：
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;dubbo:registry &lt;span style="color:#268bd2">address&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;zookeeper://127.0.0.1:2181&amp;#34;&lt;/span>/&amp;gt;
