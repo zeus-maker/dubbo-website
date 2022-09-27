@@ -2057,6 +2057,26 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;td>扩展预留，可扩展定义任意参数，所有扩展参数都将原样反映在 URL 配置上&lt;/td>
 &lt;td>2.0.0以上版本&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>providedBy&lt;/td>
+&lt;td>provided-by&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>可选&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Service Mesh&lt;/td>
+&lt;td>当dubbo.consumer.meshEnable=true，Dubbo默认会将请求转换成K8S标准格式，结合VirtualService和DestinationRule进行流量治理，此时consumer端可以感知到provider。该值应当与声明的&lt;code>k8s service&lt;/code>一致&lt;/td>
+&lt;td>3.1.0以上版本&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>providerNamespace&lt;/td>
+&lt;td>provider-namespace&lt;/td>
+&lt;td>string&lt;/td>
+&lt;td>可选&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Service Mesh&lt;/td>
+&lt;td>当dubbo.consumer.meshEnable=true，Dubbo默认会将请求转换成K8S标准格式，结合VirtualService和DestinationRule进行流量治理，此时consumer端可以感知到provider。请设置providerNamespace，使consumer端按照此配置寻址provider dns，默认&lt;code>default&lt;/code>&lt;/td>
+&lt;td>3.1.1以上版本&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="registry">registry&lt;/h3>
