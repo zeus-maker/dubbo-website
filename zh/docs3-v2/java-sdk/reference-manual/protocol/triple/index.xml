@@ -718,7 +718,18 @@ onCompleted&lt;/p>
 &lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/migration/ApiMigrationTriProvider.java">Provider&lt;/a>
 和 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/migration/ApiMigrationTriConsumer.java">Consumer&lt;/a> 完成调用，输出如下:&lt;/p>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/migration/tri/dubbo3-tri-migration-tri-tri-result.png" alt="result">&lt;/p></description></item><item><title>Docs3-V2: Streaming 通信</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/streaming/</guid><description>
-&lt;h2 id="开启-triple-新特性--stream-流">开启 Triple 新特性 —— Stream (流)&lt;/h2>
+&lt;h2 id="流的实现原理">流的实现原理&lt;/h2>
+&lt;p>&lt;code>Triple&lt;/code>协议的流模式&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>从协议层来说，&lt;code>Triple&lt;/code> 是建立在 &lt;code>HTTP2&lt;/code> 基础上的，所以直接拥有所有 &lt;code>HTTP2&lt;/code> 的能力，故拥有了分 &lt;code>stream&lt;/code> 和全双工的能力。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>框架层来说，&lt;code>StreamObserver&lt;/code> 作为流的接口提供给用户，用于入参和出参提供流式处理。框架在收发 stream data 时进行相应的接口调用, 从而保证流的生命周期完整。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="开启-triple-新特性">开启 Triple 新特性&lt;/h2>
+&lt;h3 id="stream-流">Stream 流&lt;/h3>
 &lt;p>Stream 是 Dubbo3 新提供的一种调用类型，在以下场景时建议使用流的方式:&lt;/p>
 &lt;ul>
 &lt;li>接口需要发送大量数据，这些数据无法被放在一个 RPC 的请求或响应中，需要分批发送，但应用层如果按照传统的多次 RPC 方式无法解决顺序和性能的问题，如果需要保证有序，则只能串行发送&lt;/li>
@@ -748,10 +759,8 @@ onCompleted&lt;/p>
 &lt;li>全双工，发送不需要等待&lt;/li>
 &lt;li>支持取消和超时&lt;/li>
 &lt;/ul>
-&lt;h3 id="非-pb-序列化的流">非 PB 序列化的流&lt;/h3>
-&lt;ol>
-&lt;li>api&lt;/li>
-&lt;/ol>
+&lt;h2 id="非-pb-序列化的流">非 PB 序列化的流&lt;/h2>
+&lt;h3 id="api">api&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">IWrapperGreeter&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> StreamObserver&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">sayHelloStream&lt;/span>&lt;span style="color:#719e07">(&lt;/span>StreamObserver&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">&amp;gt;&lt;/span> response&lt;span style="color:#719e07">);&lt;/span>
@@ -762,9 +771,7 @@ onCompleted&lt;/p>
 &lt;p>Stream 方法的方法入参和返回值是严格约定的，为防止写错而导致问题，Dubbo3 框架侧做了对参数的检查, 如果出错则会抛出异常。
 对于 &lt;code>双向流(BIDIRECTIONAL_STREAM)&lt;/code>, 需要注意参数中的 &lt;code>StreamObserver&lt;/code> 是响应流，返回参数中的 &lt;code>StreamObserver&lt;/code> 为请求流。&lt;/p>
 &lt;/blockquote>
-&lt;ol start="2">
-&lt;li>实现类&lt;/li>
-&lt;/ol>
+&lt;h3 id="实现类">实现类&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">WrapGreeterImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> WrapGreeter &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//...
@@ -799,9 +806,7 @@ onCompleted&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> response&lt;span style="color:#719e07">.&lt;/span>onCompleted&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
-&lt;li>调用方式&lt;/li>
-&lt;/ol>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="调用方式">调用方式&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>delegate&lt;span style="color:#719e07">.&lt;/span>sayHelloServerStream&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;server stream&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#719e07">new&lt;/span> StreamObserver&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">&amp;gt;()&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@Override&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">onNext&lt;/span>&lt;span style="color:#719e07">(&lt;/span>String data&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -855,13 +860,4 @@ onCompleted&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>dubbo&lt;span style="color:#719e07">.&lt;/span>common&lt;span style="color:#719e07">.&lt;/span>stream&lt;span style="color:#719e07">.&lt;/span>StreamObserver&lt;span style="color:#719e07">&amp;lt;&lt;/span>org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>dubbo&lt;span style="color:#719e07">.&lt;/span>sample&lt;span style="color:#719e07">.&lt;/span>tri&lt;span style="color:#719e07">.&lt;/span>GreeterRequest&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">greetStream&lt;/span>&lt;span style="color:#719e07">(&lt;/span>org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>dubbo&lt;span style="color:#719e07">.&lt;/span>common&lt;span style="color:#719e07">.&lt;/span>stream&lt;span style="color:#719e07">.&lt;/span>StreamObserver&lt;span style="color:#719e07">&amp;lt;&lt;/span>org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>dubbo&lt;span style="color:#719e07">.&lt;/span>sample&lt;span style="color:#719e07">.&lt;/span>tri&lt;span style="color:#719e07">.&lt;/span>GreeterReply&lt;span style="color:#719e07">&amp;gt;&lt;/span> responseObserver&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="流的实现原理">流的实现原理&lt;/h3>
-&lt;p>&lt;code>Triple&lt;/code>协议的流模式是怎么支持的呢？&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>从协议层来说，&lt;code>Triple&lt;/code> 是建立在 &lt;code>HTTP2&lt;/code> 基础上的，所以直接拥有所有 &lt;code>HTTP2&lt;/code> 的能力，故拥有了分 &lt;code>stream&lt;/code> 和全双工的能力。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>框架层来说，&lt;code>StreamObserver&lt;/code> 作为流的接口提供给用户，用于入参和出参提供流式处理。框架在收发 stream data 时进行相应的接口调用, 从而保证流的生命周期完整。&lt;/p>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
