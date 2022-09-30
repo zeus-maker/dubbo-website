@@ -2075,7 +2075,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;td>&lt;/td>
 &lt;td>Service Mesh&lt;/td>
 &lt;td>当dubbo.consumer.meshEnable=true，Dubbo默认会将请求转换成K8S标准格式，结合VirtualService和DestinationRule进行流量治理，此时consumer端可以感知到provider。请设置providerNamespace，使consumer端按照此配置寻址provider dns，默认&lt;code>default&lt;/code>&lt;/td>
-&lt;td>3.1.1以上版本&lt;/td>
+&lt;td>3.1.2以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
