@@ -338,7 +338,6 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 &lt;/ul>
 &lt;p>&lt;strong>实现原理&lt;/strong>&lt;/p>
 &lt;p>dubbo 客户端序列化协议是根据服务端的注册配置来选择的（即服务端的&lt;code>serialization&lt;/code>配置）。在请求阶段 dubbo 会把客户端的序列化协议组装到请求头上，服务端在进行反序列化时会根据请求头来确定反序列化协议。&lt;strong>所以，如果服务端和客户端的版本不一致就可能会出现客户端序列化不了的情况。&lt;/strong> 为了解决这个情况，3.2.0 在客户端序列化的时候会优先使用&lt;code>prefer-serialization&lt;/code>配置的协议，如果不支持&lt;code>prefer-serialization&lt;/code>相关的协议，才会使用&lt;code>serialization&lt;/code>配置的协议。（可以把&lt;code>serialization&lt;/code>理解为一个兜底的配置）&lt;/p></description></item><item><title>Docs3-V2: 应用级服务发现</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/</guid><description/></item><item><title>Docs3-V2: Protobuf与Interface对比</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/upgrades-and-compatibility/protobufinterface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/upgrades-and-compatibility/protobufinterface/</guid><description>
-&lt;h1 id="protobuf与interface这2种idl的差异">Protobuf与Interface这2种IDL的差异&lt;/h1>
 &lt;h2 id="1-数据类型">1. 数据类型&lt;/h2>
 &lt;h3 id="11-基本类型">1.1. 基本类型&lt;/h3>
 &lt;table>
@@ -414,8 +413,8 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 &lt;blockquote>
 &lt;p>[注]在Java中，无符号的32位和64位整数使用它们的有符号对数来表示，顶部位只存储在符号位中。&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="12-复合类型">1.2. 复合类型&lt;/h3>
-&lt;h4 id="121-枚举">1.2.1. 枚举&lt;/h4>
+&lt;h2 id="2-复合类型">2. 复合类型&lt;/h2>
+&lt;h3 id="21-枚举">2.1. 枚举&lt;/h3>
 &lt;ul>
 &lt;li>原始pb代码&lt;/li>
 &lt;/ul>
@@ -433,7 +432,7 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 &lt;blockquote>
 &lt;p>枚举是常量，因此采用大写&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="122-数组">1.2.2. 数组&lt;/h3>
+&lt;h3 id="22-数组">2.2. 数组&lt;/h3>
 &lt;ul>
 &lt;li>原始pb代码&lt;/li>
 &lt;/ul>
@@ -447,9 +446,9 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 &lt;blockquote>
 &lt;p>底层实际上是1个ArrayList&lt;/p>
 &lt;/blockquote>
-&lt;h3 id="223-集合">2.2.3. 集合&lt;/h3>
+&lt;h3 id="23-集合">2.3. 集合&lt;/h3>
 &lt;p>PB不支持无序、不重复的集合，只能 &lt;code>借用数组实现&lt;/code>，需要 &lt;code>自行去重&lt;/code>。&lt;/p>
-&lt;h3 id="224-字典">2.2.4. 字典&lt;/h3>
+&lt;h3 id="24-字典">2.4. 字典&lt;/h3>
 &lt;ul>
 &lt;li>原始pb代码&lt;/li>
 &lt;/ul>
@@ -460,7 +459,7 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 &lt;li>生成的java代码&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/docs/advanced/protobufinterface/124234654-e4568080-db46-11eb-9700-b30022ebee21.png" alt="image">&lt;/p>
-&lt;h3 id="225-嵌套">2.2.5. 嵌套&lt;/h3>
+&lt;h3 id="25-嵌套">2.5. 嵌套&lt;/h3>
 &lt;ul>
 &lt;li>原始pb代码&lt;/li>
 &lt;/ul>
