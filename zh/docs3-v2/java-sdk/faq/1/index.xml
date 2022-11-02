@@ -79,6 +79,16 @@
 &lt;/ol>
 &lt;h2 id="另请参阅">另请参阅&lt;/h2>
 &lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">注册中心的配置项参考手册&lt;/a>&lt;/p>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-10 - 读写注册中心服务缓存失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/10/</guid><description>
+&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;ol>
+&lt;li>多个 Dubbo 进程使用了同一个缓存文件。&lt;/li>
+&lt;li>在多注册中心的情况下，指定了多个注册中心使用同一文件存储。&lt;/li>
+&lt;/ol>
+&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;p>该错误常与 1-9 错误共同出现。检查是否有多个 Dubbo 进程使用了同一个缓存文件或者是否指定多个注册中心使用同一缓存文件。&lt;/p>
+&lt;h2 id="另请参阅">另请参阅&lt;/h2>
+&lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">注册中心的配置项参考手册&lt;/a>&lt;/p>
 &lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-12 - “注册服务” 的实例均已销毁</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</guid><description>
 &lt;h2 id="可能的原因">可能的原因&lt;/h2>
 &lt;p>在 Dubbo 优雅停机的过程中，通过调用 &lt;code>AbstractRegistryFactory&lt;/code> 的 &lt;code>destroyAll&lt;/code> 进行解注册。
