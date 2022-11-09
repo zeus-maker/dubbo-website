@@ -4650,7 +4650,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-Ddubbo.config.mode&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">strict&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 环境变量&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.config.mode&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">strict&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>DUBBO_CONFIG_MODE&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">strict&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 外部配置(配置中心)、Spring应用的Environment、dubbo.properties&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.config.mode&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">strict&lt;/span>
