@@ -78,6 +78,9 @@
 &lt;h5 class="mt-3">&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/logger-management/">日志框架适配及运行时管理&lt;/a>&lt;/h5>
 &lt;/div>
 &lt;div>
+&lt;h5 class="mt-3">&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/isolation-executor/">线程池隔离&lt;/a>&lt;/h5>
+&lt;/div>
+&lt;div>
 &lt;h5 class="mt-3">&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/">Kubernetes 生命周期探针&lt;/a>&lt;/h5>
 &lt;/div>
 &lt;div>
