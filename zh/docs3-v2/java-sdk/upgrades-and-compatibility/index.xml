@@ -593,14 +593,14 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 &lt;li>请检查注册中心 URL 上是否已经配置了 group 属性，如果是的话需要检查服务端和消费端的 group 是否都一致，如果不一致请修改为一致&lt;/li>
 &lt;li>如果不希望 group 重新对齐到 Nacos 注册中心中的 group 分组，可以配置 &lt;code>dubbo.nacos-service-discovery.use-default-group=false&lt;/code> 全局属性值忽略该功能&lt;/li>
 &lt;/ol></description></item><item><title>Docs3-V2: 3.1 升级至 3.2 操作指南</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/upgrades-and-compatibility/3.1-to-3.2-compatibility-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/upgrades-and-compatibility/3.1-to-3.2-compatibility-guide/</guid><description>
-&lt;h2 id="功能修改点">功能修改点&lt;/h2>
-&lt;h3 id="1-传递依赖变更">1. 传递依赖变更&lt;/h3>
+&lt;h1 id="功能修改点">功能修改点&lt;/h1>
+&lt;h2 id="1-传递依赖变更">1. 传递依赖变更&lt;/h2>
 &lt;ul>
 &lt;li>Dubbo 3.2.0 版本开始默认不再在 &lt;code>dubbo-all&lt;/code> 中 shade &lt;code>hessian-lite&lt;/code> 的代码，而是使用传递依赖传递。如果你的应用中不需要使用 &lt;code>hessian-lite&lt;/code>，可以将 &lt;code>hessian-lite&lt;/code> 从依赖中移除。&lt;/li>
 &lt;li>Dubbo 3.2.0 版本开始在 &lt;code>dubbo-all&lt;/code> 中不再传递 &lt;code>gson&lt;/code>、&lt;code>fastjson&lt;/code> 依赖，如果你的应用中需要使用 &lt;code>gson&lt;/code>、&lt;code>fastjson&lt;/code>，请手动将 &lt;code>gson&lt;/code>、&lt;code>fastjson&lt;/code> 依赖添加到应用中。&lt;/li>
 &lt;li>Dubbo 3.2.0 版本在 &lt;code>dubbo-all&lt;/code> 中传递 &lt;code>fastjson2&lt;/code> 依赖。&lt;/li>
 &lt;/ul>
-&lt;h3 id="2-默认序列化切换">2. 默认序列化切换&lt;/h3>
+&lt;h2 id="2-默认序列化切换">2. 默认序列化切换&lt;/h2>
 &lt;ul>
 &lt;li>Dubbo 3.2.0 版本开始默认序列化方式从 &lt;code>hessian2&lt;/code> 切换为 &lt;code>fastjson2&lt;/code>，对于升级到 3.2.0 的应用，Dubbo 会自动尝试采用 &lt;code>fastjson2&lt;/code> 进行序列化。&lt;/li>
 &lt;/ul>
@@ -615,7 +615,7 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 具体协议格式可以参考：&lt;a href="https://github.com/alibaba/fastjson2/wiki/jsonb_format_cn">JSONB 格式&lt;/a>&lt;/p>
 &lt;h4 id="q4如果我不想使用-fastjson2怎么办">Q4：如果我不想使用 &lt;code>fastjson2&lt;/code>，怎么办？&lt;/h4>
 &lt;p>如果你不想使用 &lt;code>fastjson2&lt;/code>，可以配置 &lt;code>prefer-serialization&lt;/code> 为 &lt;code>hessian2&lt;/code> 覆盖默认配置。（如 &lt;code>dubbo.provider.prefer-serialization=fastjson2,hessian2&lt;/code>） 如果没有特殊的需求，我们不建议仍继续使用 &lt;code>hessian2&lt;/code>。&lt;/p>
-&lt;h3 id="3-默认内部序列化工具切换">3. 默认内部序列化工具切换&lt;/h3>
+&lt;h2 id="3-默认内部序列化工具切换">3. 默认内部序列化工具切换&lt;/h2>
 &lt;ul>
 &lt;li>Dubbo 3.2.0 版本开始默认&lt;strong>内部&lt;/strong>序列化工具从 &lt;code>fastjson&lt;/code> 切换为 &lt;code>fastjson2&lt;/code>。&lt;/li>
 &lt;/ul>
@@ -628,7 +628,22 @@ Grpc 使用 &lt;code>compiler&lt;/code> 将编写的 &lt;code>proto&lt;/code> �
 &lt;p>Dubbo 支持多种序列化框架自动切换，如果你的环境中没有 &lt;code>fastjson2&lt;/code>，Dubbo 会自动尝试切换到 &lt;code>fastsjon&lt;/code> 或 &lt;code>gson&lt;/code>。&lt;/p>
 &lt;h4 id="q4我想指定-dubbo-内部序列化工具怎么办">Q4：我想指定 Dubbo 内部序列化工具，怎么办？&lt;/h4>
 &lt;p>可以配置 &lt;code>dubbo.json-framework.prefer&lt;/code> 参数，如 &lt;code>-Ddubbo.json-framework.prefer=gson&lt;/code>。&lt;/p>
-&lt;h3 id="4-triple-协议支持传递自定义异常">4. Triple 协议支持传递自定义异常&lt;/h3>
+&lt;h2 id="4-triple-协议支持传递自定义异常">4. Triple 协议支持传递自定义异常&lt;/h2>
 &lt;ul>
 &lt;li>Dubbo 3.2.0 版本开始 Triple 协议支持回传自定义异常，而不是只能回传 &lt;code>RpcException&lt;/code>。如果服务接口会抛出异常的，在 Dubbo 3.2.0 版本以后将默认按照 Dubbo 协议一样回传自定义异常对象。&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul>
+&lt;h2 id="5-默认关闭推空保护">5. 默认关闭推空保护&lt;/h2>
+&lt;ul>
+&lt;li>Dubbo 3.2.0 版本开始默认关闭推空保护，即使注册中心推送空地址，Dubbo 也将不会保留最后一批 provider 信息。
+如果需要开启推空保护，可以配置 &lt;code>dubbo.application.enable-empty-protection&lt;/code> 为 &lt;code>true&lt;/code>。&lt;/li>
+&lt;/ul>
+&lt;h4 id="faq-2">FAQ&lt;/h4>
+&lt;h4 id="q1关闭推空保护对我有什么影响">Q1：关闭推空保护对我有什么影响？&lt;/h4>
+&lt;p>在绝大部分场景下没有影响。
+推空保护的目的是在注册中心出现故障并且主动推送空地址的时候，Dubbo 保留最后一批 provider 信息，以保证服务可用。
+但是在大多数注册中心出现故障的时候，注册中心也不会推送空地址，只有一些特殊情况才会出现。
+但如果开启推空保护，将对 Dubbo 的 Fallback 逻辑、心跳逻辑等造成较大的影响，给开发使用 Dubbo 带来困扰。&lt;/p>
+&lt;h4 id="q2我想开启推空保护怎么办">Q2：我想开启推空保护，怎么办？&lt;/h4>
+&lt;p>如果在生产上为了高可用，需要开启推空保护，可以配置 &lt;code>dubbo.application.enable-empty-protection&lt;/code> 为 &lt;code>true&lt;/code>。
+目前已知开启推空保护会导致服务端应用从 &lt;code>2.6.x&lt;/code>、&lt;code>2.7.x&lt;/code> 等仅支持接口级服务发现的版本升级到 &lt;code>3.x&lt;/code> 之后回滚到原来版本出现异常，极端场景下会导致服务调用失败。
+此外，开启推空保护后在服务端地址真的为空的时候出现较多的心跳异常、日志异常等。&lt;/p></description></item></channel></rss>
