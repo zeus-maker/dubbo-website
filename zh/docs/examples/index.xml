@@ -1,9 +1,9 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 基本功能介绍与示例</title><link>https://dubbo.apache.org/zh/docs/examples/</link><description>Recent content in 基本功能介绍与示例 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/docs/examples/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 路由规则</title><link>https://dubbo.apache.org/zh/docs/examples/routing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/examples/routing/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 基本功能介绍与示例</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/examples/</link><description>Recent content in 基本功能介绍与示例 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/examples/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 路由规则</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/examples/routing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/examples/routing/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/">最新版本&lt;/a>。&lt;/p>
-&lt;/div></description></item><item><title>Docs: 应用级服务发现</title><link>https://dubbo.apache.org/zh/docs/examples/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/examples/service-discovery/</guid><description>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/">最新版本&lt;/a>。&lt;/p>
+&lt;/div></description></item><item><title>Docs: 应用级服务发现</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/examples/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/examples/service-discovery/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;h2 id="应用级服务发现简介">应用级服务发现简介&lt;/h2>
 &lt;p>社区版本 Dubbo 从 2.7.5 版本开始，新引入了一种基于应用粒度的服务发现机制，这是我们为 Dubbo 适配云原生基础设施的一步重要探索，也是 Dubbo 迈出的重要一步。
@@ -16,7 +16,7 @@
 &lt;li>提升性能与可伸缩性。支持超大规模集群的服务治理一直以来都是 Dubbo 的优势，通过引入应用级服务发现模型，从本质上解决了注册中心地址数据的存储与推送压力，相应的 Consumer 侧的地址计算压力也成数量级下降；集群规模也开始变得可预测、可评估（与 RPC 接口数量无关，只与实例部署规模相关）。&lt;/li>
 &lt;/ul>
 &lt;p>这样设计的全新的服务发现模型，在架构兼容性、可伸缩性上都给 Dubbo3 带来了更大的优势。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/servicediscovery_mem.png" alt="//imgs/v3/concepts/servicediscovery_mem.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/servicediscovery_mem.png" alt="//imgs/v3/concepts/servicediscovery_mem.png">&lt;/p>
 &lt;p>在架构兼容性上，Dubbo3 复用下层基础设施的服务抽象能力成为了可能；另一方面，如 Spring Cloud 等业界其它微服务解决方案也沿用这种模型，
 在打通了地址发现之后，使得用户探索用 Dubbo 连接异构的微服务体系成为了一种可能。&lt;/p>
 &lt;h2 id="接口粒度-vs-应用粒度">接口粒度 VS 应用粒度&lt;/h2>
@@ -78,13 +78,13 @@ Mesh 尚未大规模铺开，且其更适合对流量管控更关注的应用，
 &lt;li>优势：部署结构清晰、地址推送量小&lt;/li>
 &lt;li>缺点：地址订阅需要指定应用名， provider 应用变更（拆分）需消费端感知；RPC 调用无法全自动同步&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/spring-cloud.png" alt="//imgs/v3/concepts/spring-cloud.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/spring-cloud.png" alt="//imgs/v3/concepts/spring-cloud.png">&lt;/p>
 &lt;h4 id="dubbo">Dubbo&lt;/h4>
 &lt;p>Dubbo 通过注册中心同时同步了实例地址和 RPC 方法，因此其能实现 RPC 过程的自动同步，面向 RPC 编程、面向 RPC 治理，对后端应用的拆分消费端无感知，其缺点则是地址推送数量变大，和 RPC 方法成正比。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/dubbo.png" alt="//imgs/v3/concepts/Dubbo.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/dubbo.png" alt="//imgs/v3/concepts/Dubbo.png">&lt;/p>
 &lt;h3 id="更大规模的微服务集群---解决性能瓶颈">更大规模的微服务集群 - 解决性能瓶颈&lt;/h3>
 &lt;p>这部分涉及到和注册中心、配置中心的交互，关于不同模型下注册中心数据的变化，为更直观的对比服务模型变更带来的推送效率提升，我们来通过一个示例看一下不同模型注册中心的对比：&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/service-discovery-6.png" alt="img6">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/service-discovery-6.png" alt="img6">&lt;/p>
 &lt;p>图中左边是微服务框架的一个典型工作流程，Provider 和 Consumer 通过注册中心实现自动化的地址通知。其中，Provider 实例的信息如图中表格所示：
 应用 DEMO 包含三个接口 DemoService 1、DemoService 2、DemoService 3，当前实例的 ip 地址为 10.210.134.30。&lt;/p>
 &lt;ul>
@@ -112,14 +112,14 @@ Provier 应用数量往往要超过 10 个，而具体到其要消费（订阅�
 &lt;p>服务自省乍一听比较高大上，但其实简单来说服务自省主要终于在应用级服务发现场景下实现接口到应用、应用到接口的映射关系。
 在注册中心不再同步 RPC 服务信息后，服务自省在服务消费端和提供端之间建立了一条内置的 RPC 服务信息协商机制，这也是&amp;quot;服务自省&amp;quot;这个名字的由来。
 服务端实例会暴露一个预定义的 MetadataService RPC 服务，消费端通过调用 MetadataService 获取每个实例 RPC 方法相关的配置信息。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/metadataservice-rpc.png" alt="//imgs/v3/concepts/metadataservice-rpc.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/metadataservice-rpc.png" alt="//imgs/v3/concepts/metadataservice-rpc.png">&lt;/p>
 &lt;h3 id="服务自省的工作流程">服务自省的工作流程&lt;/h3>
 &lt;p>以下是服务自省的一个完整工作流程图，详细描述了服务注册、服务发现、MetadataService、RPC 调用间的协作流程。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/service-discovery-9.png" alt="img9">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/service-discovery-9.png" alt="img9">&lt;/p>
 &lt;h3 id="注册中心不再包含rpc信息">注册中心不再包含RPC信息&lt;/h3>
 &lt;p>应用服务发现模型强调注册中心不再包含 RPC 信息，以&amp;quot;应用 - 实例列表&amp;quot;来组织，metadata 只包含当前 instance 节点相关的信息，不涉及 RPC 服务粒度的信息。
 总体信息概括如下：实例地址、实例各种环境标、metadata service 元数据、其他少量必要属性。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/application-instance.png" alt="//imgs/v3/concepts/application-instance.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/application-instance.png" alt="//imgs/v3/concepts/application-instance.png">&lt;/p>
 &lt;h3 id="元数据同步机制">元数据同步机制&lt;/h3>
 &lt;ul>
 &lt;li>内建 MetadataService&lt;/li>
@@ -130,11 +130,11 @@ Provier 应用数量往往要超过 10 个，而具体到其要消费（订阅�
 &lt;/ul>
 &lt;p>复用 2.7 版本中引入的元数据中心，provider 实例启动后，会尝试将内部的 RPC 服务组织成元数据的格式到元数据中心，而 consumer 则在每次收到注册中心推送更新后，主动查询元数据中心。
 注意 consumer 端查询元数据中心的时机，是等到注册中心的地址更新通知之后。也就是通过注册中心下发的数据，我们能明确的知道何时某个实例的元数据被更新了，此时才需要去查元数据中心。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/metadatacenter.png" alt="//imgs/v3/concepts/metadatacenter.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/metadatacenter.png" alt="//imgs/v3/concepts/metadatacenter.png">&lt;/p>
 &lt;h3 id="构建-rpc-服务到应用名的映射关系">构建 RPC 服务到应用名的映射关系&lt;/h3>
 &lt;p>为了使整个开发流程对老的 Dubbo 用户更透明，同时避免指定 provider 对可扩展性带来的影响，我们设计了一套 RPC 服务到应用名的映射关系，
 以尝试在 consumer 端自动完成 RPC 服务到 provider 应用名的转换。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/concepts/application-rpc-mapping.png" alt="//imgs/v3/concepts/application-rpc-mapping.png">&lt;/p></description></item><item><title>Docs: 动态修改运行态配置项</title><link>https://dubbo.apache.org/zh/docs/examples/configuration-override/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs/examples/configuration-override/</guid><description>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/application-rpc-mapping.png" alt="//imgs/v3/concepts/application-rpc-mapping.png">&lt;/p></description></item><item><title>Docs: 动态修改运行态配置项</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/examples/configuration-override/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/examples/configuration-override/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/config-rule/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/config-rule/">最新版本&lt;/a>。&lt;/p>
 &lt;/div></description></item></channel></rss>

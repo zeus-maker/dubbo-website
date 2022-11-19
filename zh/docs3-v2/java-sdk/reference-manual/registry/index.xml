@@ -1,5 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 注册中心说明</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/</link><description>Recent content in 注册中心说明 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 概述</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/overview/</guid><description>
-&lt;p>注册中心是 Dubbo 服务治理的核心组件，Dubbo 依赖注册中心的协调实现服务（地址）发现，自动化的服务发现是微服务实现动态扩缩容、负载均衡、、流量治理的基础。Dubbo 的服务发现机制经历了 Dubbo2 时代的接口级服务发现、Dubbo3 时代的应用级服务发现，具体可参见 &lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务发现机制&lt;/a> 解析了解具体演进过程。&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 注册中心说明</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/</link><description>Recent content in 注册中心说明 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 概述</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/overview/</guid><description>
+&lt;p>注册中心是 Dubbo 服务治理的核心组件，Dubbo 依赖注册中心的协调实现服务（地址）发现，自动化的服务发现是微服务实现动态扩缩容、负载均衡、、流量治理的基础。Dubbo 的服务发现机制经历了 Dubbo2 时代的接口级服务发现、Dubbo3 时代的应用级服务发现，具体可参见 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务发现机制&lt;/a> 解析了解具体演进过程。&lt;/p>
 &lt;h2 id="基本使用">基本使用&lt;/h2>
 &lt;p>开发应用时必须指定 Dubbo 注册中心（registry）组件，配置很简单，只需指定注册中心的集群地址即可：&lt;/p>
 &lt;p>以 Spring Boot 开发为例，在 application.yml 增加 registry 配置项目&lt;/p>
@@ -13,7 +13,7 @@
 &lt;blockquote>
 &lt;p>应用必须指定 Dubbo 注册中心，即使不启用注册中心也要配置（可通过设置地址为空 address=&amp;lsquo;N/A&amp;rsquo; ）。&lt;/p>
 &lt;/blockquote>
-&lt;p>除了 其余根据每个配置中心的不同，可以参考 &lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">registry 配置参考手册&lt;/a>或通过 parameters 参数进行扩展。&lt;/p>
+&lt;p>除了 其余根据每个配置中心的不同，可以参考 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">registry 配置参考手册&lt;/a>或通过 parameters 参数进行扩展。&lt;/p>
 &lt;h2 id="配置中心与元数据中心">配置中心与元数据中心&lt;/h2>
 &lt;p>配置中心、元数据中心是实现 Dubbo 高阶服务治理能力的基础组件，相比于注册中心通常这两个组件的配置是可选的。&lt;/p>
 &lt;p>为了兼容 2.6 及老版本的配置，对于部分注册中心类型（如 Zookeeper、Nacos 等），Dubbo 会同时将其用作元数据中心和配置中心。&lt;/p>
@@ -43,7 +43,7 @@
 &lt;/ul>
 &lt;p>同时也支持 Kubernetes、Mesh 体系的服务发现。&lt;/p>
 &lt;p>另外，&lt;a href="https://github.com/apache/dubbo-spi-extensions">Dubbo 扩展生态&lt;/a> 还提供了 Consul、Eureka、Etcd 等注册中心扩展实现。也欢迎通过 &lt;a href="../../spi/">registry spi 扩展&lt;/a> 贡献更多的注册中心实现到 Dubbo 生态。&lt;/p>
-&lt;p>Dubbo 还支持在一个应用中 &lt;a href="../multiple-registry/">指定多个注册中心&lt;/a>，并将服务根据注册中心分组，这样做使得服务分组管理或服务迁移变得更容易。&lt;/p></description></item><item><title>Docs3-V2: Zookeeper</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/zookeeper/</guid><description>
+&lt;p>Dubbo 还支持在一个应用中 &lt;a href="../multiple-registry/">指定多个注册中心&lt;/a>，并将服务根据注册中心分组，这样做使得服务分组管理或服务迁移变得更容易。&lt;/p></description></item><item><title>Docs3-V2: Zookeeper</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/zookeeper/</guid><description>
 &lt;h2 id="1-前置条件">1 前置条件&lt;/h2>
 &lt;ul>
 &lt;li>了解 &lt;a href="../../../quick-start/spring-boot/">Dubbo 基本开发步骤&lt;/a>&lt;/li>
@@ -150,7 +150,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Zookeeper 注册中心还支持其他一些控制参数，具体可参见&lt;a href="../../config/properties#registry">Registry 配置项手册&lt;/a>&lt;/p>
 &lt;h2 id="4-工作原理">4 工作原理&lt;/h2>
 &lt;h3 id="41-dubbo2-节点结构">4.1 Dubbo2 节点结构&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/zookeeper.jpg" alt="/user-guide/images/zookeeper.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/zookeeper.jpg" alt="/user-guide/images/zookeeper.jpg">&lt;/p>
 &lt;p>流程：&lt;/p>
 &lt;ul>
 &lt;li>服务提供者启动时: 向 &lt;code>/dubbo/com.foo.BarService/providers&lt;/code> 目录下写入自己的 URL 地址。&lt;/li>
@@ -167,7 +167,7 @@
 &lt;li>可通过 &lt;code>&amp;lt;dubbo:registry group=&amp;quot;dubbo&amp;quot; /&amp;gt;&lt;/code> 设置 zookeeper 的根节点，不配置将使用默认的根节点。&lt;/li>
 &lt;li>支持 &lt;code>*&lt;/code> 号通配符 &lt;code>&amp;lt;dubbo:reference group=&amp;quot;*&amp;quot; version=&amp;quot;*&amp;quot; /&amp;gt;&lt;/code>，可订阅服务的所有分组和所有版本的提供者&lt;/li>
 &lt;/ul>
-&lt;h3 id="42-dubbo3-节点结构">4.2 Dubbo3 节点结构&lt;/h3></description></item><item><title>Docs3-V2: Nacos</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/nacos/</guid><description>
+&lt;h3 id="42-dubbo3-节点结构">4.2 Dubbo3 节点结构&lt;/h3></description></item><item><title>Docs3-V2: Nacos</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/nacos/</guid><description>
 &lt;h2 id="1-前置条件">1 前置条件&lt;/h2>
 &lt;ul>
 &lt;li>了解 &lt;a href="../../../quick-start/spring-boot/">Dubbo 基本开发步骤&lt;/a>&lt;/li>
@@ -406,16 +406,16 @@
 &lt;p>以下仅为展示 Nacos 作为 Dubbo 注册中心的工作原理，Dubbo 服务运维建议使用 &lt;a href="https://github.com/apache/dubbo-admin">Dubbo Admin&lt;/a>&lt;/p>
 &lt;h3 id="41-dubbo2-注册数据">4.1 Dubbo2 注册数据&lt;/h3>
 &lt;p>随后，重启您的 Dubbo 应用，Dubbo 的服务提供和消费信息在 Nacos 控制台中可以显示：&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
 &lt;p>如图所示，服务名前缀为 &lt;code>providers:&lt;/code> 的信息为服务提供者的元信息，&lt;code>consumers:&lt;/code> 则代表服务消费者的元信息。点击“&lt;strong>详情&lt;/strong>”可查看服务状态详情：&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-2.png" alt="image-dubbo-registry-nacos-2.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-2.png" alt="image-dubbo-registry-nacos-2.png">&lt;/p>
 &lt;h3 id="42-dubbo3-注册数据">4.2 Dubbo3 注册数据&lt;/h3>
 &lt;p>应用级服务发现的 &amp;ldquo;服务名&amp;rdquo; 为应用名&lt;/p>
 &lt;blockquote>
 &lt;p>Dubbo3 默认采用 &amp;ldquo;应用级服务发现 + 接口级服务发现&amp;rdquo; 的双注册模式，因此会发现应用级服务（应用名）和接口级服务（接口名）同时出现在 Nacos 控制台，可以通过配置 &lt;code>dubbo.registry.register-mode=instance/interface/all&lt;/code> 来改变注册行为。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: Multicast</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/multicast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/multicast/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: Multicast</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/multicast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/multicast/</guid><description>
 &lt;p>Multicast 注册中心不需要启动任何中心节点，只要广播地址一样，就可以互相发现。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/multicast.jpg" alt="/user-guide/images/multicast.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/multicast.jpg" alt="/user-guide/images/multicast.jpg">&lt;/p>
 &lt;h2 id="1-使用说明">1 使用说明&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;multicast://224.5.6.7:1234&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或&lt;/p>
@@ -439,7 +439,7 @@
 &lt;li>消费方收到提供方地址时，连接该地址进行 RPC 调用。&lt;/li>
 &lt;/ol>
 &lt;h3 id="22-使用限制">2.2 使用限制&lt;/h3>
-&lt;p>组播受网络结构限制，只适合小规模应用或开发阶段使用。组播地址段: 224.0.0.0 - 239.255.255.255&lt;/p></description></item><item><title>Docs3-V2: Redis</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/redis/</guid><description>
+&lt;p>组播受网络结构限制，只适合小规模应用或开发阶段使用。组播地址段: 224.0.0.0 - 239.255.255.255&lt;/p></description></item><item><title>Docs3-V2: Redis</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/redis/</guid><description>
 &lt;h2 id="前置条件">前置条件&lt;/h2>
 &lt;ul>
 &lt;li>了解 &lt;a href="../../../quick-start/spring-boot/">Dubbo 基本开发步骤&lt;/a>&lt;/li>
@@ -466,7 +466,7 @@
 &lt;h2 id="工作原理">工作原理&lt;/h2>
 &lt;p>基于 Redis [^1] 实现的注册中心。&lt;/p>
 &lt;p>Redis 过期数据通过心跳的方式检测脏数据，服务器时间必须同步，并且对服务器有一定压力，否则过期检测会不准确&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/dubbo-redis-registry.jpg" alt="/user-guide/images/dubbo-redis-registry.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-redis-registry.jpg" alt="/user-guide/images/dubbo-redis-registry.jpg">&lt;/p>
 &lt;p>使用 Redis 的 Key/Map 结构存储数据结构：&lt;/p>
 &lt;ul>
 &lt;li>主 Key 为服务名和类型&lt;/li>
@@ -489,7 +489,7 @@
 &lt;li>服务监控中心启动时，从 &lt;code>Channel:/dubbo/*&lt;/code> 订阅 &lt;code>register&lt;/code> 和 &lt;code>unregister&lt;/code>，以及 &lt;code>subscribe&lt;/code> 和&lt;code>unsubsribe &lt;/code>事件&lt;/li>
 &lt;li>服务监控中心收到 &lt;code>register&lt;/code> 和 &lt;code>unregister&lt;/code> 事件后，从 &lt;code>Key:/dubbo/com.foo.BarService/providers&lt;/code> 下获取提供者地址列表&lt;/li>
 &lt;li>服务监控中心收到 &lt;code>subscribe&lt;/code> 和 &lt;code>unsubsribe&lt;/code> 事件后，从 &lt;code>Key:/dubbo/com.foo.BarService/consumers&lt;/code> 下获取消费者地址列表&lt;/li>
-&lt;/ol></description></item><item><title>Docs3-V2: 多注册中心</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/multiple-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/multiple-registry/</guid><description>
+&lt;/ol></description></item><item><title>Docs3-V2: 多注册中心</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/multiple-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/multiple-registry/</guid><description>
 &lt;h2 id="1-关联服务与多注册中心">1 关联服务与多注册中心&lt;/h2>
 &lt;h3 id="11-全局默认注册中心">1.1 全局默认注册中心&lt;/h3>
 &lt;p>Dubbo 注册中心和服务是独立配置的，通常开发者不用设置服务和注册中心组件之间的关联关系，Dubbo 框架会将自动执行以下动作：&lt;/p>
@@ -540,7 +540,7 @@
 &lt;li>注册中心集群间选址，选定一个集群&lt;/li>
 &lt;li>注册中心集群内选址，在集群内进行地址筛选&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/registry/no-aggregation.png" alt="multi-registris-no-aggregation">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/registry/no-aggregation.png" alt="multi-registris-no-aggregation">&lt;/p>
 &lt;p>下面我们着重分析下如何控制 &lt;strong>注册中心集群间选址&lt;/strong>，可选的策略有如下几种
 &lt;strong>随机&lt;/strong>
 每次请求都随机的分配到一个注册中心集群&lt;/p>
@@ -568,7 +568,7 @@
 &lt;li>&lt;code>reference-registry&lt;/code> 指定了要聚合的注册中心集群的列表，示例中有两个集群，分别是 &lt;code>zookeeper://address11?backup=address12,address13&lt;/code> 和 &lt;code>zookeeper://address21?backup=address22,address23&lt;/code>，其中还特别指定了集群分隔符 &lt;code>separator=&amp;quot;;&amp;quot;&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>如下图所示，不同注册中心集群的地址会被聚合到一个地址池后在消费端做负载均衡或路由选址。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/registry/aggregation.png" alt="multi-registris-aggregation">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/registry/aggregation.png" alt="multi-registris-aggregation">&lt;/p>
 &lt;p>在 3.1.0 版本及之后，还支持每个注册中心集群上设置特定的 attachments 属性，以实现对该注册中心集群下的地址做特定标记，后续配合 Router 组件扩展如 TagRouter 等就可以实现跨机房间的流量治理能力。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;multiple://127.0.0.1:2181?separator=;&amp;amp;reference-registry=zookeeper://address11?attachments=zone=hangzhou,tag=middleware;zookeeper://address21&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>增加 &lt;code>attachments=zone=hangzhou,tag=middleware&lt;/code> 后，所有来自该注册中心的 URL 地址将自动携带 &lt;code>zone&lt;/code> 和 &lt;code>tag&lt;/code> 两个标识，方便消费端更灵活的做流量治理。&lt;/p>
@@ -602,7 +602,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;10.20.141.150:9090|10.20.154.177:9010&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&amp;lt;!-- 引用服务 --&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;helloService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.alibaba.hello.api.HelloService&amp;#34;&lt;/span> version=&lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Simple 注册中心</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/simple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/registry/simple/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Simple 注册中心</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/simple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/simple/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>此功能在 Dubbo 2.7 中已移除，请迁移选择&lt;a href="../">其他注册中心&lt;/a>。&lt;/p>
 &lt;/div>

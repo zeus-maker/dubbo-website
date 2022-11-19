@@ -1,10 +1,10 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Apache Dubbo Blog</title><link>https://dubbo.apache.org/en/blog/</link><description>Recent content in Apache Dubbo Blog on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/en/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: How to proxy Dubbo service in Apache ShenYu Gateway</title><link>https://dubbo.apache.org/en/blog/2022/05/04/how-to-proxy-dubbo-service-in-apache-shenyu-gateway/</link><pubDate>Wed, 04 May 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2022/05/04/how-to-proxy-dubbo-service-in-apache-shenyu-gateway/</guid><description>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/ApacheShenYu-Dubbo-en.png" alt="">&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Apache Dubbo Blog</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/</link><description>Recent content in Apache Dubbo Blog on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/en/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: How to proxy Dubbo service in Apache ShenYu Gateway</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2022/05/04/how-to-proxy-dubbo-service-in-apache-shenyu-gateway/</link><pubDate>Wed, 04 May 2022 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2022/05/04/how-to-proxy-dubbo-service-in-apache-shenyu-gateway/</guid><description>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/ApacheShenYu-Dubbo-en.png" alt="">&lt;/p>
 &lt;h2 id="1-introduction">1. Introduction&lt;/h2>
 &lt;ul>
 &lt;li>Apache ShenYu&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/shenyu.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/shenyu.png" alt="">&lt;/p>
 &lt;p>&lt;a href="https://shenyu.apache.org/docs/index">Apache ShenYu(Incubating)&lt;/a> is an asynchronous, high-performance, cross-language, responsive &lt;code>API&lt;/code> gateway. Compatible with a variety of mainstream framework systems, support for hot-plugging, users can customize the development to meet the current and future needs of users in a variety of scenarios, experienced large-scale scenarios hammered.&lt;/p>
 &lt;p>In May 2021, &lt;code>ShenYu&lt;/code> was donated to the &lt;code>Apache&lt;/code> Software Foundation, and the Apache Foundation voted unanimously to enter the incubator.&lt;/p>
 &lt;ul>
@@ -15,7 +15,7 @@
 &lt;p>This section describes how to connect the &lt;code>Dubbo&lt;/code> service to the &lt;code>Shenyu&lt;/code> gateway. You can find the [sample code] for this section directly under the project (&lt;a href="https://github.com/apache/shenyu/tree/master/shenyu-examples/shenyu-examples-dubbo">https://github.com/apache/shenyu/tree/master/shenyu-examples/shenyu-examples-dubbo&lt;/a> -examples-dubbo/shenyu-examples-apache-dubbo-service).&lt;/p>
 &lt;h3 id="21-start-shenyu-admin">2.1 Start shenyu-admin&lt;/h3>
 &lt;p>&lt;code>shenyu-admin&lt;/code> is the &lt;code>Apache ShenYu&lt;/code> backend management system, there are various ways to start it, this article is started by &lt;code>[local deployment](https://shenyu.apache.org/docs/deployment/deployment-local)&lt;/code> way. After successful startup, you need to set the &lt;code>dubbo&lt;/code> plugin to be on and set your registered address in the base configuration &lt;code>-&amp;gt;&lt;/code>Plugin Management&amp;rsquo;, please make sure the registration center has been opened.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-enable-en.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/dubbo-enable-en.png" alt="">&lt;/p>
 &lt;h3 id="22-start-shenyu-gateway">2.2 Start ShenYu Gateway&lt;/h3>
 &lt;p>Here it is started by way of &lt;a href="https://github.com/apache/incubator-shenyu/tree/master/shenyu-bootstrap">source&lt;/a> and runs directly &lt;code>shenyu-bootstrap&lt;/code> in &lt;code>shenyu-bootstrap&lt;/code>. ShenyuBootstrapApplication`.&lt;/p>
 &lt;p>Make sure the gateway has introduced the relevant dependencies before starting. If the client is &lt;code>apache dubbo&lt;/code> and the registry uses &lt;code>zookeeper&lt;/code>, please refer to the following configuration.&lt;/p>
@@ -111,11 +111,11 @@
 &lt;h3 id="24-invoke-the-dubbo-service">2.4 Invoke the Dubbo service&lt;/h3>
 &lt;p>The &lt;code>shenyu-examples-dubbo&lt;/code> project will automatically register the interface methods annotated with &lt;code>@ShenyuDubboClient&lt;/code> to the gateway after it is successfully started.&lt;/p>
 &lt;p>Open &lt;code>Plugins List -&amp;gt; Proxy -&amp;gt; dubbo&lt;/code> to see the list of plugin rules configuration.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-service-list-en.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/dubbo-service-list-en.png" alt="">&lt;/p>
 &lt;p>Information on the selectors for successful registration.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-selector-en.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/dubbo-selector-en.png" alt="">&lt;/p>
 &lt;p>Information on the rules for successful registration.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-rule-en.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/dubbo-rule-en.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>Selectors and rules are the soul of the &lt;code>Apache ShenYu&lt;/code> gateway. Mastering it well, you can manage any traffic. Corresponding to the matching conditions (conditions) inside the selectors and rules, we can handle various complex scenarios according to different traffic filtering rules. Traffic filtering can get data from &lt;code>Header&lt;/code>, &lt;code>URI&lt;/code>, &lt;code>Query&lt;/code>, &lt;code>Cookie&lt;/code> and so on Http requests.&lt;/p>
 &lt;p>Then you can use &lt;code>Match&lt;/code>, &lt;code>=&lt;/code>, &lt;code>Regex&lt;/code>, &lt;code>Groovy&lt;/code>, &lt;code>Exclude&lt;/code> and other matching methods to match the data you expect. Multi-group match additions can use the &lt;code>And/Or&lt;/code> matching strategy.&lt;/p>
@@ -143,12 +143,12 @@
 &lt;p>Accessing application clients to the &lt;code>Apache ShenYu&lt;/code> gateway is achieved through the registry, which involves client-side registration and server-side synchronization of data. The registry supports &lt;code>Http&lt;/code>, &lt;code>Zookeeper&lt;/code>, &lt;code>Etcd&lt;/code>, &lt;code>Consul&lt;/code> and &lt;code>Nacos&lt;/code>. The default is to register by &lt;code>Http&lt;/code>.&lt;/p>
 &lt;p>Please refer to &lt;code>[Client Access Configuration](https://shenyu.apache.org/docs/user-guide/register-center-access)&lt;/code> for client access related configuration.&lt;/p>
 &lt;h4 id="311-client-side-registration">3.1.1 Client-side Registration&lt;/h4>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/register-client.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/register-client.png" alt="">&lt;/p>
 &lt;p>Declare the registry client type, such as &lt;code>Http&lt;/code> or &lt;code>Zookeeper&lt;/code>, in your microservice configuration.
 Load and initialize the corresponding registry client using the &lt;code>SPI&lt;/code> method when the application starts, and get the service interface information that needs to be registered in it by implementing the post-processor interface related to the &lt;code>Spring Bean&lt;/code>, and put the obtained information into the &lt;code>Disruptor&lt;/code>.&lt;/p>
 &lt;p>The registry client reads the data from &lt;code>Disruptor&lt;/code> and registers the interface information to &lt;code>shenyu-admin&lt;/code>, where &lt;code>Disruptor&lt;/code> plays the role of decoupling data and operations, which is convenient for extension.&lt;/p>
 &lt;h4 id="312-server-side-registration">3.1.2 Server-side Registration&lt;/h4>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/register-server.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/register-server.png" alt="">&lt;/p>
 &lt;p>Declare the registry server type, such as &lt;code>Http&lt;/code> or &lt;code>Zookeeper&lt;/code>, in the &lt;code>shenyu-admin&lt;/code> configuration. When &lt;code>shenyu-admin&lt;/code> starts, it will read the configuration type, load and initialize the corresponding registry server, and when the registry server receives the interface information registered by &lt;code>shenyu-client&lt;/code>, it will put it into &lt;code>Disruptor&lt;/code>, and then it will trigger the registration processing logic to update the service interface information and publish the synchronization event.&lt;/p>
 &lt;p>The &lt;code>Disruptor&lt;/code> plays a role in decoupling data and operation, which is good for extension. It also has a data buffering role if too many registration requests lead to registration exceptions.&lt;/p>
 &lt;h3 id="32-data-synchronization-principle">3.2 Data Synchronization Principle&lt;/h3>
@@ -166,7 +166,7 @@ Load and initialize the corresponding registry client using the &lt;code>SPI&lt;
 &lt;/ul>
 &lt;h4 id="322-data-synchronization-principle-analysis">3.2.2 Data Synchronization Principle Analysis&lt;/h4>
 &lt;p>The following diagram shows the flow of &lt;code>Apache ShenYu&lt;/code> data synchronization. The &lt;code>Apache ShenYu&lt;/code> gateway synchronizes configuration data from the configuration service when it starts, and supports push-pull mode to get configuration change information and then update the local cache. Administrators can change user permissions, rules, plugins, traffic configuration in the administration backend (&lt;code>shenyu-admin&lt;/code>) and synchronize the changes to the &lt;code>Apache ShenYu&lt;/code> gateway via push-pull mode, depending on which synchronization method is used.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/data-sync.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/data-sync.png" alt="">&lt;/p>
 &lt;p>In the original version, the configuration service relied on the &lt;code>Zookeeper&lt;/code> implementation, and the management backend &lt;code>pushed&lt;/code> the changes to the gateway. Now we can support &lt;code>WebSocket&lt;/code>, &lt;code>Http long polling&lt;/code>, &lt;code>Zookeeper&lt;/code>, &lt;code>Nacos&lt;/code>, &lt;code>Etcd&lt;/code> and &lt;code>Consul&lt;/code>, by setting &lt;code>shenyu.sync.${strategy}&lt;/code> in the configuration file to specify the corresponding synchronization strategy, the default is to use &lt;code>webosocket&lt;/code> synchronization strategy to achieve second-level data synchronization. However, one thing to note is that the &lt;code>Apache ShenYu&lt;/code> gateway and &lt;code>shenyu-admin&lt;/code> must use the same synchronization strategy.&lt;/p>
 &lt;p>As shown in the figure below, &lt;code>shenyu-admin&lt;/code> sends out configuration change notifications through &lt;code>EventPublisher&lt;/code> after a user makes a configuration change, and &lt;code>EventDispatcher&lt;/code> processes the change notification, and then synchronizes the data according to the configured synchronization policy (&lt;code>http, weboscket, zookeeper, naocs, etcd, consul&lt;/code>). etcd, consul`), the configuration is sent to the corresponding event handler.&lt;/p>
 &lt;ul>
@@ -187,7 +187,7 @@ Load and initialize the corresponding registry client using the &lt;code>SPI&lt;
 &lt;li>Processing registration information&lt;/li>
 &lt;/ul>
 &lt;p>The metadata and &lt;code>URI&lt;/code> data registered by the client through the registration center are processed at the &lt;code>shenyu-admin&lt;/code> end, which is responsible for storing to the database and synchronizing to the &lt;code>shenyu&lt;/code> gateway. The client-side registration processing logic of the &lt;code>Dubbo&lt;/code> plugin is in the &lt;code>ShenyuClientRegisterDubboServiceImpl&lt;/code>. The inheritance relationship is as follows.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/ShenyuClientRegisterDubboServiceImpl.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/ShenyuClientRegisterDubboServiceImpl.png" alt="">&lt;/p>
 &lt;ul>
 &lt;li>ShenyuClientRegisterService: client registration service, top-level interface.&lt;/li>
 &lt;li>FallbackShenyuClientRegisterService: registration failure, provides retry operation.&lt;/li>
@@ -196,7 +196,7 @@ Load and initialize the corresponding registry client using the &lt;code>SPI&lt;
 &lt;/ul>
 &lt;p>Registration information including selectors, rules and metadata.&lt;/p>
 &lt;p>The overall &lt;code>dubbo&lt;/code> service registration process is as follows.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-register-en.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/dubbo-register-en.png" alt="">&lt;/p>
 &lt;h4 id="332-data-synchronization-process">3.3.2 Data Synchronization Process&lt;/h4>
 &lt;ul>
 &lt;li>admin update data&lt;/li>
@@ -214,10 +214,10 @@ Load and initialize the corresponding registry client using the &lt;code>SPI&lt;
 &lt;p>In the common plugin data subscriber &lt;code>CommonPluginDataSubscriber&lt;/code>, which is responsible for handling all plugin, selector and rule information&lt;/p>
 &lt;p>Saves data to the gateway&amp;rsquo;s memory, &lt;code>BaseDataCache&lt;/code> is the class that ultimately caches the data, implemented through the singleton pattern. The selector data is then stored in &lt;code>SELECTOR_MAP&lt;/code>, a &lt;code>Map&lt;/code>. In the subsequent use, the data is also taken from here.&lt;/p>
 &lt;p>The above logic is represented in a flowchart as follows.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/data-sync-seq-en.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/data-sync-seq-en.png" alt="">&lt;/p>
 &lt;h4 id="333-service-invocation-process">3.3.3 Service Invocation Process&lt;/h4>
 &lt;p>In the &lt;code>Dubbo&lt;/code> plugin system, the class extends relationship is as follows.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/ApacheDubboPlugin.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/ApacheDubboPlugin.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>ShenyuPlugin: top-level interface, defining interface methods.&lt;/p>
 &lt;p>AbstractShenyuPlugin: abstract class that implements the common logic of the plugin; &amp;gt; AbstractShenyuPlugin: abstract class that implements the common logic of the plugin.&lt;/p>
@@ -257,7 +257,7 @@ Load and initialize the corresponding registry client using the &lt;code>SPI&lt;
 &lt;li>org.apache.shenyu.plugin.response.ResponsePlugin#execute()&lt;/li>
 &lt;/ul>
 &lt;p>The last one to be executed is &lt;code>ResponsePlugin&lt;/code>, which unifies the response result messages of the gateway. The processing type is determined by the &lt;code>MessageWriter&lt;/code>, and the class extends relationship is as follows.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/MessageWriter.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/MessageWriter.png" alt="">&lt;/p>
 &lt;blockquote>
 &lt;p>MessageWriter: interface that defines message processing methods.&lt;/p>
 &lt;p>NettyClientMessageWriter: Handles the results of &lt;code>Netty&lt;/code> calls.&lt;/p>
@@ -270,7 +270,7 @@ Load and initialize the corresponding registry client using the &lt;code>SPI&lt;
 &lt;/ul>
 &lt;p>Process the response results in the &lt;code>writeWith()&lt;/code> method, get the results or handle exceptions.&lt;/p>
 &lt;p>At this point in the analysis, the source code analysis of the &lt;code>Dubbo&lt;/code> plugin is complete, and the analysis flowchart is as follows.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/shenyu-dubbo/dubbo-execute-en.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/shenyu-dubbo/dubbo-execute-en.png" alt="">&lt;/p>
 &lt;h2 id="4-summary">4. Summary&lt;/h2>
 &lt;p>This article analyzes the proxy process of &lt;code>ShenYu&lt;/code> gateway to Dubbo service from a practical case. The main knowledge points involved are as follows.&lt;/p>
 &lt;ul>
@@ -280,13 +280,13 @@ Load and initialize the corresponding registry client using the &lt;code>SPI&lt;
 &lt;li>the ability to introduce different registries and number synchronization methods through the &lt;code>springboot starter&lt;/code>, which is very scalable.&lt;/li>
 &lt;li>support for hot updates of rules through &lt;code>admin&lt;/code> to facilitate traffic control.&lt;/li>
 &lt;li>&lt;code>Disruptor&lt;/code> queue is for data and operation decoupling, as well as data buffering.&lt;/li>
-&lt;/ul></description></item><item><title>Blog: Makes it More Convenient for You to Proxy Dubbo Services in Apache APISIX</title><link>https://dubbo.apache.org/en/blog/2022/01/18/makes-it-more-convenient-for-you-to-proxy-dubbo-services-in-apache-apisix/</link><pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2022/01/18/makes-it-more-convenient-for-you-to-proxy-dubbo-services-in-apache-apisix/</guid><description>
+&lt;/ul></description></item><item><title>Blog: Makes it More Convenient for You to Proxy Dubbo Services in Apache APISIX</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2022/01/18/makes-it-more-convenient-for-you-to-proxy-dubbo-services-in-apache-apisix/</link><pubDate>Tue, 18 Jan 2022 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2022/01/18/makes-it-more-convenient-for-you-to-proxy-dubbo-services-in-apache-apisix/</guid><description>
 &lt;h2 id="background">Background&lt;/h2>
-&lt;p>&lt;a href="https://dubbo.apache.org/en/">Apache Dubbo&lt;/a> is a MicroService development framework open sourced by Alibaba and donated to Apache, which provides two key capabilities of RPC communication and microservice governance. It has not only been validated by Ali&amp;rsquo;s massive traffic in e-commerce scenario, but also been widely implemented in domestic technology companies.&lt;/p>
+&lt;p>&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/">Apache Dubbo&lt;/a> is a MicroService development framework open sourced by Alibaba and donated to Apache, which provides two key capabilities of RPC communication and microservice governance. It has not only been validated by Ali&amp;rsquo;s massive traffic in e-commerce scenario, but also been widely implemented in domestic technology companies.&lt;/p>
 &lt;p>In practical application scenarios, Apache Dubbo is generally used as the implementation framework for RPC calls between back-end systems, and when HTTP interfaces need to be provided to the front-end, the Dubbo Service is packaged as an HTTP interface through a &amp;ldquo;glue layer&amp;rdquo; and then delivered to the front-end system.&lt;/p>
 &lt;p>&lt;a href="https://apisix.apache.org/">Apache APISIX&lt;/a> is the top open source project of Apache Software Foundation and the most active open source gateway project today. As a dynamic, real-time, high-performance open source API gateway, Apache APISIX provides rich traffic management features such as load balancing, dynamic upstream, grayscale publishing, service meltdown, authentication, observability, and more.&lt;/p>
 &lt;p>Benefiting from the advantages of Apache Dubbo application scenarios, Apache APISIX is based on the open source project tengine/mod_dubbo module to equip Apache Dubbo services with HTTP gateway capabilities. Dubbo Service can be easily published as an HTTP service via the dubbo-proxy plugin.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/apisix-plugin/1.png" alt="Architecture Diagram">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/apisix-plugin/1.png" alt="Architecture Diagram">&lt;/p>
 &lt;h2 id="how-to-use">How to use&lt;/h2>
 &lt;h3 id="getting-started-installation-and-use">Getting Started: Installation and Use&lt;/h3>
 &lt;blockquote>
@@ -461,7 +461,7 @@ The Header and Body of the HTTP request are available through the &lt;code>httpR
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">}&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="summary">Summary&lt;/h2>
 &lt;p>In this article, we introduced how to use Apache APISIX to implement a proxy for Dubbo Service. By introducing the &lt;code>dubbo-proxy&lt;/code> plugin, you can build a simpler and more efficient traffic link for the back-end system of Dubbo framework.&lt;/p>
-&lt;p>We hope that the above steps and use cases will provide you with ideas for using it in relevant scenarios. For more information about the &lt;code>dubbo-proxy&lt;/code> plugin, please refer to the &lt;a href="https://apisix.apache.org/docs/apisix/plugins/dubbo-proxy/">official documentation&lt;/a>.&lt;/p></description></item><item><title>Blog: 2.7.14 Release Note</title><link>https://dubbo.apache.org/en/blog/2021/09/20/2.7.14-release-note/</link><pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2021/09/20/2.7.14-release-note/</guid><description>
+&lt;p>We hope that the above steps and use cases will provide you with ideas for using it in relevant scenarios. For more information about the &lt;code>dubbo-proxy&lt;/code> plugin, please refer to the &lt;a href="https://apisix.apache.org/docs/apisix/plugins/dubbo-proxy/">official documentation&lt;/a>.&lt;/p></description></item><item><title>Blog: 2.7.14 Release Note</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2021/09/20/2.7.14-release-note/</link><pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2021/09/20/2.7.14-release-note/</guid><description>
 &lt;h2 id="change-lists">Change Lists&lt;/h2>
 &lt;ul>
 &lt;li>add Dynamic Configuration Override Support For ServiceDiscovery. (#8389)&lt;/li>
@@ -488,7 +488,7 @@ The Header and Body of the HTTP request are available through the &lt;code>httpR
 &lt;li>commons_io: 2.6 -&amp;gt; 2.7&lt;/li>
 &lt;li>curator: 5.0.0 -&amp;gt; 5.1.0&lt;/li>
 &lt;li>hessian_lite: 3.2.8 -&amp;gt; 3.2.11&lt;/li>
-&lt;/ul></description></item><item><title>Blog: 3.0.2.1 Release Note</title><link>https://dubbo.apache.org/en/blog/2021/08/23/3.0.2.1-release-note/</link><pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2021/08/23/3.0.2.1-release-note/</guid><description>
+&lt;/ul></description></item><item><title>Blog: 3.0.2.1 Release Note</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2021/08/23/3.0.2.1-release-note/</link><pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2021/08/23/3.0.2.1-release-note/</guid><description>
 &lt;p>This is a bugfix version of 3.0.2.
 Exactly the same as version 3.0.2, except for the following changes.&lt;/p>
 &lt;h2 id="bugfix">Bugfix&lt;/h2>
@@ -496,7 +496,7 @@ Exactly the same as version 3.0.2, except for the following changes.&lt;/p>
 &lt;li>Fix nacos group inviable in consumer side (#8533)&lt;/li>
 &lt;li>Fix NPE on serialization checking when request timed out (#8547)&lt;/li>
 &lt;li>Compact with dubbo-all without farbic-io (#8546)&lt;/li>
-&lt;/ul></description></item><item><title>Blog: 3.0.2 Release Note</title><link>https://dubbo.apache.org/en/blog/2021/08/18/3.0.2-release-note/</link><pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2021/08/18/3.0.2-release-note/</guid><description>
+&lt;/ul></description></item><item><title>Blog: 3.0.2 Release Note</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2021/08/18/3.0.2-release-note/</link><pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2021/08/18/3.0.2-release-note/</guid><description>
 &lt;h2 id="features">Features&lt;/h2>
 &lt;ul>
 &lt;li>improve generic service with @DubboService annotation.&lt;/li>
@@ -621,7 +621,7 @@ Exactly the same as version 3.0.2, except for the following changes.&lt;/p>
 &lt;li>nacos client: 2.0.0 -&amp;gt; 2.0.2&lt;/li>
 &lt;li>swagger: 1.5.19 -&amp;gt; 1.5.24&lt;/li>
 &lt;li>hessian_lite: 3.2.8 -&amp;gt; 3.2.11&lt;/li>
-&lt;/ul></description></item><item><title>Blog: 3.0.1 Release Note</title><link>https://dubbo.apache.org/en/blog/2021/07/02/3.0.1-release-note/</link><pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2021/07/02/3.0.1-release-note/</guid><description>
+&lt;/ul></description></item><item><title>Blog: 3.0.1 Release Note</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2021/07/02/3.0.1-release-note/</link><pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2021/07/02/3.0.1-release-note/</guid><description>
 &lt;h2 id="optimization">Optimization&lt;/h2>
 &lt;ul>
 &lt;li>Refactor NameMapping to Metadata, Support application field in MigrationRule&lt;/li>
@@ -651,7 +651,7 @@ Exactly the same as version 3.0.2, except for the following changes.&lt;/p>
 &lt;a href="https://github.com/apache/dubbo/pull/8048">#8048&lt;/a>,
 &lt;a href="https://github.com/apache/dubbo/pull/8071">#8071&lt;/a>,
 &lt;a href="https://github.com/apache/dubbo/pull/8119">#8119&lt;/a>,
-&lt;a href="https://github.com/apache/dubbo/pull/8132">#8132&lt;/a>&lt;/p></description></item><item><title>Blog: Past Releases</title><link>https://dubbo.apache.org/en/blog/2020/05/18/past-releases/</link><pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2020/05/18/past-releases/</guid><description>
+&lt;a href="https://github.com/apache/dubbo/pull/8132">#8132&lt;/a>&lt;/p></description></item><item><title>Blog: Past Releases</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2020/05/18/past-releases/</link><pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2020/05/18/past-releases/</guid><description>
 &lt;h2 id="verification">Verification&lt;/h2>
 &lt;p>you can follow these &lt;a href="https://www.apache.org/info/verification">procedures&lt;/a> and the &lt;a href="https://downloads.apache.org/dubbo/KEYS">KEYS&lt;/a> file to verify the download files&lt;/p>
 &lt;h2 id="apache-dubbo">Apache Dubbo&lt;/h2>
@@ -1004,7 +1004,7 @@ Release Notes: &lt;a href="https://github.com/apache/incubator-dubbo-admin/relea
 &lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip">source&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip.asc">asc&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: Dubbo Admin service test</title><link>https://dubbo.apache.org/en/blog/2019/08/26/service-test/</link><pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2019/08/26/service-test/</guid><description>
+&lt;/ul></description></item><item><title>Blog: Dubbo Admin service test</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/08/26/service-test/</link><pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/08/26/service-test/</guid><description>
 &lt;p>Based on the metadata of Dubbo2.7, Dubbo Admin implements the service test function, which can call the real service provider on the console through generalized call.&lt;/p>
 &lt;h2 id="usage">Usage&lt;/h2>
 &lt;ul>
@@ -1013,14 +1013,14 @@ Release Notes: &lt;a href="https://github.com/apache/incubator-dubbo-admin/relea
 &lt;/li>
 &lt;li>
 &lt;p>Service-seeking: After completing the server deployment, you can query the corresponding service on the Dubbo Admin&amp;rsquo;s &lt;code>service test&lt;/code> page:
-&lt;img src="https://dubbo.apache.org/imgs/blog/admin/testSearch.jpg" alt="testSearch">&lt;br>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/admin/testSearch.jpg" alt="testSearch">&lt;br>
 the information here is similar to the metadata, including the method name, parameter type and return value. Click the label on the right to enter the &lt;code>service test&lt;/code> page.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Service test：
-&lt;img src="https://dubbo.apache.org/imgs/blog/admin/testSuccess.jpg" alt="testSuccess">&lt;br>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/admin/testSuccess.jpg" alt="testSuccess">&lt;br>
 &lt;code>service test&lt;/code> page contains two json editor, the parameter&amp;rsquo;s informations are all stored in a json format, where you need to fill in the corresponding parameter values (in this case, the number type is String ), after filling, click &lt;code>execute&lt;/code> to initiate the call to the server, and the result of the call is displayed in the editor on the right. If the call fails, the detailed cause of the failure is displayed. Let&amp;rsquo;s look at the example of the call failure.&lt;br>
-&lt;img src="https://dubbo.apache.org/imgs/blog/admin/testFail.jpg" alt="testFail">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/admin/testFail.jpg" alt="testFail">&lt;/p>
 &lt;p>In this case, the Dubbo service provider&amp;rsquo;s process is shut down before the service test is executed, you can see that the returned result is an &lt;code>No provider availble&lt;/code> exception. As with normal calls, business and framework exceptions are returned in the results, for easy business troubleshooting.&lt;/p>
 &lt;/li>
 &lt;li>
@@ -1070,11 +1070,11 @@ Consider the following methods and types in &lt;code>UserService&lt;/code>:&lt;/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The parameters are complex complex type. When the service is tested, the value of each field will be filled out layer by layer, As shown below:&lt;br>
-&lt;img src="https://dubbo.apache.org/imgs/blog/admin/complex.jpg" alt="complex">
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/admin/complex.jpg" alt="complex">
 It can also make successful call and the result is returned.&lt;/p>
 &lt;h2 id="principledata-source">Principle：Data source&lt;/h2>
 &lt;p>In the service test, the most important thing is the complete method signature, and the type information of the parameters, with which the values of each parameter can be filled step by step to assemble the complete service consumer. In Dubbo 2.7, the metadata center has been added. The method signature and parameter type information of Dubbo Admin is from here:&lt;br>
-&lt;img src="https://dubbo.apache.org/imgs/blog/admin/metadata.png" alt="medatada">
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/admin/metadata.png" alt="medatada">
 As shown, the server will register the metadata information of the service to the metadata center when it runs,the format is as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
@@ -1153,7 +1153,7 @@ As shown, the server will register the metadata information of the service to th
 &lt;h2 id="principle-generalized-calls">Principle: Generalized calls&lt;/h2>
 &lt;p>With the parameter type, the next question is how to call to the server. In the traditional Dubbo RPC call, the client needs to rely on the server&amp;rsquo;s API jar package ( refer to the &lt;a href="https://github.com/nzomkxia/dubbo-demo/tree/master/dubbo-basic-consumer">dubbo-basic-consumer&lt;/a> in the previous demo ), which is unlikely for Dubbo Admin, because the up and down of services are dynamic, Dubbo Admin can not dynamically increase the jar package dependencies, so you need to use the &lt;strong>generalization call&lt;/strong> in Dubbo , which means that in the absence of the server API interface, the client initiates a service call through the &lt;code>GenericService&lt;/code> interface, and the data objects in return values are represented by maps. The generalization call doesn&amp;rsquo;t require special processing on the server side, only need to be initiated by the client side.&lt;/p>
 &lt;h2 id="summary-and-outlook">Summary and outlook&lt;/h2>
-&lt;p>This article briefly introduces the usage and principle of service testing, and will further enhance this function in the future, such as processing the parameter types of abstract classes, importing parameter values from json files, supporting the saving of parameter values, etc., to facilitate regression testing of the service interface.&lt;/p></description></item><item><title>Blog: Tracing Dubbo service with Apache Skywalking</title><link>https://dubbo.apache.org/en/blog/2019/08/11/tracing-dubbo-service-with-apache-skywalking/</link><pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2019/08/11/tracing-dubbo-service-with-apache-skywalking/</guid><description>
+&lt;p>This article briefly introduces the usage and principle of service testing, and will further enhance this function in the future, such as processing the parameter types of abstract classes, importing parameter values from json files, supporting the saving of parameter values, etc., to facilitate regression testing of the service interface.&lt;/p></description></item><item><title>Blog: Tracing Dubbo service with Apache Skywalking</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/08/11/tracing-dubbo-service-with-apache-skywalking/</link><pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/08/11/tracing-dubbo-service-with-apache-skywalking/</guid><description>
 &lt;h2 id="introduction-to-apache-skywalking">Introduction to Apache Skywalking&lt;/h2>
 &lt;p>&lt;a href="https://github.com/apache/skywalking">Apache Skywalking&lt;/a> is the APM system that it designed for micro-services architectures and cloud native architecture systems and supports distribute tracking. &lt;a href="https://github.com/apache/skywalking">Apache skywalking (incubator)&lt;/a> collects and analyzes the trace data and generates the relationship between the application and the service metric, Apache skywalking supports multiple languages agent, for example &lt;a href="https://github.com/apache/skywalking">Java&lt;/a>,&lt;a href="https://github.com/OpenSkywalking/skywalking-netcore">.net core&lt;/a>,&lt;a href="https://github.com/OpenSkywalking/skywalking-nodejs">Node.js&lt;/a> and &lt;a href="https://github.com/SkyAPM/go2sky">Go&lt;/a>.&lt;/p>
 &lt;p>Currently, Skywalking has supported analysis the operation of distributed systems from 6 visual dimensions. The overview view is a global view of your applications and components, including the number of components and applications, application alarm fluctuations, slow service lists, and application throughput; The topology shows the topological relationship of the whole application; The application view represents the upstream and downstream relationship of the application from single application, TOP N services and servers, JVM, host and process info. The service view focuses on the operation of a single service portal and the upstream and downstream dependencies of this service and it helps the user to optimize and monitor a single service; the trace graph shows all the buried points of the invocation and the execution time of each burial point, and the alarm view is based on the configuration threshold for the application, server, service for real-time alarms&lt;/p>
@@ -1228,25 +1228,25 @@ return helloService.sayHello(name);
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>curl http://localhost:8080/sayHello/test
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="skywalking-scren-snapshot">Skywalking scren snapshot&lt;/h2>
 &lt;h3 id="dashboard">Dashboard&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-dashboard.png" alt="/admin-guide/images/skywalking-dashboard.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-dashboard.png" alt="/admin-guide/images/skywalking-dashboard.png">&lt;/p>
 &lt;h3 id="topology">Topology&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-topology.png" alt="/admin-guide/images/skywalking-topology.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-topology.png" alt="/admin-guide/images/skywalking-topology.png">&lt;/p>
 &lt;h3 id="application-view">Application view&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-application.png" alt="/admin-guide/images/skywalking-application.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-application.png" alt="/admin-guide/images/skywalking-application.png">&lt;/p>
 &lt;p>JVM Information
-&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-application_instance.png" alt="/admin-guide/images/skywalking-application_instance.png">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-application_instance.png" alt="/admin-guide/images/skywalking-application_instance.png">&lt;/p>
 &lt;h3 id="service-view">Service view&lt;/h3>
 &lt;p>Consumer side
-&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-service-consumer.png" alt="/admin-guide/images/skywalking-service-consumer.png">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-service-consumer.png" alt="/admin-guide/images/skywalking-service-consumer.png">&lt;/p>
 &lt;p>provider side
-&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-service-provider.png" alt="/admin-guide/images/skywalking-service-provider.png">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-service-provider.png" alt="/admin-guide/images/skywalking-service-provider.png">&lt;/p>
 &lt;h3 id="trace">Trace&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-trace.png" alt="/admin-guide/images/skywalking-trace.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-trace.png" alt="/admin-guide/images/skywalking-trace.png">&lt;/p>
 &lt;p>Span info
-&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-span-Info.png" alt="/admin-guide/images/skywalking-span-Info.png">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-span-Info.png" alt="/admin-guide/images/skywalking-span-Info.png">&lt;/p>
 &lt;h3 id="alarm-view">Alarm view&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/skywalking-alarm.png" alt="/admin-guide/images/skywalking-alarm.png">&lt;/p></description></item><item><title>Blog: Dubbo extensible mechanism source code analysis - part 2</title><link>https://dubbo.apache.org/en/blog/2019/05/02/dubbo-extensible-mechanism-source-code-analysis-part-2/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2019/05/02/dubbo-extensible-mechanism-source-code-analysis-part-2/</guid><description>
-&lt;p>In the &lt;a href="https://dubbo.apache.org/en/blog/2019/04/25/dubbo-extensible-mechanism-source-code-analysis-part-1/" title="">actual implementation of the Dubbo extensibility mechanism&lt;/a>, we learned some concepts of the Dubbo extension mechanism, explored the implementation of LoadBalance in Dubbo, and implemented a LoadBalance on our own. Do you think Dubbo&amp;rsquo;s extension mechanism is great? Next, we will go deep into the source code of Dubbo and see what it is.&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/skywalking-alarm.png" alt="/admin-guide/images/skywalking-alarm.png">&lt;/p></description></item><item><title>Blog: Dubbo extensible mechanism source code analysis - part 2</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/05/02/dubbo-extensible-mechanism-source-code-analysis-part-2/</link><pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/05/02/dubbo-extensible-mechanism-source-code-analysis-part-2/</guid><description>
+&lt;p>In the &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/04/25/dubbo-extensible-mechanism-source-code-analysis-part-1/" title="">actual implementation of the Dubbo extensibility mechanism&lt;/a>, we learned some concepts of the Dubbo extension mechanism, explored the implementation of LoadBalance in Dubbo, and implemented a LoadBalance on our own. Do you think Dubbo&amp;rsquo;s extension mechanism is great? Next, we will go deep into the source code of Dubbo and see what it is.&lt;/p>
 &lt;h2 id="extensionloader">ExtensionLoader&lt;/h2>
 &lt;p>&lt;code>ExtensionLoader&lt;/code> is the core class, which is responsible for the loading and lifecycle management of extension points. Let&amp;rsquo;s start with this class. There are many methods of Extension, and the common methods include:&lt;/p>
 &lt;ul>
@@ -1413,7 +1413,7 @@ This is a static factory method that enters an extensible interface and returns 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objectFactory &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">(&lt;/span>type &lt;span style="color:#719e07">==&lt;/span> ExtensionFactory&lt;span style="color:#719e07">.&lt;/span>class &lt;span style="color:#719e07">?&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span> &lt;span style="color:#719e07">:&lt;/span> ExtensionLoader&lt;span style="color:#719e07">.&lt;/span>getExtensionLoader&lt;span style="color:#719e07">(&lt;/span>ExtensionFactory&lt;span style="color:#719e07">.&lt;/span>class&lt;span style="color:#719e07">).&lt;/span>getAdaptiveExtension&lt;span style="color:#719e07">());&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ObjectFacore is also an extension, obtained through &lt;code>ExtensionLoader.getExtensionLoader(ExtensionFactory.class).getAdaptiveExtension()&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-extensionfactory.png" alt="Dubbo-ExtensionFactory" title="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-extensionfactory.png" alt="Dubbo-ExtensionFactory" title="">&lt;/p>
 &lt;p>ExtensionFactory includes three implementations:&lt;/p>
 &lt;ol>
 &lt;li>SpiExtensionFactory: use Dubbo&amp;rsquo;s Spi to load Extension.&lt;/li>
@@ -1583,7 +1583,7 @@ In the generated Protocol$Adaptive, both the getDefaultPort and destroy methods 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">destroy&lt;/span>&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>As you can see, there are four methods in the Protocol interface, but only the methods of export and refer use the @Adaptive annotation. Dubbo automatically generates adaptive instances, and only the methods modified by @Adaptive has a specific implementation. Therefore, in the Protocol$Adaptive class, only the export and refer methods have specific implementations, and the rest of the methods throw exceptions.&lt;/p></description></item><item><title>Blog: Dubbo extensible mechanism source code analysis - part 1</title><link>https://dubbo.apache.org/en/blog/2019/04/25/dubbo-extensible-mechanism-source-code-analysis-part-1/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2019/04/25/dubbo-extensible-mechanism-source-code-analysis-part-1/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>As you can see, there are four methods in the Protocol interface, but only the methods of export and refer use the @Adaptive annotation. Dubbo automatically generates adaptive instances, and only the methods modified by @Adaptive has a specific implementation. Therefore, in the Protocol$Adaptive class, only the export and refer methods have specific implementations, and the rest of the methods throw exceptions.&lt;/p></description></item><item><title>Blog: Dubbo extensible mechanism source code analysis - part 1</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/04/25/dubbo-extensible-mechanism-source-code-analysis-part-1/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/04/25/dubbo-extensible-mechanism-source-code-analysis-part-1/</guid><description>
 &lt;h2 id="1-extension-mechanism-of-dubbo">1. Extension Mechanism of Dubbo&lt;/h2>
 &lt;p>Dubbo is claimed as a high-performance RPC framework on its official website. Today, I want to talk about another great specialty of Dubbo &amp;mdash; its scalability. As quote: Rome wasn’t built in a day. Any successful system always starts as a prototype. It is impossible to design a perfect system at the beginning. Instead, we should focus on true demand and keep improving the system. On the coding side, it requires us to pay attention on abstraction layers and high-level isolation. In that case, the system could keep a healthy structure and easy to maintain while new features or third-party extensions are added. Under some circumstances, a designer should pursue more of scalability than the system’s current performance.
 When talking about software design, people always mention scalability. A framework with good scalability requires the following:
@@ -1703,7 +1703,7 @@ Save tom to Mysql&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">leastactive&lt;/span>&lt;span style="color:#719e07">=&lt;/span>com.alibaba.dubbo.rpc.cluster.loadbalance.LeastActiveLoadBalance
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">consistenthash&lt;/span>&lt;span style="color:#719e07">=&lt;/span>com.alibaba.dubbo.rpc.cluster.loadbalance.ConsistentHashLoadBalance
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There are four extension implementations of LoadBalance defined in the configuration file. The implementation of load balancing will not be covered in this article. The only thing we need to know is that Dubbo provides four kinds of load balancing implementations. We can explicitly specify an implementation by using xml file, properties file or JVM parameter. If there has no explicitly specified implementation, Dubbo will use random as default.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo_loadbalance.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo_loadbalance.png" alt="">&lt;/p>
 &lt;ul>
 &lt;li>@Adaptive(&amp;ldquo;loadbalance&amp;rdquo;) Applying @Adaptive annotation on select method indicates that select method is an adaptive method. Dubbo will automatically generate the corresponding code for the method. When select method is called, it will decide which extension to apply based on the method parameters. @Adaptive parameter &lt;code>loadbalance&lt;/code> indicates that the value of loadbalance in method is the extension implementation that will be actually called. However, we cannot find loadbalance parameter in select method, then how can we obtain the value of loadbalance? There is another URL-type parameter in select method, and Dubbo obtains the value of loadbalance from that URL. Here we need to use Dubbo’s URL bus pattern, in one word, URL contains all the parameters in RPC. There is a member variable &lt;code>Map&amp;lt;String, String&amp;gt;parameters&lt;/code> in the URL class, which contains loadbalance as a parameter&lt;/li>
 &lt;/ul>
@@ -1743,9 +1743,9 @@ Save tom to Mysql&lt;/p>
 &lt;li>Dubbo&amp;rsquo;s extension mechanism supports third-party IoC containers. It supports Spring beans by default and can be extended to other containers, such as Google/Guice.&lt;/li>
 &lt;li>It is easy to switch the implementation of the extension point because it requires only modifications on the specific implementation in the configuration file without changing the code.&lt;/li>
 &lt;/ul>
-&lt;p>In the next article, we will go deep and check Dubbo&amp;rsquo;s source code to learn more about Dubbo&amp;rsquo;s extensibility mechanism.&lt;/p></description></item><item><title>Blog: Implementation background and practice of Dubbo client asynchronous interface</title><link>https://dubbo.apache.org/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-client-asynchronous-interface/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-client-asynchronous-interface/</guid><description>
+&lt;p>In the next article, we will go deep and check Dubbo&amp;rsquo;s source code to learn more about Dubbo&amp;rsquo;s extensibility mechanism.&lt;/p></description></item><item><title>Blog: Implementation background and practice of Dubbo client asynchronous interface</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-client-asynchronous-interface/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-client-asynchronous-interface/</guid><description>
 &lt;h2 id="preface">Preface&lt;/h2>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubboasyn_client/1_en.png" alt="image | left">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubboasyn_client/1_en.png" alt="image | left">&lt;/p>
 &lt;p>Let&amp;rsquo;s start with a brief introduction about the stages of a complete Dubbo invocation.&lt;/p>
 &lt;ol>
 &lt;li>
@@ -1810,9 +1810,9 @@ Save tom to Mysql&lt;/p>
 &lt;ul>
 &lt;li>The motivation of client asynchronization is that the request sending and response processing are two different independent events, how the response is handled and in which thread is handled are not required to be coupled with the business logic thread of the request sending event.&lt;/li>
 &lt;li>The processing logic of response event callbacks in which thread to process is to be selected according to the situation. It is recommended that if the callback logic is relatively simple, it should be directly in the IO thread; if it contains IO type synchronization operations such as remote access or DB access, it is recommended that it be processed in a separate thread pool.&lt;/li>
-&lt;/ul></description></item><item><title>Blog: Implementation background and practice of Dubbo server asynchronous interface</title><link>https://dubbo.apache.org/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-server-asynchronous-interface/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-server-asynchronous-interface/</guid><description>
+&lt;/ul></description></item><item><title>Blog: Implementation background and practice of Dubbo server asynchronous interface</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-server-asynchronous-interface/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-server-asynchronous-interface/</guid><description>
 &lt;h2 id="preface">Preface&lt;/h2>
-&lt;p>It is suggested to make an understanding of the thread phase involved in the process of Dubbo first, please refer to &lt;a href="https://dubbo.apache.org/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-client-asynchronous-interface/">Implementation background and practice of Dubbo client asynchronous interface&lt;/a> for details.&lt;/p>
+&lt;p>It is suggested to make an understanding of the thread phase involved in the process of Dubbo first, please refer to &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/02/20/implementation-background-and-practice-of-dubbo-client-asynchronous-interface/">Implementation background and practice of Dubbo client asynchronous interface&lt;/a> for details.&lt;/p>
 &lt;h2 id="implementation-background">Implementation background&lt;/h2>
 &lt;p>It is necessary to introduce the server-side thread strategy in more detail to deepen the user&amp;rsquo;s judgment basis for selecting server-side asynchrony. It is also necessary to introduce coroutines, the &amp;ldquo;secret weapon&amp;rdquo; often used in server-side asynchrony.&lt;/p>
 &lt;h3 id="server-side-thread-strategy">Server-side thread strategy&lt;/h3>
@@ -1821,26 +1821,26 @@ Save tom to Mysql&lt;/p>
 &lt;li>&lt;strong>Worker-thread Strategy&lt;/strong>&lt;/li>
 &lt;/ol>
 &lt;p>The most useful IOStrategy, where Selector thread delegates NIO events processing to a worker threads.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubboasyn_server/1.png" alt="workerthread-strategy.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubboasyn_server/1.png" alt="workerthread-strategy.png">&lt;/p>
 &lt;p>This IOStrategy is very scalable and safe. We can change the size of selector and worker thread pool as required and there is no risk that some problem, which may occur during the specific NIO event processing, will impact other Channels registered on the same Selector.&lt;/p>
 &lt;p>The disadvantage is the cost of thread context switching.&lt;/p>
 &lt;ol start="2">
 &lt;li>&lt;strong>Same-thread Strategy&lt;/strong>&lt;/li>
 &lt;/ol>
 &lt;p>Potentially the most efficient IOStrategy. Unlike the worker-thread IOStrategy, the same-thread IOStrategy processes NIO events in the current thread, avoiding expensive thread context switches.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubboasyn_server/2.png" alt="samethread-strategy.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubboasyn_server/2.png" alt="samethread-strategy.png">&lt;/p>
 &lt;p>This IOStrategy is still pretty scalable, because we can tune the selector thread pool size, but it does have drawbacks. Care needs to be taken that channel NIO event processing won’t block or execute any long lasting operation, because it may block the processing of other NIO events that occur on the same Selector.&lt;/p>
 &lt;ol start="3">
 &lt;li>&lt;strong>Dynamic Strategy&lt;/strong>&lt;/li>
 &lt;/ol>
 &lt;p>As mentioned previously worker-thread and same-thread strategies have distinct advantages and disadvantages. However, what if a strategy could try to swap them smartly during runtime depending on the current conditions (load, gathered statistics… etc)?&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubboasyn_server/3.png" alt="dynamic-strategy.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubboasyn_server/3.png" alt="dynamic-strategy.png">&lt;/p>
 &lt;p>Potentially this IOStrategy could bring a lot of benefit and allow finer control of the resources. However, it’s important to not overload the condition evaluation logic, as its complexity will make this IOStrategy inefficient comparing to previous two strategies.&lt;/p>
 &lt;p>By the way, I want you to pay more attention to this strategy, which is probably the best combination of Dubbo server asynchrony.&lt;/p>
 &lt;ol start="4">
 &lt;li>&lt;strong>Leader-follower Strategy&lt;/strong>&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubboasyn_server/4.png" alt="leaderfollower-strategy.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubboasyn_server/4.png" alt="leaderfollower-strategy.png">&lt;/p>
 &lt;p>This IOStrategy is similar to worker-thread IOStrategy, but instead of passing NIO event processing to a worker thread, it changes worker thread to a selector thread by passing it the control over Selector and the actual NIO event processing takes place in the current thread. This strategy actually confuses worker and IO thread stages, which is not recommended.&lt;/p>
 &lt;h3 id="coroutine-and-thread">Coroutine and thread&lt;/h3>
 &lt;p>In terms of CPU resource management, the minimum scheduling unit of OS and JVM is thread. The coroutine library implemented by business application through extension can have independent running unit. In fact, it is also done based on thread. The principle should be to save the context and switch to another coroutine when IO blocking or lock waiting is encountered.&lt;/p>
@@ -1875,7 +1875,7 @@ Save tom to Mysql&lt;/p>
 &lt;li>To use server-side asynchrony, it is recommended that the server-side thread strategy adopt the Same_thread pattern + Coroutine Library.&lt;/li>
 &lt;/ul>
 &lt;h2 id="conclusions">Conclusions&lt;/h2>
-&lt;p>When Dubbo supports business applications, it encounters a variety of requirements scenarios, and server-side asynchrony provides users with a solution to deal with ThreadPool Full. In the case of ThreadPool Full, if the current system bottleneck is CPU, this solution is not recommended. If the system load is not high, increasing the number of worker threads or using server asynchrony can be considered.&lt;/p></description></item><item><title>Blog: How to use Seata to ensure consistency between Dubbo Microservices</title><link>https://dubbo.apache.org/en/blog/2019/01/17/how-to-use-seata-to-ensure-consistency-between-dubbo-microservices/</link><pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2019/01/17/how-to-use-seata-to-ensure-consistency-between-dubbo-microservices/</guid><description>
+&lt;p>When Dubbo supports business applications, it encounters a variety of requirements scenarios, and server-side asynchrony provides users with a solution to deal with ThreadPool Full. In the case of ThreadPool Full, if the current system bottleneck is CPU, this solution is not recommended. If the system load is not high, increasing the number of worker threads or using server asynchrony can be considered.&lt;/p></description></item><item><title>Blog: How to use Seata to ensure consistency between Dubbo Microservices</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/01/17/how-to-use-seata-to-ensure-consistency-between-dubbo-microservices/</link><pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2019/01/17/how-to-use-seata-to-ensure-consistency-between-dubbo-microservices/</guid><description>
 &lt;h2 id="use-case">Use case&lt;/h2>
 &lt;p>A business logic for user purchasing commodities. The whole business logic is powered by 3 microservices:&lt;/p>
 &lt;ul>
@@ -1884,7 +1884,7 @@ Save tom to Mysql&lt;/p>
 &lt;li>Account service: debit the balance of user&amp;rsquo;s account.&lt;/li>
 &lt;/ul>
 &lt;h3 id="architecture">Architecture&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/fescar/fescar-1.png" alt="Architecture">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/fescar/fescar-1.png" alt="Architecture">&lt;/p>
 &lt;h3 id="storageservice">StorageService&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">StorageService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -1960,7 +1960,7 @@ Save tom to Mysql&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="distributed-transaction-solution-with-seata">Distributed Transaction Solution with Seata&lt;/h2>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/fescar/fescar-2.png" alt="undefined">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/fescar/fescar-2.png" alt="undefined">&lt;/p>
 &lt;p>We just need an annotation &lt;code>@GlobalTransactional&lt;/code> on business method:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@GlobalTransactional&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#dc322f">void&lt;/span> &lt;span style="color:#268bd2">purchase&lt;/span>&lt;span style="color:#719e07">(&lt;/span>String userId&lt;span style="color:#719e07">,&lt;/span> String commodityCode&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#dc322f">int&lt;/span> orderCount&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -2057,7 +2057,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;ul>
 &lt;li>Seata: &lt;a href="https://github.com/seata/seata">https://github.com/seata/seata&lt;/a>&lt;/li>
 &lt;li>Seata Samples : &lt;a href="https://github.com/seata/seata-samples">https://github.com/seata/seata-samples&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: The fifth Dubbo meetup has been held in Hangzhou</title><link>https://dubbo.apache.org/en/blog/2018/12/10/the-fifth-dubbo-meetup-has-been-held-in-hangzhou/</link><pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/12/10/the-fifth-dubbo-meetup-has-been-held-in-hangzhou/</guid><description>
+&lt;/ul></description></item><item><title>Blog: The fifth Dubbo meetup has been held in Hangzhou</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/12/10/the-fifth-dubbo-meetup-has-been-held-in-hangzhou/</link><pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/12/10/the-fifth-dubbo-meetup-has-been-held-in-hangzhou/</guid><description>
 &lt;p>The fifth Dubbo meetup has been held in Hangzhou,&lt;/p>
 &lt;p>Please enjoy the slides of the topics:&lt;/p>
 &lt;ul>
@@ -2067,7 +2067,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;li>Mercy Ma: Nacos support in Dubbo &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201812%40hangzhou/nacos-support-in-dubbo.pdf">slides&lt;/a>&lt;/li>
 &lt;li>Yihao Zhao: Sentinel: Sentinel support for Dubbo &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201812%40hangzhou/sentinel-support-for-dubbo.pdf">slides&lt;/a>&lt;/li>
 &lt;li>Zhixuan Chen: Troubleshooting Dubbo with Arthas &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201812%40hangzhou/troubleshooting-dubbo-with-arthas.pdf">slides&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: Dubbo Integrates with Nacos to Become a Registry</title><link>https://dubbo.apache.org/en/blog/2018/11/07/dubbo-integrates-with-nacos-to-become-a-registry/</link><pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/11/07/dubbo-integrates-with-nacos-to-become-a-registry/</guid><description>
+&lt;/ul></description></item><item><title>Blog: Dubbo Integrates with Nacos to Become a Registry</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/11/07/dubbo-integrates-with-nacos-to-become-a-registry/</link><pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/11/07/dubbo-integrates-with-nacos-to-become-a-registry/</guid><description>
 &lt;p>Nacos is an important registry in Dubbo ecosystem, and dubbo-registry-nacos is the implementation of Dubbo-integrated Nacos registry.&lt;/p>
 &lt;h2 id="preparation-works">Preparation Works&lt;/h2>
 &lt;p>Before you integrate dubbo-registry-nacos into your Dubbo project, make sure the Nacos service is started in the background. If you are not familiar with the basic use of Nacos, you can refer to the Quick Start for Nacos: &lt;a href="https://nacos.io/en-us/docs/quick-start.html">https://nacos.io/en-us/docs/quick-start.html&lt;/a>. Nacos versions above 0.6.1 are recommended.&lt;/p>
@@ -2129,9 +2129,9 @@ dubbo-storage-service.xml&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">nacos://10.20.153.10:8848&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Subsequently, restart your Dubbo application, and Dubbo&amp;rsquo;s service delivery and consumption information can be displayed in the Nacos console:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-1.png" alt="image-20181213103845976">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-1.png" alt="image-20181213103845976">&lt;/p>
 &lt;p>As shown in the figure, the service name prefixed with providers: is the meta-information for the service provider, and consumers: represents the meta-information of the service consumer. Click &amp;ldquo;Details&amp;rdquo; to view service status details:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-2.png" alt="image-20181213104145998">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-2.png" alt="image-20181213104145998">&lt;/p>
 &lt;p>If you are using the Spring XML configuration file to assemble the Dubbo registry, refer to the next section.&lt;/p>
 &lt;h2 id="spring-xml-configuration-file">Spring XML Configuration File&lt;/h2>
 &lt;p>Also, assume your Dubbo application uses Zookeeper as the registry and its server IP address is 10.20.153.10 and assemble the Spring Bean in an XML file, as shown below:&lt;/p>
@@ -2163,7 +2163,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you restart the Dubbo application, you can also see that the registration meta-information for both service providers and consumers is presented in the Nacos console:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-3.png" alt="image-20181213113049185">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-3.png" alt="image-20181213113049185">&lt;/p>
 &lt;p>Do you absolutely configure or switch Nacos registry super Easy? If you want to get more or unclear, refer to the complete example below.&lt;/p>
 &lt;h2 id="complete-example">Complete Example&lt;/h2>
 &lt;p>The metadata in the above image is derived from the Dubbo Spring annotation-driven example and the Dubbo Spring XML configuration-driven example, both of which will be described below, you can choose your preferred programming model. Before we get into the formal discussion, let&amp;rsquo;s look at the preparations for both, as they both rely on Java service interfaces and implementations. Also, ensure that the Nacos service is started in the local (127.0.0.1) environment.&lt;/p>
@@ -2317,7 +2317,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;p>The @PostConstruct code shows that when the DemoServiceConsumerBootstrap Bean is initialized, it executes ten Dubbo remote method invocation.&lt;/p>
 &lt;h3 id="run-the-annotation-driven-example">Run the Annotation-driven Example&lt;/h3>
 &lt;p>Start DemoServiceProviderBootstrap twice locally and the registry will have two health services:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-4.png" alt="image-20181213123909636">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-4.png" alt="image-20181213123909636">&lt;/p>
 &lt;p>Run DemoServiceConsumerBootstrap again and the results are as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Service [name :demoService , port : 20880] sayName(&amp;#34;小马哥（mercyblitz）&amp;#34;) : Hello,小马哥（mercyblitz）
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Service [name :demoService , port : 20881] sayName(&amp;#34;小马哥（mercyblitz）&amp;#34;) : Hello,小马哥（mercyblitz）
@@ -2433,7 +2433,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="run-xml-configuration-driven-example">Run XML Configuration-driven Example&lt;/h4>
 &lt;p>As such, start two DemoServiceProviderXmlBootstrap bootstraps and observe the changes in the Nacos registry service provider:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-registry-nacos-5.png" alt="image-20181213125527201">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-5.png" alt="image-20181213125527201">&lt;/p>
 &lt;p>The service version driven by the XML configuration is 2.0.0, so the registration service is correct.&lt;/p>
 &lt;p>Run the service consumer bootstrap DemoServiceConsumerXmlBootstrap again and observe the console output:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Service [name :null , port : 20882] sayName(&amp;#34;小马哥（mercyblitz）&amp;#34;) : Hello,小马哥（mercyblitz）
@@ -2452,7 +2452,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;li>Apache Dubbo: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a>&lt;/li>
 &lt;li>Dubbo Nacos Registry: &lt;a href="https://github.com/apache/dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">https://github.com/apache/dubbo/tree/master/dubbo-registry/dubbo-registry-nacos&lt;/a>&lt;/li>
 &lt;li>Alibaba Nacos: &lt;a href="https://github.com/alibaba/nacos">https://github.com/alibaba/nacos&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: Introduction to the Dubbo protocol</title><link>https://dubbo.apache.org/en/blog/2018/10/05/introduction-to-the-dubbo-protocol/</link><pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/10/05/introduction-to-the-dubbo-protocol/</guid><description>
+&lt;/ul></description></item><item><title>Blog: Introduction to the Dubbo protocol</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/10/05/introduction-to-the-dubbo-protocol/</link><pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/10/05/introduction-to-the-dubbo-protocol/</guid><description>
 &lt;h2 id="the-concept-of-the-protocol">The concept of the protocol&lt;/h2>
 &lt;p>The protocol is the foundation of communication between two network entities, and data is transmitted from one entity to another in the form of a byte stream over the network. In the world of byte streams, this one-dimensional byte stream cannot be reshaped into two-dimensional or multi-dimensional data structures and domain objects without a protocol.&lt;/p>
 &lt;h3 id="what-is-the-protocol">What is the protocol&lt;/h3>
@@ -2510,7 +2510,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;h2 id="the-dubbo-protocol">The Dubbo protocol&lt;/h2>
 &lt;h3 id="overview-to-the-dubbo-protocol">Overview to the Dubbo protocol&lt;/h3>
 &lt;p>The Dubbo framework defines a proprietary RPC protocol in which the specific content of the request and response protocols is presented using a table.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/dev/dubbo_protocol_header.png" alt="/dev-guide/images/dubbo_protocol_header.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/dev/dubbo_protocol_header.png" alt="/dev-guide/images/dubbo_protocol_header.jpg">&lt;/p>
 &lt;h3 id="dubbo-protocol-details">Dubbo protocol details&lt;/h3>
 &lt;ul>
 &lt;li>
@@ -2613,7 +2613,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>This article mainly introduces the concept of the protocol and the commonly used protocol mode. Then it analyzes the Dubbo protocol in detail and also mentions some shortcomings. However, compared with its simplicity and ease of implementation, the above shortcomings are not enough to drive us to redesign a new version of the protocol, so we welcome suggestions and features for protocol optimization.&lt;/p></description></item><item><title>Blog: Integrate Dubbo with Kubernetes</title><link>https://dubbo.apache.org/en/blog/2018/09/30/integrate-dubbo-with-kubernetes/</link><pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/09/30/integrate-dubbo-with-kubernetes/</guid><description>
+&lt;p>This article mainly introduces the concept of the protocol and the commonly used protocol mode. Then it analyzes the Dubbo protocol in detail and also mentions some shortcomings. However, compared with its simplicity and ease of implementation, the above shortcomings are not enough to drive us to redesign a new version of the protocol, so we welcome suggestions and features for protocol optimization.&lt;/p></description></item><item><title>Blog: Integrate Dubbo with Kubernetes</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/09/30/integrate-dubbo-with-kubernetes/</link><pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/09/30/integrate-dubbo-with-kubernetes/</guid><description>
 &lt;h1 id="general-goal">General goal&lt;/h1>
 &lt;p>Dubbo&amp;rsquo;s provider don&amp;rsquo;t care about service registration.Open its Dubbo service port,the declaration and publishment of the service will be executed by Kubernetes.
 Dubbo&amp;rsquo;s consumer directly discovers the corresponding service endpoints of Kubernetes during service discovery procedure, thereby reusing Dubbo&amp;rsquo;s existing microservice channel capabilities.The benefit is that there is no need to rely on any third-party soft-loaded registry and it can be seamlessly integrated into the multi-tenant security system of Kubernetes. Reference demo : &lt;a href="https://github.com/dubbo/dubbo-Kubernetes">https://github.com/dubbo/dubbo-ubernetes&lt;/a>&lt;/p>
@@ -2625,7 +2625,7 @@ Dubbo&amp;rsquo;s consumer directly discovers the corresponding service endpoint
 &lt;li>Finally, on top of the abstract model of the basic resource (mainly the resources of abstract infrastructure, IaaS) and the application layer is the governance layer, which includes elastic expansion, namespaces/tenants and so on. Naturally, it is a matter of course to set up service about unified log center and omnidirectional monitoring on the Kubernetes based upon the foundational capabilities of atomic inner core.&lt;/li>
 &lt;/ul>
 &lt;p>We will explain the above description with a diagram of Kubernetes Architecture. In 2018, Kubernetes took a qualitative step toward the standard PaaS basement.Someone hold opinions that the reason is the ability for secondary development on the basis of the expansion and someone think the key is declarative programming and strong community operations relying on Google and Redhat. However,I think the essential reason is Layered architecture and the abstract domain modeling in the problem domain as the figure below.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/k8s/1.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/k8s/1.png" alt="img">&lt;/p>
 &lt;p>From a micro-service architecture perspective, Kubernetes is a micro-service framework (more appropriate than a micro-service platform or toolkit set at this time) in a sense, supporting the basic capabilities of microservices for service discovery/registration. Use the following table to make a brief description.&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2718,7 +2718,7 @@ Dubbo&amp;rsquo;s consumer directly discovers the corresponding service endpoint
 &lt;ol>
 &lt;li>
 &lt;p>DNS: The default Kubernetes service is based on the DNS plugin (The latest version of the recommendation is coreDNS), one proposal on Dubbo is about this.  since HSF/Dubbo has always highlighted its soft-load address discovery capability, it ignores Static&amp;rsquo;s strategy insteadily, my understanding is that as a service discovery mechanism, the static resolution mechanism is one of the simplest and most needed to support mechanism, you can also refer to Envoy&amp;rsquo;s point of views. While at the same time, ant&amp;rsquo;s SOFA has always supported this static strategy, it can provides an explanation for an engineering fragment of the SOFA project. There are two advantages to doing this. 1) When the soft load center crash is unavailable and the address list cannot be obtained, there is a mechanism to Failover to this policy to handle certain requests. 2) Under LDC/unitization, the ant&amp;rsquo;s load center cluster is deployed in the equipment room/area. First, the LDC of the soft load center is guaranteed to be stable and controllable. When the unit needs the request center, the address of the VIP can come in handy.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1Kj1ktpkoBKNjSZFEXXbrEVXa-985-213.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1Kj1ktpkoBKNjSZFEXXbrEVXa-985-213.png" alt="img">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>API：DNS relies on the DNS plugin, which will generate additional operation, so consider directly obtaining the endpoint through the client of Kubernetes. In fact, by accessing the API server interface of Kubernetes, you can directly obtain the list of endpoints behind a certain servie, and can also monitor the changes in its address list. Thereby implementing the soft load discovery strategy recommended by Dubbo/HSF. Refer to the code for details:&lt;/p>
@@ -2734,24 +2734,24 @@ Dubbo&amp;rsquo;s consumer directly discovers the corresponding service endpoint
 &lt;ol>
 &lt;li>
 &lt;p>Create repo and bind the github codebase. As shown below.
-&lt;img src="https://dubbo.apache.org/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1m.tEtrorBKNjSZFjXXc_SpXa-1892-870.png" alt="img">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1m.tEtrorBKNjSZFjXXc_SpXa-1892-870.png" alt="img">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Click Manage enter the repository details page. Click Build in images service panel, construct the demo into image and publish it to the specified repository. As shown below.
-&lt;img src="https://dubbo.apache.org/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1oYqvtcIrBKNjSZK9XXagoVXa-1872-888.png" alt="img">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1oYqvtcIrBKNjSZK9XXagoVXa-1872-888.png" alt="img">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Switch to Enterprise Distributed Application Services (EDAS) products panel, visit Resource Management -&amp;gt; Clusters. Create Kubernetes cluster and bind ECS. As shown below.
-&lt;img src="https://dubbo.apache.org/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1b1p2trZnBKNjSZFKXXcGOVXa-1858-833.png" alt="img">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1b1p2trZnBKNjSZFKXXcGOVXa-1858-833.png" alt="img">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Application Management -&amp;gt; Create application, type Kubernetes application and specify the image in the container registry . As shown below.
-&lt;img src="https://dubbo.apache.org/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1_YywtDCWBKNjSZFtXXaC3FXa-1737-588.png" alt="img">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB18uzTtdcnBKNjSZR0XXcFqFXa-1820-861.png" alt="">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1_YywtDCWBKNjSZFtXXaC3FXa-1737-588.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB18uzTtdcnBKNjSZR0XXcFqFXa-1820-861.png" alt="">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>After creation , then deploy applications. As shown below.
-&lt;img src="https://dubbo.apache.org/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1fEpEtrorBKNjSZFjXXc_SpXa-1846-783.png" alt="">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/2018/09/30/integrate-dubbo-with-kubernetes/TB1fEpEtrorBKNjSZFjXXc_SpXa-1846-783.png" alt="">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;ul>
@@ -2779,7 +2779,7 @@ Dubbo&amp;rsquo;s consumer directly discovers the corresponding service endpoint
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;#34;apiVersion&amp;#34;&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;v1&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;#34;resourceVersion&amp;#34;&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;850282769&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}, &lt;span style="color:#2aa198">&amp;#34;reason&amp;#34;&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;FailedSync&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;message&amp;#34;&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;Error syncing pod&amp;#34;&lt;/span>, &amp;#34;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: How to prepare an Apache Release</title><link>https://dubbo.apache.org/en/blog/2018/09/02/how-to-prepare-an-apache-release/</link><pubDate>Sun, 02 Sep 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/09/02/how-to-prepare-an-apache-release/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: How to prepare an Apache Release</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/09/02/how-to-prepare-an-apache-release/</link><pubDate>Sun, 02 Sep 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/09/02/how-to-prepare-an-apache-release/</guid><description>
 &lt;h2 id="understanding-the-apache-release-cycle">Understanding the Apache Release Cycle&lt;/h2>
 &lt;p>In general, Source Release is the key and the required content of Apache. But Binary Release is optional, Dubbo can choose whether to release binary packages to the Apache repository or to the Maven central repository.&lt;/p>
 &lt;p>Please refer to the following links for more information on ASF&amp;rsquo;s release guide:&lt;/p>
@@ -3164,7 +3164,7 @@ The problem is that missing package occurred many times at deploying. So you sho
 &lt;li>Remove the the release file for the previous release under &lt;a href="https://dist.apache.org/repos/dist/release/dubbo/">official release directory&lt;/a>, which will be archived and can be found &lt;a href="https://archive.apache.org/dist/incubator/dubbo/">here&lt;/a>&lt;/li>
 &lt;li>Publish &lt;a href="https://github.com/apache/dubbo/releases">release notes&lt;/a> on Github.&lt;/li>
 &lt;li>Update the recommend dependency on &lt;a href="https://github.com/apache/dubbo#maven-dependency">Github&lt;/a> to the latest version, also update the version in other place if necessary.&lt;/li>
-&lt;li>Add the download link to official website &lt;a href="https://dubbo.apache.org/en/blog/2020/05/18/past-releases/">https://dubbo.apache.org/en/blog/2020/05/18/past-releases/&lt;/a>, using the ASF mirror system. The latest release download link should be something like &lt;code>https://www.apache.org/dyn/closer.cgi?path=incubator/dubbo/$VERSION/apache-dubbo-$VERSION-source-release.zip&lt;/code>. The download link for the previous release version should be changed like &lt;code>https://archive.apache.org/dist/incubator/dubbo/$VERSION/apache-dubbo-$VERSION-bin-release.zip)&lt;/code>. Please refer to the &lt;a href="https://dubbo.apache.org/en/blog/2020/05/18/past-releases/">download page&lt;/a> for more details.&lt;/li>
+&lt;li>Add the download link to official website &lt;a href="https://dubbo.apache.org/en/blog/2020/05/18/past-releases/">https://dubbo.apache.org/en/blog/2020/05/18/past-releases/&lt;/a>, using the ASF mirror system. The latest release download link should be something like &lt;code>https://www.apache.org/dyn/closer.cgi?path=incubator/dubbo/$VERSION/apache-dubbo-$VERSION-source-release.zip&lt;/code>. The download link for the previous release version should be changed like &lt;code>https://archive.apache.org/dist/incubator/dubbo/$VERSION/apache-dubbo-$VERSION-bin-release.zip)&lt;/code>. Please refer to the &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/blog/2020/05/18/past-releases/">download page&lt;/a> for more details.&lt;/li>
 &lt;li>Make sure all the commits in the release branch are merged into master branch, and then remove the remote release branch. For example: &lt;code>git push origin --delete 2.7.0-release&lt;/code>&lt;/li>
 &lt;li>Send mail to &lt;a href="mailto:dev@dubbo.apache.org">dev@dubbo.apache.org&lt;/a> and &lt;a href="mailto:general@incubator.apache.org">general@incubator.apache.org&lt;/a>, notify the community that the release is completed.
 The mail template to announce release:&lt;/li>
@@ -3207,10 +3207,10 @@ The mail template to announce release:&lt;/li>
 &lt;h4 id="gpg-signing-failed-inappropriate-ioctl-for-device">gpg: signing failed: Inappropriate ioctl for device&lt;/h4>
 &lt;p>If you&amp;rsquo;ve encoutered this error, try the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>export GPG_TTY=$(tty)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: How to implement a fully asynchronous calls chain based on Dubbo</title><link>https://dubbo.apache.org/en/blog/2018/09/02/how-to-implement-a-fully-asynchronous-calls-chain-based-on-dubbo/</link><pubDate>Sun, 02 Sep 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/09/02/how-to-implement-a-fully-asynchronous-calls-chain-based-on-dubbo/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: How to implement a fully asynchronous calls chain based on Dubbo</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/09/02/how-to-implement-a-fully-asynchronous-calls-chain-based-on-dubbo/</link><pubDate>Sun, 02 Sep 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/09/02/how-to-implement-a-fully-asynchronous-calls-chain-based-on-dubbo/</guid><description>
 &lt;p>Implementing the full asynchronous programming based on Dubbo, which is a new feature introduced in version 2.7.0 after the enhancement of the existing asynchronous mode.This article first reviews the supported functions and existing problems of asynchronization in 2.6.x and earlier versions, and introduces the targeted enhancements based on CompletableFuture in version 2.7.0. Then, the use of enhanced asynchronous programming is elaborated through several examples. Finally, it summarizes the new problems brought by the introduction of asynchronous mode and corresponding solutions from Dubbo. By reading this article, it is easy to implement a fully asynchronous remote service call chain based on Dubbo 2.7.0+.&lt;/p>
 &lt;h2 id="asynchronous-mode-before-version-26x">Asynchronous mode before version 2.6.x&lt;/h2>
-&lt;p>Dubbo Provides some asynchronous programming capabilities in 2.6.x and earlier versions, including &lt;a href="https://dubbo.apache.org/en/docs/v2.7/user/examples/async-call/">Asynchronous Call&lt;/a>, &lt;a href="https://dubbo.apache.org/en/docs/v2.7/user/examples/callback-parameter/">Parameter Callback&lt;/a> and &lt;a href="https://dubbo.apache.org/en/docs/v2.7/user/examples/events-notify/">Event Notification&lt;/a> on Consumer side. There are some brief introductions to the usage and Demo in the above document links.&lt;/p>
+&lt;p>Dubbo Provides some asynchronous programming capabilities in 2.6.x and earlier versions, including &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/examples/async-call/">Asynchronous Call&lt;/a>, &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/examples/callback-parameter/">Parameter Callback&lt;/a> and &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/examples/events-notify/">Event Notification&lt;/a> on Consumer side. There are some brief introductions to the usage and Demo in the above document links.&lt;/p>
 &lt;p>But the current asynchronous method has the following problems:&lt;/p>
 &lt;ul>
 &lt;li>Methods to access Future object are not direct enough.&lt;/li>
@@ -3561,9 +3561,9 @@ The mail template to announce release:&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: The fourth Dubbo meetup has been held in Chengdu</title><link>https://dubbo.apache.org/en/blog/2018/08/26/the-fourth-dubbo-meetup-has-been-held-in-chengdu/</link><pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/26/the-fourth-dubbo-meetup-has-been-held-in-chengdu/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: The fourth Dubbo meetup has been held in Chengdu</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/26/the-fourth-dubbo-meetup-has-been-held-in-chengdu/</link><pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/26/the-fourth-dubbo-meetup-has-been-held-in-chengdu/</guid><description>
 &lt;h1 id="the-fourth-dubbo-meetup-has-been-held-in-chengdu">The fourth Dubbo meetup has been held in Chengdu&lt;/h1>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/meetup-chengdu/all-hands.webp" alt="img">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/meetup-chengdu/all-hands.webp" alt="img">&lt;/p>
 &lt;h2 id="the-depth-of-the-user-communication">The depth of the user communication&lt;/h2>
 &lt;p>On August 26, 10:00 am - 12:00am, invited the arrival of the car to help, cloud gold, former BBD, flying fish star four companies open source enthusiasts and heavy users participate in face-to-face communication;According to the participants&amp;rsquo; feedback, answer to Dubbo many doubt, especially how to participate in the contribution to the community, as well as code contribution value point.Hope later can be more deeply involved in Dubbo communities and activities.&lt;/p>
 &lt;h2 id="meetup-activity-information">Meetup activity information&lt;/h2>
@@ -3571,7 +3571,7 @@ The mail template to announce release:&lt;/li>
 &lt;h2 id="the-registration-information">The registration information&lt;/h2>
 &lt;p>Aliware Open Source, headquarters - Apache Dubbo developers salon on August 26 (Sunday) in chengdu high-tech zone tianfu hemicyenine rong international plaza, 200 five street on the 8th floor held the second floor conference room, technical thinking is GG feast, dry goods and welfare will not one less.&lt;/br>
 Sign up link：http://www.huodongxing.com/event/7453091088400&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-chengdu-meetup-img.jpg" alt="img">&lt;/p></description></item><item><title>Blog: Dubbo Basic Usage - Dubbo Consumer Configuration</title><link>https://dubbo.apache.org/en/blog/2018/08/14/dubbo-basic-usage-dubbo-consumer-configuration/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/dubbo-basic-usage-dubbo-consumer-configuration/</guid><description>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-chengdu-meetup-img.jpg" alt="img">&lt;/p></description></item><item><title>Blog: Dubbo Basic Usage - Dubbo Consumer Configuration</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/dubbo-basic-usage-dubbo-consumer-configuration/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/dubbo-basic-usage-dubbo-consumer-configuration/</guid><description>
 &lt;h2 id="dubbo-consumer-configuration">Dubbo Consumer Configuration&lt;/h2>
 &lt;h3 id="consumer-configuration-detailed">Consumer Configuration Detailed&lt;/h3>
 &lt;p>There are 3 ways to configure the Dubbo Consumer: XML configuration, API call mode configuration, and annotation mode configuration.&lt;/p>
@@ -3691,7 +3691,7 @@ Sign up link：http://www.huodongxing.com/event/7453091088400&lt;/p>
 &lt;/table>
 &lt;p>For other properties, you can refer to xsd above.&lt;/p>
 &lt;h6 id="configured-coverage-relationship">Configured coverage relationship&lt;/h6>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/dubbo-config-override.jpg" alt="undefined">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-config-override.jpg" alt="undefined">&lt;/p>
 &lt;p>Coverage diagram for configuration&lt;/p>
 &lt;p>It contains the configuration of the consumer side and the provider, pay attention to the distinction.&lt;/p>
 &lt;h4 id="annotation">annotation&lt;/h4>
@@ -3780,7 +3780,7 @@ The provider of the service has been defined in the provider section.&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;dubbo:protocol name=&amp;#34;dubbo&amp;#34; port=&amp;#34;20880&amp;#34; /&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;dubbo:reference id=&amp;#34;userReadService&amp;#34; interface=&amp;#34;com.package.UserReadService&amp;#34;check=&amp;#34;false&amp;#34; /&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/beans&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Other ways of configuring Dubbo can refer to the relevant configuration in the previous section, or use the integrated dubbo spring boot starter mode.&lt;/p></description></item><item><title>Blog: Dubbo: Several ways about synchronous/asynchronous invoke</title><link>https://dubbo.apache.org/en/blog/2018/08/14/dubbo-several-ways-about-synchronous/asynchronous-invoke/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/dubbo-several-ways-about-synchronous/asynchronous-invoke/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Other ways of configuring Dubbo can refer to the relevant configuration in the previous section, or use the integrated dubbo spring boot starter mode.&lt;/p></description></item><item><title>Blog: Dubbo: Several ways about synchronous/asynchronous invoke</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/dubbo-several-ways-about-synchronous/asynchronous-invoke/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/dubbo-several-ways-about-synchronous/asynchronous-invoke/</guid><description>
 &lt;p>As we all know，Dubbo adopts a single large join protocol by default and takes the NIO asynchronous communication mechanism of Netty as the low-level implementation. Based on this mechanism, Dubbo implements several invocation modes as follows:&lt;/p>
 &lt;ul>
 &lt;li>synchronous invoke&lt;/li>
@@ -3831,7 +3831,7 @@ The provider of the service has been defined in the provider section.&lt;/li>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;goodbye&amp;#34;&lt;/span> async=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> return=&lt;span style="color:#2aa198">&amp;#34;false&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>At this time，&lt;code>RpcContext.getContext().getFuture()&lt;/code> will return &lt;code>null&lt;/code>。&lt;/p>
 &lt;p>The complete sequence diagram of asynchronous invoke is as follow:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-async.svg" alt="Asynchronous invoke">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-async.svg" alt="Asynchronous invoke">&lt;/p>
 &lt;p>The sample locates at：https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-async&lt;/p>
 &lt;h3 id="parameters-callback">Parameters callback&lt;/h3>
 &lt;p>The parameter Callback is somewhat similar to the local Callback mechanism, but Callback is not an inner class or interface of Dubbo. Instead, it is defined by the Provider. Dubbo will generate a reverse proxy based on the long connection, so as to implement the logic of calling the Consumer from the Provider.&lt;/p>
@@ -3929,7 +3929,7 @@ The provider of the service has been defined in the provider section.&lt;/li>
 &lt;li>&lt;code>onthrow&lt;/code> method&amp;rsquo;s first parameter is an invoked exception，and the others are the same as the calling method.&lt;/li>
 &lt;/ul>
 &lt;p>In the above configuration, &lt;code>sayHello&lt;/code> method is an asynchronous invocation, so the execution of event notification method is also synchronous. You can configure the &lt;code>async = true&lt;/code> to make method invocation asynchronous, at this moment, event notification method is executed asynchronously. Especially emphasize that &lt;code>oninvoke&lt;/code> method is executed synchronously, whether is an asynchronous call or not.&lt;/p>
-&lt;p>Please refer to the sample code for event notification：https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify&lt;/p></description></item><item><title>Blog: Dubbo Basic Usage -- Dubbo Provider Configuration</title><link>https://dubbo.apache.org/en/blog/2018/08/14/dubbo-basic-usage--dubbo-provider-configuration/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/dubbo-basic-usage--dubbo-provider-configuration/</guid><description>
+&lt;p>Please refer to the sample code for event notification：https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-notify&lt;/p></description></item><item><title>Blog: Dubbo Basic Usage -- Dubbo Provider Configuration</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/dubbo-basic-usage--dubbo-provider-configuration/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/dubbo-basic-usage--dubbo-provider-configuration/</guid><description>
 &lt;p>This chapter mainly talking about how to configure dubbo. According to the configuration mode, it can be divided into the following mode: XML Configuration, Properties Configuration, Annotation Configuration, API Invocation Mode Configuration. And according to the function, we can divide them into Dubbo Provider and Dubbo Consumer. In the following sections, we would explain Dubbo Provider and Dubbo Consumer respectively.&lt;/p>
 &lt;h2 id="dubbo-provider-configuration">Dubbo Provider Configuration&lt;/h2>
 &lt;h3 id="provider-configuration-in-detail">Provider Configuration in Detail&lt;/h3>
@@ -4020,7 +4020,7 @@ The provider of the service has been defined in the provider section.&lt;/li>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/dubbo-config.jpg" alt="undefined">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-config.jpg" alt="undefined">&lt;/p>
 &lt;p>Configuration Diagram&lt;/p>
 &lt;h6 id="configuration-item-in-detail">Configuration item in detail&lt;/h6>
 &lt;ul>
@@ -4133,7 +4133,7 @@ Here is the transport protocol and the default port, generally no changes are re
 &lt;/table>
 &lt;p>For other properties，you can refer to xsd above。&lt;/p>
 &lt;h6 id="configuration-override-relationship">Configuration Override Relationship&lt;/h6>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/dubbo-config-override.jpg" alt="undefined">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-config-override.jpg" alt="undefined">&lt;/p>
 &lt;p>Configuration Coverage Relationship Diagram&lt;/p>
 &lt;p>The Override relationship here includes the configuration of both provider end and consumer end. If you have any questions about consumer, you can refer to the next chapter, consumer chapter, to understand.&lt;/p>
 &lt;h4 id="dubboproperties-configuration">dubbo.properties Configuration&lt;/h4>
@@ -4163,7 +4163,7 @@ Here is the transport protocol and the default port, generally no changes are re
 &lt;li>For example: dubbo.registry.china.address=10.20.153.10:9090 equivalents to &amp;lt;dubbo:registry id=&amp;ldquo;china&amp;rdquo; address=&amp;ldquo;10.20.153.10:9090&amp;rdquo; /&amp;gt;&lt;/li>
 &lt;/ul>
 &lt;h6 id="coverage-strategy">Coverage Strategy&lt;/h6>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/dubbo-config.jpg" alt="undefined">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-config.jpg" alt="undefined">&lt;/p>
 &lt;ul>
 &lt;li>When JVM starts, -D parameter has priority, so that users can rewrite the parameters when deploy and start, for example, the protocol port should be changed when start.&lt;/li>
 &lt;li>Then comes to XML, the configurations in dubbo.properties are invalid, if they are configured in XML.&lt;/li>
@@ -4289,7 +4289,7 @@ Implement UserReadService, and deploy current implementation in the Provider&amp
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;bean id=&amp;#34;userReadService&amp;#34; class=&amp;#34;com.package.UserReadServiceImpl&amp;#34;/&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;dubbo:service interface=&amp;#34;com.package.UserReadService&amp;#34; ref=&amp;#34;userReadService&amp;#34; /&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/beans&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the other modes of Dubbo configuration, please refer to the related configurations in the previous chapter, or use the integrated Dubbo Spring Boot starter method.&lt;/p></description></item><item><title>Blog: Manipulating Services Dynamically via QoS</title><link>https://dubbo.apache.org/en/blog/2018/08/14/manipulating-services-dynamically-via-qos/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/manipulating-services-dynamically-via-qos/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the other modes of Dubbo configuration, please refer to the related configurations in the previous chapter, or use the integrated Dubbo Spring Boot starter method.&lt;/p></description></item><item><title>Blog: Manipulating Services Dynamically via QoS</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/manipulating-services-dynamically-via-qos/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/manipulating-services-dynamically-via-qos/</guid><description>
 &lt;h1 id="manipulating-services-dynamically-via-qos">Manipulating Services Dynamically via QoS&lt;/h1>
 &lt;p>QoS (short form of &lt;strong>Quality of Service&lt;/strong>), is a common terminology talking about network devices. For example, by adjusting and manipulating the weights of ports of a router dynamically via QoS, engineers could give priority to services running on these ports and make sure these services&amp;rsquo; quality and reliability.&lt;/p>
 &lt;p>In Dubbo, QoS is used to query and manipulate services dynamically, like getting a list of active provider and consumer services, and launching or withdrawing services (i.e registering to or unregistering services from registration center).&lt;/p>
@@ -4298,7 +4298,7 @@ Implement UserReadService, and deploy current implementation in the Provider&amp
 &lt;blockquote>
 &lt;p>QoS is based on Netty4. In versions earlier than 2.6.x, Dubbo relies on Netty3, so you have to add Netty4 as a dependency explicitly to ensure that Netty4 works. If you generate a Dubbo application on &lt;a href="http://start.dubbo.io">http://start.dubbo.io&lt;/a>, there&amp;rsquo;s no need to add configurations because Netty4 is listed as a dependency by default.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/qos-architecture.png" alt="undefined">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/qos-architecture.png" alt="undefined">&lt;/p>
 &lt;p>The picture above shows how QoS works:&lt;/p>
 &lt;ol>
 &lt;li>Start and listen to a port (22222 by default).&lt;/li>
@@ -4490,7 +4490,7 @@ Implement UserReadService, and deploy current implementation in the Provider&amp
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qosEnable=true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosPort=33333
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qosAcceptForeignIp=false
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: Source code analysis of spring-boot+Dubbo App start and stop</title><link>https://dubbo.apache.org/en/blog/2018/08/14/source-code-analysis-of-spring-boot-dubbo-app-start-and-stop/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/source-code-analysis-of-spring-boot-dubbo-app-start-and-stop/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: Source code analysis of spring-boot+Dubbo App start and stop</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/source-code-analysis-of-spring-boot-dubbo-app-start-and-stop/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/source-code-analysis-of-spring-boot-dubbo-app-start-and-stop/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>&lt;a href="https://github.com/apache/dubbo-spring-boot-project">Dubbo Spring Boot&lt;/a> project is dedicated to simplifying the development of the Dubbo RPC framework in the Spring Boot application. It also integrates the feature of Spring Boot:&lt;/p>
 &lt;ul>
@@ -4665,7 +4665,7 @@ Implement UserReadService, and deploy current implementation in the Provider&amp
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}).&lt;/span>start&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>[1] &lt;a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-12.html#jls-12.8">https://docs.oracle.com/javase/specs/jls/se8/html/jls-12.html#jls-12.8&lt;/a>&lt;/p>
-&lt;p>[2] &lt;a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html#addShutdownHook">https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html#addShutdownHook&lt;/a>&lt;/p></description></item><item><title>Blog: Implementation of cross-language calls by Dubbo2.js</title><link>https://dubbo.apache.org/en/blog/2018/08/14/implementation-of-cross-language-calls-by-dubbo2.js/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/implementation-of-cross-language-calls-by-dubbo2.js/</guid><description>
+&lt;p>[2] &lt;a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html#addShutdownHook">https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html#addShutdownHook&lt;/a>&lt;/p></description></item><item><title>Blog: Implementation of cross-language calls by Dubbo2.js</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/implementation-of-cross-language-calls-by-dubbo2.js/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/implementation-of-cross-language-calls-by-dubbo2.js/</guid><description>
 &lt;blockquote>
 &lt;p>&lt;a href="https://github.com/dubbo/dubbo2.js">dubbo2.js&lt;/a> is a Dubbo client for node.js developped by &lt;a href="https://www.qianmi.com/">Qianmiwang&lt;/a>. It supports Dubbo&amp;rsquo;s native protocol, which makes the RPC calls between javascript and java efficient and agile. This tool has been contributed to Dubbo&amp;rsquo;s community.&lt;/p>
 &lt;/blockquote>
@@ -4684,7 +4684,7 @@ Implement UserReadService, and deploy current implementation in the Provider&amp
 &lt;p>When a new team is choosing technical solutions, what I mentioned below could be our candidates. Meanwhile, the old system&amp;rsquo;s compatibility and migration costs should also be considered. The first trial we did is to work on RPC protocol.&lt;/p>
 &lt;h2 id="cross-language-calls-by-a-common-protocol">Cross-language calls by a common protocol&lt;/h2>
 &lt;h3 id="springmvc">SpringMVC&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/springmvc.png" alt="springmvc">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/springmvc.png" alt="springmvc">&lt;/p>
 &lt;p>Before achieving the real cross-language calls, the most common solution is to use the http protocol. We can call Dubbo provider indirectly by controller/restController provided by springmvc. This is easy to carry out, but there are lots of inconveniences. firstly, a call will go through too many nodes. Secondly, an extra communication layer (for http protocol) will be involved, but it could have been handled simply by the TCP protocol. Thirdly, we need to implement the RPC interface in the controller part. This will be extra work for developers.&lt;/p>
 &lt;h3 id="we-support-some-common-protocols">We support some common protocols&lt;/h3>
 &lt;p>Most of the service management frameworks support multiple protocols, dubbo as well. Besides its own protocol, the common protocols such as Dangdangwang&amp;rsquo;s &lt;a href="https://dangdangdotcom.github.io/dubbox/rest.html">Rest&lt;/a> protocol and Qianmiwang&amp;rsquo;s &lt;a href="https://github.com/apache/dubbo-rpc-jsonrpc">json-rpc&lt;/a> protocol are also supported.&lt;/p>
@@ -4696,14 +4696,14 @@ Implement UserReadService, and deploy current implementation in the Provider&amp
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="customized-protocols-for-cross-language-support">Customized Protocols for Cross-language Support&lt;/h3>
 &lt;p>The so-called protocol of the microservice framework can be simply interpreted as: message format and serialization scheme. Generally, the service governance framework would provide numbers of protocol configuration items for users to choose from. In addition to the above two common protocols,there exists some other customized protocols like the dubbo protocol, the default protocol for the dubbo framework, and Motan2, a cross-language protocol provided by the motan framework.&lt;/p>
 &lt;h4 id="motan2-for-cross-language-support">Motan2 for cross-language support&lt;/h4>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/motan-protocol-en.png" alt="motan2">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/motan-protocol-en.png" alt="motan2">&lt;/p>
 &lt;p>In the original Motan protocol, the protocol message consisted only of the Header and the Body, making deserialization indispensable for acquiring data stored in the Body, like path, param and group, which is terribly unfriendly for cross-language support. Therefore, the content of the protocol was modifiedin Motan2, Weibo released the open-source projects, &lt;a href="https://github.com/weibocom/motan-go/">motan-go&lt;/a>, &lt;a href="https://github.com/weibocom/motan-php">motan-php&lt;/a> and &lt;a href="https://github.com/weibocom/motan-openresty">motan-openresty&lt;/a>. It used motan-go as an interpreter and the Simple serialization scheme to serialize the Body of protocol message. (Simple is a comparably weaker serialization scheme)&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/motan-agent.png" alt="agent">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/motan-agent.png" alt="agent">&lt;/p>
 &lt;p>After observation we find out that there is no big difference between the configuration of Motan2 and the dual protocol. It’s just that the agent here is implicit, and it co-exists with the main service. The most obvious difference is that different languages do not interact directly in agent scheme.&lt;/p>
 &lt;h4 id="dubbo-for-cross-language-support">Dubbo for cross-language support&lt;/h4>
 &lt;p>Instead of cross-language support, the dubbo protocol was originally designed only for common rpc requests. However, it’s not always the case that we can only choose to support it or not. We can always choose to offer different levels of support. It may be hard to offer cross-language support based on the dubbo protocol, but not impossible. Actually, Qianmiwang succeeded. It conquered the front-end cross-language business field built by nodejs with dubbo2.js. It builds the bridge between Nodejs and the native dubbo protocol. Next, we will focus on what we can do with dubbo2.js.&lt;/p>
 &lt;h5 id="dubbo-protocol-message-format">Dubbo protocol message format:&lt;/h5>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-protocol.png" alt="dubbo协议">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-protocol.png" alt="dubbo协议">&lt;/p>
 &lt;p>Details in dubbo protocol header message:&lt;/p>
 &lt;ul>
 &lt;li>Magic: similar to magic number in Java bytes code files, which is used to determine whether it is a data pack of dubbo protocol. The magic number is the constant, 0xdabb.&lt;/li>
@@ -4855,7 +4855,7 @@ Implement UserReadService, and deploy current implementation in the Provider&amp
 &lt;/ul>
 &lt;h2 id="more-details">More details&lt;/h2>
 &lt;p>The sample code in this article is available here, &lt;a href="https://github.com/dubbo/dubbo2.js">https://github.com/dubbo/dubbo2.js&lt;/a>.
-If you don't know much about the dubbo protocol and want to understand how it works, the project provides a sub-moudle: java-socket-consumer, which is implemented in a process-oriented approach, realizing a process of sending dubbo protocal message with native socket and making function calls, and then get response.&lt;/p></description></item><item><title>Blog: Generic invoke of Dubbo</title><link>https://dubbo.apache.org/en/blog/2018/08/14/generic-invoke-of-dubbo/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/generic-invoke-of-dubbo/</guid><description>
+If you don't know much about the dubbo protocol and want to understand how it works, the project provides a sub-moudle: java-socket-consumer, which is implemented in a process-oriented approach, realizing a process of sending dubbo protocal message with native socket and making function calls, and then get response.&lt;/p></description></item><item><title>Blog: Generic invoke of Dubbo</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/generic-invoke-of-dubbo/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/generic-invoke-of-dubbo/</guid><description>
 &lt;h1 id="generic-invoke-of-dubbo">Generic invoke of Dubbo&lt;/h1>
 &lt;p>The generic invoke could be considered to be used in the following cases:&lt;/p>
 &lt;ul>
@@ -4990,7 +4990,7 @@ It can be seen that the return value &lt;code>user&lt;/code> is a HashMap, which
 &lt;ul>
 &lt;li>The generic invoke and generic interface implementations introduced in this article are all based on the native Dubbo protocol. Prior to version 2.6.2, other protocols such as http/hessian don&amp;rsquo;t support generic invoke. Version 2.6.3 will support the generic invoke of these two protocols.&lt;/li>
 &lt;li>The relevant sample codes mentioned in this article can be found in dubbo-samples: &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-generic">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-generic&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: Native Image using GraalVM</title><link>https://dubbo.apache.org/en/blog/2018/08/14/native-image-using-graalvm/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/native-image-using-graalvm/</guid><description>
+&lt;/ul></description></item><item><title>Blog: Native Image using GraalVM</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/native-image-using-graalvm/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/14/native-image-using-graalvm/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This document will show you how to access GraalVM with a dubbo project and how to compile the project to a binary executable using native-image. The document also introduces the efforts we made in achieving this.&lt;/p>
 &lt;p>GraalVM&amp;rsquo;s essential is the Graal compiler, an excellent just-in-time (JIT) compiler. It can be used as both a JIT compiler and a static compiler for ahead-of-time compilation. Graal compiler completes the primary compilation work.&lt;/p>
@@ -4998,17 +4998,17 @@ It can be seen that the return value &lt;code>user&lt;/code> is a HashMap, which
 &lt;h2 id="preparation">Preparation&lt;/h2>
 &lt;p>Before compiling the dubbo project, make sure that we are programming based on the GraalVM environment.&lt;/p>
 &lt;p>GraalVM&amp;rsquo;s installation process won&amp;rsquo;t be introduced in this document. You can visit &lt;a href="https://www.graalvm.org/">https://www.graalvm.org/&lt;/a> and select the latest version to install. After installation you will be able to see the following in local jdk:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-graalvm-support/graalvm_env.png" alt="">
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-graalvm-support/graalvm_env.png" alt="">
 GraalVM we use here is based on jdk version 1.8.&lt;/p>
 &lt;h2 id="get-started">Get Started&lt;/h2>
 &lt;p>For user&amp;rsquo;s convenience, we provide the following demo in the &lt;a href="https://github.com/apache/dubbo/">apache dubbo&lt;/a> branch. In module dubbo-demo-native, dubbo&amp;rsquo;s provider and consumer demos are given:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-graalvm-support/demo_path.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-graalvm-support/demo_path.png" alt="">&lt;/p>
 &lt;p>We used native-image&amp;rsquo;s maven plug-in and customized several native-image starting parameters. Users only need to run maven&amp;rsquo;s compile and package command in consumers&amp;rsquo; and providers&amp;rsquo; modules:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>mvn &lt;span style="color:#719e07">-&lt;/span>U clean &lt;span style="color:#719e07">package&lt;/span> &lt;span style="color:#719e07">-&lt;/span>Dmaven.test.skip=&lt;span style="color:#cb4b16">true&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can see the following output after compilation:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-graalvm-support/consumer_compiler.png" alt="">&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-graalvm-support/provider_compiler.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-graalvm-support/consumer_compiler.png" alt="">&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-graalvm-support/provider_compiler.png" alt="">&lt;/p>
 &lt;p>Binary executable file generated can be found in the target catalog:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-graalvm-support/compile_result.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-graalvm-support/compile_result.png" alt="">&lt;/p>
 &lt;p>Size of the binary executable file is around 40M:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>MacdeMacBook-pro-3:target mac$ du -m demo-native-provider
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>40 demo-native-provider
@@ -5097,7 +5097,7 @@ GraalVM we use here is based on jdk version 1.8.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>
 &lt;p>Copy the exported code into dubbo-graalvm module
-&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-graalvm-support/graalvm.png" alt="">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-graalvm-support/graalvm.png" alt="">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Import module in new project&lt;/p>
@@ -5234,7 +5234,7 @@ GraalVM we use here is based on jdk version 1.8.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> //......
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The service here has multiple interfaces which have to be in order when requesting proxy. Set does not fulfill the requirement so we use ArrayList instead.&lt;/p>
-&lt;p>Major modifications to dubbo source code are listed above.&lt;/p></description></item><item><title>Blog: Dubbo's Load Balance</title><link>https://dubbo.apache.org/en/blog/2018/08/10/dubbos-load-balance/</link><pubDate>Fri, 10 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/10/dubbos-load-balance/</guid><description>
+&lt;p>Major modifications to dubbo source code are listed above.&lt;/p></description></item><item><title>Blog: Dubbo's Load Balance</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/10/dubbos-load-balance/</link><pubDate>Fri, 10 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/10/dubbos-load-balance/</guid><description>
 &lt;h2 id="background">Background&lt;/h2>
 &lt;p>Dubbo is a distributed service framework that avoids single point of failure and horizontal expansion of support services. A service typically deploys multiple instances. How to select a call from a cluster of multiple service providers involves a load balancing strategy.&lt;/p>
 &lt;h2 id="concepts">Concepts&lt;/h2>
@@ -5445,7 +5445,7 @@ This is a simple text file. The file contents are as follows:&lt;/p>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;dubbo:reference id=&amp;#34;helloService&amp;#34; interface=&amp;#34;com.demo.dubbo.api.IHelloService&amp;#34; loadbalance=&amp;#34;demo&amp;#34; /&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Configure &lt;code>&amp;lt;loadbalance=&amp;quot;demo&amp;quot;&amp;gt;&lt;/code> in &lt;code>dubbo:reference&lt;/code> at the Consumer side.&lt;/p>
-&lt;p>After 3 steps above, we wrote a custom LoadBalance and told Dubbo to use it. Start Dubbo and we can see that Dubbo has used a custom DemoLoadBalance.&lt;/p></description></item><item><title>Blog: Use Annotations In Dubbo</title><link>https://dubbo.apache.org/en/blog/2018/08/07/use-annotations-in-dubbo/</link><pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/07/use-annotations-in-dubbo/</guid><description>
+&lt;p>After 3 steps above, we wrote a custom LoadBalance and told Dubbo to use it. Start Dubbo and we can see that Dubbo has used a custom DemoLoadBalance.&lt;/p></description></item><item><title>Blog: Use Annotations In Dubbo</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/07/use-annotations-in-dubbo/</link><pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/07/use-annotations-in-dubbo/</guid><description>
 &lt;p>With the widely promotion and implementation of Microservices Architecture, the Microservices Architecture represented by Spring Boot and Spring Cloud, in Java ecosystem, introduced some brand new programming model, like:&lt;/p>
 &lt;ul>
 &lt;li>Annotation-Driven&lt;/li>
@@ -5733,15 +5733,15 @@ Start the Server&amp;rsquo;s &lt;code>main&lt;/code> method, you will see the fo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>result: hello, annotation
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="conclusion">Conclusion&lt;/h2>
 &lt;p>By studying this article, the reader can master the basic concepts of &lt;code>Dubbo&lt;/code>&amp;rsquo;s exclusive &lt;code>annotations&lt;/code> , &lt;code>@EnableDubbo&lt;/code>, &lt;code>@Service&lt;/code>, &lt;code>@Reference&lt;/code>, and master it&amp;rsquo;s basic usage through a simple &lt;code>Dubbo&lt;/code> application.&lt;/p>
-&lt;p>In addition to traditional &lt;code>XML&lt;/code> configuration, &lt;code>Spring&lt;/code> offers more modern configurations such as annotation drivers, externalization, and auto-assembly.This article focuses on the development of &lt;code>Dubbo&lt;/code> applications through annotations. You can be seen that annotation mode programming is more concise and simple than XML configuration. In future, we will introduce the use of externalization configuration and automatic assembly in &lt;code>Dubbo&lt;/code> further.&lt;/p></description></item><item><title>Blog: Using Zookeeper in Dubbo</title><link>https://dubbo.apache.org/en/blog/2018/08/07/using-zookeeper-in-dubbo/</link><pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/07/using-zookeeper-in-dubbo/</guid><description>
+&lt;p>In addition to traditional &lt;code>XML&lt;/code> configuration, &lt;code>Spring&lt;/code> offers more modern configurations such as annotation drivers, externalization, and auto-assembly.This article focuses on the development of &lt;code>Dubbo&lt;/code> applications through annotations. You can be seen that annotation mode programming is more concise and simple than XML configuration. In future, we will introduce the use of externalization configuration and automatic assembly in &lt;code>Dubbo&lt;/code> further.&lt;/p></description></item><item><title>Blog: Using Zookeeper in Dubbo</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/07/using-zookeeper-in-dubbo/</link><pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/07/using-zookeeper-in-dubbo/</guid><description>
 &lt;h2 id="introduction-of-zookeeper">Introduction of Zookeeper&lt;/h2>
 &lt;h3 id="the-basic-concept">The basic concept&lt;/h3>
 &lt;p>In the mordern distrbuted applications, there are multiple coordination problems between nodes and nodes, including: leader election, group service, locking, configuration management, naming and synchronization. Apache Zookeeper, as its name implied, is a distributed, open-source coordination service framwork to address these demand.&lt;/p>
 &lt;p>In order to ensure the high performance, highly available and strictly ordered access, the performance aspects of ZooKeeper means it can be used in large, distributed systems and can also be deployed in cluster mode, which called &amp;lsquo;ZooKeeper ensemble&amp;rsquo;. In ZooKeeper ensemble, all write requests from clients are forwarded to a single server, called the leader, through the ZAB(Zookeeper Atomic Broadcast Protocol) to make sure the message in each nodes are same. Clients can access any one of the clusters to read and write data without worrying about inconsistencies in the data.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/zk-emsemble.png" alt="Diagram shows client-server architecture of ZooKeeper">
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/zk-emsemble.png" alt="Diagram shows client-server architecture of ZooKeeper">
 &lt;em>Image Credit : ebook -Zookeeper-Distributed Process Coordination from O&amp;rsquo;Reilly&lt;/em>&lt;/p>
 &lt;p>The method to store the data in Zookeeper is similar as the standard UNIX file system, as a data model styled after the familiar directory tree structure of file systems. When we talking about ZooKeeper data nodes, we call it Znodes to clarify it.&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/zk-tree.png" alt="zk-tree">
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/zk-tree.png" alt="zk-tree">
 &lt;em>Image Credit : ebook -Zookeeper-Distributed Process Coordination from O&amp;rsquo;Reilly&lt;/em>&lt;/p>
 &lt;h3 id="basic-implementation">Basic Implementation&lt;/h3>
 &lt;p>You could donwload and install Zookeeper directly&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.
@@ -5816,7 +5816,7 @@ Considering the versatility, we run the Zookeeper by using docker in this blog. 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>world
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-zookeeper-in-dubbo">Using Zookeeper in Dubbo&lt;/h2>
 &lt;p>Zookeeper is used for service registration discovery and configuration management in Dubbo, and the structure of data in Zookeeper is shown in the following figure:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-in-zk.jpg" alt="dubbo-in-zk">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-in-zk.jpg" alt="dubbo-in-zk">&lt;/p>
 &lt;p>First, all data related to Dubbo is organized under the root node of &lt;code>/dubbo&lt;/code>.&lt;/p>
 &lt;p>The secondary directory is the service name like &lt;code>com.foo.BarService&lt;/code>.&lt;/p>
 &lt;p>The three-level directory has two child nodes, &lt;code>providers&lt;/code> and &lt;code>consumers&lt;/code>, representing the supplier and customers of the service.&lt;/p>
@@ -5959,7 +5959,7 @@ For example, the service provider of &lt;code>com.foo.BarService&lt;/code> will 
 &lt;p>&lt;a href="https://www.docker.com/community-edition">https://www.docker.com/community-edition&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Blog: Your First Dubbo Demo</title><link>https://dubbo.apache.org/en/blog/2018/08/07/dubbo-101/</link><pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/07/dubbo-101/</guid><description>
+&lt;/div></description></item><item><title>Blog: Your First Dubbo Demo</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/07/dubbo-101/</link><pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/08/07/dubbo-101/</guid><description>
 &lt;h2 id="java-rmi-introduction">Java RMI Introduction&lt;/h2>
 &lt;p>Java RMI (Remote Method Invocation) is a mechanism that allows users to access or invocate an object and a method running on another JVM (Java Virtual Machine). RMI is an implementation of RPC (Remote Procedure Call) in java with support of OOP (Object Oriented Paradigms). Instead of bothering IDL (Interface Define Language), users can build distributed applications by depending on interfaces in an easy and natural way.&lt;/p>
 &lt;h3 id="java-rmi-work-flow">Java RMI Work Flow&lt;/h3>
@@ -5972,7 +5972,7 @@ For example, the service provider of &lt;code>com.foo.BarService&lt;/code> will 
 &lt;li>The Skeleton object of server receives the network request and unzips the information.&lt;/li>
 &lt;li>Server runs invocation on the target object based on the information and return the zipped results back to client via network.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/rmi-flow.png" alt="RMI Flow">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/rmi-flow.png" alt="RMI Flow">&lt;/p>
 &lt;p>(source：https://www.cs.rutgers.edu/~pxk/417/notes/images/rpc-rmi_flow.png)&lt;/p>
 &lt;h3 id="java-rmi-concepts">Java RMI Concepts&lt;/h3>
 &lt;p>Java RMI is a technique foundation stone of creating distributed applications in Java. The following EJB techniques and current framework of distributed services still inherit the fundamental concepts of Java RMI. In RMI invocation, there are some core concepts：&lt;/p>
@@ -6024,7 +6024,7 @@ Understand the work flow and basic concepts of RMI is helpful to handle current 
 &lt;li>Monitor center – Collect and monitor running status of providers and consumers, e.g., times of invocations, delay of invocations, etc.&lt;/li>
 &lt;li>Running container – Initialize and load the provider and manage the lifecycle of running.&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-architecture.png" alt="dubbo-architecture">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-architecture.png" alt="dubbo-architecture">&lt;/p>
 &lt;p>&lt;strong>Deploy stage&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Service providers expose service at assigned ports and register information of service at registry center.&lt;/li>
@@ -6162,7 +6162,7 @@ Understand the work flow and basic concepts of RMI is helpful to handle current 
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>hi, dubbo&lt;/code> is the execution results from service provider.&lt;/p>
 &lt;h2 id="quick-creation-of-a-dubbo-application">Quick Creation of A Dubbo Application&lt;/h2>
 &lt;p>Dubbo also provides a public platform that can create a Dubbo application quickly based on Spring Boot. Visit &lt;a href="http://start.dubbo.io">http://start.dubbo.io&lt;/a> and follow the figure below to create an example project:&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/dubbo-initializr.png" alt="dubbo initializr">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-initializr.png" alt="dubbo initializr">&lt;/p>
 &lt;p>&lt;strong>Notes&lt;/strong>：&lt;/p>
 &lt;ol>
 &lt;li>Provide maven groupId in &lt;em>Group&lt;/em> with default value &lt;code>com.example&lt;/code>.&lt;/li>
@@ -6257,17 +6257,17 @@ Understand the work flow and basic concepts of RMI is helpful to handle current 
 &lt;hr>
 &lt;ol>
 &lt;li>&lt;a href="https://docs.oracle.com/javase/6/docs/technotes/guides/rmi/hello/hello-world.html">Getting Started Using JavaTM RMI&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://dubbo.apache.org/en/docs/v2.7/user/examples/explicit-target/">Explicit target&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://dubbo.apache.org/en/docs/v2.7/user/references/registry/multicast/">Multicast Registry&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://dubbo.apache.org/en/docs/v2.7/user/references/qos/">Online QOS command&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>Blog: The third Dubbo meetup has been held in Shenzhen</title><link>https://dubbo.apache.org/en/blog/2018/07/30/the-third-dubbo-meetup-has-been-held-in-shenzhen/</link><pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/07/30/the-third-dubbo-meetup-has-been-held-in-shenzhen/</guid><description>
+&lt;li>&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/examples/explicit-target/">Explicit target&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/multicast/">Multicast Registry&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/qos/">Online QOS command&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Blog: The third Dubbo meetup has been held in Shenzhen</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/07/30/the-third-dubbo-meetup-has-been-held-in-shenzhen/</link><pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/07/30/the-third-dubbo-meetup-has-been-held-in-shenzhen/</guid><description>
 &lt;p>The third Dubbo meetup has successfully been held in Shenzhen, over 2000 people submitted registration, and over 700 were present, more than 17,000 watched the live online.&lt;/p>
 &lt;p>Please enjoy the slides of the topics:&lt;/p>
 &lt;ul>
 &lt;li>Zhixuan Chen: Dubbo-present-and-2.7-update (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201807%40shenzhen/dubbo-present-and-2.7-update.pdf">slides&lt;/a>&lt;/li>
 &lt;li>Bin Kang: Microservice-in-lexinfintech (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201807%40shenzhen/microservice-in-lexinfintech.pdf">slides&lt;/a>&lt;/li>
 &lt;li>Jialiang lin: sentinel (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201807%40shenzhen/sentinel.pdf">slides&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: Sentinel: The flow sentinel of Dubbo services</title><link>https://dubbo.apache.org/en/blog/2018/07/27/sentinel-the-flow-sentinel-of-dubbo-services/</link><pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/07/27/sentinel-the-flow-sentinel-of-dubbo-services/</guid><description>
+&lt;/ul></description></item><item><title>Blog: Sentinel: The flow sentinel of Dubbo services</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/07/27/sentinel-the-flow-sentinel-of-dubbo-services/</link><pubDate>Fri, 27 Jul 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/07/27/sentinel-the-flow-sentinel-of-dubbo-services/</guid><description>
 &lt;p>In large clusters there may be thousands of Dubbo service instances in production, with continuous traffic coming in. However, in distributed systems, some services may be unavailable due to various of failure such as traffic surge, high system load, and network latency. If no control actions are performed, this may cause cascading failure, affecting the availability of the service. So we need a powerful library - Sentinel, which can guarantee the stability of the service, to protect the Dubbo service.&lt;/p>
 &lt;h2 id="introduction-to-sentinel">Introduction to Sentinel&lt;/h2>
 &lt;p>&lt;a href="https://github.com/alibaba/Sentinel">Sentinel&lt;/a> is a powerful library opensourced by Alibaba Middleware Team. Sentinel takes &amp;ldquo;&lt;strong>flow&lt;/strong>&amp;rdquo; as the breakthrough point, and covers multiple fields including flow control, concurrency, circuit breaking and load protection to protect service stability.&lt;/p>
@@ -6321,11 +6321,11 @@ Understand the work flow and basic concepts of RMI is helpful to handle current 
 &lt;p>For ease of use, Sentinel provides a Dashboard for configuring rules, viewing monitoring metrics, machine discovery, and more. We only need to start the dashborad according to the &lt;a href="https://github.com/alibaba/Sentinel/wiki/Dashboard">Sentinel dashboard documentation&lt;/a>, then add the appropriate parameters to the corresponding application and launch it. For example, the startup parameters of the service provider demo in this article is:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>-Djava.net.preferIPv4Stack&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#b58900">true&lt;/span> -Dcsp.sentinel.api.port&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">8720&lt;/span> -Dcsp.sentinel.dashboard.server&lt;span style="color:#719e07">=&lt;/span>localhost:8080 -Dproject.name&lt;span style="color:#719e07">=&lt;/span>dubbo-provider-demo
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After launching the service provider demo, we can find our application in the Sentinel dashboard. It&amp;rsquo;s convenient to configure the rules in the dashboard：&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/sentinel-dashboard-view-rules.png" alt="Rule List">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/sentinel-dashboard-view-rules.png" alt="Rule List">&lt;/p>
 &lt;p>Or view real-time metrics：&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/sentinel-dashboard-metrics.png" alt="Real-time metrics monitoring">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/sentinel-dashboard-metrics.png" alt="Real-time metrics monitoring">&lt;/p>
 &lt;h2 id="summary">Summary&lt;/h2>
-&lt;p>This blog post only introduces the simplest scenario in Sentinel - Traffic Flow Control. Sentinel can handle more complex scenarios like circuit breaking, cold starting and uniform traffic flow. For more scenarios, you can dig into &lt;a href="https://github.com/alibaba/Sentinel/wiki">Sentinel Wiki&lt;/a>.&lt;/p></description></item><item><title>Blog: Tracking with Pinpoint</title><link>https://dubbo.apache.org/en/blog/2018/07/12/tracking-with-pinpoint/</link><pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/07/12/tracking-with-pinpoint/</guid><description>
+&lt;p>This blog post only introduces the simplest scenario in Sentinel - Traffic Flow Control. Sentinel can handle more complex scenarios like circuit breaking, cold starting and uniform traffic flow. For more scenarios, you can dig into &lt;a href="https://github.com/alibaba/Sentinel/wiki">Sentinel Wiki&lt;/a>.&lt;/p></description></item><item><title>Blog: Tracking with Pinpoint</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/07/12/tracking-with-pinpoint/</link><pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/07/12/tracking-with-pinpoint/</guid><description>
 &lt;p>After using Dubbo to serve or integrate applications, assuming that a service backstage log shows an exception and that the service is invoked by multiple applications, it is often difficult to determine which application is called, and what is the cause of the problem, so we need a set of distributed tracking systems to quickly locate the problem. Pinpoint can help us quickly locate problems (of course, there are more than one solution).&lt;/p>
 &lt;h2 id="what-is-pinpoint">What is Pinpoint&lt;/h2>
 &lt;p>&lt;a href="https://github.com/naver/pinpoint">Pinpoint&lt;/a> is an APM (Application Performance Management) tool for large-scale distributed systems written in Java. Inspired by Dapper, Pinpoint provides a solution to help analyze the overall structure of the system and how components within them are interconnected by tracing transactions across distributed applications.&lt;/p>
@@ -6673,16 +6673,16 @@ have minimal impact on the performance (approximately 3% increase in resource us
 &lt;p>&lt;code>http://localhost:8080/sayHello?name=ABC&lt;/code>&lt;/p>
 &lt;h2 id="using-pinpoint-locate-problems">Using Pinpoint locate problems&lt;/h2>
 &lt;h3 id="homepage">Homepage&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/en_pinpoint-home.png" alt="/admin-guide/images/pinpoint-home.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/en_pinpoint-home.png" alt="/admin-guide/images/pinpoint-home.png">&lt;/p>
 &lt;blockquote>
 &lt;p>The user request here is double the number of requests for DubboProvider, because the favicon.ico icon request is recorded.&lt;/p>
 &lt;/blockquote>
 &lt;h3 id="call-tree">Call tree&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/en_pinpoint-calltree.png" alt="/admin-guide/images/pinpoint-calltree.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/en_pinpoint-calltree.png" alt="/admin-guide/images/pinpoint-calltree.png">&lt;/p>
 &lt;h3 id="mixed-view">Mixed view&lt;/h3>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/blog/en_pinpoint-mixedview.png" alt="/admin-guide/images/pinpoint-mixedview.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/en_pinpoint-mixedview.png" alt="/admin-guide/images/pinpoint-mixedview.png">&lt;/p>
 &lt;h3 id="other">Other&lt;/h3>
-&lt;p>The example simply simulates the provision and call of Dubbo, and does not carry out the application of other middleware such as database. For detailed use, please refer to the Pinpoint document.&lt;/p></description></item><item><title>Blog: Your First Dubbo Filter</title><link>https://dubbo.apache.org/en/blog/2018/07/01/your-first-dubbo-filter/</link><pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/07/01/your-first-dubbo-filter/</guid><description>
+&lt;p>The example simply simulates the provision and call of Dubbo, and does not carry out the application of other middleware such as database. For detailed use, please refer to the Pinpoint document.&lt;/p></description></item><item><title>Blog: Your First Dubbo Filter</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/07/01/your-first-dubbo-filter/</link><pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/07/01/your-first-dubbo-filter/</guid><description>
 &lt;h3 id="overview">Overview&lt;/h3>
 &lt;p>In overall design of Dubbo, Filter is a very important concept, most of Dubbo&amp;rsquo;s functions are based on this
 extension point, and the Filter interception will be executed during each call.&lt;/p>
@@ -6856,7 +6856,7 @@ Now, let&amp;rsquo;s implement a simple Filter:&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Using xml configuration is more flexible and granular.&lt;/p>
 &lt;p>In before and after, you can implement your own business logic to give the filter a certain function.
-Once written and configured, the filter is activated by the Dubbo and executed in the call chain.&lt;/p></description></item><item><title>Blog: The second Dubbo Shanghai meetup has been held successfully</title><link>https://dubbo.apache.org/en/blog/2018/06/23/the-second-dubbo-shanghai-meetup-has-been-held-successfully/</link><pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/06/23/the-second-dubbo-shanghai-meetup-has-been-held-successfully/</guid><description>
+Once written and configured, the filter is activated by the Dubbo and executed in the call chain.&lt;/p></description></item><item><title>Blog: The second Dubbo Shanghai meetup has been held successfully</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/06/23/the-second-dubbo-shanghai-meetup-has-been-held-successfully/</link><pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/06/23/the-second-dubbo-shanghai-meetup-has-been-held-successfully/</guid><description>
 &lt;p>The sencond Dubbo meetup has successfully been held in Shanghai, over 700 people submitted registration, and over 300 were present, more than 10,000 watched the live online.&lt;/p>
 &lt;p>Please enjoy the slides of the topics:&lt;/p>
 &lt;ul>
@@ -6864,7 +6864,7 @@ Once written and configured, the filter is activated by the Dubbo and executed i
 &lt;li>Mercy Ma: Dubbo Cloud Native Practices and Thoughts (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201806%40Shanghai/dubbo-cloud-native-practices-and-thoughts.pdf">slides&lt;/a>&lt;/li>
 &lt;li>Ping Guo: Nacos Open Source Initiative (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201806%40Shanghai/nacos-open-source-initiative.pdf">slides&lt;/a>&lt;/li>
 &lt;li>Zhiwei Pan: Dubbo Practices on Internet Finance Industries (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/blob/master/slides/meetup/201806%40Shanghai/dubbo-practices-on-internet-finance-industries.pdf">slides&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: The first Dubbo meetup has been held in Beijing</title><link>https://dubbo.apache.org/en/blog/2018/05/12/the-first-dubbo-meetup-has-been-held-in-beijing/</link><pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/05/12/the-first-dubbo-meetup-has-been-held-in-beijing/</guid><description>
+&lt;/ul></description></item><item><title>Blog: The first Dubbo meetup has been held in Beijing</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/05/12/the-first-dubbo-meetup-has-been-held-in-beijing/</link><pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/05/12/the-first-dubbo-meetup-has-been-held-in-beijing/</guid><description>
 &lt;p>The first Dubbo meetup has successfully been held in Beijing, over 400+ people were present. What a great event!&lt;/p>
 &lt;p>Please enjoy the slides of the topics:&lt;/p>
 &lt;ul>
@@ -6872,7 +6872,7 @@ Once written and configured, the filter is activated by the Dubbo and executed i
 &lt;li>Jun Liu: Introduction to the 4th Aliware Performance Challenge (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/raw/master/slides/meetup/201805%40Beijing/introduction-to-4th-aliware-performance-challenge.pdf">slides&lt;/a>&lt;/li>
 &lt;li>Zhixuan Chen: Quickly building Microservice with Dubbo and Spring-boot (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/raw/master/slides/meetup/201805%40Beijing/quickly-building-microservice-with-dubbo-and-springboot.pdf">slides&lt;/a>&lt;/li>
 &lt;li>Xin Wang: Dubbo and Weidian&amp;rsquo;s Practice on Microservice Architecture (Chinese) &lt;a href="https://github.com/dubbo/awesome-dubbo/raw/master/slides/meetup/201805%40Beijing/dubbo-and-weidian's-practice-on-microservice-architecture.pdf">slides&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Blog: The ApacheCon NA schedule has been announced</title><link>https://dubbo.apache.org/en/blog/2018/05/02/the-apachecon-na-schedule-has-been-announced/</link><pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/05/02/the-apachecon-na-schedule-has-been-announced/</guid><description>
-&lt;p>Ian Luo(PMC) and Jun Liu(PMC) will talk about &amp;ldquo;Introducing Apache Dubbo(Incubating): What is Dubbo and How it Works&amp;rdquo; at ApacheCon NA this year in Montréal! Please check out the schedule &lt;a href="https://apachecon.dukecon.org/acna/2018/#/scheduledEvent/b8db9dc580d85853f">here&lt;/a> and register &lt;a href="https://www.eventbrite.com/e/apachecon-north-america-2018-registration-43200327342">here&lt;/a>.&lt;/p></description></item><item><title>Blog: The GSoC(Google Summer of Code) 2018</title><link>https://dubbo.apache.org/en/blog/2018/04/25/the-gsocgoogle-summer-of-code-2018/</link><pubDate>Wed, 25 Apr 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/04/25/the-gsocgoogle-summer-of-code-2018/</guid><description>
-&lt;p>The GSoC(Google Summer of Code) 2018 projects has been announced, Raghu Reddy&amp;rsquo;s project &amp;ldquo;Extending Serialization protocols support for Apache Dubbo&amp;rdquo; has been &lt;a href="https://summerofcode.withgoogle.com/projects/#4747840161579008">accepted&lt;/a>! Congratulations!&lt;/p></description></item><item><title>Blog: Dubbo roadmap is announced in QCon Beijing 2018</title><link>https://dubbo.apache.org/en/blog/2018/04/22/dubbo-roadmap-is-announced-in-qcon-beijing-2018/</link><pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/04/22/dubbo-roadmap-is-announced-in-qcon-beijing-2018/</guid><description>
+&lt;/ul></description></item><item><title>Blog: The ApacheCon NA schedule has been announced</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/05/02/the-apachecon-na-schedule-has-been-announced/</link><pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/05/02/the-apachecon-na-schedule-has-been-announced/</guid><description>
+&lt;p>Ian Luo(PMC) and Jun Liu(PMC) will talk about &amp;ldquo;Introducing Apache Dubbo(Incubating): What is Dubbo and How it Works&amp;rdquo; at ApacheCon NA this year in Montréal! Please check out the schedule &lt;a href="https://apachecon.dukecon.org/acna/2018/#/scheduledEvent/b8db9dc580d85853f">here&lt;/a> and register &lt;a href="https://www.eventbrite.com/e/apachecon-north-america-2018-registration-43200327342">here&lt;/a>.&lt;/p></description></item><item><title>Blog: The GSoC(Google Summer of Code) 2018</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/04/25/the-gsocgoogle-summer-of-code-2018/</link><pubDate>Wed, 25 Apr 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/04/25/the-gsocgoogle-summer-of-code-2018/</guid><description>
+&lt;p>The GSoC(Google Summer of Code) 2018 projects has been announced, Raghu Reddy&amp;rsquo;s project &amp;ldquo;Extending Serialization protocols support for Apache Dubbo&amp;rdquo; has been &lt;a href="https://summerofcode.withgoogle.com/projects/#4747840161579008">accepted&lt;/a>! Congratulations!&lt;/p></description></item><item><title>Blog: Dubbo roadmap is announced in QCon Beijing 2018</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/04/22/dubbo-roadmap-is-announced-in-qcon-beijing-2018/</link><pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/blog/2018/04/22/dubbo-roadmap-is-announced-in-qcon-beijing-2018/</guid><description>
 &lt;p>Ian Luo has delivered a great talk at QCon Beijing 2018, where the roadmap of Dubbo has also be announced. Please enjoy the &lt;a href="https://github.com/dubbo/awesome-dubbo/raw/master/slides/qcon2018/dubbo-present-and-future.pdf">slides&lt;/a>!&lt;/p></description></item></channel></rss>

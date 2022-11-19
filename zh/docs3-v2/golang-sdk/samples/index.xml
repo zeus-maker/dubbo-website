@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 示例</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/</link><description>Recent content in 示例 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: Go-Java 互通示例</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/go_java_interactive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/go_java_interactive/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 示例</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/</link><description>Recent content in 示例 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: Go-Java 互通示例</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/go_java_interactive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/go_java_interactive/</guid><description>
 &lt;h2 id="准备工作">准备工作&lt;/h2>
 &lt;h3 id="环境">环境&lt;/h3>
 &lt;p>JDK 8，Golang &amp;gt;= 1.15，Dubbo 3.0.2，zookeeper 启动，&lt;/p>
@@ -103,7 +103,7 @@
 &lt;h3 id="11-go-client---java-server">1.1 Go-Client -&amp;gt; Java-Server&lt;/h3>
 &lt;h4 id="java-server-启动">Java-Server 启动&lt;/h4>
 &lt;ol>
-&lt;li>定义 Java 的 PB 文件，可参考 &lt;a href="https://dubbo.apache.org/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
+&lt;li>定义 Java 的 PB 文件，可参考 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-protobuf" data-lang="protobuf">&lt;span style="display:flex;">&lt;span>syntax &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;proto3&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -362,7 +362,7 @@
 &lt;h3 id="21-go-client---java-server">2.1 Go-Client -&amp;gt; Java-Server&lt;/h3>
 &lt;h4 id="java-server-启动-1">Java-Server 启动&lt;/h4>
 &lt;ol>
-&lt;li>定义 Java 接口、参数和返回值，可参考 &lt;a href="https://dubbo.apache.org/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
+&lt;li>定义 Java 接口、参数和返回值，可参考 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">package&lt;/span> org.apache.dubbo&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -705,7 +705,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>user&lt;span style="color:#719e07">.&lt;/span>getId&lt;span style="color:#719e07">());&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Dubbogo 3.0 配置中心和配置监听</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/config-center-dynamic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/config-center-dynamic/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Dubbogo 3.0 配置中心和配置监听</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/config-center-dynamic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/config-center-dynamic/</guid><description>
 &lt;h2 id="1-配置中心概念">1. 配置中心概念&lt;/h2>
 &lt;p>配置中心即为在分布式场景下，无法将最新的框架配置文件和应用程序绑定在一起，可以指定好配置中心的信息，例如配置中心类型和地址，并在框架启动时从配置中心拉取相应配置进行启动。&lt;/p>
 &lt;h2 id="2-配置中心的配置">2. 配置中心的配置&lt;/h2>
@@ -821,7 +821,7 @@
 &lt;h2 id="4-dubbogo-配置热更新">4. Dubbogo 配置热更新&lt;/h2>
 &lt;p>// todo&lt;/p>
 &lt;p>正在开发中ing&lt;/p>
-&lt;p>下一章: &lt;a href="../custom-filter/">【Filter】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 自定义Filter组件</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/custom-filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/custom-filter/</guid><description>
+&lt;p>下一章: &lt;a href="../custom-filter/">【Filter】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 自定义Filter组件</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/custom-filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/custom-filter/</guid><description>
 &lt;p>参考samples &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/filter">dubbo-go-samples/filter&lt;/a>&lt;/p>
 &lt;h2 id="1-filter-概念">1. Filter 概念&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// Filter interface defines the functions of a filter
@@ -908,7 +908,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#268bd2">Println&lt;/span>(&lt;span style="color:#2aa198">&amp;#34;MyClientFilter OnResponse is called&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> result
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下一章: &lt;a href="../registry/">【注册中心配置】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: dubbo-go 3.0 示例仓库</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/samples_repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/samples_repo/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下一章: &lt;a href="../registry/">【注册中心配置】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: dubbo-go 3.0 示例仓库</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/samples_repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/samples_repo/</guid><description>
 &lt;p>为了方便 Dubbogo 框架用户的使用，我们提供了 Samples 仓库以供用户参考：&lt;/p>
 &lt;p>&lt;a href="https://github.com/apache/dubbo-go-samples">【Dubbo-go-samples 仓库地址】&lt;/a>&lt;/p>
 &lt;h2 id="1-samples-仓库包含的例子">1. Samples 仓库包含的例子&lt;/h2>
@@ -1033,7 +1033,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[2021-02-03/16:19:30 main.main: client.go: 66] response result: &amp;amp;{A001 Alex Stocks 18 2020-02-04 16:19:30.422 +0800 CST}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ol>
-&lt;p>如果需要调试该示例或者 dubbo-go 框架，可以在 IDE 中从 &amp;ldquo;Run&amp;rdquo; 切换到 &amp;ldquo;Debug&amp;rdquo;。如果要结束的话，直接点击 ◼︎ 就好了。&lt;/p></description></item><item><title>Docs3-V2: dubbogo 3.0 启动时检查</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/start-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/start-check/</guid><description>
+&lt;p>如果需要调试该示例或者 dubbo-go 框架，可以在 IDE 中从 &amp;ldquo;Run&amp;rdquo; 切换到 &amp;ldquo;Debug&amp;rdquo;。如果要结束的话，直接点击 ◼︎ 就好了。&lt;/p></description></item><item><title>Docs3-V2: dubbogo 3.0 启动时检查</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/start-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/start-check/</guid><description>
 &lt;h1 id="启动时检查">启动时检查&lt;/h1>
 &lt;p>在启动时检查依赖的服务是否可用&lt;/p>
 &lt;p>Dubbo-go 缺省会在启动时检查依赖的服务是否可用，不可用时会抛出异常，阻止应用初始化完成，以便上线时，能及早发现问题，默认 check=&amp;ldquo;true&amp;rdquo;，并等待3s。&lt;/p>
@@ -1047,7 +1047,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">reference&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">myserivce&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">check&lt;/span>: &lt;span style="color:#cb4b16">true&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 注册中心配置</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/registry/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 注册中心配置</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/registry/</guid><description>
 &lt;p>参考samples &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/registry">dubbo-go-samples/registry&lt;/a>&lt;/p>
 &lt;h2 id="registry-注册中心配置">Registry 注册中心配置&lt;/h2>
 &lt;ul>
@@ -1139,7 +1139,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">services&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">GreeterProvider&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">interface&lt;/span>: com.apache.dubbo.sample.basic.IGreeter
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Triple 异常回传</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/exception_response/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/exception_response/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Triple 异常回传</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/exception_response/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/exception_response/</guid><description>
 &lt;p>参考samples &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/error">dubbo-go-samples/error&lt;/a>&lt;/p>
 &lt;h2 id="用户异常回传介绍">用户异常回传介绍&lt;/h2>
 &lt;p>用户可以在 provider 端生成用户定义的异常信息，可以记录异常产生堆栈，triple 协议可保证将用户在客户端获取到异常 message ，并可以查看报错堆栈，便于定位问题。&lt;/p>
@@ -1233,7 +1233,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /Users/laurence/go/pkg/mod/dubbo.apache.org/dubbo-go/v3@v3.0.0-rc4-1/common/proxy/proxy_factory/default.go:145
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可看到报错信息和堆栈&lt;/p>
-&lt;p>下一章: &lt;a href="../custom-logger/">【日志】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 日志</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/custom-logger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/custom-logger/</guid><description>
+&lt;p>下一章: &lt;a href="../custom-logger/">【日志】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 日志</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/custom-logger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/custom-logger/</guid><description>
 &lt;p>参考samples &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/logger">dubbo-go-samples/logger&lt;/a>&lt;/p>
 &lt;h2 id="1-日志配置">1. 日志配置&lt;/h2>
 &lt;p>dubbogo 3.0 默认采用 zap 日志库，在配置文件中不添加 logger 配置，日志将会打印到控制默认级别为debug。您也可在配置文件中配置日志级别、, 可参照如下方式来配置zap-config和lumberjack-config，从而定制化日志输出。&lt;/p>
@@ -1300,7 +1300,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>日志API不可以在Init 阶段使用，否则可能会发生意料之外的问题。&lt;/li>
 &lt;/ul>
-&lt;p>下一章: &lt;a href="../metrics/">【Metrics 数据上报】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: Metrics 数据上报</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/metrics/</guid><description>
+&lt;p>下一章: &lt;a href="../metrics/">【Metrics 数据上报】&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: Metrics 数据上报</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/metrics/</guid><description>
 &lt;p>参考Samples： &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/metrics">dubbo-go-samples/metrics&lt;/a>&lt;/p>
 &lt;h2 id="1-数据上报配置">1. 数据上报配置&lt;/h2>
 &lt;p>在不指定 metrics: 字段的时候，默认开启拉模式 prometheus 数据上报，端口默认为9090，监听path默认为/metrics。可参考如下服务端配置例子来定制化。&lt;/p>
@@ -1475,7 +1475,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo_test_summary_with_label{summarylabel1=&amp;#34;value1&amp;#34;,summarylabel2=&amp;#34;value2&amp;#34;,quantile=&amp;#34;0.999&amp;#34;} 0.9986025122460248
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo_test_summary_with_label_sum{summarylabel1=&amp;#34;value1&amp;#34;,summarylabel2=&amp;#34;value2&amp;#34;} 233.609026131067
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo_test_summary_with_label_count{summarylabel1=&amp;#34;value1&amp;#34;,summarylabel2=&amp;#34;value2&amp;#34;} 463
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 泛化调用</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/generic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/generic/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 泛化调用</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/generic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/generic/</guid><description>
 &lt;h2 id="1-dubbogo-泛化调用-java-server">1. Dubbogo 泛化调用 Java Server&lt;/h2>
 &lt;p>使用 Triple 协议 + hessian2 序列化方案&lt;/p>
 &lt;p>可参考Dubbogo 3.0 &lt;a href="https://www.yuque.com/docs/share/f4e72670-74ab-45b9-bc0c-4b42249ed953?#">泛化调用文档&lt;/a>&lt;/p>
@@ -1552,9 +1552,9 @@
 &lt;p>其中第二个参数为对应参数的 Java 类名，例如java.lang.String、org.apache.dubbo.User，第三个参数为参数列表，hessian.Object 即为 interface。第二、第三个参数应与方法签名一致，按顺序对应。&lt;/p>
 &lt;p>获得map结构的返回结果&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>INFO cmd/client.go:89 GetUser1(userId string) res: map[age:48 class:org.apache.dubbo.User id:A003 name:Joe sex:MAN time:2021-10-04 14:03:03.37 +0800 CST]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用 Pixiu 暴露 Dubbo-go 服务</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/pixiu-nacos-triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/pixiu-nacos-triple/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用 Pixiu 暴露 Dubbo-go 服务</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/pixiu-nacos-triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/pixiu-nacos-triple/</guid><description>
 &lt;p>Dubbo-go-pixiu 网关支持调用 GO/Java 的 Dubbo 集群。在 Dubbo-go 3.0 的场景下，我们可以通过 Pixiu 网关，在集群外以 HTTP 协议请求 pixiu 网关，在网关层进行协议转换，进一步调用集群内的Dubbo-go 服务。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/docs3-v2/golang-sdk/samples/pixiu-nacos-triple/triple-pixiu.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/docs3-v2/golang-sdk/samples/pixiu-nacos-triple/triple-pixiu.png" alt="img">&lt;/p>
 &lt;p>用户调用 Dubbo-go 服务的 path 为http://$(app_name)/$(service_name)/$(method)&lt;/p>
 &lt;p>例如一个proto文件内有如下定义：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-protobuf" data-lang="protobuf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">package&lt;/span> org&lt;span style="color:#719e07">.&lt;/span>apache.dubbo.quickstart.samples;
@@ -1589,14 +1589,14 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过curl 调用 demo 服务，并获得响应结果。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ curl -X POST -d &lt;span style="color:#2aa198">&amp;#39;{&amp;#34;name&amp;#34;:&amp;#34;laurence&amp;#34;}&amp;#39;&lt;/span> http://30.XXX.XXX.XX:8881/dubbogoDemoServer/org.apache.dubbo.laurence.samples.UserProvider/SayHello
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">{&lt;/span>&lt;span style="color:#2aa198">&amp;#34;name&amp;#34;&lt;/span>:&lt;span style="color:#2aa198">&amp;#34;Hello laurence&amp;#34;&lt;/span>,&lt;span style="color:#2aa198">&amp;#34;id&amp;#34;&lt;/span>:&lt;span style="color:#2aa198">&amp;#34;12345&amp;#34;&lt;/span>,&lt;span style="color:#2aa198">&amp;#34;age&amp;#34;&lt;/span>:21&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用 grpc_cli 调试 Dubbo-go 服务</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/grpc_cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/grpc_cli/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用 grpc_cli 调试 Dubbo-go 服务</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/grpc_cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/grpc_cli/</guid><description>
 &lt;h2 id="1-简介">1. 简介&lt;/h2>
 &lt;p>grpc_cli 工具是 gRPC 生态用于调试服务的工具，在 server 开启&lt;a href="https://github.com/grpc/grpc/blob/master/doc/server-reflection.md">反射服务&lt;/a>的前提下，可以获取到服务的 proto 文件、服务名、方法名、参数列表，以及发起 gRPC 调用。&lt;/p>
 &lt;p>Triple 协议兼容 gRPC 生态，并默认开启 gRPC 反射服务，因此可以直接使用 grpc_cli 调试 triple 服务。&lt;/p>
 &lt;h2 id="2-安装grpc_cli">2. 安装grpc_cli&lt;/h2>
 &lt;p>参考&lt;a href="https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md">文档&lt;/a>&lt;/p>
 &lt;h2 id="3-例子">3. 例子&lt;/h2>
-&lt;p>参考 &lt;a href="../../quickstart/quickstart_triple/">3.0 快速开始&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 应用级服务发现</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/service-discovery/</guid><description>
+&lt;p>参考 &lt;a href="../../quickstart/quickstart_triple/">3.0 快速开始&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 应用级服务发现</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/service-discovery/</guid><description>
 &lt;p>参考文章&lt;a href="https://baijiahao.baidu.com/s?id=1669266413887039723&amp;amp;wfr=spider&amp;amp;for=pc">&lt;strong>《Dubbo 迈出云原生重要一步 应用级服务发现解析》&lt;/strong>&lt;/a>&lt;/p>
 &lt;p>参考仓库：&lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/registry/servicediscovery">dubbo-go-samples/registry/serivcediscovery&lt;/a>&lt;/p>
 &lt;h2 id="配置方案">配置方案&lt;/h2>
@@ -1637,7 +1637,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">services&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">GreeterProvider&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">interface&lt;/span>: com.apache.dubbo.sample.basic.IGreeter
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>相比于常规配置，定义好registry-type: service, 并且定义好元数据中心后，将会使用应用级服务注册/服务发现。&lt;/p></description></item><item><title>Docs3-V2: 路由规则</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/mesh_router/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/mesh_router/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>相比于常规配置，定义好registry-type: service, 并且定义好元数据中心后，将会使用应用级服务注册/服务发现。&lt;/p></description></item><item><title>Docs3-V2: 路由规则</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/mesh_router/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/mesh_router/</guid><description>
 &lt;h2 id="路由规则介绍">路由规则介绍&lt;/h2>
 &lt;p>&lt;a href="https://www.yuque.com/docs/share/c132d5db-0dcb-487f-8833-7c7732964bd4?#">《微服务Mesh路由方案草案V2》&lt;/a>&lt;/p>
 &lt;h2 id="简介">简介&lt;/h2>
@@ -1744,7 +1744,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">env-sign&lt;/span>: zzz &lt;span style="color:#586e75"># server label, 对应 destination Rule中的testing，即兜底逻辑&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="3-运行方法">3. 运行方法&lt;/h4>
 &lt;p>直接使用goland运行本示例&lt;/p>
-&lt;p>运行后，可观测到所有客户端流量都路由至 server，根据source label，没有命中的virtualService，因此路由至兜底testing。&lt;/p></description></item><item><title>Docs3-V2: dubbogo 3.0 柔性服务</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/adaptive-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/samples/adaptive-service/</guid><description>
+&lt;p>运行后，可观测到所有客户端流量都路由至 server，根据source label，没有命中的virtualService，因此路由至兜底testing。&lt;/p></description></item><item><title>Docs3-V2: dubbogo 3.0 柔性服务</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/adaptive-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/adaptive-service/</guid><description>
 &lt;h1 id="柔性负载均衡-柔性服务">柔性负载均衡 (柔性服务)&lt;/h1>
 &lt;p>柔性服务是一种去中心化的智能负载均衡组件，同时也是 Dubbo-go 3.0 版本中重磅新特性之一。柔性服务尚处于早期实验阶段，该特性将在后续版本中持续优化，与 Dubbo 社区共同探索出一套适合微服务场景的最佳实践。&lt;/p>
 &lt;p>传统的负载均衡算法是由随机节点、RoundRobin 等算法实现，他们的局限性在于不知道当前服务提供者的负载情况，算法总是以尽可能公平的概率调用不同的服务提供者。在实践中，公平不等于高性能，集群服务性能还与服务负载、任务复杂度等多因素相关。为解决传统负载均衡算法的不足，Dubbo-go 在 3.0 版本中引入了柔性服务，实现了容量动态评估和分流功能。&lt;/p>
@@ -1753,7 +1753,7 @@
 &lt;li>TPS 从服务提供者的角度反映系统利用率。在系统压力未饱和前，请求数越大则系统利用率越高，但是进一步加大请求量直至系统过饱和后，出现过载的问题，导致整体效率呈下降趋势。&lt;/li>
 &lt;li>响应时间是从服务调用者的角度反映系统性能。在系统压力未饱和前，响应时间与请求数成线性增长的关系，但是进一步加大请求量直至系统过饱和后，响应时间与请求数成指数级增长。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/docs3-v2/golang-sdk/samples/adaptive-service/adaptive.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/docs3-v2/golang-sdk/samples/adaptive-service/adaptive.png" alt="img">&lt;/p>
 &lt;p>柔性服务则在调用过程中收集&lt;/p>
 &lt;p>在 Dubbo-go 3.0 版本中，支持服务柔性负载均衡。在微服务场景下，客户端会在调用过程中收集该服务下游 server 实例的硬件资源消耗情况，通过容量评估与筛选策略，选择最合适的下游实例进行调用，从而提升系统整体的性能。&lt;/p>
 &lt;p>服务柔性将在之后的迭代中持续优化，追求与 Dubbo 社区共同探索出最佳实践。&lt;/p>

@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 注册中心</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/registry/</link><description>Recent content in 注册中心 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 使用 Nacos 作为注册中心</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/registry/nacos/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 注册中心</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/registry/</link><description>Recent content in 注册中心 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 使用 Nacos 作为注册中心</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/registry/nacos/</guid><description>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
 &lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>
@@ -47,7 +47,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
 &lt;h2 id="4-更多支持的注册中心">4. 更多支持的注册中心&lt;/h2>
-&lt;p>参考 &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/registry">dubbo-go-samples/registry&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 多注册中心</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/registry/multi_registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/registry/multi_registry/</guid><description>
+&lt;p>参考 &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/registry">dubbo-go-samples/registry&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 多注册中心</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/registry/multi_registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/registry/multi_registry/</guid><description>
 &lt;p>一个 Dubbo-go 应用可以配置的多个接口维度的注册中心。&lt;/p>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>

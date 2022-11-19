@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 微服务治理</title><link>https://dubbo.apache.org/zh/overview/tasks/ecosystem/</link><description>Recent content in 微服务治理 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/overview/tasks/ecosystem/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 事务管理</title><link>https://dubbo.apache.org/zh/overview/tasks/ecosystem/transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/ecosystem/transaction/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 服务治理</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/ecosystem/</link><description>Recent content in 服务治理 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/ecosystem/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 事务管理</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/ecosystem/transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/ecosystem/transaction/</guid><description>
 &lt;h2 id="seata-是什么">Seata 是什么&lt;/h2>
 &lt;p>Seata 是一款开源的分布式事务解决方案，致力于提供高性能和简单易用的分布式事务服务。Seata 将为用户提供了 AT、TCC、SAGA 和 XA 事务模式，为用户打造一站式的分布式解决方案。&lt;/p>
 &lt;h2 id="一示例架构说明">一、示例架构说明&lt;/h2>
@@ -8,7 +8,7 @@
 &lt;li>订单服务: 根据采购请求生成订单。&lt;/li>
 &lt;li>账户服务: 用户账户金额扣减。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/docs3-v2/java-sdk/seata/transaction-1.png" alt="image.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/docs3-v2/java-sdk/seata/transaction-1.png" alt="image.png">&lt;/p>
 &lt;h3 id="storageservice">StorageService&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">interface&lt;/span> &lt;span style="color:#268bd2">StorageService&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -129,7 +129,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-7-启动-businessservice">Step 7: 启动 BusinessService&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>java &lt;span style="color:#719e07">-&lt;/span>classpath &lt;span style="color:#719e07">./&lt;/span>target&lt;span style="color:#719e07">/&lt;/span>dubbo&lt;span style="color:#719e07">-&lt;/span>samples&lt;span style="color:#719e07">-&lt;/span>transaction&lt;span style="color:#719e07">-&lt;/span>1&lt;span style="color:#719e07">.&lt;/span>0&lt;span style="color:#719e07">-&lt;/span>SNAPSHOT&lt;span style="color:#719e07">.&lt;/span>jar org&lt;span style="color:#719e07">.&lt;/span>apache&lt;span style="color:#719e07">.&lt;/span>dubbo&lt;span style="color:#719e07">.&lt;/span>samples&lt;span style="color:#719e07">.&lt;/span>starter&lt;span style="color:#719e07">.&lt;/span>DubboBusinessTester
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="四示例核心流程">四、示例核心流程&lt;/h2>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/docs3-v2/java-sdk/seata/transaction-2.png" alt="image.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/docs3-v2/java-sdk/seata/transaction-2.png" alt="image.png">&lt;/p>
 &lt;h3 id="step-1-修改业务代码">Step 1: 修改业务代码&lt;/h3>
 &lt;p>此处仅仅需要一行注解 &lt;code>@GlobalTransactional&lt;/code> 写在业务发起方的方法上:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@GlobalTransactional&lt;/span>
@@ -214,7 +214,7 @@ dubbo-storage-service.xml&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e.g.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sh seata-server.sh -p &lt;span style="color:#2aa198">8091&lt;/span> -h 127.0.0.1 -m file
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: 限流降级</title><link>https://dubbo.apache.org/zh/overview/tasks/ecosystem/rate-limit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/ecosystem/rate-limit/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: 限流降级</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/ecosystem/rate-limit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/ecosystem/rate-limit/</guid><description>
 &lt;h2 id="sentinel-是什么">Sentinel 是什么&lt;/h2>
 &lt;p>随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel 是面向分布式、多语言异构化服务架构的流量治理组件，主要以流量为切入点，从流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护等多个维度来帮助开发者保障微服务的稳定性。&lt;/p>
 &lt;h2 id="一示例架构说明">一、示例架构说明&lt;/h2>
@@ -265,5 +265,5 @@ dubbo-storage-service.xml&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Blocked
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Blocked
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>关于 Sentinel 的更多使用方式可以参考：&lt;a href="https://dubbo.apache.org/zh/blog/2018/07/27/sentinel-%E4%B8%BA-dubbo-%E6%9C%8D%E5%8A%A1%E4%BF%9D%E9%A9%BE%E6%8A%A4%E8%88%AA/">Sentinel 为 Dubbo 服务保驾护航&lt;/a>，&lt;a href="https://sentinelguard.io/zh-cn/index.html">Sentinel 官网&lt;/a>&lt;/p>
+&lt;p>关于 Sentinel 的更多使用方式可以参考：&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/blog/2018/07/27/sentinel-%E4%B8%BA-dubbo-%E6%9C%8D%E5%8A%A1%E4%BF%9D%E9%A9%BE%E6%8A%A4%E8%88%AA/">Sentinel 为 Dubbo 服务保驾护航&lt;/a>，&lt;a href="https://sentinelguard.io/zh-cn/index.html">Sentinel 官网&lt;/a>&lt;/p>
 &lt;/blockquote></description></item></channel></rss>

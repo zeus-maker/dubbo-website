@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 配置</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/config/</link><description>Recent content in 配置 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/config/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 远程加载配置启动</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/config/remote_config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/config/remote_config/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 配置</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/config/</link><description>Recent content in 配置 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/config/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 远程加载配置启动</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/config/remote_config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/config/remote_config/</guid><description>
 &lt;h1 id="远程加载配置启动">远程加载配置启动&lt;/h1>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
@@ -32,7 +32,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># services:&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># GreeterProvider:&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># interface: com.apache.dubbo.sample.basic.IGreeter # must be compatible with grpc or dubbo-java&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用配置 API 启动应用</title><link>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/config/config_api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/golang-sdk/tasks/config/config_api/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用配置 API 启动应用</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/config/config_api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/config/config_api/</guid><description>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
 &lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>

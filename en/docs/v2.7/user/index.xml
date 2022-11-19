@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – User Documentation</title><link>https://dubbo.apache.org/en/docs/v2.7/user/</link><description>Recent content in User Documentation on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/en/docs/v2.7/user/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Preface</title><link>https://dubbo.apache.org/en/docs/v2.7/user/preface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/preface/</guid><description/></item><item><title>Docs: Quick start</title><link>https://dubbo.apache.org/en/docs/v2.7/user/quick-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/quick-start/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – User Documentation</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/</link><description>Recent content in User Documentation on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Preface</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/preface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/preface/</guid><description/></item><item><title>Docs: Quick start</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/quick-start/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/quick-start/</guid><description>
 &lt;p>The most common way to use Dubbo is to run it in Spring framework. The following content will guide you to develop a Dubbo application with Spring framework&amp;rsquo;s &lt;a href="https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html">XML configuration&lt;/a>.&lt;/p>
 &lt;p>If you don&amp;rsquo;t want to rely on Spring, you can try using &lt;a href="../configuration/api">API configuration&lt;/a>.&lt;/p>
 &lt;p>First let&amp;rsquo;s create a root directory called dubbo-demo:&lt;/p>
@@ -188,7 +188,7 @@ If you prefer a registry like zookeeper, please check out examples &lt;a href="h
 &lt;p>IoC injection can also be used&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs: Dependencies</title><link>https://dubbo.apache.org/en/docs/v2.7/user/dependencies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/dependencies/</guid><description>
+&lt;/div></description></item><item><title>Docs: Dependencies</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/dependencies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/dependencies/</guid><description>
 &lt;h2 id="necessary-dependencies">Necessary dependencies&lt;/h2>
 &lt;p>JDK 1.6+ &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p>
 &lt;h2 id="default-dependencies">Default dependencies&lt;/h2>
@@ -253,7 +253,7 @@ If you prefer a registry like zookeeper, please check out examples &lt;a href="h
 &lt;p>JAVAEE&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref2:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref3:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs: Maturity</title><link>https://dubbo.apache.org/en/docs/v2.7/user/maturity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/maturity/</guid><description>
+&lt;/div></description></item><item><title>Docs: Maturity</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/maturity/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/maturity/</guid><description>
 &lt;h2 id="function-maturity">Function maturity&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -857,12 +857,12 @@ If you prefer a registry like zookeeper, please check out examples &lt;a href="h
 &lt;td>Alibaba&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Dubbo Configuration</title><link>https://dubbo.apache.org/en/docs/v2.7/user/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/configuration/</guid><description/></item><item><title>Docs: Dubbo Examples</title><link>https://dubbo.apache.org/en/docs/v2.7/user/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/examples/</guid><description>
+&lt;/table></description></item><item><title>Docs: Dubbo Configuration</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/configuration/</guid><description/></item><item><title>Docs: Dubbo Examples</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/examples/</guid><description>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Tips&lt;/h4>
 &lt;p>To complete run, please see: &lt;a href="../quick-start">quick start&lt;/a>, here just lists the configuration of various scenarios.&lt;/p>
 &lt;p>The following examples are all based on Spring configuration: &lt;a href="../configuration/xml">XML configuration&lt;/a> for reference, if you do not want to use Spring, but want to be use it via the directly API, please see: &lt;a href="../configuration/api">API configuration&lt;/a>&lt;/p>
-&lt;/div></description></item><item><title>Docs: References</title><link>https://dubbo.apache.org/en/docs/v2.7/user/references/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/references/</guid><description/></item><item><title>Docs: Best practice</title><link>https://dubbo.apache.org/en/docs/v2.7/user/best-practice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/best-practice/</guid><description>
+&lt;/div></description></item><item><title>Docs: References</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/</guid><description/></item><item><title>Docs: Best practice</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/best-practice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/best-practice/</guid><description>
 &lt;h2 id="modularization">Modularization&lt;/h2>
 &lt;p>It is recommended to put service interfaces, service models, service exceptions, and so on in the API package,Because the service model and exception are part of the API, it is also in conformity with the modularization principle:Reusing the publish equivalence principle (REP) and the Common Reuse Principle (CRP).&lt;/p>
 &lt;p>If you need, you can also consider placing a spring reference configuration in the API package, so that the user can only use the configuration in the spring loading process, and the configuration suggestion is placed in the package directory of the module, so as not to conflict, eg:&lt;code>com/alibaba/china/xxx/dubbo-reference.xml&lt;/code>。&lt;/p>
@@ -893,7 +893,7 @@ If you prefer a registry like zookeeper, please check out examples &lt;a href="h
 &lt;p>Service providers should not throw the exception of DAO or SQL to the consumer side. They should package the exception that consumers do not care about in service implementation, otherwise consumers may not be able to serialize the corresponding exception.&lt;/p>
 &lt;h2 id="call">Call&lt;/h2>
 &lt;p>Not just because it is a Dubbo call, wrap the call logic with &lt;code>try...catch&lt;/code>clause. &lt;code>try...catch&lt;/code> should be added to the appropriate rollback boundary.&lt;/p>
-&lt;p>The check logic for the input parameters should be available at the Provider side. For performance considerations, the service implementer may consider adding a service Stub class to the API package to complete the test.&lt;/p></description></item><item><title>Docs: Recommended usage</title><link>https://dubbo.apache.org/en/docs/v2.7/user/recommend/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/recommend/</guid><description>
+&lt;p>The check logic for the input parameters should be available at the Provider side. For performance considerations, the service implementer may consider adding a service Stub class to the API package to complete the test.&lt;/p></description></item><item><title>Docs: Recommended usage</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/recommend/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/recommend/</guid><description>
 &lt;h2 id="configuring-the-attributes-of-the-consumer-side-as-much-as-possible-on-the-provider-side">Configuring the attributes of the consumer side as much as possible on the provider side&lt;/h2>
 &lt;p>the reason is：&lt;/p>
 &lt;ul>
@@ -1008,7 +1008,7 @@ Configurated in &lt;code>dubbo:method&lt;/code>(method level configuration) , th
 &lt;hr>
 &lt;ol>
 &lt;li id="fn:1">
-&lt;p>Overlay rules for configuration: 1) The method level configuration has a higher priority than the interface level, that is to say,small scope have a high priority 2) Consumer side configuration has a higher priority than provider side, better than global configuration, the last one is the Dubbo hard coded configuration value（&lt;a href="https://dubbo.apache.org/en/docs/v2.7/user/configuration/properties/">Dubbo configuration introduction&lt;/a>）&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>Overlay rules for configuration: 1) The method level configuration has a higher priority than the interface level, that is to say,small scope have a high priority 2) Consumer side configuration has a higher priority than provider side, better than global configuration, the last one is the Dubbo hard coded configuration value（&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/configuration/properties/">Dubbo configuration introduction&lt;/a>）&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:2">
 &lt;p>With the first call, the call will be called 3 times&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
@@ -1023,7 +1023,7 @@ Configurated in &lt;code>dubbo:method&lt;/code>(method level configuration) , th
 &lt;p>&lt;code>timeout&lt;/code> Can be set in multiple places, configuration items and overlay rules： &lt;a href="../references/xml/">Dubbo Schema configuration introduction&lt;/a>&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs: Capacity plan</title><link>https://dubbo.apache.org/en/docs/v2.7/user/capacity-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/capacity-plan/</guid><description>
+&lt;/div></description></item><item><title>Docs: Capacity plan</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/capacity-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/capacity-plan/</guid><description>
 &lt;p>The following data for reference：&lt;/p>
 &lt;h2 id="use-member-service-project-of-dubbo">Use member service project of Dubbo&lt;/h2>
 &lt;ul>
@@ -1038,7 +1038,7 @@ Configurated in &lt;code>dubbo:method&lt;/code>(method level configuration) , th
 &lt;li>Use 8 standard servers to provide services (CPU:8 core, memory: 8G)&lt;/li>
 &lt;li>The average load is less than 1 (For 8 core CPU, the load is very low)&lt;/li>
 &lt;li>The average response time is 1.4 to 2.8 ms，Network cost about 1.0 to 1.1 ms(Related to the size of the packet )&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Performance</title><link>https://dubbo.apache.org/en/docs/v2.7/user/perf-test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/perf-test/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Performance</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/perf-test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/perf-test/</guid><description>
 &lt;h2 id="test-instructions">Test instructions&lt;/h2>
 &lt;ol start="0">
 &lt;li>In this performance test, the performance of all Dubbo 2.0 supported protocols in different sizes and data types is tested and compared with the Dubbo 1.0.&lt;/li>
@@ -1209,9 +1209,9 @@ On the basis of the stability scenario, the providers and consumers are arranged
 &lt;/tbody>
 &lt;/table>
 &lt;p>POJO TPS&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/pojotps.png" alt="pojotps.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/pojotps.png" alt="pojotps.png">&lt;/p>
 &lt;p>POJO Response&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/pojores.png" alt="pojores.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/pojores.png" alt="pojores.png">&lt;/p>
 &lt;h3 id="scene-name-scence-1k-string">Scene name: scence 1k string&lt;/h3>
 &lt;table>
 &lt;thead>
@@ -1265,9 +1265,9 @@ On the basis of the stability scenario, the providers and consumers are arranged
 &lt;/tbody>
 &lt;/table>
 &lt;p>1k TPS&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/1ktps.png" alt="1ktps.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/1ktps.png" alt="1ktps.png">&lt;/p>
 &lt;p>1k Response&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/1kres.png" alt="1kres.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/1kres.png" alt="1kres.png">&lt;/p>
 &lt;h3 id="scene-name-scence-50k-string">Scene name: scence 50k string&lt;/h3>
 &lt;table>
 &lt;thead>
@@ -1312,9 +1312,9 @@ On the basis of the stability scenario, the providers and consumers are arranged
 &lt;/tbody>
 &lt;/table>
 &lt;p>50K TPS&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/50ktps.png" alt="50ktps.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/50ktps.png" alt="50ktps.png">&lt;/p>
 &lt;p>50K Response&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/50kres.png" alt="50kres.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/50kres.png" alt="50kres.png">&lt;/p>
 &lt;h3 id="scene-name-scence-200k-string">Scene name: scence 200k string&lt;/h3>
 &lt;table>
 &lt;thead>
@@ -1359,9 +1359,9 @@ On the basis of the stability scenario, the providers and consumers are arranged
 &lt;/tbody>
 &lt;/table>
 &lt;p>200K TPS&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/200ktps.png" alt="200ktps.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/200ktps.png" alt="200ktps.png">&lt;/p>
 &lt;p>&lt;strong>200K Response&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/200kres.png" alt="200kres.png">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/200kres.png" alt="200kres.png">&lt;/p>
 &lt;h2 id="test-analysis">Test analysis&lt;/h2>
 &lt;h3 id="performance-analysis-and-evaluation">Performance analysis and evaluation&lt;/h3>
 &lt;p>The performance test conclusion of Dubbo 2 has been improved and improved from performance, memory footprint and stability. Because of its memory management, the change of Mina into netty greatly reduces the 1 version of the large memory sawtooth in high concurrency and large data.&lt;/p>
@@ -1372,22 +1372,22 @@ On the basis of the stability scenario, the providers and consumers are arranged
 &lt;h3 id="test-limitation-analysis-optional">Test limitation analysis (optional)&lt;/h3>
 &lt;p>This performance test examines the performance of the Dubbo itself, and the performance of the actual use needs to be verified.&lt;/p>
 &lt;p>Because the performance of Dubbo itself is in millisecond and the base number is small, performance improvement may not change the performance of the application as a whole.&lt;/p>
-&lt;p>All the monitoring charts are not listed because of the limit of length.&lt;/p></description></item><item><title>Docs: Test coverage report</title><link>https://dubbo.apache.org/en/docs/v2.7/user/coveragence/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/coveragence/</guid><description>
+&lt;p>All the monitoring charts are not listed because of the limit of length.&lt;/p></description></item><item><title>Docs: Test coverage report</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/coveragence/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/coveragence/</guid><description>
 &lt;ul>
 &lt;li>v2.0 Codecov report , Statistics since 2017-12-29
 The test coverage is : &lt;a href="https://codecov.io/gh/apache/dubbo">&lt;img src="https://codecov.io/gh/apache/dubbo/branch/master/graph/badge.svg" alt="codecov">&lt;/a> , we can get the report in &lt;a href="https://codecov.io/gh/apache/dubbo">https://codecov.io/gh/apache/dubbo&lt;/a>&lt;/li>
 &lt;li>v1.0 Based on version &lt;code>2.0.12&lt;/code>，Statistics on 2012-02-03&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-quality1.jpg" alt="code-quality1.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-quality2.jpg" alt="code-quality2.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-quality3.jpg" alt="code-quality3.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-quality4.jpg" alt="code-quality4.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-quality5.jpg" alt="code-quality5.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-quality6.jpg" alt="code-quality6.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-quality7.jpg" alt="code-quality7.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-coverage.jpg" alt="code-coverage.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-tendency.jpg" alt="code-tendency.jpg">&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/user/code-dependency.jpg" alt="code-dependency.jpg">&lt;/p></description></item><item><title>Docs: Benchmark Suite</title><link>https://dubbo.apache.org/en/docs/v2.7/user/benchmark-tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/benchmark-tool/</guid><description>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-quality1.jpg" alt="code-quality1.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-quality2.jpg" alt="code-quality2.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-quality3.jpg" alt="code-quality3.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-quality4.jpg" alt="code-quality4.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-quality5.jpg" alt="code-quality5.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-quality6.jpg" alt="code-quality6.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-quality7.jpg" alt="code-quality7.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-coverage.jpg" alt="code-coverage.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-tendency.jpg" alt="code-tendency.jpg">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/code-dependency.jpg" alt="code-dependency.jpg">&lt;/p></description></item><item><title>Docs: Benchmark Suite</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/benchmark-tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/benchmark-tool/</guid><description>
 &lt;ul>
 &lt;li>download： git clone &lt;a href="https://github.com/apache/dubbo.git">https://github.com/apache/dubbo.git&lt;/a>&lt;/li>
 &lt;li>compile benchmark: cd dubbo/dubbo-test/dubbo-test-benchmark; mvn clean install&lt;/li>
@@ -1425,7 +1425,7 @@ The test coverage is : &lt;a href="https://codecov.io/gh/apache/dubbo">&lt;img s
 &lt;p>Run run.bat(windows) or run.sh(linux)&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>If you want to test the different versions of Dubbo, you can replace the jar of the Dubbo.&lt;/p></description></item><item><title>Docs: REST support</title><link>https://dubbo.apache.org/en/docs/v2.7/user/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/rest/</guid><description>
+&lt;p>If you want to test the different versions of Dubbo, you can replace the jar of the Dubbo.&lt;/p></description></item><item><title>Docs: REST support</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/rest/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>Original author: Li Shen
 Document copyright: &lt;a href="HTTP://www.apache.org/licenses/LICENSE-2.0">Apache 2.0license Signature - No interpretation&lt;/a>&lt;/p>
@@ -1550,7 +1550,7 @@ For people who only want to get a glimpse of Dubbo and REST, all they need is to
 &lt;/ol>
 &lt;p>It should be pointed out that I think that 1~3 are the most valuable application scenarios for Dubbo&amp;rsquo;s REST call. And the main purpose why we add REST calls for Dubbo is to provide a service-oriented provider. In other words, to develop REST services for Non-Dubbo (heterogeneous) consumers.&lt;/p>
 &lt;p>To sum up, all application scenarios are shown below:
-&lt;img src="https://dubbo.apache.org/imgs/user/rest.jpg" alt="rest.jpg">&lt;/p>
+&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/rest.jpg" alt="rest.jpg">&lt;/p>
 &lt;p>Borrowing the most famous slogan of Java in the past, by adding REST calls to Dubbo, you can implement the &amp;ldquo;Write once, access everywhere&amp;rdquo; service, which can theoretically be accessed all over the world, thus truly achieving an idealized Service-oriented Architecture (SOA).&lt;/p>
 &lt;p>Of course, traditional Web Services (WSDL/SOAP) can meet the requirements (even those that require enterprise-level features) of the above scenarios (except for scenario 4). But due to the complexity and other issues, they are less and less used.&lt;/p>
 &lt;h2 id="quick-start">Quick Start&lt;/h2>
@@ -2312,11 +2312,11 @@ Excute a five-minute performance test. (Reference to Dubbo&amp;rsquo;s own test 
 &lt;li>Asynchronous calls&lt;/li>
 &lt;li>Gzip&lt;/li>
 &lt;li>Payload maxsize&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Simple Monitor</title><link>https://dubbo.apache.org/en/docs/v2.7/user/simple-monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/simple-monitor/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Simple Monitor</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/simple-monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/simple-monitor/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 &lt;p>Monitor service is a standard Dubbo service，can be exported to the registry，also can be connected straightly.&lt;/p>
-&lt;p>&lt;a href="https://dubbo.apache.org/en/docs/v2.7/admin/install/">Install the simple registry&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/admin/install/">Install the simple registry&lt;/a>&lt;/p>
 &lt;/div>
 &lt;ol start="0">
 &lt;li>
@@ -2378,4 +2378,4 @@ Excute a five-minute performance test. (Reference to Dubbo&amp;rsquo;s own test 
 &lt;p>&lt;strong>dubbo.properties&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>dubbo.monitor.address&lt;span style="color:#719e07">=&lt;/span>127.0.0.1:7070
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Docs: Other Languages</title><link>https://dubbo.apache.org/en/docs/v2.7/user/languages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/languages/</guid><description/></item></channel></rss>
+&lt;/ol></description></item><item><title>Docs: Other Languages</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/languages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/languages/</guid><description/></item></channel></rss>

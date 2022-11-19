@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Mesh 部署方案</title><link>https://dubbo.apache.org/zh/overview/tasks/mesh/</link><description>Recent content in Mesh 部署方案 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/overview/tasks/mesh/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: Dubbo proxy mesh using Envoy &amp; Istio</title><link>https://dubbo.apache.org/zh/overview/tasks/mesh/dubbo-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/mesh/dubbo-mesh/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 服务网格</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/mesh/</link><description>Recent content in 服务网格 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/mesh/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: Dubbo proxy mesh using Envoy &amp; Istio</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/mesh/dubbo-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/mesh/dubbo-mesh/</guid><description>
 &lt;p>遵循以下步骤，可以轻松掌握如何开发符合 Service Mesh 架构的 Dubbo 服务，并将其部署到 Kubernetes 并接入 Istio 的流量治理体系。在此查看 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mesh-k8s">完整示例源码&lt;/a>&lt;/p>
 &lt;h2 id="1-总体目标">1 总体目标&lt;/h2>
 &lt;ul>
@@ -8,7 +8,7 @@
 &lt;/ul>
 &lt;h2 id="2-基本流程与工作原理">2 基本流程与工作原理&lt;/h2>
 &lt;p>这个示例演示了如何将 Dubbo 开发的应用部署在 Istio 体系下，以实现 Envoy 对 Dubbo 服务的自动代理，示例总体架构如下图所示。&lt;/p>
-&lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/mesh/thinsdk-envoy.png" alt="thinsdk">&lt;/p>
+&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/mesh/thinsdk-envoy.png" alt="thinsdk">&lt;/p>
 &lt;p>完成示例将需要的步骤如下：&lt;/p>
 &lt;ol>
 &lt;li>创建一个 Dubbo 应用( &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mesh-k8s">dubbo-samples-mesh-k8s&lt;/a> )&lt;/li>
@@ -201,7 +201,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> provider-port=&lt;span style="color:#2aa198">&amp;#34;20885&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> provided-by=&lt;span style="color:#2aa198">&amp;#34;istio-dubbo-producer&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> provider-namespace=&lt;span style="color:#2aa198">&amp;#34;istio-demo&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: Istio + Proxyless</title><link>https://dubbo.apache.org/zh/overview/tasks/mesh/proxyless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/mesh/proxyless/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: Istio + Proxyless</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/mesh/proxyless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/mesh/proxyless/</guid><description>
 &lt;p>Proxyless 模式是指 Dubbo 直接与 Istiod 通信，通过 xDS 协议实现服务发现和服务治理等能力。
 本示例中将通过一个简单的示例来演示如何使用 Proxyless 模式。&lt;/p>
 &lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-xds">示例地址&lt;/a>&lt;/p>
@@ -223,7 +223,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-客户端订阅方式">3. 客户端订阅方式&lt;/h3>
 &lt;p>&lt;strong>由于原生 xDS 协议无法支持获取从接口到应用名的映射，因此需要配置 &lt;code>providedBy&lt;/code> 参数来标记此服务来自哪个应用。&lt;/strong>&lt;/p>
-&lt;p>未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务映射&lt;/a>关系获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
+&lt;p>未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务映射&lt;/a>关系获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@Component&lt;/span>&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;annotatedConsumer&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">GreetingServiceConsumer&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">@DubboReference&lt;/span>&lt;span style="color:#719e07">(&lt;/span>version &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> providedBy &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;dubbo-samples-xds-provider&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
@@ -235,7 +235,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="4-服务端配置">4. 服务端配置&lt;/h3>
 &lt;p>服务端配置注册中心为 istio 的地址，协议为 xds。&lt;/p>
 &lt;p>我们建议将 &lt;code>protocol&lt;/code> 配置为 tri 协议（全面兼容 grpc 协议），以获得在 istio 体系下更好的体验。&lt;/p>
-&lt;p>为了使 Kubernetes 感知到应用的状态，需要配置 &lt;code>qosAcceptForeignIp&lt;/code> 参数，以便 Kubernetes 可以获得正确的应用状态，&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/">对齐生命周期&lt;/a>。&lt;/p>
+&lt;p>为了使 Kubernetes 感知到应用的状态，需要配置 &lt;code>qosAcceptForeignIp&lt;/code> 参数，以便 Kubernetes 可以获得正确的应用状态，&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/">对齐生命周期&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>dubbo.application.name&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">dubbo-samples-xds-provider&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">20885&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">xds://istiod.istio-system.svc:15012&lt;/span>
@@ -340,7 +340,7 @@
 &lt;li>providedBy&lt;/li>
 &lt;/ol>
 &lt;p>由于当前 Dubbo 版本受限于 istio 的通信模型无法获取接口所对应的应用名，因此需要配置 &lt;code>providedBy&lt;/code> 参数来标记此服务来自哪个应用。
-未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务映射&lt;/a>关系获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
+未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务映射&lt;/a>关系获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
 &lt;ol start="4">
 &lt;li>protocol name&lt;/li>
 &lt;/ol>
@@ -366,7 +366,7 @@
 &lt;p>由于 Dubbo 3 应用级服务发现的元数据无法从 istio 中获取，需要走服务自省模式。这要求了 &lt;code>Dubbo MetadataService&lt;/code> 的端口在全集群的是统一的。&lt;/p>
 &lt;p>参考配置：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>dubbo.application.metadataServicePort&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">20885&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务元数据&lt;/a>获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>未来我们将基于 Dubbo Mesh 的控制面实现自动的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/">服务元数据&lt;/a>获取，届时将不需要独立配置参数即可将 Dubbo 运行在 Mesh 体系下，敬请期待。&lt;/p>
 &lt;ol start="6">
 &lt;li>qosAcceptForeignIp&lt;/li>
 &lt;/ol>

@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 流量治理</title><link>https://dubbo.apache.org/zh/overview/tasks/traffic-management/</link><description>Recent content in 流量治理 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/overview/tasks/traffic-management/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 动态调整服务超时时间</title><link>https://dubbo.apache.org/zh/overview/tasks/traffic-management/timeout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/traffic-management/timeout/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 流量管控</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/</link><description>Recent content in 流量管控 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 动态调整服务超时时间</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/timeout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/timeout/</guid><description>
 &lt;p>Dubbo提供动态调整超时时间的服务治理能力，可以在无需重启应用的情况下，动态调整服务超时时间。&lt;/p>
 &lt;p>Dubbo可以通过XML配置，注解配置，动态配置实现动态调整超时时间，这里主要介绍动态配置的方式，其他配置方式请参考旧文档&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/">配置&lt;/a>&lt;/p>
 &lt;h2 id="开始之前">开始之前&lt;/h2>
@@ -60,7 +60,7 @@
 &lt;li>要修改的超时时间。&lt;/li>
 &lt;/ol>
 &lt;h2 id="结果验证">结果验证&lt;/h2>
-&lt;p>选择和超时配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 临时踢除问题服务实例</title><link>https://dubbo.apache.org/zh/overview/tasks/traffic-management/isolation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/traffic-management/isolation/</guid><description>
+&lt;p>选择和超时配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 临时踢除问题服务实例</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/isolation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/isolation/</guid><description>
 &lt;p>Dubbo提供临时踢除问题服务实例的服务治理能力，可以在无需重启应用的情况下，临时踢除问题服务实例。&lt;/p>
 &lt;p>Dubbo可以通过XML配置，注解配置，动态配置实现临时踢除问题服务实例，这里主要介绍动态配置的方式，其他配置方式请参考旧文档&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/">配置&lt;/a>&lt;/p>
 &lt;h2 id="开始之前">开始之前&lt;/h2>
@@ -121,7 +121,7 @@
 &lt;li>要修改的disabled参数。&lt;/li>
 &lt;/ol>
 &lt;h2 id="结果验证">结果验证&lt;/h2>
-&lt;p>选择和临时踢除问题服务实例配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 流量隔离</title><link>https://dubbo.apache.org/zh/overview/tasks/traffic-management/traffic-condition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/traffic-management/traffic-condition/</guid><description>
+&lt;p>选择和临时踢除问题服务实例配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 流量隔离</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/traffic-condition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/traffic-condition/</guid><description>
 &lt;p>Dubbo提供动态流量隔离的服务治理能力，可以在无需重启应用的情况下，动态进行流量隔离。&lt;/p>
 &lt;p>Dubbo可以通过XML配置，注解配置，动态配置实现流量隔离，这里主要介绍动态配置的方式，其他配置方式请参考旧文档&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/">配置&lt;/a>&lt;/p>
 &lt;h2 id="开始之前">开始之前&lt;/h2>
@@ -175,7 +175,7 @@
 &lt;li>要修改的标签名。&lt;/li>
 &lt;/ol>
 &lt;h2 id="结果验证">结果验证&lt;/h2>
-&lt;p>选择和流量隔离配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 流量灰度</title><link>https://dubbo.apache.org/zh/overview/tasks/traffic-management/traffic-gray/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/traffic-management/traffic-gray/</guid><description>
+&lt;p>选择和流量隔离配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 流量灰度</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/traffic-gray/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/traffic-gray/</guid><description>
 &lt;p>Dubbo提供流量灰度的服务治理能力，可以在无需重启应用的情况下，配置标签路由规则和条件路由实现灰度发布。&lt;/p>
 &lt;p>Dubbo可以通过XML配置，注解配置，动态配置实现流量灰度，这里主要介绍动态配置的方式，其他配置方式请参考旧文档&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/">配置&lt;/a>&lt;/p>
 &lt;h2 id="开始之前">开始之前&lt;/h2>
@@ -280,7 +280,7 @@
 &lt;li>要修改的标签名。&lt;/li>
 &lt;/ol>
 &lt;h2 id="结果验证">结果验证&lt;/h2>
-&lt;p>选择和流量灰度配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 请求路由</title><link>https://dubbo.apache.org/zh/overview/tasks/traffic-management/traffic-routing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/traffic-management/traffic-routing/</guid><description>
+&lt;p>选择和流量灰度配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 请求路由</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/traffic-routing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/traffic-routing/</guid><description>
 &lt;p>Dubbo提供动态创建条件路由的服务治理能力，可以在无需重启应用的情况下，根据请求发起方、请求的方法条件路由。&lt;/p>
 &lt;p>Dubbo可以通过XML配置，注解配置，动态配置实现动态根据请求条件路由，这里主要介绍动态配置的方式，其他配置方式请参考旧文档&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/">配置&lt;/a>&lt;/p>
 &lt;h2 id="开始之前">开始之前&lt;/h2>
@@ -340,7 +340,7 @@
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="结果验证">结果验证&lt;/h2>
-&lt;p>选择和条件路由配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 通过权重调整流量分布</title><link>https://dubbo.apache.org/zh/overview/tasks/traffic-management/weight/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/traffic-management/weight/</guid><description>
+&lt;p>选择和条件路由配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 通过权重调整流量分布</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/weight/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/weight/</guid><description>
 &lt;p>Dubbo提供通过权重调整流量分布的服务治理能力，可以在无需重启应用的情况下，通过权重动态调整流量分布。&lt;/p>
 &lt;p>Dubbo可以通过XML配置，注解配置，动态配置实现通过权重调整流量分布，这里主要介绍动态配置的方式，其他配置方式请参考旧文档&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/">配置&lt;/a>&lt;/p>
 &lt;h2 id="开始之前">开始之前&lt;/h2>
@@ -373,7 +373,7 @@
 &lt;li>要修改的权重。&lt;/li>
 &lt;/ol>
 &lt;h2 id="结果验证">结果验证&lt;/h2>
-&lt;p>选择和权重配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 同机房/区域优先</title><link>https://dubbo.apache.org/zh/overview/tasks/traffic-management/zone/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/traffic-management/zone/</guid><description>
+&lt;p>选择和权重配置相关的应用，触发该调用验证。&lt;/p></description></item><item><title>Overview: 同机房/区域优先</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/zone/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/traffic-management/zone/</guid><description>
 &lt;p>Dubbo提供动态配置同机房/区域优先的服务治理能力，可以在无需重启应用的情况下，动态配置同机房/区域优先。&lt;/p>
 &lt;p>Dubbo可以通过XML配置，注解配置，动态配置同机房/区域优先，这里主要介绍动态配置的方式，其他配置方式请参考旧文档&lt;a href="https://dubbo.apache.org/zh/docsv2.7/user/configuration/">配置&lt;/a>&lt;/p>
 &lt;h2 id="开始之前">开始之前&lt;/h2>
