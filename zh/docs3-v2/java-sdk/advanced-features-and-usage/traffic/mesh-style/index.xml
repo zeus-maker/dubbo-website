@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Mesh 路由规则</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/</link><description>Recent content in Mesh 路由规则 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 动态路由</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/dynamic-rule-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/dynamic-rule-deployment/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Mesh 路由规则</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/</link><description>Recent content in Mesh 路由规则 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 动态路由</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/dynamic-rule-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/dynamic-rule-deployment/</guid><description>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">apiVersion&lt;/span>: service.dubbo.apache.org/v1alpha1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">kind&lt;/span>: VirtualService
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">metadata&lt;/span>:
@@ -67,7 +67,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#268bd2">name&lt;/span>: v2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">labels&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">sigma.ali/mg&lt;/span>: v2-host
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 权重路由</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/weight-rule-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/weight-rule-deployment/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 权重路由</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/weight-rule-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/weight-rule-deployment/</guid><description>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">apiVersion&lt;/span>: service.dubbo.apache.org/v1alpha1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">kind&lt;/span>: VirtualService
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">metadata&lt;/span>:
@@ -105,7 +105,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#268bd2">name&lt;/span>: v2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">labels&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">version&lt;/span>: v2
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用案例</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/demo-rule-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/demo-rule-deployment/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用案例</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/demo-rule-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/demo-rule-deployment/</guid><description>
 &lt;h3 id="应用服务">应用服务&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>com.taobao.hsf.DemoService:1.0.0
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="服务地址">服务地址&lt;/h3>
@@ -354,7 +354,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这个结果将做为一下路由的输出,重复前面的动作；&lt;/p>
 &lt;p>如果这个路由规则已经结束，那么调用的地址将为&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">10.0.0.2&lt;/span>:&lt;span style="color:#2aa198">12200&lt;/span>?_p=hessian2&amp;amp;APP=demo&amp;amp;st=na62&amp;amp;v=2.0&amp;amp;_TIMEOUT=3000&amp;amp;_ih2=y&amp;amp;mg=demohost&amp;amp;_CONNECTTIMEOUT=1000&amp;amp;_SERIALIZETYPE=hessian&amp;amp;ut=CENTER
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 蓝绿部署</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/blue-green-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/blue-green-deployment/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 蓝绿部署</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/blue-green-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/blue-green-deployment/</guid><description>
 &lt;h3 id="场景描述">场景描述&lt;/h3>
 &lt;p>描述当前IDC、服务部署、服务信息、希望实现的效果等相关情况&lt;/p>
 &lt;h3 id="操作工艺">操作工艺&lt;/h3>
@@ -373,7 +373,7 @@
 &lt;li>验证方案&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: Ab测试</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/ab-testing-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/ab-testing-deployment/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: Ab测试</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/ab-testing-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/ab-testing-deployment/</guid><description>
 &lt;h3 id="场景描述">场景描述&lt;/h3>
 &lt;p>描述当前IDC、服务部署、服务信息、希望实现的效果等相关情况&lt;/p>
 &lt;h3 id="操作工艺">操作工艺&lt;/h3>
@@ -392,7 +392,7 @@
 &lt;li>验证方案&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: VirtualService</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/virtualservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/virtualservice/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: VirtualService</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/virtualservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/virtualservice/</guid><description>
 &lt;h3 id="virtualservice">VirtualService&lt;/h3>
 &lt;p>&lt;code>VirtualService&lt;/code>是用来处理入站流量的规则，也就是说用来描述哪些入站流量适用于该路由规则。&lt;/p>
 &lt;ul>
@@ -1322,7 +1322,7 @@
 &lt;td>NO&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs3-V2: DestinationRule</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/destination-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/destination-rule/</guid><description>
+&lt;/table></description></item><item><title>Docs3-V2: DestinationRule</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/destination-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/destination-rule/</guid><description>
 &lt;h3 id="destinationrule">DestinationRule&lt;/h3>
 &lt;p>&lt;code>DestinationRule&lt;/code>用来处理目标地址的规则，与&lt;code>DestinationRule&lt;/code>相关的&lt;code>ServiceEntry&lt;/code>, &lt;code>WorkloadEntry&lt;/code>等定义与开源保持一致&lt;/p>
 &lt;ul>
@@ -1494,7 +1494,7 @@
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs3-V2: 金丝雀部署</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/canary-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/canary-deployment/</guid><description>
+&lt;/table></description></item><item><title>Docs3-V2: 金丝雀部署</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/canary-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/canary-deployment/</guid><description>
 &lt;h3 id="场景描述">场景描述&lt;/h3>
 &lt;p>描述当前IDC、服务部署、服务信息、希望实现的效果等相关情况&lt;/p>
 &lt;h3 id="操作工艺">操作工艺&lt;/h3>

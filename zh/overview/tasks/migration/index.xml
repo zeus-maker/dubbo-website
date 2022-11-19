@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 版本迁移</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/migration/</link><description>Recent content in 版本迁移 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/migration/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 升级到 Dubbo3</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/migration/2to3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/migration/2to3/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 版本迁移</title><link>https://static.dubbo.apache.org/next/zh/overview/tasks/migration/</link><description>Recent content in 版本迁移 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/overview/tasks/migration/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 升级到 Dubbo3</title><link>https://static.dubbo.apache.org/next/zh/overview/tasks/migration/2to3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/overview/tasks/migration/2to3/</guid><description>
 &lt;p>&lt;strong>无需改动任何代码，直接升级到 Dubbo 3.0。&lt;/strong>&lt;/p>
 &lt;p>在 3.0 版本的设计与开发之初，我们就定下了兼容老版本 Dubbo 用户（2.5、2.6、2.7）的目标。因此，往 3.0 版本的升级过程将会是完全透明的，用户无需做任何业务改造，升级 3.x 后的框架行为将保持与 2.x 版本完全一致。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
@@ -16,26 +16,26 @@
 &lt;ul>
 &lt;li>&lt;strong>新的地址发现模型（应用级服务发现）。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-samples/">应用级服务发现迁移示例&lt;/a>。&lt;/li>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/">应用级服务发现的迁移步骤&lt;/a>&lt;/li>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/">应用级服务发现地址迁移规则说明&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-samples/">应用级服务发现迁移示例&lt;/a>。&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/">应用级服务发现的迁移步骤&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/">应用级服务发现地址迁移规则说明&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>下一代基于 HTTP/2 的 Triple 协议。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/migration-triple/">Triple 协议迁移步骤&lt;/a>&lt;/li>
-&lt;li>查看 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/guide/">Triple 协议使用方式&lt;/a>&lt;/li>
-&lt;li>查看 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/overview/">Triple 协议设计与实现&lt;/a>。&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/migration-triple/">Triple 协议迁移步骤&lt;/a>&lt;/li>
+&lt;li>查看 &lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/guide/">Triple 协议使用方式&lt;/a>&lt;/li>
+&lt;li>查看 &lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/overview/">Triple 协议设计与实现&lt;/a>。&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>统一的路由规则。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/">统一路由规则设计与实现&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/">统一路由规则设计与实现&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Overview: Dubbo 协议迁移至 Triple 协议指南</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/migration/migration-triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/migration/migration-triple/</guid><description>
+&lt;/ul></description></item><item><title>Overview: Dubbo 协议迁移至 Triple 协议指南</title><link>https://static.dubbo.apache.org/next/zh/overview/tasks/migration/migration-triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/overview/tasks/migration/migration-triple/</guid><description>
 &lt;h2 id="triple-介绍">Triple 介绍&lt;/h2>
-&lt;p>&lt;code>Triple&lt;/code> 协议的格式和原理请参阅 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/concepts/rpc-protocol/">RPC 通信协议&lt;/a>&lt;/p>
+&lt;p>&lt;code>Triple&lt;/code> 协议的格式和原理请参阅 &lt;a href="https://static.dubbo.apache.org/next/zh/docs/concepts/rpc-protocol/">RPC 通信协议&lt;/a>&lt;/p>
 &lt;p>根据 Triple 设计的目标，&lt;code>Triple&lt;/code> 协议有以下优势:&lt;/p>
 &lt;ul>
 &lt;li>具备跨语言交互的能力，传统的多语言多 SDK 模式和 Mesh 化跨语言模式都需要一种更通用易扩展的数据传输协议。&lt;/li>
@@ -52,7 +52,7 @@
 &lt;p>而 Grpc 的默认仅支持 Protobuf 序列化，对于 Java 语言中的多参数以及方法重载也无法支持。&lt;/p>
 &lt;p>Dubbo3的之初就有一条目标是完美兼容 Dubbo2，所以为了 Dubbo2 能够平滑升级， Dubbo 框架侧做了很多工作来保证升级的无感，目前默认的序列化和 Dubbo2 保持一致为&lt;code>hessian2&lt;/code>。&lt;/p>
 &lt;p>&lt;strong>所以，如果决定要升级到 Dubbo3 的 &lt;code>Triple&lt;/code> 协议，只需要修改配置中的协议名称为 &lt;code>tri&lt;/code> (注意: 不是triple)即可。&lt;/strong>&lt;/p>
-&lt;p>关于 &lt;code>Triple&lt;/code> 协议更多使用说明可以参考 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/migration-triple/">Triple 协议迁移指南&lt;/a>。&lt;/p></description></item><item><title>Overview: Dubbo3 应用级服务发现</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/migration/service-discovery-samples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/migration/service-discovery-samples/</guid><description>
+&lt;p>关于 &lt;code>Triple&lt;/code> 协议更多使用说明可以参考 &lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/migration-triple/">Triple 协议迁移指南&lt;/a>。&lt;/p></description></item><item><title>Overview: Dubbo3 应用级服务发现</title><link>https://static.dubbo.apache.org/next/zh/overview/tasks/migration/service-discovery-samples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/overview/tasks/migration/service-discovery-samples/</guid><description>
 &lt;p>应用级服务发现为应用间服务发现的协议，因此使用应用级服务发现需要消费端和服务端均升级到 Dubbo 3.0 版本并开启新特性（默认开启）才能在链路中使用应用级服务发现，真正发挥应用级服务发现的优点。&lt;/p>
 &lt;h2 id="开启方式">开启方式&lt;/h2>
 &lt;h2 id="服务端">服务端&lt;/h2>
@@ -106,7 +106,7 @@ FORCE_APPLICATION：仅应用级订阅，将只采用全新的服务发现模型
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
 &lt;li>动态配置（优先级最高，可以在运行时修改配置）&lt;/li>
 &lt;/ol>
-&lt;p>此配置需要基于配置中心进行推送，Key 为应用名 + &lt;code>.migration&lt;/code> （如 &lt;code>demo-application.migraion&lt;/code>），Group 为 &lt;code>DUBBO_SERVICEDISCOVERY_MIGRATION&lt;/code>。规则体配置详见&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/">接口级服务发现迁移至应用级服务发现指南&lt;/a>。&lt;/p>
+&lt;p>此配置需要基于配置中心进行推送，Key 为应用名 + &lt;code>.migration&lt;/code> （如 &lt;code>demo-application.migraion&lt;/code>），Group 为 &lt;code>DUBBO_SERVICEDISCOVERY_MIGRATION&lt;/code>。规则体配置详见&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/">接口级服务发现迁移至应用级服务发现指南&lt;/a>。&lt;/p>
 &lt;blockquote>
 &lt;p>示例：&lt;a href="https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-cloud-native/dubbo-servicediscovery-migration/dubbo-servicediscovery-migration-consumer/src/main/java/org/apache/dubbo/demo/consumer/UpgradeUtil.java">https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-cloud-native/dubbo-servicediscovery-migration/dubbo-servicediscovery-migration-consumer/src/main/java/org/apache/dubbo/demo/consumer/UpgradeUtil.java&lt;/a>&lt;/p>
 &lt;/blockquote>

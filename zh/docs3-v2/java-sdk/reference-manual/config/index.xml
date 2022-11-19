@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 配置手册</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/</link><description>Recent content in 配置手册 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 配置概述</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 配置手册</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/</link><description>Recent content in 配置手册 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 配置概述</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/overview/</guid><description>
 &lt;p>通过以下链接快速跳转到关心的内容：&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="../../../quick-start/spring-boot/">使用 Spring Boot 快速开发 Dubbo 应用&lt;/a>&lt;/li>
@@ -7,7 +7,7 @@
 &lt;/ul>
 &lt;h2 id="配置组件">配置组件&lt;/h2>
 &lt;p>为了更好地管理各种配置，Dubbo 抽象了一套结构化的配置组件，各组件总体以用途划分，分别控制不同作用域的行为。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-config.jpg" alt="dubbo-config">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-config.jpg" alt="dubbo-config">&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -106,7 +106,7 @@
 &lt;/table>
 &lt;blockquote>
 &lt;ol>
-&lt;li>从实现原理层面，最终 Dubbo 所有的配置项都会被组装到 URL 中，以 URL 为载体在后续的启动、RPC 调用过程中传递，进而控制框架行为。如想了解更多，请参照 Dubbo 源码解析系列文档或 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/blog/2019/10/17/dubbo-%E4%B8%AD%E7%9A%84-url-%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/#rpc%E8%B0%83%E7%94%A8">Blog&lt;/a>。&lt;/li>
+&lt;li>从实现原理层面，最终 Dubbo 所有的配置项都会被组装到 URL 中，以 URL 为载体在后续的启动、RPC 调用过程中传递，进而控制框架行为。如想了解更多，请参照 Dubbo 源码解析系列文档或 &lt;a href="https://static.dubbo.apache.org/next/zh/blog/2019/10/17/dubbo-%E4%B8%AD%E7%9A%84-url-%E7%BB%9F%E4%B8%80%E6%A8%A1%E5%9E%8B/#rpc%E8%B0%83%E7%94%A8">Blog&lt;/a>。&lt;/li>
 &lt;li>各组件支持的具体配置项及含义请参考 &lt;a href="../properties">配置项手册&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;/blockquote>
@@ -212,7 +212,7 @@
 &lt;li>Application Configuration，应用的属性配置，从Spring应用的Environment中提取&amp;quot;dubbo&amp;quot;打头的属性集&lt;/li>
 &lt;li>API / XML /注解等编程接口采集的配置可以被理解成配置来源的一种，是直接面向用户编程的配置采集方式&lt;/li>
 &lt;li>从classpath读取配置文件 dubbo.properties&lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: API 配置</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/api/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: API 配置</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/api/</guid><description>
 &lt;p>通过 API 编码方式组装配置、启动 Dubbo、发布及订阅服务。此方式可以支持动态创建 ReferenceConfig/ServiceConfig，结合泛化调用可以满足 API Gateway 或测试平台的需要。&lt;/p>
 &lt;blockquote>
 &lt;p>参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api">API示例&lt;/a>&lt;/p>
@@ -485,7 +485,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>reference&lt;span style="color:#719e07">.&lt;/span>setUrl&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;dubbo://10.20.130.230:20880/com.xxx.DemoService&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">...&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Annotation 配置</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/annotation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/annotation/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Annotation 配置</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/annotation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/annotation/</guid><description>
 &lt;p>本文以 Spring Boot + Annotation 模式描述 Dubbo 应用开发，在此查看无 Spring Boot 的 Spring 注解开发模式 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-annotation">完整示例&lt;/a>&lt;/p>
 &lt;p>在 Dubbo Spring Boot 开发中，你只需要增加几个注解，并配置 &lt;code>application.properties&lt;/code> 或 &lt;code>application.yml&lt;/code> 文件即可完成 Dubbo 服务定义：&lt;/p>
 &lt;ul>
@@ -642,7 +642,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.reference.org.apache.dubbo.springboot.demo.DemoService.timeout&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">6000&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>properties 格式配置目前结构性不太强，比如体现在 key 字段冗余较多，后续会考虑提供对于 yaml 格式的支持。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: XML 配置</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/xml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/xml/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: XML 配置</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/xml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/xml/</guid><description>
 &lt;p>Dubbo 有基于 Spring Schema 扩展的自定义配置组件，使用 XML 能达到的配置能力总体与 &lt;a href="../properties">配置参考手册&lt;/a> 对等。&lt;/p>
 &lt;p>以下内容的完整示例请参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-basic">dubbo-samples&lt;/a>&lt;/p>
 &lt;h2 id="服务提供者">服务提供者&lt;/h2>
@@ -719,7 +719,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>hello&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 配置工作原理</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/principle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/principle/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 配置工作原理</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/principle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/principle/</guid><description>
 &lt;p>以下是一个 Dubbo 属性配置的例子 &lt;a href="https://github.com/apache/dubbo-spring-boot-project/tree/master/dubbo-spring-boot-samples">dubbo-spring-boot-samples&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">## application.properties&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -976,7 +976,7 @@
 &lt;h2 id="3-配置加载流程">3 配置加载流程&lt;/h2>
 &lt;h3 id="31-处理流程">3.1 处理流程&lt;/h3>
 &lt;p>Dubbo 配置加载大概分为两个阶段：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/config/config-load.svg" alt="配置加载流程">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/config/config-load.svg" alt="配置加载流程">&lt;/p>
 &lt;ul>
 &lt;li>第一阶段为DubboBootstrap初始化之前，在Spring context启动时解析处理XML配置/注解配置/Java-config 或者是执行API配置代码，创建config bean并且加入到ConfigManager中。&lt;/li>
 &lt;li>第二阶段为DubboBootstrap初始化过程，从配置中心读取外部配置，依次处理实例级属性配置和应用级属性配置，最后刷新所有配置实例的属性，也就是&lt;a href="../principle#32-%E5%B1%9E%E6%80%A7%E8%A6%86%E7%9B%96">属性覆盖&lt;/a>。&lt;/li>
@@ -988,7 +988,7 @@
 &lt;li>相同配置源，但在不同层次指定了相同的配置项&lt;/li>
 &lt;/ol>
 &lt;h4 id="321-不同配置源">3.2.1 不同配置源&lt;/h4>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/configuration.jpg" alt="覆盖关系">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/configuration.jpg" alt="覆盖关系">&lt;/p>
 &lt;h4 id="321-相同配置源">3.2.1 相同配置源&lt;/h4>
 &lt;p>属性覆盖是指用配置的属性值覆盖config bean实例的属性，类似Spring &lt;a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/config/PropertyOverrideConfigurer.html">PropertyOverrideConfigurer&lt;/a> 的作用。&lt;/p>
 &lt;blockquote>
@@ -1007,7 +1007,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.{config-type}.{config-item}&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">{config-item-value}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>属性覆盖处理流程：&lt;/p>
 &lt;p>按照优先级从高到低依次查找，如果找到此前缀开头的属性，则选定使用这个前缀提取属性，忽略后面的配置。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/config/properties-override.svg" alt="属性覆盖流程">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/config/properties-override.svg" alt="属性覆盖流程">&lt;/p>
 &lt;h3 id="33-外部化配置">3.3 外部化配置&lt;/h3>
 &lt;p>外部化配置目的之一是实现配置的集中式管理，这部分业界已经有很多成熟的专业配置系统如 Apollo, Nacos 等，Dubbo 所做的主要是保证能配合这些系统正常工作。&lt;/p>
 &lt;p>外部化配置和其他本地配置在内容和格式上并无区别，可以简单理解为 &lt;code>dubbo.properties&lt;/code> 的外部化存储，配置中心更适合将一些公共配置如注册中心、元数据中心配置等抽取以便做集中管理。&lt;/p>
@@ -1039,7 +1039,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
 &lt;li>在相应的配置中心（zookeeper、Nacos 等）增加全局配置项，如下以 Nacos 为例：&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/config-center/nacos-extenal-properties.png" alt="nacos-extenal-properties">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/config-center/nacos-extenal-properties.png" alt="nacos-extenal-properties">&lt;/p>
 &lt;p>开启外部化配置后，registry、metadata-report、protocol、qos 等全局范围的配置理论上都不再需要在应用中配置，应用开发侧专注业务服务配置，一些全局共享的全局配置转而由运维人员统一配置在远端配置中心。&lt;/p>
 &lt;p>这样能做到的效果就是，应用只需要关心：&lt;/p>
 &lt;ul>
@@ -1063,7 +1063,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">//将组织好的配置塞给Dubbo框架
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>ConfigCenterConfig configCenter &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ConfigCenterConfig&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>configCenter&lt;span style="color:#719e07">.&lt;/span>setExternalConfig&lt;span style="color:#719e07">(&lt;/span>dubboConfigurations&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 配置项参考手册</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 配置项参考手册</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/</guid><description>
 &lt;h2 id="配置详情">配置详情&lt;/h2>
 &lt;h3 id="application">application&lt;/h3>
 &lt;p>每个应用必须要有且只有一个 application 配置，对应的配置类：&lt;code>org.apache.dubbo.config.ApplicationConfig&lt;/code>&lt;/p>

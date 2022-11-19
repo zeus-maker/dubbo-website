@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 文档</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/</link><description>Recent content in 文档 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 0-1 - 线程池资源枯竭</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/0/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/0/1/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 文档</title><link>https://static.dubbo.apache.org/next/zh/docs/</link><description>Recent content in 文档 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 0-1 - 线程池资源枯竭</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/1/</guid><description>
 &lt;p>服务端的线程资源耗尽了。
 默认情况下，Dubbo 服务端的业务线程数是 200 个。如果多个并发请求量超过了 200，就会拒绝新的请求，抛出此错误。&lt;/p>
 &lt;h3 id="可能的原因">可能的原因&lt;/h3>
@@ -16,7 +16,7 @@
 &lt;blockquote>
 &lt;p>这个错误码的 FAQ 页面参考了空冥同学的 &lt;a href="https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/plugin/rpc/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%94%E2%80%94Dubbo%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md">《Dubbo 常见错误及解决方法》&lt;/a> 。
 所引文章通过 &lt;a href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0&lt;/a> 协议赋予了汇编的权利。在此向原作者表示感谢。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: 1-1 - 地址非法</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/1/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/1/1/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: 1-1 - 地址非法</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/1/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/1/1/</guid><description>
 &lt;p>服务版本或分组不匹配。&lt;/p>
 &lt;h3 id="可能的原因">可能的原因&lt;/h3>
 &lt;ol>
@@ -30,8 +30,8 @@
 &lt;/ol>
 &lt;blockquote>
 &lt;p>另请参阅 &lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: 2-1 - 路由选址执行失败</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/2/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/2/1/</guid><description>
-&lt;h2 id="路由选址执行失败">路由选址执行失败&lt;/h2></description></item><item><title>Docs3-V2: 2.x 升级至 3.x 操作指南</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/2.x-to-3.x-compatibility-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/2.x-to-3.x-compatibility-guide/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: 2-1 - 路由选址执行失败</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/2/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/2/1/</guid><description>
+&lt;h2 id="路由选址执行失败">路由选址执行失败&lt;/h2></description></item><item><title>Docs3-V2: 2.x 升级至 3.x 操作指南</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/2.x-to-3.x-compatibility-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/2.x-to-3.x-compatibility-guide/</guid><description>
 &lt;h3 id="升级">升级&lt;/h3>
 &lt;p>&lt;strong>无需改动任何代码，直接升级到 Dubbo 3.0。&lt;/strong>&lt;/p>
 &lt;p>在 3.0 版本的设计与开发之初，我们就定下了兼容老版本 Dubbo 用户（2.5、2.6、2.7）的目标。因此，往 3.0 版本的升级过程将会是完全透明的，用户无需做任何业务改造，升级 3.x 后的框架行为将保持与 2.x 版本完全一致。&lt;/p>
@@ -52,24 +52,24 @@
 &lt;ul>
 &lt;li>&lt;strong>新的地址发现模型（应用级服务发现）。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-samples/">应用级服务发现迁移示例&lt;/a>。&lt;/li>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/">应用级服务发现的迁移步骤&lt;/a>&lt;/li>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/">应用级服务发现地址迁移规则说明&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-samples/">应用级服务发现迁移示例&lt;/a>。&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/">应用级服务发现的迁移步骤&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/">应用级服务发现地址迁移规则说明&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>下一代基于 HTTP/2 的 Triple 协议。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/migration-triple/">Triple 协议迁移步骤&lt;/a>&lt;/li>
-&lt;li>查看 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/guide/">Triple 协议使用方式&lt;/a>&lt;/li>
-&lt;li>查看 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/overview/">Triple 协议设计与实现&lt;/a>。&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/migration-triple/">Triple 协议迁移步骤&lt;/a>&lt;/li>
+&lt;li>查看 &lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/guide/">Triple 协议使用方式&lt;/a>&lt;/li>
+&lt;li>查看 &lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/overview/">Triple 协议设计与实现&lt;/a>。&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>统一的路由规则。&lt;/strong>
 &lt;ul>
-&lt;li>查看&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/">统一路由规则设计与实现&lt;/a>&lt;/li>
+&lt;li>查看&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/">统一路由规则设计与实现&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: 3-1 - 将地址转换成 Invoker 失败</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/3/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/3/1/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: 3-1 - 将地址转换成 Invoker 失败</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/3/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/3/1/</guid><description>
 &lt;h2 id="可能的原因">可能的原因&lt;/h2>
 &lt;ol>
 &lt;li>
@@ -84,7 +84,7 @@
 &lt;li>检查提供方和消费方双方的协议配置。&lt;/li>
 &lt;li>更新注册中心的版本。&lt;/li>
 &lt;/ol>
-&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 4-1 - 不支持的协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/4/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/4/1/</guid><description>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 4-1 - 不支持的协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/4/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/4/1/</guid><description>
 &lt;h2 id="可能的原因">可能的原因&lt;/h2>
 &lt;p>这种情况可能出现在自定义 Protocol 的场景下。Dubbo 的 SPI 机制找不到 URL 中所指定的 Protocol。&lt;/p>
 &lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
@@ -95,7 +95,7 @@
 &lt;h2 id="另请参阅">另请参阅&lt;/h2>
 &lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/spi/overview/">Dubbo SPI 概述&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/spi/description/protocol/">协议扩展说明&lt;/a>&lt;/p>
-&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 5-1 - 配置中心连接失败</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/5/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/faq/5/1/</guid><description>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 5-1 - 配置中心连接失败</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/5/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/5/1/</guid><description>
 &lt;h2 id="可能的原因">可能的原因&lt;/h2>
 &lt;ol>
 &lt;li>配置中心所在的服务器关机或宕机。&lt;/li>
@@ -108,7 +108,7 @@
 &lt;li>检查服务器是否开机，是否正常工作。&lt;/li>
 &lt;li>检查防火墙等是否放行配置中心所用的端口。&lt;/li>
 &lt;/ol>
-&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: Dubbo Java 文档版本列表</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/home/supported-doc-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/home/supported-doc-versions/</guid><description>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: Dubbo Java 文档版本列表</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/home/supported-doc-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/home/supported-doc-versions/</guid><description>
 &lt;h2 id="最新版本">最新版本&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="#">v3.2.0&lt;/a> （本文档）&lt;/li>
@@ -122,7 +122,7 @@
 &lt;ul>
 &lt;li>&lt;a href="../../../docsv2.7/">v2.7.x&lt;/a>&lt;/li>
 &lt;li>v2.6.x 及以前&lt;/li>
-&lt;/ul></description></item><item><title>Docsv2.7: Dubbo SPI</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/dev/source/dubbo-spi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/dev/source/dubbo-spi/</guid><description>
+&lt;/ul></description></item><item><title>Docsv2.7: Dubbo SPI</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/source/dubbo-spi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/source/dubbo-spi/</guid><description>
 &lt;h2 id="1简介">1.简介&lt;/h2>
 &lt;p>SPI 全称为 Service Provider Interface，是一种服务发现机制。SPI 的本质是将接口实现类的全限定名配置在文件中，并由服务加载器读取配置文件，加载实现类。这样可以在运行时，动态为接口替换实现类。正因此特性，我们可以很容易的通过 SPI 机制为我们的程序提供拓展功能。SPI 机制在第三方框架中也有所应用，比如 Dubbo 就是通过 SPI 机制加载所有的组件。不过，Dubbo 并未使用 Java 原生的 SPI 机制，而是对其进行了增强，使其能够更好的满足需求。在 Dubbo 中，SPI 是一个非常重要的模块。基于 SPI，我们可以很容易的对 Dubbo 进行拓展。如果大家想要学习 Dubbo 的源码，SPI 机制务必弄懂。接下来，我们先来了解一下 Java SPI 与 Dubbo SPI 的用法，然后再来分析 Dubbo SPI 的源码。&lt;/p>
 &lt;p>需要特别说明的是，本篇文章以及本系列其他文章所分析的源码版本均为 &lt;strong>dubbo-2.6.4&lt;/strong>。因此大家在阅读文章的过程中，需注意将代码版本切换到 dubbo-2.6.4 tag 上。&lt;/p>
@@ -162,7 +162,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最后来看一下测试结果，如下：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/dev/java-spi-result.jpg" alt="">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/java-spi-result.jpg" alt="">&lt;/p>
 &lt;p>从测试结果可以看出，我们的两个实现类被成功的加载，并输出了相应的内容。关于 Java SPI 的演示先到这里，接下来演示 Dubbo SPI。&lt;/p>
 &lt;h3 id="22-dubbo-spi-示例">2.2 Dubbo SPI 示例&lt;/h3>
 &lt;p>Dubbo 并未使用 Java SPI，而是重新实现了一套功能更强的 SPI 机制。Dubbo SPI 的相关逻辑被封装在了 ExtensionLoader 类中，通过 ExtensionLoader，我们可以加载指定的实现类。Dubbo SPI 所需的配置文件需放置在 META-INF/dubbo 路径下，配置内容如下。&lt;/p>
@@ -182,7 +182,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>测试结果如下：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/dev/dubbo-spi-result.jpg" alt="">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo-spi-result.jpg" alt="">&lt;/p>
 &lt;p>Dubbo SPI 除了支持按需加载接口实现类，还增加了 IOC 和 AOP 等特性，这些特性将会在接下来的源码分析章节中一一进行介绍。&lt;/p>
 &lt;h2 id="3-dubbo-spi-源码分析">3. Dubbo SPI 源码分析&lt;/h2>
 &lt;p>上一章简单演示了 Dubbo SPI 的使用方法。我们首先通过 ExtensionLoader 的 getExtensionLoader 方法获取一个 ExtensionLoader 实例，然后再通过 ExtensionLoader 的 getExtension 方法获取拓展类对象。这其中，getExtensionLoader 方法用于从缓存中获取与拓展类对应的 ExtensionLoader，若缓存未命中，则创建一个新的实例。该方法的逻辑比较简单，本章就不进行分析了。下面我们从 ExtensionLoader 的 getExtension 方法作为入口，对拓展类对象的获取过程进行详细的分析。&lt;/p>
@@ -470,7 +470,7 @@
 &lt;p>Dubbo IOC 目前仅支持 setter 方式注入，总的来说，逻辑比较简单易懂。&lt;/p>
 &lt;h2 id="4总结">4.总结&lt;/h2>
 &lt;p>本篇文章简单分别介绍了 Java SPI 与 Dubbo SPI 用法，并对 Dubbo SPI 的加载拓展类的过程进行了分析。另外，在 Dubbo SPI 中还有一块重要的逻辑这里没有进行分析，即 Dubbo SPI 的扩展点自适应机制。该机制的逻辑较为复杂，我们将会在下一篇文章中进行详细的分析。&lt;/p>
-&lt;p>好了，本篇文章就先到这里了。如果文章中有错误不妥之处，欢迎大家提 issue 进行反馈，或者提 pull request 进行修正。让我们携手共建 Dubbo 社区。&lt;/p></description></item><item><title>Docs3-V2: Dubbo SPI 概述</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/spi/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/spi/overview/</guid><description>
+&lt;p>好了，本篇文章就先到这里了。如果文章中有错误不妥之处，欢迎大家提 issue 进行反馈，或者提 pull request 进行修正。让我们携手共建 Dubbo 社区。&lt;/p></description></item><item><title>Docs3-V2: Dubbo SPI 概述</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/spi/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/spi/overview/</guid><description>
 &lt;h2 id="扩展设计理念">扩展设计理念&lt;/h2>
 &lt;p>可扩展性是任何一个系统所追求的，对于 Dubbo 来说是同样适用。&lt;/p>
 &lt;h3 id="什么是可扩展性">什么是可扩展性&lt;/h3>
@@ -503,7 +503,7 @@
 &lt;p>从 Dubbo 扩展的设计目标可以看出，Dubbo 实现的一些例如动态选择扩展实现、IOC、AOP 等特性，能够为用户提供非常灵活的扩展能力。&lt;/p>
 &lt;h2 id="dubbo-扩展加载流程">Dubbo 扩展加载流程&lt;/h2>
 &lt;p>Dubbo 加载扩展的整个流程如下：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/extension-load.png" alt="//imgs/v3/concepts/extension-load.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/extension-load.png" alt="//imgs/v3/concepts/extension-load.png">&lt;/p>
 &lt;p>主要步骤为 4 个：&lt;/p>
 &lt;ul>
 &lt;li>读取并解析配置文件&lt;/li>
@@ -526,7 +526,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>从上面的扩展步骤可以看出，用户基本在黑盒下就完成了扩展。&lt;/p>
 &lt;h2 id="dubbo-扩展的应用">Dubbo 扩展的应用&lt;/h2>
 &lt;p>Dubbo 的扩展能力非常灵活，在自身功能的实现上无处不在。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/extension-use.png" alt="//imgs/v3/concepts/extension-use.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/extension-use.png" alt="//imgs/v3/concepts/extension-use.png">&lt;/p>
 &lt;p>Dubbo 扩展能力使得 Dubbo 项目很方便的切分成一个一个的子模块，实现热插拔特性。用户完全可以基于自身需求，替换 Dubbo 原生实现，来满足自身业务需求。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;ul>
@@ -534,13 +534,13 @@
 &lt;li>如果你需要实现自定义的注册中心，你可以使用 Dubbo 扩展能力。&lt;/li>
 &lt;li>如果你需要实现自定义的过滤器，你可以使用 Dubbo 扩展能力。&lt;/li>
 &lt;/ul>
-&lt;p>Dubbo 扩展平等的对待内部实现和第三方实现。更多使用场景，参见 &lt;a href="../description/">SPI 扩展实现&lt;/a>&lt;/p></description></item><item><title>Docs: dubbo 协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/protocols/dubbo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/protocols/dubbo/</guid><description>
+&lt;p>Dubbo 扩展平等的对待内部实现和第三方实现。更多使用场景，参见 &lt;a href="../description/">SPI 扩展实现&lt;/a>&lt;/p></description></item><item><title>Docs: dubbo 协议</title><link>https://static.dubbo.apache.org/next/zh/docs/references/protocols/dubbo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/protocols/dubbo/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/dubbo/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/dubbo/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据量大并发的服务调用，以及服务消费者机器数远大于服务提供者机器数的情况。&lt;/p>
 &lt;p>反之，Dubbo 缺省协议不适合传送大数据量的服务，比如传文件，传视频等，除非请求量很低。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-protocol.jpg" alt="dubbo-protocol.jpg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-protocol.jpg" alt="dubbo-protocol.jpg">&lt;/p>
 &lt;ul>
 &lt;li>Transporter: mina, netty, grizzy&lt;/li>
 &lt;li>Serialization: dubbo, hessian2, java, json&lt;/li>
@@ -646,10 +646,10 @@
 &lt;p>1024Mbit=128MByte&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docsv2.7: dubbo 协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/protocol/dubbo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/protocol/dubbo/</guid><description>
+&lt;/div></description></item><item><title>Docsv2.7: dubbo 协议</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/protocol/dubbo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/protocol/dubbo/</guid><description>
 &lt;p>Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据量大并发的服务调用，以及服务消费者机器数远大于服务提供者机器数的情况。&lt;/p>
 &lt;p>反之，Dubbo 缺省协议不适合传送大数据量的服务，比如传文件，传视频等，除非请求量很低。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-protocol.jpg" alt="dubbo-protocol.jpg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-protocol.jpg" alt="dubbo-protocol.jpg">&lt;/p>
 &lt;ul>
 &lt;li>Transporter: mina, netty, grizzy&lt;/li>
 &lt;li>Serialization: dubbo, hessian2, java, json&lt;/li>
@@ -757,9 +757,9 @@
 &lt;p>1024Mbit=128MByte&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs: dubbo:application</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-application/</guid><description>
+&lt;/div></description></item><item><title>Docs: dubbo:application</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-application/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#application">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#application">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>应用信息配置。对应的配置类：&lt;code>org.apache.dubbo.config.ApplicationConfig&lt;/code>&lt;/p>
 &lt;table>
@@ -867,7 +867,7 @@
 &lt;td>2.7.6以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:application</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-application/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:application</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-application/</guid><description>
 &lt;p>应用信息配置。对应的配置类：&lt;code>org.apache.dubbo.config.ApplicationConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -964,9 +964,9 @@
 &lt;td>2.2.0以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:argument</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-argument/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-argument/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:argument</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-argument/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-argument/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#argument">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#argument">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>方法参数配置。对应的配置类： &lt;code>org.apache.dubbo.config.ArgumentConfig&lt;/code>。该标签为 &lt;code>&amp;lt;dubbo:method&amp;gt;&lt;/code> 的子标签，用于方法参数的特征描述，比如：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;findXxx&amp;#34;&lt;/span> timeout=&lt;span style="color:#2aa198">&amp;#34;3000&amp;#34;&lt;/span> retries=&lt;span style="color:#2aa198">&amp;#34;2&amp;#34;&lt;/span>&lt;span style="color:#268bd2">&amp;gt;&lt;/span>
@@ -1017,7 +1017,7 @@
 &lt;td>2.0.6以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:argument</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-argument/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-argument/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:argument</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-argument/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-argument/</guid><description>
 &lt;p>方法参数配置。对应的配置类： &lt;code>org.apache.dubbo.config.ArgumentConfig&lt;/code>。该标签为 &lt;code>&amp;lt;dubbo:method&amp;gt;&lt;/code> 的子标签，用于方法参数的特征描述，比如：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;findXxx&amp;#34;&lt;/span> timeout=&lt;span style="color:#2aa198">&amp;#34;3000&amp;#34;&lt;/span> retries=&lt;span style="color:#2aa198">&amp;#34;2&amp;#34;&lt;/span>&lt;span style="color:#268bd2">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:argument&lt;/span> index=&lt;span style="color:#2aa198">&amp;#34;0&amp;#34;&lt;/span> callback=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
@@ -1067,9 +1067,9 @@
 &lt;td>2.0.6以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:config-center</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-config-center/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-config-center/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:config-center</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-config-center/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-config-center/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#config-center">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#config-center">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>配置中心。对应的配置类：&lt;code>org.apache.dubbo.config.ConfigCenterConfig&lt;/code>&lt;/p>
 &lt;table>
@@ -1203,7 +1203,7 @@
 &lt;td>2.7.0+&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:config-center</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-config-center/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-config-center/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:config-center</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-config-center/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-config-center/</guid><description>
 &lt;p>配置中心。对应的配置类：&lt;code>org.apache.dubbo.config.ConfigCenterConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1336,9 +1336,9 @@
 &lt;td>2.7.0+&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:consumer</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-consumer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-consumer/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:consumer</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-consumer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-consumer/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#consumer">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#consumer">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>服务消费者缺省值配置。配置类： &lt;code>org.apache.dubbo.config.ConsumerConfig&lt;/code> 。同时该标签为 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 标签的缺省值设置。&lt;/p>
 &lt;table>
@@ -1546,7 +1546,7 @@
 &lt;td>Dubbo2.2.0及其以上版本支持&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:consumer</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-consumer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-consumer/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:consumer</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-consumer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-consumer/</guid><description>
 &lt;p>服务消费者缺省值配置。配置类： &lt;code>org.apache.dubbo.config.ConsumerConfig&lt;/code> 。同时该标签为 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 标签的缺省值设置。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1743,9 +1743,9 @@
 &lt;td>Dubbo2.1.0及其以上版本支持&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:method</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-method/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:method</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-method/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#method">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#method">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>方法级配置。对应的配置类： &lt;code>org.apache.dubbo.config.MethodConfig&lt;/code>。同时该标签为 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 或 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 的子标签，用于控制到方法级。&lt;/p>
 &lt;table>
@@ -1928,7 +1928,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.XxxService&amp;#34;&lt;/span>&lt;span style="color:#268bd2">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;findXxx&amp;#34;&lt;/span> timeout=&lt;span style="color:#2aa198">&amp;#34;3000&amp;#34;&lt;/span> retries=&lt;span style="color:#2aa198">&amp;#34;2&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:reference&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: dubbo:method</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-method/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: dubbo:method</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-method/</guid><description>
 &lt;p>方法级配置。对应的配置类： &lt;code>org.apache.dubbo.config.MethodConfig&lt;/code>。同时该标签为 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 或 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 的子标签，用于控制到方法级。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2110,9 +2110,9 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.XxxService&amp;#34;&lt;/span>&lt;span style="color:#268bd2">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;findXxx&amp;#34;&lt;/span> timeout=&lt;span style="color:#2aa198">&amp;#34;3000&amp;#34;&lt;/span> retries=&lt;span style="color:#2aa198">&amp;#34;2&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:reference&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: dubbo:module</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-module/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: dubbo:module</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-module/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#module">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#module">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>模块信息配置。对应的配置类 &lt;code>org.apache.dubbo.config.ModuleConfig&lt;/code>&lt;/p>
 &lt;table>
@@ -2170,7 +2170,7 @@
 &lt;td>2.2.0以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:module</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-module/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:module</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-module/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-module/</guid><description>
 &lt;p>模块信息配置。对应的配置类 &lt;code>org.apache.dubbo.config.ModuleConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2227,9 +2227,9 @@
 &lt;td>2.2.0以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:monitor</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-monitor/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:monitor</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-monitor/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#monitor">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#monitor">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>监控中心配置。对应的配置类： &lt;code>org.apache.dubbo.config.MonitorConfig&lt;/code>&lt;/p>
 &lt;table>
@@ -2267,7 +2267,7 @@
 &lt;td>1.0.16以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:monitor</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-monitor/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:monitor</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-monitor/</guid><description>
 &lt;p>监控中心配置。对应的配置类： &lt;code>org.apache.dubbo.config.MonitorConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2304,9 +2304,9 @@
 &lt;td>1.0.16以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:parameter</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-parameter/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:parameter</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-parameter/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#parameter">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#parameter">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>选项参数配置。对应的配置类：&lt;code>java.util.Map&lt;/code>。同时该标签为&lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:provider&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:consumer&amp;gt;&lt;/code>的子标签，用于配置自定义参数，该配置项将作为扩展点设置自定义参数使用。&lt;/p>
 &lt;table>
@@ -2351,7 +2351,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:protocol&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>也可以：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;jms&amp;#34;&lt;/span> p:queue=&lt;span style="color:#2aa198">&amp;#34;xxx&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: dubbo:parameter</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-parameter/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: dubbo:parameter</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-parameter/</guid><description>
 &lt;p>选项参数配置。对应的配置类：&lt;code>java.util.Map&lt;/code>。同时该标签为&lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:provider&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code>或&lt;code>&amp;lt;dubbo:consumer&amp;gt;&lt;/code>的子标签，用于配置自定义参数，该配置项将作为扩展点设置自定义参数使用。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2395,9 +2395,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:protocol&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>也可以：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;jms&amp;#34;&lt;/span> p:queue=&lt;span style="color:#2aa198">&amp;#34;xxx&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: dubbo:protocol</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-protocol/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: dubbo:protocol</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-protocol/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#protocol">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#protocol">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>服务提供者协议配置。对应的配置类： &lt;code>org.apache.dubbo.config.ProtocolConfig&lt;/code>。同时，如果需要支持多协议，可以声明多个 &lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code> 标签，并在 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 中通过 &lt;code>protocol&lt;/code> 属性指定使用的协议。&lt;/p>
 &lt;table>
@@ -2655,7 +2655,7 @@
 &lt;td>2.0.6以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:protocol</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-protocol/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:protocol</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-protocol/</guid><description>
 &lt;p>服务提供者协议配置。对应的配置类： &lt;code>org.apache.dubbo.config.ProtocolConfig&lt;/code>。同时，如果需要支持多协议，可以声明多个 &lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code> 标签，并在 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 中通过 &lt;code>protocol&lt;/code> 属性指定使用的协议。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -2912,9 +2912,9 @@
 &lt;td>2.0.6以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:provider</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-provider/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:provider</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-provider/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#provider">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#provider">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>服务提供者缺省值配置。对应的配置类： &lt;code>org.apache.dubbo.config.ProviderConfig&lt;/code>。同时该标签为 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 和 &lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code> 标签的缺省值设置。&lt;/p>
 &lt;table>
@@ -3372,7 +3372,7 @@
 &lt;td>2.0.7以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:provider</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-provider/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:provider</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-provider/</guid><description>
 &lt;p>服务提供者缺省值配置。对应的配置类： &lt;code>org.apache.dubbo.config.ProviderConfig&lt;/code>。同时该标签为 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 和 &lt;code>&amp;lt;dubbo:protocol&amp;gt;&lt;/code> 标签的缺省值设置。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -3829,9 +3829,9 @@
 &lt;td>2.0.7以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:reference</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-reference/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:reference</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-reference/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#reference">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#reference">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>服务消费者引用服务配置。对应的配置类： &lt;code>org.apache.dubbo.config.ReferenceConfig&lt;/code>&lt;/p>
 &lt;table>
@@ -4119,7 +4119,7 @@
 &lt;td>2.2.0以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:reference</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-reference/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:reference</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-reference/</guid><description>
 &lt;p>服务消费者引用服务配置。对应的配置类： &lt;code>org.apache.dubbo.config.ReferenceConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -4406,9 +4406,9 @@
 &lt;td>2.2.0以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:registry</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-registry/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:registry</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-registry/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>注册中心配置。对应的配置类： &lt;code>org.apache.dubbo.config.RegistryConfig&lt;/code>。同时如果有多个不同的注册中心，可以声明多个 &lt;code>&amp;lt;dubbo:registry&amp;gt;&lt;/code> 标签，并在 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 或 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 的 &lt;code>registry&lt;/code> 属性指定使用的注册中心。&lt;/p>
 &lt;table>
@@ -4606,7 +4606,7 @@
 &lt;td>2.7.0以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:registry</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-registry/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:registry</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-registry/</guid><description>
 &lt;p>注册中心配置。对应的配置类： &lt;code>org.apache.dubbo.config.RegistryConfig&lt;/code>。同时如果有多个不同的注册中心，可以声明多个 &lt;code>&amp;lt;dubbo:registry&amp;gt;&lt;/code> 标签，并在 &lt;code>&amp;lt;dubbo:service&amp;gt;&lt;/code> 或 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 的 &lt;code>registry&lt;/code> 属性指定使用的注册中心。&lt;/p>
 &lt;table>
 &lt;thead>
@@ -4803,9 +4803,9 @@
 &lt;td>2.7.0以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: dubbo:service</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/xml/dubbo-service/</guid><description>
+&lt;/table></description></item><item><title>Docs: dubbo:service</title><link>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/xml/dubbo-service/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/config/properties/#service">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/#service">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>服务提供者暴露服务配置。对应的配置类：&lt;code>org.apache.dubbo.config.ServiceConfig&lt;/code>&lt;/p>
 &lt;table>
@@ -5133,7 +5133,7 @@
 &lt;td>2.0.8以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docsv2.7: dubbo:service</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/xml/dubbo-service/</guid><description>
+&lt;/table></description></item><item><title>Docsv2.7: dubbo:service</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/xml/dubbo-service/</guid><description>
 &lt;p>服务提供者暴露服务配置。对应的配置类：&lt;code>org.apache.dubbo.config.ServiceConfig&lt;/code>&lt;/p>
 &lt;table>
 &lt;thead>
@@ -5460,7 +5460,7 @@
 &lt;td>2.0.8以上版本&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs3-V2: Go-Java 互通示例</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/go_java_interactive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/samples/go_java_interactive/</guid><description>
+&lt;/table></description></item><item><title>Docs3-V2: Go-Java 互通示例</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/samples/go_java_interactive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/samples/go_java_interactive/</guid><description>
 &lt;h2 id="准备工作">准备工作&lt;/h2>
 &lt;h3 id="环境">环境&lt;/h3>
 &lt;p>JDK 8，Golang &amp;gt;= 1.15，Dubbo 3.0.2，zookeeper 启动，&lt;/p>
@@ -5565,7 +5565,7 @@
 &lt;h3 id="11-go-client---java-server">1.1 Go-Client -&amp;gt; Java-Server&lt;/h3>
 &lt;h4 id="java-server-启动">Java-Server 启动&lt;/h4>
 &lt;ol>
-&lt;li>定义 Java 的 PB 文件，可参考 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
+&lt;li>定义 Java 的 PB 文件，可参考 &lt;a href="https://static.dubbo.apache.org/next/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-protobuf" data-lang="protobuf">&lt;span style="display:flex;">&lt;span>syntax &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;proto3&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -5824,7 +5824,7 @@
 &lt;h3 id="21-go-client---java-server">2.1 Go-Client -&amp;gt; Java-Server&lt;/h3>
 &lt;h4 id="java-server-启动-1">Java-Server 启动&lt;/h4>
 &lt;ol>
-&lt;li>定义 Java 接口、参数和返回值，可参考 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
+&lt;li>定义 Java 接口、参数和返回值，可参考 &lt;a href="https://static.dubbo.apache.org/next/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">package&lt;/span> org.apache.dubbo&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -6167,11 +6167,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>user&lt;span style="color:#719e07">.&lt;/span>getId&lt;span style="color:#719e07">());&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: Java SDK</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/mannual/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/mannual/java/</guid><description/></item><item><title>Release: Java SDK</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/release/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/release/java/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: Java SDK</title><link>https://static.dubbo.apache.org/next/zh/overview/mannual/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/overview/mannual/java/</guid><description/></item><item><title>Release: Java SDK</title><link>https://static.dubbo.apache.org/next/zh/release/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/release/java/</guid><description>
 &lt;h2 id="验证">验证&lt;/h2>
 &lt;p>可以按照这里的&lt;a href="https://www.apache.org/info/verification">步骤&lt;/a>, 利用&lt;a href="https://downloads.apache.org/dubbo/KEYS">KEYS&lt;/a>文件来验证下载。&lt;/p>
 &lt;h2 id="apache-dubbo">Apache Dubbo&lt;/h2>
-&lt;p>请点击了解各&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/versions/">版本详情和升级注意事项&lt;/a>&lt;/p>
+&lt;p>请点击了解各&lt;a href="https://static.dubbo.apache.org/next/zh/docsv2.7/user/versions/">版本详情和升级注意事项&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>GitHub: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a> &lt;br>
 发布说明: &lt;a href="https://github.com/apache/dubbo/releases">https://github.com/apache/dubbo/releases&lt;/a>&lt;/p>
@@ -6256,10 +6256,10 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>2.7.18&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Release: Java SDK</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/release/past-releases/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/release/past-releases/java/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Release: Java SDK</title><link>https://static.dubbo.apache.org/next/zh/release/past-releases/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/release/past-releases/java/</guid><description>
 &lt;h2 id="验证">验证&lt;/h2>
 &lt;p>可以按照这里的&lt;a href="https://www.apache.org/info/verification">步骤&lt;/a>, 利用&lt;a href="https://downloads.apache.org/dubbo/KEYS">KEYS&lt;/a>文件来验证下载。&lt;/p>
-&lt;p>请点击了解各&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/versions/">版本详情和升级注意事项&lt;/a>&lt;/p>
+&lt;p>请点击了解各&lt;a href="https://static.dubbo.apache.org/next/zh/docsv2.7/user/versions/">版本详情和升级注意事项&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>GitHub: &lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a> &lt;br>
 发布说明: &lt;a href="https://github.com/apache/dubbo/releases">https://github.com/apache/dubbo/releases&lt;/a>&lt;/p>
@@ -6665,9 +6665,9 @@
 &lt;li>&lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip">source&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip.asc">asc&lt;/a> |
 &lt;a href="https://archive.apache.org/dist/incubator/dubbo/dubbo-ops/0.1/apache-dubbo-ops-incubating-0.1-source-release.zip.sha512">sha512&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Nacos 注册中心</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/registry/nacos/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Nacos 注册中心</title><link>https://static.dubbo.apache.org/next/zh/docs/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/registry/nacos/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/registry/nacos/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/registry/nacos/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>Nacos 是 Dubbo 生态系统中重要的注册中心实现，其中 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">&lt;code>dubbo-registry-nacos&lt;/code>&lt;/a> 则是 Dubbo 融合 Nacos 注册中心的实现。&lt;/p>
 &lt;h2 id="预备工作">预备工作&lt;/h2>
@@ -6726,9 +6726,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">nacos://10.20.153.10:8848&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>随后，重启您的 Dubbo 应用，Dubbo 的服务提供和消费信息在 Nacos 控制台中可以显示：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
 &lt;p>如图所示，服务名前缀为 &lt;code>providers:&lt;/code> 的信息为服务提供者的元信息，&lt;code>consumers:&lt;/code> 则代表服务消费者的元信息。点击“&lt;strong>详情&lt;/strong>”可查看服务状态详情：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-2.png" alt="image-dubbo-registry-nacos-2.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-2.png" alt="image-dubbo-registry-nacos-2.png">&lt;/p>
 &lt;p>如果您正在使用 Spring XML 配置文件装配 Dubbo 注册中心的话，请参考下一节。&lt;/p>
 &lt;h3 id="spring-xml-配置文件">Spring XML 配置文件&lt;/h3>
 &lt;p>与 &lt;a href="https://mercyblitz.github.io/2018/01/18/Dubbo-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE/">Dubbo Spring 外部化配置&lt;/a> 配置类似，只需要调整 &lt;code>address&lt;/code> 属性配置即可：&lt;/p>
@@ -6746,7 +6746,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>重启 Dubbo 应用后，您同样也能发现服务提供方和消费方的注册元信息呈现在 Nacos 控制台中：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-3.png" alt="dubbo-registry-nacos-3.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-3.png" alt="dubbo-registry-nacos-3.png">&lt;/p>
 &lt;p>&lt;strong>附加信息&lt;/strong>: 在nacos-server@&lt;code>1.0.0&lt;/code>版本后，支持客户端通过上报一些包含特定的元数据的实例到服务端来控制实例的一些行为。&lt;/p>
 &lt;p>例如:&lt;br>
 &lt;code>preserved.heart.beat.timeout&lt;/code> : 该实例在不发送心跳后，从健康到不健康的时间。（单位:毫秒）
@@ -6755,7 +6755,7 @@
 &lt;code>preserved.instance.id.generator&lt;/code>: 该实例的id生成策略，值为&lt;code>snowflake&lt;/code>时，从0开始增加。
 &lt;code>preserved.register.source&lt;/code> : 保留键，目前未使用。&lt;/p>
 &lt;p>该功能将在Dubbo@&lt;code>2.7.10&lt;/code>开始支持，通过在address中增加参数来进行配置.
-例如: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&amp;amp;preserved.ip.delete.timeout=30000&amp;amp;preserved.heart.beat.interval=10000&lt;/code>&lt;/p></description></item><item><title>Docsv2.7: Nacos 注册中心</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docsv2.7/user/references/registry/nacos/</guid><description>
+例如: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&amp;amp;preserved.ip.delete.timeout=30000&amp;amp;preserved.heart.beat.interval=10000&lt;/code>&lt;/p></description></item><item><title>Docsv2.7: Nacos 注册中心</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/user/references/registry/nacos/</guid><description>
 &lt;p>Nacos 是 Dubbo 生态系统中重要的注册中心实现，其中 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">&lt;code>dubbo-registry-nacos&lt;/code>&lt;/a> 则是 Dubbo 融合 Nacos 注册中心的实现。&lt;/p>
 &lt;h2 id="预备工作">预备工作&lt;/h2>
 &lt;p>当您将 &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">dubbo-registry-nacos&lt;/a> 整合到您的 Dubbo 工程之前，请确保后台已经启动 Nacos 服务。如果您尚且不熟悉 Nacos 的基本使用的话，可先行参考 &lt;a href="https://nacos.io/en-us/docs/quick-start.html">Nacos 快速入门&lt;/a>。建议使用 Nacos &lt;code>1.0.0&lt;/code> 及以上的版本。&lt;/p>
@@ -6813,9 +6813,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">nacos://10.20.153.10:8848&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>随后，重启您的 Dubbo 应用，Dubbo 的服务提供和消费信息在 Nacos 控制台中可以显示：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
 &lt;p>如图所示，服务名前缀为 &lt;code>providers:&lt;/code> 的信息为服务提供者的元信息，&lt;code>consumers:&lt;/code> 则代表服务消费者的元信息。点击“&lt;strong>详情&lt;/strong>”可查看服务状态详情：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-2.png" alt="image-dubbo-registry-nacos-2.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-2.png" alt="image-dubbo-registry-nacos-2.png">&lt;/p>
 &lt;p>如果您正在使用 Spring XML 配置文件装配 Dubbo 注册中心的话，请参考下一节。&lt;/p>
 &lt;h3 id="spring-xml-配置文件">Spring XML 配置文件&lt;/h3>
 &lt;p>与 &lt;a href="https://mercyblitz.github.io/2018/01/18/Dubbo-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE/">Dubbo Spring 外部化配置&lt;/a> 配置类似，只需要调整 &lt;code>address&lt;/code> 属性配置即可：&lt;/p>
@@ -6833,7 +6833,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>重启 Dubbo 应用后，您同样也能发现服务提供方和消费方的注册元信息呈现在 Nacos 控制台中：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-3.png" alt="dubbo-registry-nacos-3.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-3.png" alt="dubbo-registry-nacos-3.png">&lt;/p>
 &lt;p>&lt;strong>附加信息&lt;/strong>: 在nacos-server@&lt;code>1.0.0&lt;/code>版本后，支持客户端通过上报一些包含特定的元数据的实例到服务端来控制实例的一些行为。&lt;/p>
 &lt;p>例如:&lt;br>
 &lt;code>preserved.heart.beat.timeout&lt;/code> : 该实例在不发送心跳后，从健康到不健康的时间。（单位:毫秒）
@@ -6842,9 +6842,9 @@
 &lt;code>preserved.instance.id.generator&lt;/code>: 该实例的id生成策略，值为&lt;code>snowflake&lt;/code>时，从0开始增加。
 &lt;code>preserved.register.source&lt;/code> : 保留键，目前未使用。&lt;/p>
 &lt;p>该功能将在Dubbo@&lt;code>2.7.10&lt;/code>开始支持，通过在address中增加参数来进行配置.
-例如: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&amp;amp;preserved.ip.delete.timeout=30000&amp;amp;preserved.heart.beat.interval=10000&lt;/code>&lt;/p></description></item><item><title>Docs: 使用 GraalVM 打包 Native Image</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/graalvm/support-graalvm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/graalvm/support-graalvm/</guid><description>
+例如: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&amp;amp;preserved.ip.delete.timeout=30000&amp;amp;preserved.heart.beat.interval=10000&lt;/code>&lt;/p></description></item><item><title>Docs: 使用 GraalVM 打包 Native Image</title><link>https://static.dubbo.apache.org/next/zh/docs/references/graalvm/support-graalvm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/graalvm/support-graalvm/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/performance/support-graalvm/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/performance/support-graalvm/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>dubbo3.0支持native-image文档&lt;/p>
 &lt;h2 id="概述">概述&lt;/h2>
@@ -6856,9 +6856,9 @@
 &lt;li>安装GraalVM&lt;/li>
 &lt;/ol>
 &lt;p>进入https://www.graalvm.org/ 官网根据自己的系统选取最新版本安装：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo3.0-graalvm-support/graalvmgw.jpg" alt="">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo3.0-graalvm-support/graalvmgw.jpg" alt="">&lt;/p>
 &lt;p>安装完成后，修改配置JAVA_HOME的路径，生效后查看本地jdk可以看到如下：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo3.0-graalvm-support/graalvm_env.jpg" alt="">
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo3.0-graalvm-support/graalvm_env.jpg" alt="">
 这里我们使用的基于jdk1.8版本的GraalVM。&lt;/p>
 &lt;ul>
 &lt;li>安装native-image，只需执行gu install native-image即可。&lt;/li>
@@ -6868,7 +6868,7 @@
 &lt;li>手动执行生成SPI代码。&lt;/li>
 &lt;/ol>
 &lt;p>由于目前编译native-image不支持代码动态生成编译，所以有关代码动态生成的部分需要我们手动先生成，这里提供了工具函数：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo3.0-graalvm-support/code_generator.jpg" alt="">
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo3.0-graalvm-support/code_generator.jpg" alt="">
 执行CodeGenerator即可在dubbo-native模块下生成SPI代码。&lt;/p>
 &lt;ol>
 &lt;li>在根目录下执行install&lt;/li>
@@ -6884,11 +6884,11 @@
 &lt;p>这里我们提供了可直接进行编译的示例项目，dubbo-demo/dubbo-demo-native。上面步骤install完成后，先到dubbo-demo-native的provider下，执行native-image编译：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span> mvn clean &lt;span style="color:#719e07">package&lt;/span> &lt;span style="color:#719e07">-&lt;/span>P native &lt;span style="color:#719e07">-&lt;/span>Dmaven.test.skip=&lt;span style="color:#cb4b16">true&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里由于我们在maven中引入了native-image插件，所以直接-P native即可执行该插件。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo3.0-graalvm-support/native_image_build.jpg" alt="">
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo3.0-graalvm-support/native_image_build.jpg" alt="">
 编译成功后可以在target下看到已经生成的二进制文件，本地启动一个zookeeper，直接执行该二进制，可见启动成功如下：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo3.0-graalvm-support/run_provider.jpg" alt="">
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo3.0-graalvm-support/run_provider.jpg" alt="">
 consumer端同样执行编译，在consumer的target下也会生成二进制文件：demo-native-consumer,执行该二进制可以看到调用结果如下：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo3.0-graalvm-support/run_consumer.jpg" alt="">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo3.0-graalvm-support/run_consumer.jpg" alt="">&lt;/p>
 &lt;h3 id="具体步骤">具体步骤&lt;/h3>
 &lt;p>实际上在这个demo下我们做了一些工作来确保项目可以编译执行，主要有以下几个步骤&lt;/p>
 &lt;ul>
@@ -7016,9 +7016,9 @@ consumer端同样执行编译，在consumer的target下也会生成二进制文�
 &lt;p>在启动参数中添加：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>-agentlib:native-image-agent=config-output-dir=/tmp/config/,config-write-period-secs=300,config-write-initial-delay-secs=5
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>以正常方式启动，在项目的resources下建立文件夹META-INF.native-image，把在本地目录中生成的文件粘进去：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo3.0-graalvm-support/resources.jpg" alt="">
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo3.0-graalvm-support/resources.jpg" alt="">
 （可能会有缺漏没有生成的类信息，需要根据编译或运行时的报错信息手动添加。）&lt;/p>
-&lt;p>&lt;strong>完成以上几步后就可以进行项目的编译了。&lt;/strong>&lt;/p></description></item><item><title>Docs3-V2: Pixiu Filter体系介绍</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/dubbo-go-pixiu/dev/filter-extension/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/dubbo-go-pixiu/dev/filter-extension/</guid><description>
+&lt;p>&lt;strong>完成以上几步后就可以进行项目的编译了。&lt;/strong>&lt;/p></description></item><item><title>Docs3-V2: Pixiu Filter体系介绍</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/dubbo-go-pixiu/dev/filter-extension/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/dubbo-go-pixiu/dev/filter-extension/</guid><description>
 &lt;h2 id="怎样编写一个filter">&lt;strong>怎样编写一个Filter&lt;/strong>&lt;/h2>
 &lt;p>&lt;code>更详细的信息，请移步Blog《谈谈Pixiu的Filter》&lt;/code>&lt;/p>
 &lt;p>我们来尝试写一个简单的Filter，这个Filter将会有简单的配置，在Decode阶段把请求的Body Log出来，并翻转后作为Mock的返回值。最后在Encode阶段根据配置把返回值Log出来。&lt;/p>
@@ -7119,10 +7119,10 @@ consumer端同样执行编译，在consumer的target下也会生成二进制文�
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>日志&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>2022-02-19T20:20:11.900+0800 INFO demo/demo.go:62 request body: eiv al tse’c
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2022-02-19T20:20:11.900+0800 INFO demo/demo.go:71 : eiv al tse’c
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Pixiu 是什么</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/dubbo-go-pixiu/overview/what-is-pixiu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/dubbo-go-pixiu/overview/what-is-pixiu/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Pixiu 是什么</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/dubbo-go-pixiu/overview/what-is-pixiu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/dubbo-go-pixiu/overview/what-is-pixiu/</guid><description>
 &lt;h3 id="pixiu-说明">Pixiu 说明&lt;/h3>
 &lt;p>Pixiu 是一款开源的 Dubbo 生态的 API 网关和 接入 dubbo 集群的语言解决方案。作为 API 网关形态， Pixiu 能接收外界的网络请求，将其转换为 dubbo 等协议请求，转发给背后集群；作为 Sidecar，Pixiu 期望可以代替代理服务注册到 Dubbo 集群，让多语言服务接入 Dubbo 集群提供更快捷的解决方案。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/pixiu/overview/pixiu-overview.png" alt="image">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/pixiu/overview/pixiu-overview.png" alt="image">&lt;/p>
 &lt;h3 id="api-网关">API 网关&lt;/h3>
 &lt;p>作为一款网关产品，Pixiu 帮助用户轻松创建、发布、维护、监控和保护任意规模的 API ，接受和处理成千上万个并发 API 调用，包括流量管理、 CORS 支持、授权和访问控制、限制、监控，以及 API 版本管理。除此以外，作为 Dubbo 的衍生产品，Pixiu 可以帮助 Dubbo 用户进行协议转换，实现跨系统、跨协议的服务能力互通。
 Pixiu 的整体设计遵守以下原则：&lt;/p>
@@ -7134,9 +7134,9 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;h3 id="sidecar-模式">Sidecar 模式&lt;/h3>
 &lt;p>目前最为主流的接入 dubbo 集群的方式当然是集成语言对应的 sdk，但是如图的左侧部分。但是对于dubbo来讲，它的多语言支持能力不足，目前较为成熟的只有 java 版本和 go 版本，当然 js 版本 和 python 版本也在努力追赶中.其次，就是使用sdk的通用问题，比如代码耦合度高，版本升级困难，服务发现，服务路由和负载均衡策略不易整体调控等。&lt;/p>
 &lt;p>所以 mesh 话或者 sidecar 的方案，也就是 service mesh 在16年时被提出。将服务发现，服务路由和负载均衡等逻辑放在 sidecar，服务使用轻量级 sdk 与之进行交互。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/pixiu/overview/pixiu-sidecar.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/pixiu/overview/pixiu-sidecar.png" alt="img">&lt;/p>
 &lt;p>对于接入 dubbo 的多语言解决方案。首推的当然是 pixiu 作为 sidecar 和 服务进行同时部署。pixiu提供 服务发现，流量治理，路由能力，协议转换能力和通讯能力。如图的左侧部分，使用sidecar的服务可以和原生使用 dubbp 框架的服务组成集群，无感的进行相互调用。
-另外一种方案是 pixiu 只单单作为代理，将服务注册到dubbo集群中，如图右侧部分，这种方案部署和运维较为简单，比如适合中小规模的集群。&lt;/p></description></item><item><title>Docs3-V2: QOS 概述</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</guid><description>
+另外一种方案是 pixiu 只单单作为代理，将服务注册到dubbo集群中，如图右侧部分，这种方案部署和运维较为简单，比如适合中小规模的集群。&lt;/p></description></item><item><title>Docs3-V2: QOS 概述</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</guid><description>
 &lt;h2 id="相关参数说明">相关参数说明&lt;/h2>
 &lt;p>QoS 提供了一些启动参数，来对启动进行配置，他们主要包括：&lt;/p>
 &lt;table>
@@ -7269,7 +7269,7 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qos-enable=true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-port=33333
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-accept-foreign-ip=false
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: RPC 协议 Triple&amp;Dubbo 基准测试</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: RPC 协议 Triple&amp;Dubbo 基准测试</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</guid><description>
 &lt;ul>
 &lt;li>Dubbo3 的 _Dubbo协议 _实现与 Dubbo2 版本在性能上基本持平。&lt;/li>
 &lt;li>由于 Triple协议 本身是基于 HTTP/2 构建，因此在单条链路上的 RPC 调用并未比基于 TCP 的 Dubbo2 有提升，反而在某些调用场景出现一定下降。但 _Triple协议 _更大的优势在于网关穿透性、通用性，以及 Stream 通信模型带来的总体吞吐量提升。&lt;/li>
@@ -7339,13 +7339,13 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="121-dubbo-协议不同版本实现对比">1.2.1 Dubbo 协议不同版本实现对比&lt;/h3>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/performance/rpc-dubbo.svg" alt="//imgs/v3/performance/rpc-dubbo.svg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/rpc-dubbo.svg" alt="//imgs/v3/performance/rpc-dubbo.svg">&lt;/p>
 &lt;p>&lt;br />图三 Dubbo协议在不同版本的实现对比&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>就 Dubbo RPC + Hessian 的默认组合来说，Dubbo3 与 Dubbo2 在性能上在不同调用场景下基本持平&lt;/li>
 &lt;/ul>
 &lt;h3 id="122-dubbo协议-vs-triple协议">1.2.2 Dubbo协议 vs Triple协议&lt;/h3>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/performance/rpc-triple.svg" alt="//imgs/v3/performance/rpc-triple.svg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/rpc-triple.svg" alt="//imgs/v3/performance/rpc-triple.svg">&lt;/p>
 &lt;p>&lt;br />图四 Triple vs Dubbo&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>单纯看 Consumer &amp;lt;-&amp;gt; Provider 的点对点调用，可以看出 Triple 协议本身并不占优势，同样使用 Protobuf 序列化方式，Dubbo RPC 协议总体性能还是要优于 Triple。&lt;br />&lt;br />&lt;/li>
@@ -7354,7 +7354,7 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;h3 id="123-补充网关场景">1.2.3 补充网关场景&lt;/h3>
 &lt;p>TBD&lt;br />&lt;br />&lt;/p>
 &lt;h3 id="124-模拟-stream-通信场景的吞吐量提升">1.2.4 模拟 Stream 通信场景的吞吐量提升&lt;/h3>
-&lt;p>TBD&lt;/p></description></item><item><title>Overview: Dubbo proxy mesh using Envoy &amp; Istio</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/mesh/dubbo-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/overview/tasks/mesh/dubbo-mesh/</guid><description>
+&lt;p>TBD&lt;/p></description></item><item><title>Overview: Dubbo proxy mesh using Envoy &amp; Istio</title><link>https://static.dubbo.apache.org/next/zh/overview/tasks/mesh/dubbo-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/overview/tasks/mesh/dubbo-mesh/</guid><description>
 &lt;p>遵循以下步骤，可以轻松掌握如何开发符合 Service Mesh 架构的 Dubbo 服务，并将其部署到 Kubernetes 并接入 Istio 的流量治理体系。在此查看 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mesh-k8s">完整示例源码&lt;/a>&lt;/p>
 &lt;h2 id="1-总体目标">1 总体目标&lt;/h2>
 &lt;ul>
@@ -7364,7 +7364,7 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/ul>
 &lt;h2 id="2-基本流程与工作原理">2 基本流程与工作原理&lt;/h2>
 &lt;p>这个示例演示了如何将 Dubbo 开发的应用部署在 Istio 体系下，以实现 Envoy 对 Dubbo 服务的自动代理，示例总体架构如下图所示。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/mesh/thinsdk-envoy.png" alt="thinsdk">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/mesh/thinsdk-envoy.png" alt="thinsdk">&lt;/p>
 &lt;p>完成示例将需要的步骤如下：&lt;/p>
 &lt;ol>
 &lt;li>创建一个 Dubbo 应用( &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mesh-k8s">dubbo-samples-mesh-k8s&lt;/a> )&lt;/li>

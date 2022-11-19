@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – QOS 操作手册</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/</link><description>Recent content in QOS 操作手册 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: QOS 概述</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – QOS 操作手册</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/</link><description>Recent content in QOS 操作手册 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: QOS 概述</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/overview/</guid><description>
 &lt;h2 id="相关参数说明">相关参数说明&lt;/h2>
 &lt;p>QoS 提供了一些启动参数，来对启动进行配置，他们主要包括：&lt;/p>
 &lt;table>
@@ -131,7 +131,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qos-enable=true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-port=33333
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-accept-foreign-ip=false
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 基础命令手册</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/command/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/command/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 基础命令手册</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/command/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/command/</guid><description>
 &lt;h2 id="help-命令">help 命令&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>//列出所有命令
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;help
@@ -157,7 +157,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;quit
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BYE!
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Connection closed by foreign host.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 服务管理命令</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/service-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/service-management/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 服务管理命令</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/service-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/service-management/</guid><description>
 &lt;h2 id="ls-命令">ls 命令&lt;/h2>
 &lt;p>列出消费者和提供者&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;ls
@@ -204,7 +204,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>//根据正则，下线部分服务
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;offline com.*
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OK
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 框架状态命令</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/probe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/probe/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 框架状态命令</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/probe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/probe/</guid><description>
 &lt;p>参考文档：&lt;a href="../../../advanced-features-and-usage/others/dubbo-kubernetes-probe/">Kubernetes 生命周期探针&lt;/a>&lt;/p>
 &lt;h2 id="startup-命令">startup 命令&lt;/h2>
 &lt;p>检测当前框架是否已经启动完毕&lt;/p>
@@ -224,7 +224,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 日志框架运行时管理</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/logger-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/logger-management/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 日志框架运行时管理</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/logger-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/logger-management/</guid><description>
 &lt;h2 id="日志框架运行时管理">日志框架运行时管理&lt;/h2>
 &lt;p>自 &lt;code>3.0.10&lt;/code> 开始，dubbo-qos 运行时管控支持查询日志配置以及动态修改使用的日志框架和日志级别。&lt;/p>
 &lt;p>注：通过 dubbo-qos 修改的日志配置不进行持久化存储，在应用重启后将会失效。&lt;/p>
@@ -283,7 +283,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OK
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;loggerInfo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Available logger adapters: [jcl, slf4j, log4j, jdk]. Current Adapter: [slf4j]. Log level: INFO
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 性能采样命令</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/profiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/profiler/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 性能采样命令</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/profiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/profiler/</guid><description>
 &lt;p>性能采样功能可以对 Dubbo 处理链路上的各处耗时进行检测，在出现超时的时候 &lt;code>( usageTime / timeout &amp;gt; profilerWarnPercent * 100 )&lt;/code> 通过日志记录调用的耗时。&lt;/p>
 &lt;p>此功能分为 &lt;code>simple profiler&lt;/code> 和 &lt;code>detail profiler&lt;/code> 两个模式，其中 &lt;code>simple profiler&lt;/code> 模式默认开启，&lt;code>detail profiler&lt;/code> 模式默认关闭。
 &lt;code>detail profiler&lt;/code> 相较 &lt;code>simple profiler&lt;/code> 模式多采集了每个 filter 的处理耗时、协议上的具体耗时等。
@@ -321,7 +321,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OK
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 路由状态命令</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/router-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/qos/router-snapshot/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 路由状态命令</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/router-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/qos/router-snapshot/</guid><description>
 &lt;p>Dubbo 的很多流量治理能力是基于 Router 进行实现的，在生产环境中，如果出现流量结果不符合预期的情况，可以通过路由状态命令来查看路由的状态，以此来定位可能存在的问题。&lt;/p>
 &lt;p>参考链接：&lt;a href="../../../advanced-features-and-usage/performance/router-snapshot/">路由状态采集&lt;/a>&lt;/p>
 &lt;h2 id="getroutersnapshot-命令">getRouterSnapshot 命令&lt;/h2>

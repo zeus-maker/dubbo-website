@@ -1,6 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Kubernetes 生命周期对齐探针</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/</link><description>Recent content in Kubernetes 生命周期对齐探针 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 使用方法</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/brief/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/brief/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Kubernetes 生命周期对齐探针</title><link>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/</link><description>Recent content in Kubernetes 生命周期对齐探针 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 使用方法</title><link>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/brief/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/brief/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/others/dubbo-kubernetes-probe/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>&lt;a href="https://kubernetes.io/zh/docs/concepts/workloads/pods/pod-lifecycle/">Pod 的生命周期&lt;/a> 与服务调度息息相关，通过对 Kubernetes 官方探针的实现，能够使 Dubbo 乃至整个应用的生命周期与 Pod 的生命周期对齐。&lt;/p>
 &lt;p>通过 Dubbo 的 SPI 机制，在内部实现多种“探针”，基于 Dubbo QOS 运维模块的 HTTP 服务，使容器探针能够获取到应用内对应探针的状态。另外，SPI 的实现机制也利于用户自行拓展内部“探针”，使整个应用的生命周期更有效的进行管控。&lt;/p>
@@ -39,9 +39,9 @@
 &lt;h4 id="就绪检测">就绪检测&lt;/h4>
 &lt;p>对于 readinessProbe 就绪检测，目前 Dubbo 默认提供了两个检测维度，一是对 Dubbo 服务自身是否启停做判断，另外是对所有服务是否存在已注册接口，如果所有服务均已从注册中心下线（可以通过 QOS 运维进行操作）将返回未就绪的状态。&lt;/p>
 &lt;h4 id="启动检测">启动检测&lt;/h4>
-&lt;p>对于 startupProbe 启动检测，目前Dubbo 默认提供了一个检测维度，即是在所有启动流程（接口暴露、注册中心写入等）均结束后返回已就绪状态。&lt;/p></description></item><item><title>Docs: Liveness 存活探针</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/liveness/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/liveness/</guid><description>
+&lt;p>对于 startupProbe 启动检测，目前Dubbo 默认提供了一个检测维度，即是在所有启动流程（接口暴露、注册中心写入等）均结束后返回已就绪状态。&lt;/p></description></item><item><title>Docs: Liveness 存活探针</title><link>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/liveness/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/liveness/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/spi/description/liveness/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/spi/description/liveness/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>拓展应用存活的检测点。&lt;/p>
@@ -74,9 +74,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.qos.probe.LivenessProbe：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>xxx=com.xxx.XxxLivenessProbe
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Readiness 就绪探针</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/readiness/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/readiness/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Readiness 就绪探针</title><link>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/readiness/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/readiness/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/spi/description/readiness/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/spi/description/readiness/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>拓展应用就绪的检测点。&lt;/p>
@@ -112,9 +112,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.qos.probe.ReadinessProbe：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>xxx=com.xxx.XxxReadinessProbe
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Startup 启动探针</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/startup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/startup/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Startup 启动探针</title><link>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/startup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/startup/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/spi/description/startup/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/spi/description/startup/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>拓展应用启动的检测点。&lt;/p>
@@ -149,9 +149,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.qos.probe.StartupProbe：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>xxx=com.xxx.XxxStartupProbe
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 开发 REST 应用</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/references/lifecycle/rest/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 开发 REST 应用</title><link>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/lifecycle/rest/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/rest/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/rest/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>作者：沈理&lt;/p>
@@ -274,7 +274,7 @@
 &lt;/ol>
 &lt;p>需要指出的是，我认为1～3是dubbo的REST调用最有价值的三种应用场景，并且我们为dubbo添加REST调用，其最主要到目的也是面向服务的提供端，即开发REST服务来提供给非dubbo的（异构）消费端。&lt;/p>
 &lt;p>归纳起来，所有应用场景如下图所示：
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/rest.jpg" alt="rest">&lt;/p>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/user/rest.jpg" alt="rest">&lt;/p>
 &lt;p>借用Java过去最流行的宣传语，为dubbo添加REST调用后，可以实现服务的”一次编写，到处访问“，理论上可以面向全世界开放，从而真正实现比较理想化的面向服务架构（SOA）。&lt;/p>
 &lt;p>当然，传统的WebServices（WSDL/SOAP）也基本同样能满足以上场景（除了场景4）的要求（甚至还能满足那些需要企业级特性的场景），但由于其复杂性等问题，现在已经越来越少被实际采用了。&lt;/p>
 &lt;h2 id="快速入门">快速入门&lt;/h2>
@@ -960,8 +960,8 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/rt.png" alt="rt">&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/tps.png" alt="tps">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/rt.png" alt="rt">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/tps.png" alt="tps">&lt;/p>
 &lt;p>仅就目前的结果，一点简单总结：&lt;/p>
 &lt;ul>
 &lt;li>dubbo RPC（特别是基于高效java序列化方式如kryo，fst）比REST的响应时间和吞吐量都有较显著优势，内网的dubbo系统之间优先选择dubbo RPC。&lt;/li>

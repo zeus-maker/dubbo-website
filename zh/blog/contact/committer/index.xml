@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Committer 指南</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/contact/committer/</link><description>Recent content in Committer 指南 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/blog/contact/committer/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Apache 提交者注册流程</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/apache-%E6%8F%90%E4%BA%A4%E8%80%85%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/apache-%E6%8F%90%E4%BA%A4%E8%80%85%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Committer 指南</title><link>https://static.dubbo.apache.org/next/zh/blog/contact/committer/</link><description>Recent content in Committer 指南 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/blog/contact/committer/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: Apache 提交者注册流程</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/apache-%E6%8F%90%E4%BA%A4%E8%80%85%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/apache-%E6%8F%90%E4%BA%A4%E8%80%85%E6%B3%A8%E5%86%8C%E6%B5%81%E7%A8%8B/</guid><description>
 &lt;h2 id="一apache-提交者的产生">一、Apache 提交者的产生&lt;/h2>
 &lt;h3 id="项目孵化初始化提交者">项目孵化初始化提交者&lt;/h3>
 &lt;p>项目孵化阶段，在孵化项目提案中，会有初始化提交者列表这一选项。确认你是初始化提交者的一员。项目在 apache 孵化器社区投票通过后，提交者可以开始准备注册账户了。可以参看&lt;a href="https://wiki.apache.org/incubator/">孵化器 wiki&lt;/a>&lt;/p>
@@ -68,7 +68,7 @@
 &lt;h3 id="小福利">小福利&lt;/h3>
 &lt;p>Jetbrains 给 apache 提交者一个小福利，就是可以免费使用 idea 的全产品系列。具体注册地址为：https://www.jetbrains.com/shop/eform/apache?product=ALL&lt;/p>
 &lt;h3 id="相关-wiki">相关 wiki&lt;/h3>
-&lt;p>&lt;a href="https://www.apache.org/dev/new-committers-guide.html">https://www.apache.org/dev/new-committers-guide.html&lt;/a>&lt;/p></description></item><item><title>Blog: CLA 签署向导</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/cla-%E7%AD%BE%E7%BD%B2%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/cla-%E7%AD%BE%E7%BD%B2%E5%90%91%E5%AF%BC/</guid><description>
+&lt;p>&lt;a href="https://www.apache.org/dev/new-committers-guide.html">https://www.apache.org/dev/new-committers-guide.html&lt;/a>&lt;/p></description></item><item><title>Blog: CLA 签署向导</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/cla-%E7%AD%BE%E7%BD%B2%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/cla-%E7%AD%BE%E7%BD%B2%E5%90%91%E5%AF%BC/</guid><description>
 &lt;p>以下情况，需要您签署 Apache ICLA：&lt;/p>
 &lt;ul>
 &lt;li>在 Dubbo 被捐赠给 Apache 之前，您已经为 Dubbo 作出了很多贡献，并且您以前没有签署过 Alibaba-CLA。&lt;/li>
@@ -94,11 +94,11 @@
 &lt;li>Mailing address：首选英文格式的公司地址&lt;/li>
 &lt;li>Preferred apache id(s)：如果您被邀请成为一名提交者，那么需要您填写一个apache账号，否则，可以不填&lt;/li>
 &lt;li>Notify project：Dubbo（意思就是Dubbo就是通知您签署ICLA的项目）&lt;/li>
-&lt;/ul></description></item><item><title>Blog: 如何准备 Apache Release</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/contact/committer/release-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/contact/committer/release-guide/</guid><description/></item><item><title>Blog: 网站向导</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/%E7%BD%91%E7%AB%99%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/%E7%BD%91%E7%AB%99%E5%90%91%E5%AF%BC/</guid><description>
+&lt;/ul></description></item><item><title>Blog: 如何准备 Apache Release</title><link>https://static.dubbo.apache.org/next/zh/blog/contact/committer/release-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/contact/committer/release-guide/</guid><description/></item><item><title>Blog: 网站向导</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E7%BD%91%E7%AB%99%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E7%BD%91%E7%AB%99%E5%90%91%E5%AF%BC/</guid><description>
 &lt;ol>
 &lt;li>Apache Dubbo 的网站仓库是 &lt;a href="https://github.com/apache/dubbo-website">https://github.com/apache/dubbo-website&lt;/a>&lt;/li>
 &lt;li>网站构建完毕后，它会被自动发布到 dubbo.apache.org，您也可以通过 &lt;a href="https://selfserve.apache.org">https://selfserve.apache.org&lt;/a> 手动触发（需要使用 Apache 账号登陆）&lt;/li>
-&lt;/ol></description></item><item><title>Blog: 给问题打标签</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/%E7%BB%99%E9%97%AE%E9%A2%98%E6%89%93%E6%A0%87%E7%AD%BE/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/%E7%BB%99%E9%97%AE%E9%A2%98%E6%89%93%E6%A0%87%E7%AD%BE/</guid><description>
+&lt;/ol></description></item><item><title>Blog: 给问题打标签</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E7%BB%99%E9%97%AE%E9%A2%98%E6%89%93%E6%A0%87%E7%AD%BE/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E7%BB%99%E9%97%AE%E9%A2%98%E6%89%93%E6%A0%87%E7%AD%BE/</guid><description>
 &lt;p>如果您正在处理一个问题，请记得&lt;strong>给这个问题标记一个或者多个您认为有意义的标签&lt;/strong>。有了标签，其他开发人员就会很轻松地识别出问题，以便对其进行分类并跟踪进度。&lt;/p>
 &lt;p>对于需要编码和发版修复的 issues 和 pull requests，需要您&lt;strong>将其标记为 &lt;a href="https://github.com/apache/dubbo/milestones">milestone&lt;/a>&lt;/strong>。&lt;/p>
 &lt;p>一些常用的标签：&lt;/p>
@@ -134,7 +134,7 @@
 &lt;li>type/feature&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Blog: 官方 Dubbo 主页的维护</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/%E5%AE%98%E6%96%B9-dubbo-%E4%B8%BB%E9%A1%B5%E7%9A%84%E7%BB%B4%E6%8A%A4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/blog/1/01/01/%E5%AE%98%E6%96%B9-dubbo-%E4%B8%BB%E9%A1%B5%E7%9A%84%E7%BB%B4%E6%8A%A4/</guid><description>
+&lt;/ul></description></item><item><title>Blog: 官方 Dubbo 主页的维护</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E5%AE%98%E6%96%B9-dubbo-%E4%B8%BB%E9%A1%B5%E7%9A%84%E7%BB%B4%E6%8A%A4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E5%AE%98%E6%96%B9-dubbo-%E4%B8%BB%E9%A1%B5%E7%9A%84%E7%BB%B4%E6%8A%A4/</guid><description>
 &lt;p>Apache 有一个官方的网站，用来维护所有的孵化项目的信息。每一个孵化项目在这个网站下都有一个信息页。
 Dubbo 的信息页地址是 &lt;a href="https://incubator.apache.org/projects/dubbo.html">https://incubator.apache.org/projects/dubbo.html&lt;/a>。&lt;/p>
 &lt;p>当项目发生比较大的变化，比如新的 committer 的加入，新的 PMC 的当选，或是新版本的 Release 等，都需要将这些更新信息维护到这个页面。&lt;/p>

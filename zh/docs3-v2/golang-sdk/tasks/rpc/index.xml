@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 服务调用</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/</link><description>Recent content in 服务调用 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 查看 RPC 调用的监控信息</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/rpc_metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/rpc_metrics/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 服务调用</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/</link><description>Recent content in 服务调用 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 查看 RPC 调用的监控信息</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/rpc_metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/rpc_metrics/</guid><description>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
 &lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>
@@ -31,7 +31,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># HELP dubbo_provider_service_rt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># TYPE dubbo_provider_service_rt gauge
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo_provider_service_rt{group=&amp;#34;&amp;#34;,method=&amp;#34;SayHello&amp;#34;,service=&amp;#34;api.Greeter&amp;#34;,timeout=&amp;#34;&amp;#34;,version=&amp;#34;3.0.0&amp;#34;} 41084
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可看到当前最近一次请求 rt 为 41084 ns。&lt;/p></description></item><item><title>Docs3-V2: 配置调用的超时</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/timeout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/timeout/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可看到当前最近一次请求 rt 为 41084 ns。&lt;/p></description></item><item><title>Docs3-V2: 配置调用的超时</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/timeout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/timeout/</guid><description>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
 &lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>
@@ -71,7 +71,7 @@
 &lt;p>再次通过客户端发起调用，观察日志，正常返回：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>client response result: name:&lt;span style="color:#2aa198">&amp;#34;Hello laurence&amp;#34;&lt;/span> id:&lt;span style="color:#2aa198">&amp;#34;12345&amp;#34;&lt;/span> age:21
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Docs3-V2: 为服务端设置限流</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/tps_limiter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/tps_limiter/</guid><description>
+&lt;/ol></description></item><item><title>Docs3-V2: 为服务端设置限流</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/tps_limiter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/tps_limiter/</guid><description>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
 &lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>
@@ -146,7 +146,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INFO cmd/client.go:62 Success &lt;span style="color:#268bd2">rate&lt;/span> &lt;span style="color:#719e07">=&lt;/span> 0.6
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在服务端日志中可以看到拒绝的信息：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ERROR tps/filter.go:84 The invocation was rejected due to over the limiter limitation...
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 与 Java 应用跨语言互通</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/call_java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/call_java/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 与 Java 应用跨语言互通</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/call_java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/call_java/</guid><description>
 &lt;h2 id="准备工作">准备工作&lt;/h2>
 &lt;h3 id="环境">环境&lt;/h3>
 &lt;p>JDK 8，Golang &amp;gt;= 1.15，Dubbo 3.0.2，zookeeper 启动，&lt;/p>
@@ -251,7 +251,7 @@
 &lt;h3 id="11-go-client---java-server">1.1 Go-Client -&amp;gt; Java-Server&lt;/h3>
 &lt;h4 id="java-server-启动">Java-Server 启动&lt;/h4>
 &lt;ol>
-&lt;li>定义 Java 的 PB 文件，可参考 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
+&lt;li>定义 Java 的 PB 文件，可参考 &lt;a href="https://static.dubbo.apache.org/next/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-protobuf" data-lang="protobuf">&lt;span style="display:flex;">&lt;span>syntax &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;proto3&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -509,7 +509,7 @@
 &lt;h3 id="21-go-client---java-server">2.1 Go-Client -&amp;gt; Java-Server&lt;/h3>
 &lt;h4 id="java-server-启动-1">Java-Server 启动&lt;/h4>
 &lt;ol>
-&lt;li>定义 Java 接口、参数和返回值，可参考 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
+&lt;li>定义 Java 接口、参数和返回值，可参考 &lt;a href="https://static.dubbo.apache.org/next/zh/docs/quick-start/">Dubbo 快速开始&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">package&lt;/span> org.apache.dubbo&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -848,21 +848,21 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>user&lt;span style="color:#719e07">.&lt;/span>getId&lt;span style="color:#719e07">());&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 与 gRPC 应用互通</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/call_grpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/call_grpc/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 与 gRPC 应用互通</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/call_grpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/call_grpc/</guid><description>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
 &lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>
 &lt;li>创建一个新的 demo 应用&lt;/li>
 &lt;/ul>
 &lt;h2 id="2-dubbo-go-应用与-grpc-应用互通">2. Dubbo-go 应用与 gRPC 应用互通&lt;/h2>
-&lt;p>参考 &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/rpc/triple/pb/dubbogo-grpc">dubbo-go-samples/rpc/triple/pb/dubbogo-grpc&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 使用 ctx 传递上下文信息</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/context/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/context/</guid><description>
+&lt;p>参考 &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/rpc/triple/pb/dubbogo-grpc">dubbo-go-samples/rpc/triple/pb/dubbogo-grpc&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 使用 ctx 传递上下文信息</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/context/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/context/</guid><description>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
 &lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>
 &lt;li>创建一个新的 demo 应用&lt;/li>
 &lt;/ul>
 &lt;h2 id="2-使用-context-传递附加信息">2. 使用 context 传递附加信息&lt;/h2>
-&lt;p>参考 &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/context">dubbo-go-samples/context&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 泛化调用</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/generic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/generic/</guid><description>
+&lt;p>参考 &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/context">dubbo-go-samples/context&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: 泛化调用</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/generic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/generic/</guid><description>
 &lt;h2 id="1-dubbo-go-泛化调用-java-server">1. Dubbo-go 泛化调用 Java Server&lt;/h2>
 &lt;p>使用 Triple 协议 + hessian2 序列化方案&lt;/p>
 &lt;h3 id="11-java-server启动">1.1 Java-Server启动&lt;/h3>
@@ -938,7 +938,7 @@
 &lt;p>其中第二个参数为对应参数的 Java 类名，例如java.lang.String、org.apache.dubbo.User，第三个参数为参数列表，hessian.Object 即为 interface。第二、第三个参数应与方法签名一致，按顺序对应。&lt;/p>
 &lt;p>获得map结构的返回结果&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>INFO cmd/client.go:89 GetUser1(userId string) res: map[age:48 class:org.apache.dubbo.User id:A003 name:Joe sex:MAN time:2021-10-04 14:03:03.37 +0800 CST]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 异常信息回传</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/error/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/error/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 异常信息回传</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/error/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/error/</guid><description>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
 &lt;li>dubbo-go cli 工具和依赖工具已安装&lt;/li>
@@ -1037,7 +1037,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.apache.org/dubbo-go/v3/common/proxy/proxy_factory.(*ProxyInvoker).Invoke
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /Users/laurence/go/pkg/mod/dubbo.apache.org/dubbo-go/v3@v3.0.0-rc4-1/common/proxy/proxy_factory/default.go:145
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可看到报错信息和堆栈&lt;/p></description></item><item><title>Docs3-V2: 选择使用的网络协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/choose_protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/rpc/choose_protocol/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可看到报错信息和堆栈&lt;/p></description></item><item><title>Docs3-V2: 选择使用的网络协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/choose_protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/rpc/choose_protocol/</guid><description>
 &lt;h1 id="修改使用的协议">修改使用的协议&lt;/h1>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>

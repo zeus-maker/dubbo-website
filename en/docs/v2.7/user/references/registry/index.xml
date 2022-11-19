@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Registry Server References</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/</link><description>Recent content in Registry Server References on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Nacos Registry Center</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/nacos/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Registry Server References</title><link>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/</link><description>Recent content in Registry Server References on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Nacos Registry Center</title><link>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/nacos/</guid><description>
 &lt;p>Nacos is a very important registry center for Dubbo ecosystem, &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">&lt;code>dubbo-registry-nacos&lt;/code>&lt;/a> is the implementation of Nacos integration to Nacos.&lt;/p>
 &lt;h2 id="prepare-work">Prepare Work&lt;/h2>
 &lt;p>When you integrate &lt;a href="https://github.com/apache/incubator-dubbo/tree/master/dubbo-registry/dubbo-registry-nacos">&lt;code>dubbo-registry-nacos&lt;/code>&lt;/a> into your Dubbo project, please Make sure the Nacos service is started in the background. If you are not familiar with the basic use of Nacos, you can refer to &lt;a href="https://nacos.io/en-us/docs/quick-start.html">Nacos Quick Start&lt;/a>. It is recommended to use the version equal or above Nacos &lt;code>1.0.0&lt;/code>.&lt;/p>
@@ -53,9 +53,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.registry.address &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">nacos://10.20.153.10:8848&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then, restart your Dubbo app, Dubbo&amp;rsquo;s service provider and consumer information can be displayed on the Nacos console:&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-1.png" alt="dubbo-registry-nacos-1.png">&lt;/p>
 &lt;p>As shown in the figure, the information whose service name prefix is &lt;code>providers:&lt;/code> is the meta information of the service provider, and the &lt;code>consumers:&lt;/code> represents the meta information of the service consumer. Click on &amp;ldquo;&lt;strong>Details&lt;/strong>&amp;rdquo; to view service status details:&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-2.png" alt="dubbo-registry-nacos-2.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-2.png" alt="dubbo-registry-nacos-2.png">&lt;/p>
 &lt;p>If you are using the Spring XML configuration file to assemble the Dubbo registry, please refer to the next section.&lt;/p>
 &lt;h3 id="spring-xml-configuration-file">Spring XML Configuration File&lt;/h3>
 &lt;p>Similar to &lt;a href="https://mercyblitz.github.io/2018/01/18/Dubbo-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE/">Dubbo Spring Externalization Configuration&lt;/a>, just adjust the &lt;code>address&lt;/code> attribute to configure:&lt;/p>
@@ -73,7 +73,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After restarting the Dubbo app, you can also find that the registration meta-information of the service provider and consumer is presented on the Nacos console:&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/blog/dubbo-registry-nacos-3.png" alt="dubbo-registry-nacos-3.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/dubbo-registry-nacos-3.png" alt="dubbo-registry-nacos-3.png">&lt;/p>
 &lt;p>&lt;strong>Additional information&lt;/strong>: since &lt;a href="mailto:nacos-server@1.0.0">nacos-server@1.0.0&lt;/a>, support client report instance info which contains particular key in metadata to control some behavior.&lt;/p>
 &lt;p>Such as:&lt;br>
 &lt;code>preserved.heart.beat.timeout&lt;/code> : The time of the instance from healthy to unhealthy after heartbeat is not send.(unit:millisecond) &lt;br>
@@ -82,9 +82,9 @@
 &lt;code>preserved.instance.id.generator&lt;/code>: The id generator strategy, value set as &lt;code>snowflake&lt;/code> means the id will be increment from 0.&lt;br>
 &lt;code>preserved.register.source&lt;/code> : Reserved key, not used at now.&lt;/p>
 &lt;p>This feature will be support since Dubbo@&lt;code>2.7.10&lt;/code>, you can use this feature by append param in nacos address.
-Such as: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&amp;amp;preserved.ip.delete.timeout=30000&amp;amp;preserved.heart.beat.interval=10000&lt;/code>&lt;/p></description></item><item><title>Docs: Zookeeper Registry Server</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/zookeeper/</guid><description>
+Such as: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&amp;amp;preserved.ip.delete.timeout=30000&amp;amp;preserved.heart.beat.interval=10000&lt;/code>&lt;/p></description></item><item><title>Docs: Zookeeper Registry Server</title><link>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/zookeeper/</guid><description>
 &lt;p>&lt;a href="http://zookeeper.apache.org">Zookeeper&lt;/a> is the child project of apache hadoop. Since it offers tree-like directory service and supports change notification, it&amp;rsquo;s suitable to use it as dubbo&amp;rsquo;s registry server. It&amp;rsquo;s a field-proven product, therefore it&amp;rsquo;s recommended to use it in the production environment. &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/zookeeper.jpg" alt="/user-guide/images/zookeeper.jpg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/zookeeper.jpg" alt="/user-guide/images/zookeeper.jpg">&lt;/p>
 &lt;p>Description on registration procedure:&lt;/p>
 &lt;ul>
 &lt;li>When service provider boots up: write service URL address under directory &lt;code>/dubbo/com.foo.BarService/providers&lt;/code>&lt;/li>
@@ -152,7 +152,7 @@ Such as: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&a
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;chinaRegistry&amp;#34;&lt;/span> protocol=&lt;span style="color:#2aa198">&amp;#34;zookeeper&amp;#34;&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;10.20.153.10:2181&amp;#34;&lt;/span> group=&lt;span style="color:#2aa198">&amp;#34;china&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;intlRegistry&amp;#34;&lt;/span> protocol=&lt;span style="color:#2aa198">&amp;#34;zookeeper&amp;#34;&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;10.20.153.10:2181&amp;#34;&lt;/span> group=&lt;span style="color:#2aa198">&amp;#34;intl&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="zookeeper-installation">Zookeeper Installation&lt;/h2>
-&lt;p>Pls. refer to &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/admin/install/zookeeper/">zookeeper install manual&lt;/a> for how to install zookeeper based registry server. To set it up, specify &lt;code>dubbo.registry.address&lt;/code> to &lt;code>zookeeper://127.0.0.1:2181&lt;/code> in &lt;code>conf/dubbo.properties&lt;/code> for both provider and consumer (you can refer to &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/quick-start/">quick start&lt;/a>) after install a zookeeper server.&lt;/p>
+&lt;p>Pls. refer to &lt;a href="https://static.dubbo.apache.org/next/en/docs/v2.7/admin/install/zookeeper/">zookeeper install manual&lt;/a> for how to install zookeeper based registry server. To set it up, specify &lt;code>dubbo.registry.address&lt;/code> to &lt;code>zookeeper://127.0.0.1:2181&lt;/code> in &lt;code>conf/dubbo.properties&lt;/code> for both provider and consumer (you can refer to &lt;a href="https://static.dubbo.apache.org/next/en/docs/v2.7/user/quick-start/">quick start&lt;/a>) after install a zookeeper server.&lt;/p>
 &lt;h2 id="declaration-of-reliability">Declaration of Reliability&lt;/h2>
 &lt;p>A home-brewed service registry server is used in Alibaba instead of zookeeper server. Zookeeper based registry center does not have long-run practice within Alibaba, therefore we cannot guarantee its reliability. Zookeeper registry server is provided for dubbo community, and its reliability relies on zookeeper itself largely.&lt;/p>
 &lt;h2 id="declaration-of-compatibility">Declaration of Compatibility&lt;/h2>
@@ -166,9 +166,9 @@ Such as: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&a
 &lt;p>Suggest to use &lt;code>2.3.3&lt;/code> or above for zookeeper registry client&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs: Multicast Registry</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/multicast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/multicast/</guid><description>
+&lt;/div></description></item><item><title>Docs: Multicast Registry</title><link>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/multicast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/multicast/</guid><description>
 &lt;p>Multicast registry doesn&amp;rsquo;t require to setup any central node. Just like IP address broadcast, dubbo service providers and consumers can discover each other through this mechanism.&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/multicast.jpg" alt="/user-guide/images/multicast.jpg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/multicast.jpg" alt="/user-guide/images/multicast.jpg">&lt;/p>
 &lt;ol start="0">
 &lt;li>Service provider broadcasts its address when it boots up.&lt;/li>
 &lt;li>Service consumer broadcasts its subscription request when it boots up.&lt;/li>
@@ -188,10 +188,10 @@ Such as: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&a
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:consumer&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:parameter&lt;/span> key=&lt;span style="color:#2aa198">&amp;#34;unicast&amp;#34;&lt;/span> value=&lt;span style="color:#2aa198">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:consumer&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Redis Registry Server</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/redis/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Redis Registry Server</title><link>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/redis/</guid><description>
 &lt;h1 id="redis-registry-server">Redis Registry Server&lt;/h1>
 &lt;p>It is a registry server implementation &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> based on redis &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>.&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-redis-registry.jpg" alt="/user-guide/images/dubbo-redis-registry.jpg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-redis-registry.jpg" alt="/user-guide/images/dubbo-redis-registry.jpg">&lt;/p>
 &lt;p>Use key/map structure in redis to save the registration info:&lt;/p>
 &lt;ul>
 &lt;li>Main key for service name and type&lt;/li>
@@ -236,7 +236,7 @@ Such as: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&a
 &lt;h2 id="declaration-of-reliability">Declaration of Reliability&lt;/h2>
 &lt;p>A home-brewed service registry server is used in Alibaba instead of redis server. Redis based registry center does not have long-run practice within Alibaba, therefore we cannot guarantee its reliability. This registry server implementation is provided for dubbo community, and its reliability relies on redis itself largely.&lt;/p>
 &lt;h2 id="installation">Installation&lt;/h2>
-&lt;p>Pls. refer to &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/admin/install/redis/">redis install manual&lt;/a> for how to install a redis based registry server. To set it up, specify &lt;code>dubbo.registry.address&lt;/code> to &lt;code>redis://127.0.0.1:6379&lt;/code> in &lt;code>conf/dubbo.properties&lt;/code> for both provider and consumer (you can refer to &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/quick-start/">quick start&lt;/a>) after install a redis server.&lt;/p>
+&lt;p>Pls. refer to &lt;a href="https://static.dubbo.apache.org/next/en/docs/v2.7/admin/install/redis/">redis install manual&lt;/a> for how to install a redis based registry server. To set it up, specify &lt;code>dubbo.registry.address&lt;/code> to &lt;code>redis://127.0.0.1:6379&lt;/code> in &lt;code>conf/dubbo.properties&lt;/code> for both provider and consumer (you can refer to &lt;a href="https://static.dubbo.apache.org/next/en/docs/v2.7/user/quick-start/">quick start&lt;/a>) after install a redis server.&lt;/p>
 &lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
@@ -250,7 +250,7 @@ Such as: &lt;code>nacos://10.20.153.10:8848?preserved.heart.beat.timeout=15000&a
 &lt;p>Heartbeat mechanism is used to detect the dirty data in redis. It requires time among servers must be sync in advanced, otherwise expiration check may inaccurate, plus, heartbeats may add extra pressure on servers.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs: Simple Registry Server</title><link>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/simple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/en/docs/v2.7/user/references/registry/simple/</guid><description>
+&lt;/div></description></item><item><title>Docs: Simple Registry Server</title><link>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/simple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/en/docs/v2.7/user/references/registry/simple/</guid><description>
 &lt;p>Simple registry server itself is a regular dubbo service. In this way, third-party dependency is unnecessary, and communication keeps consistent at the same moment.&lt;/p>
 &lt;h2 id="configuration">Configuration&lt;/h2>
 &lt;p>Register simple registry server as dubbo service:&lt;/p>

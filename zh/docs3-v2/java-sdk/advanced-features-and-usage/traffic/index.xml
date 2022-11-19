@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 流量治理规则</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/</link><description>Recent content in 流量治理规则 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 路由规则</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/routing-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/routing-rule/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 流量治理规则</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/</link><description>Recent content in 流量治理规则 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 路由规则</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/routing-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/routing-rule/</guid><description>
 &lt;p>路由规则在发起一次RPC调用前起到过滤目标服务器地址的作用，过滤后的地址列表，将作为消费端最终发起RPC调用的备选地址。&lt;/p>
 &lt;ul>
 &lt;li>条件路由。支持以服务或 Consumer 应用为粒度配置路由规则。&lt;/li>
@@ -203,8 +203,8 @@
 &lt;/ol>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
-自定义路由参考&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/spi/description/router/">路由扩展&lt;/a>
-&lt;/div></description></item><item><title>Docs3-V2: 配置规则</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/config-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/config-rule/</guid><description>
+自定义路由参考&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/spi/description/router/">路由扩展&lt;/a>
+&lt;/div></description></item><item><title>Docs3-V2: 配置规则</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/config-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/config-rule/</guid><description>
 &lt;h2 id="覆盖规则">覆盖规则&lt;/h2>
 &lt;p>覆盖规则是 Dubbo 设计的在无需重启应用的情况下，动态调整 RPC 调用行为的一种能力。2.7.0 版本开始，支持从&lt;strong>服务&lt;/strong>和&lt;strong>应用&lt;/strong>两个粒度来调整动态配置。&lt;/p>
 &lt;h3 id="概览">概览&lt;/h3>
@@ -361,12 +361,12 @@ parameters:
 force: return null
 &amp;hellip;&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Mesh 路由规则</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Mesh 路由规则</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/traffic/mesh-style/</guid><description>
 &lt;h3 id="基本思想">基本思想&lt;/h3>
 &lt;p>基于路由链，采用Pipeline的处理方式，如下图所示：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/route-rule1.png" alt="route-rule1.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/route-rule1.png" alt="route-rule1.png">&lt;/p>
 &lt;p>可以把路由链的逻辑简单的理解为 target = rn(&amp;hellip;r3(r2(r1(src))))。对于每一个 router 内部的逻辑，可以抽象为输入地址 addrs-in 与 router 中按全量地址 addrs-all 实现切分好的 n 个互不相交的地址池 addrs-pool-1 &amp;hellip; addrs-pool-n 按实现定义好的规则取交集作为输出 addrs-out。以此类推，完成整个路由链的计算。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/route-rule2.png" alt="route-rule2.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/route-rule2.png" alt="route-rule2.png">&lt;/p>
 &lt;p>另外一方面，如果 router(n) 需要执行 fallback 逻辑的时候，那么需要经过 router(n) 就应该决定好 fallback 逻辑&lt;/p>
 &lt;h3 id="fallback-处理原则">fallback 处理原则&lt;/h3>
 &lt;p>由于多个 router 之间多个条件组件之后，很容易出现地址被筛选为空的情况，那么我们需要针对这情况进行 fallback 处理，保证业务在正确性的前提下，能够顺利找到有效地址。&lt;/p>
@@ -563,7 +563,7 @@ force: return null
 &lt;li>我们在编写匹配条件时，应该遵循从 具体条件到广泛条件 的原则&lt;/li>
 &lt;/ul>
 &lt;h3 id="routechain-的组装模式-目前未实现">RouteChain 的组装模式 (目前未实现)&lt;/h3>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/route-rule3.png" alt="route-rule3.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/route-rule3.png" alt="route-rule3.png">&lt;/p>
 &lt;p>我们看到上面的图，在路由的过程当中，我们是 Pipeline 的处理方式，Pipeline 的 Router 节点存在顺序，并且每个 Router 都有一个唯一对应的 VirtualService 和 &lt;strong>多个&lt;/strong> 相应的 DestinationRule 进行描述。&lt;/p>
 &lt;p>以 Nacos 上存着的路由规则配置为例，配置的格式如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">DataId&lt;/span>: Demo.rule.yaml

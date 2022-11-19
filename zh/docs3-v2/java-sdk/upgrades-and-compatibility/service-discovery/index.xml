@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 应用级服务发现</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/</link><description>Recent content in 应用级服务发现 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 应用级服务发现迁移示例</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-samples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-samples/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 应用级服务发现</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/</link><description>Recent content in 应用级服务发现 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 应用级服务发现迁移示例</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-samples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-samples/</guid><description>
 &lt;p>应用级服务发现为应用间服务发现的协议，因此使用应用级服务发现需要消费端和服务端均升级到 Dubbo 3.0 版本并开启新特性（默认开启）才能在链路中使用应用级服务发现，真正发挥应用级服务发现的优点。&lt;/p>
 &lt;h2 id="开启方式">开启方式&lt;/h2>
 &lt;h3 id="服务端">服务端&lt;/h3>
@@ -57,7 +57,7 @@ FORCE_APPLICATION：仅应用级订阅，将只采用全新的服务发现模型
 &lt;p>示例：&lt;a href="https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-cloud-native/dubbo-servicediscovery-migration/dubbo-servicediscovery-migration-consumer/src/main/java/org/apache/dubbo/demo/consumer/UpgradeUtil.java">https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-cloud-native/dubbo-servicediscovery-migration/dubbo-servicediscovery-migration-consumer/src/main/java/org/apache/dubbo/demo/consumer/UpgradeUtil.java&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>step: FORCE_INTERFACE
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 接口级服务发现迁移至应用级服务发现指南</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 接口级服务发现迁移至应用级服务发现指南</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/migration-service-discovery/</guid><description>
 &lt;p>&lt;strong>总体上来说，在地址注册与发现环节，3.x 是完全兼容 2.x 版本的，这意味着，用户可以选择将集群内任意数量的应用或机器升级到 3.x，同时在这个过程中保持与 2.x 版本的互操作性。&lt;/strong>
 如关心迁移背后工作原理，请参考 &lt;a href="../service-discovery-rule">迁移规则详情与工作原理&lt;/a>&lt;/p>
 &lt;h2 id="1-快速升级步骤">1 快速升级步骤&lt;/h2>
@@ -71,7 +71,7 @@ FORCE_APPLICATION：仅应用级订阅，将只采用全新的服务发现模型
 &lt;h2 id="2-provider-端升级过程详解">2 Provider 端升级过程详解&lt;/h2>
 &lt;p>在不改变任何 Dubbo 配置的情况下，可以将一个应用或实例升级到 3.x 版本，升级后的 Dubbo 实例会默保保证与 2.x 版本的兼容性，即会正常注册 2.x 格式的地址到注册中心，因此升级后的实例仍会对整个集群仍保持可见状态。&lt;/p>
 &lt;p>同时新的地址发现模型（注册应用级别的地址）也将会自动注册。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/provider-registration.png" alt="//imgs/v3/migration/provider-registration.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/provider-registration.png" alt="//imgs/v3/migration/provider-registration.png">&lt;/p>
 &lt;p>通过 -D 参数，可以指定 provider 启动时的注册行为&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>-Ddubbo.application.register-mode=all
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 可选值 interface、instance、all，默认是 all，即接口级地址、应用级地址都注册
@@ -93,18 +93,18 @@ FORCE_APPLICATION：仅应用级订阅，将只采用全新的服务发现模型
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># APPLICATION_FIRST，智能决策接口级/应用级地址，双订阅
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># FORCE_APPLICATION，只消费应用级地址，如无地址则报错，单订阅 3.x 地址
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>dubbo.application.service-discovery.migration &lt;/code> 支持通过 &lt;code>-D&lt;/code> 以及 &lt;code>全局配置中心&lt;/code> 两种方式进行配置。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/consumer-subscription.png" alt="//imgs/v3/migration/consumer-subscription.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/consumer-subscription.png" alt="//imgs/v3/migration/consumer-subscription.png">&lt;/p>
 &lt;p>接下来，我们就具体看一下，如何通过双订阅模式（APPLICATION_FIRST）让升级到 3.x 的消费端迁移到应用级别的地址。在具体展开之前，先明确一条消费端的选址行为：&lt;strong>对于双订阅的场景，消费端虽然可同时持有 2.x 地址与 3.x 地址，但选址过程中两份地址是完全隔离的：要么用 2.x 地址，要么用 3.x 地址，不存在两份地址混合调用的情况，这个决策过程是在收到第一次地址通知后就完成了的。&lt;/strong>&lt;/p>
 &lt;p>下面，我们看一个&lt;code>APPLICATION_FIRST&lt;/code>策略的具体操作过程。&lt;/p>
 &lt;p>首先，提前在全局配置中心 Nacos 配置一条配置项（所有消费端都将默认执行这个选址策略）：&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/nacos-migration-item.png" alt="//imgs/v3/migration/nacos-migration-item.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/nacos-migration-item.png" alt="//imgs/v3/migration/nacos-migration-item.png">&lt;/p>
 &lt;p>紧接着，升级消费端到 3.x 版本并启动，这时消费端读取到&lt;code>APPLICATION_FIRST&lt;/code>配置后，执行双订阅逻辑（订阅 2.x 接口级地址与 3.x 应用级地址）&lt;/p>
 &lt;p>至此，升级操作就完成了，剩下的就是框架内部的执行了。在调用发生前，框架在消费端会有一个“选址过程”，注意这里的选址和之前 2.x 版本是有区别的，选址过程包含了两层筛选：&lt;/p>
 &lt;ul>
 &lt;li>先进行地址列表（ClusterInvoker）筛选（接口级地址 or 应用级地址）&lt;/li>
 &lt;li>再进行实际的 provider 地址（Invoker）筛选。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/migration-cluster-invoker.png" alt="//imgs/v3/migration/migration-cluster-item.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/migration-cluster-invoker.png" alt="//imgs/v3/migration/migration-cluster-item.png">&lt;/p>
 &lt;p>ClusterInvoker 筛选的依据，可以通过 MigrationAddressComparator SPI 自行定义，目前官方提供了一个简单的地址数量比对策略，即当 &lt;code>应用级地址数量 == 接口级地址数量&lt;/code> 满足时则进行迁移。&lt;/p>
 &lt;blockquote>
 &lt;p>其实 FORCE_INTERFACE、APPLICATION_FIRST、FORCE_APPLICATION 控制的都是这里的 ClusterInvoker 类型的筛选策略&lt;/p>
@@ -137,10 +137,10 @@ FORCE_APPLICATION：仅应用级订阅，将只采用全新的服务发现模型
 &lt;ol>
 &lt;li>要能分析出应用间的依赖关系，比如一个 Provdier 应用被哪些消费端应用消费，这可以通过 Dubbo 提供的服务元数据上报能力来实现。&lt;/li>
 &lt;li>要能知道每个应用当前使用的 dubbo 版本，可以通过扫描或者主动上报手段。&lt;/li>
-&lt;/ol></description></item><item><title>Docs3-V2: 应用级服务发现地址迁移规则说明</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/</guid><description>
+&lt;/ol></description></item><item><title>Docs3-V2: 应用级服务发现地址迁移规则说明</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/upgrades-and-compatibility/service-discovery/service-discovery-rule/</guid><description>
 &lt;h2 id="状态模型">状态模型&lt;/h2>
 &lt;p>在 Dubbo 3 之前地址注册模型是以接口级粒度注册到注册中心的，而 Dubbo 3 全新的应用级注册模型注册到注册中心的粒度是应用级的。从注册中心的实现上来说是几乎不一样的，这导致了对于从接口级注册模型获取到的 invokers 是无法与从应用级注册模型获取到的 invokers 进行合并的。为了帮助用户从接口级往应用级迁移，Dubbo 3 设计了 Migration 机制，基于三个状态的切换实现实际调用中地址模型的切换。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/migration-1.png" alt="//imgs/v3/migration/migration-1.png">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/migration-1.png" alt="//imgs/v3/migration/migration-1.png">&lt;/p>
 &lt;p>当前共存在三种状态，FORCE_INTERFACE（强制接口级），APPLICATION_FIRST（应用级优先）、FORCE_APPLICATION（强制应用级）。&lt;/p>
 &lt;p>FORCE_INTERFACE：只启用兼容模式下接口级服务发现的注册中心逻辑，调用流量 100% 走原有流程
 APPLICATION_FIRST：开启接口级、应用级双订阅，运行时根据阈值和灰度流量比例动态决定调用流量走向
@@ -249,9 +249,9 @@ FORCE_APPLICATION：只启用新模式下应用级服务发现的注册中心逻
 &lt;p>灰度比例功能仅在应用级优先状态下生效。此功能可以让用户自行决定调用往新模式应用级注册中心地址的调用数比例。灰度生效的前提是满足了阈值探测，在应用级优先状态下，如果阈值探测通过，&lt;code>currentAvailableInvoker&lt;/code> 将被切换为对应应用级地址的 invoker；如果探测失败 &lt;code>currentAvailableInvoker&lt;/code> 仍为原有接口级地址的 invoker。&lt;/p>
 &lt;p>流程图如下：
 探测阶段
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/migration-2.png" alt="//imgs/v3/migration/migration-2.png">
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/migration-2.png" alt="//imgs/v3/migration/migration-2.png">
 调用阶段
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/migration-3.png" alt="//imgs/v3/migration/migration-3.png">&lt;/p>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/migration-3.png" alt="//imgs/v3/migration/migration-3.png">&lt;/p>
 &lt;p>核心代码如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// currentAvailableInvoker is based on MigrationAddressComparator&amp;#39;s result
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">(&lt;/span>currentAvailableInvoker &lt;span style="color:#719e07">!=&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
@@ -269,11 +269,11 @@ FORCE_APPLICATION：只启用新模式下应用级服务发现的注册中心逻
 &lt;h3 id="1-切换到应用级优先">1. 切换到应用级优先&lt;/h3>
 &lt;p>从强制接口级、强制应用级往应用级优先切换本质上是从某一单订阅往双订阅切换，保留原有的订阅并创建另外一种订阅的过程。这个切换模式下规则体中配置的 delay 配置不会生效，也即是创建完订阅后马上进行阈值探测并决策选择某一组订阅进行实际优先调用。由于应用级优先模式是支持运行时动态进行阈值探测，所以对于部分注册中心无法启动时即获取全量地址的场景在全部地址通知完也会重新计算阈值并切换。
 应用级优先模式下的动态切换是基于服务目录（Directory）的地址监听器实现的。
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/migration-4.png" alt="//imgs/v3/migration/migration-4.png">&lt;/p>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/migration-4.png" alt="//imgs/v3/migration/migration-4.png">&lt;/p>
 &lt;h3 id="2-应用级优先切换到强制">2. 应用级优先切换到强制&lt;/h3>
 &lt;p>应用级优先往强制接口级、强制应用级切换的过程是对双订阅的地址进行检查，如果满足则对另外一份订阅进行销毁，如果不满足则回滚保留原来的应用级优先状态。
 如果用户希望这个切换过程不经过检查直接切换可以通过配置 force 参数实现。
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/migration-5.png" alt="//imgs/v3/migration/migration-5.png">&lt;/p>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/migration-5.png" alt="//imgs/v3/migration/migration-5.png">&lt;/p>
 &lt;h3 id="3-强制接口级和强制应用级互相切换">3. 强制接口级和强制应用级互相切换&lt;/h3>
 &lt;p>强制接口级和强制应用级互相切换需要临时创建一份新的订阅，判断新的订阅（即阈值计算时使用新订阅的地址数去除旧订阅的地址数）是否达标，如果达标则进行切换，如果不达标会销毁这份新的订阅并且回滚到之前的状态。
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/migration-6.png" alt="//imgs/v3/migration/migration-6.png">&lt;/p></description></item></channel></rss>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/migration-6.png" alt="//imgs/v3/migration/migration-6.png">&lt;/p></description></item></channel></rss>

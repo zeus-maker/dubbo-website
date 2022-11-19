@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – RPC 协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/</link><description>Recent content in RPC 协议 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 协议概述</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – RPC 协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/</link><description>Recent content in RPC 协议 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 协议概述</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/overview/</guid><description>
 &lt;p>Dubbo3 提供了 Triple(Dubbo3)、Dubbo2 协议，这是 Dubbo 框架的原生协议。除此之外，Dubbo3 也对众多第三方协议进行了集成，并将它们纳入 Dubbo 的编程与服务治理体系，
 包括 gRPC、Thrift、JsonRPC、Hessian2、REST 等。以下重点介绍 Triple 与 Dubbo2 协议。&lt;/p>
 &lt;h2 id="协议说明">协议说明&lt;/h2>
@@ -11,7 +11,7 @@
 &lt;li>协议结构： 定义包含字段列表和各字段语义以及不同字段的排列方式&lt;/li>
 &lt;li>协议通过定义规则、格式和语义来约定数据如何在网络间传输。一次成功的 RPC 需要通信的两端都能够按照协议约定进行网络字节流的读写和对象转换。如果两端对使用的协议不能达成一致，就会出现鸡同鸭讲，无法满足远程通信的需求。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/triple-protocol.png" alt="协议选择">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/triple-protocol.png" alt="协议选择">&lt;/p>
 &lt;p>RPC 协议的设计需要考虑以下内容：&lt;/p>
 &lt;ul>
 &lt;li>通用性： 统一的二进制格式，跨语言、跨平台、多传输层协议支持&lt;/li>
@@ -57,7 +57,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;li>易用性上，Triple 除了支持原生 gRPC 所推荐的 Protobuf 序列化外，使用通用的方式支持了 Hessian / JSON 等其他序列化，能让用户更方便的升级到 Triple 协议。对原有的 Dubbo 服务而言，修改或增加 Triple 协议 只需要在声明服务的代码块添加一行协议配置即可，改造成本几乎为 0。&lt;/li>
 &lt;/ul>
 &lt;h2 id="triple-协议">Triple 协议&lt;/h2>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/concepts/triple.png" alt="Triple 协议通信方式">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/triple.png" alt="Triple 协议通信方式">&lt;/p>
 &lt;p>现状&lt;/p>
 &lt;ul>
 &lt;li>
@@ -108,7 +108,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;p>在Cloud Native的潮流下，跨平台、跨厂商、跨环境的系统间互操作性的需求必然会催生基于开放标准的RPC技术，而gRPC顺应了历史趋势，得到了越来越广泛地应用。在微服务领域，Triple协议的提出与落地，是 Dubbo3 迈向云原生微服务的一大步。&lt;/p>
 &lt;h2 id="dubbo2">Dubbo2&lt;/h2>
 &lt;h3 id="protocol-spec">Protocol SPEC&lt;/h3>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/dev/dubbo_protocol_header.png" alt="/dev-guide/images/dubbo_protocol_header.jpg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo_protocol_header.png" alt="/dev-guide/images/dubbo_protocol_header.jpg">&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Magic - Magic High &amp;amp; Magic Low (16 bits)&lt;/p>
@@ -186,11 +186,11 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Dubbo version bytes (换行符)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Service name bytes (换行符)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Dubbo协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/dubbo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/dubbo/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Dubbo协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/dubbo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/dubbo/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>Dubbo 缺省协议采用单一长连接和 NIO 异步通讯，适合于小数据量大并发的服务调用，以及服务消费者机器数远大于服务提供者机器数的情况。&lt;/p>
 &lt;p>反之，Dubbo 缺省协议不适合传送大数据量的服务，比如传文件，传视频等，除非请求量很低。&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/user/dubbo-protocol.jpg" alt="dubbo-protocol.jpg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-protocol.jpg" alt="dubbo-protocol.jpg">&lt;/p>
 &lt;ul>
 &lt;li>Transporter: mina, netty, grizzy&lt;/li>
 &lt;li>Serialization: dubbo, hessian2, java, json&lt;/li>
@@ -290,7 +290,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;p>因 dubbo 协议采用单一长连接，如果每次请求的数据包大小为 500KByte，假设网络为千兆网卡 &lt;strong>1024Mbit=128MByte&lt;/strong>，每条连接最大 7MByte (不同的环境可能不一样)，单个服务提供者的 TPS(每秒处理事务数)最大为：128MByte / 500KByte = 262。单个消费者调用单个服务提供者的 TPS (每秒处理事务数)最大为：7MByte / 500KByte = 14。如果能接受，可以考虑使用，否则网络将成为瓶颈。&lt;/p>
 &lt;h3 id="q3">Q3&lt;/h3>
 &lt;p>为什么采用异步单一长连接?&lt;/p>
-&lt;p>因为服务的现状大都是服务提供者少，通常只有几台机器，而服务的消费者多，可能整个网站都在访问该服务，比如 Morgan 的提供者只有 6 台提供者，却有上百台消费者，每天有 1.5 亿次调用，如果采用常规的 hessian 服务，服务提供者很容易就被压跨，通过单一连接，保证单一消费者不会压死提供者，长连接，减少连接握手验证等，并使用异步 IO，复用线程池，防止 C10K 问题。&lt;/p></description></item><item><title>Docs3-V2: Triple协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/</guid><description/></item><item><title>Docs3-V2: Rest协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/rest/</guid><description>
+&lt;p>因为服务的现状大都是服务提供者少，通常只有几台机器，而服务的消费者多，可能整个网站都在访问该服务，比如 Morgan 的提供者只有 6 台提供者，却有上百台消费者，每天有 1.5 亿次调用，如果采用常规的 hessian 服务，服务提供者很容易就被压跨，通过单一连接，保证单一消费者不会压死提供者，长连接，减少连接握手验证等，并使用异步 IO，复用线程池，防止 C10K 问题。&lt;/p></description></item><item><title>Docs3-V2: Triple协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/</guid><description/></item><item><title>Docs3-V2: Rest协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/rest/</guid><description>
 &lt;p>基于标准的 Java REST API——JAX-RS 2.0（Java API for RESTful Web Services 的简写）实现的 REST 调用支持&lt;/p>
 &lt;h3 id="快速入门">快速入门&lt;/h3>
 &lt;p>在 dubbo 中开发一个 REST 风格的服务会比较简单，下面以一个注册用户的简单服务为例说明。&lt;/p>
@@ -728,7 +728,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后将这个 ExceptionMapper 添加到 XML 配置中即可：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;rest&amp;#34;&lt;/span> port=&lt;span style="color:#2aa198">&amp;#34;8888&amp;#34;&lt;/span> extension=&lt;span style="color:#2aa198">&amp;#34;xxx.MyValidationExceptionMapper&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: gRPC协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/grpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/grpc/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: gRPC协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/grpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/grpc/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>Dubbo 自 2.7.5 版本开始支持 gRPC 协议，对于计划使用 HTTP/2 通信，或者想利用 gRPC 带来的 Stream、反压、Reactive 编程等能力的开发者来说，
 都可以考虑启用 gRPC 协议。&lt;/p>
@@ -756,7 +756,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;/ol>
 &lt;blockquote>
 &lt;p>除了原生 StreamObserver 接口类型之外，Dubbo 还支持 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-grpc/dubbo-samples-rxjava">RxJava&lt;/a>、&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-grpc/dubbo-samples-reactor">Reactor&lt;/a> 编程风格的 API。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: HTTP协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/http/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/http/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: HTTP协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/http/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/http/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>基于 HTTP 表单的远程调用协议，采用 Spring 的 HttpInvoker 实现，&lt;code>2.3.0&lt;/code> 以上版本支持。&lt;/p>
 &lt;ul>
@@ -775,7 +775,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>http短连接，协议标准化且易读，容易对接外部系统，适用于上层业务模块。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
-&lt;p>从 Dubbo 3 开始，Http 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
+&lt;p>从 Dubbo 3 开始，Http 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://static.dubbo.apache.org/next/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo.extensions&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo-rpc-http&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -803,7 +803,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;li>协议的端口 &lt;code>&amp;lt;dubbo:protocol port=&amp;quot;8080&amp;quot; /&amp;gt;&lt;/code> 必须与 servlet 容器的端口相同，&lt;/li>
 &lt;li>协议的上下文路径 &lt;code>&amp;lt;dubbo:protocol contextpath=&amp;quot;foo&amp;quot; /&amp;gt;&lt;/code> 必须与 servlet 应用的上下文路径相同。&lt;/li>
 &lt;/ul>
-&lt;/blockquote></description></item><item><title>Docs3-V2: Thrift协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/thrift/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/thrift/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: Thrift协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/thrift/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/thrift/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>当前 dubbo 支持的 thrift 协议是对 thrift 原生协议的扩展，在原生协议的基础上添加了一些额外的头信息，比如 service name，magic number 等。&lt;code>2.3.0&lt;/code> 以上版本支持。&lt;/p>
 &lt;p>&lt;a href="http://thrift.apache.org">Thrift&lt;/a> 是 Facebook 捐给 Apache 的一个 RPC 框架。&lt;/p>
@@ -812,7 +812,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;p>适用于 SOA 标准 RPC 框架。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="依赖">依赖&lt;/h3>
-&lt;p>从 Dubbo 3 开始，Thrift 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
+&lt;p>从 Dubbo 3 开始，Thrift 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://static.dubbo.apache.org/next/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo.extensions&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo-rpc-native-thrift&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -829,7 +829,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://github.com/apache/dubbo/tree/master/dubbo-rpc/dubbo-rpc-thrift/src/test/java/org/apache/dubbo/rpc/protocol/thrift">dubbo 项目中的示例代码&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>Thrift 不支持 null 值，即：不能在协议中传递 null 值&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: Rmi协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/rmi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/rmi/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: Rmi协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/rmi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/rmi/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>RMI 协议采用 JDK 标准的 &lt;code>java.rmi.*&lt;/code> 实现，采用阻塞式短连接和 JDK 标准序列化方式。&lt;/p>
 &lt;ul>
@@ -850,7 +850,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;p>是 Java 的一组拥护开发分布式应用程序的 API，实现了不同操作系统之间程序的方法调用。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="引入依赖">引入依赖&lt;/h3>
-&lt;p>从 Dubbo 3 开始，RMI 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
+&lt;p>从 Dubbo 3 开始，RMI 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://static.dubbo.apache.org/next/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo.extensions&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo-rpc-rmi&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -896,7 +896,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>存在反序列化安全风险。&lt;/strong> 请检查应用：将 commons-collections3 请升级到 &lt;a href="https://commons.apache.org/proper/commons-collections/release_3_2_2.html">3.2.2&lt;/a>；将 commons-collections4 请升级到 &lt;a href="https://commons.apache.org/proper/commons-collections/release_4_1.html">4.1&lt;/a>。新版本的 commons-collections 解决了该问题。&lt;/li>
 &lt;/ul>
-&lt;/blockquote></description></item><item><title>Docs3-V2: Redis协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/redis/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: Redis协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/redis/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>基于 Redis 实现的 RPC 协议。 &lt;code>2.3.0&lt;/code> 以上版本支持。&lt;/p>
 &lt;p>&lt;a href="http://redis.io">Redis&lt;/a> 是一个高效的 KV 存储服务器。&lt;/p>
@@ -904,7 +904,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;p>缓存，限流，分布式锁等&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="引入依赖">引入依赖&lt;/h3>
-&lt;p>从 Dubbo 3 开始，Redis 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
+&lt;p>从 Dubbo 3 开始，Redis 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://static.dubbo.apache.org/next/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo.extensions&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo-rpc-redis&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -925,7 +925,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中 &amp;ldquo;p:xxx&amp;rdquo; 为 spring 的标准 p 标签&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;cache&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.CacheService&amp;#34;&lt;/span> url=&lt;span style="color:#2aa198">&amp;#34;redis://10.20.153.10:6379&amp;#34;&lt;/span> p:set=&lt;span style="color:#2aa198">&amp;#34;putFoo&amp;#34;&lt;/span> p:get=&lt;span style="color:#2aa198">&amp;#34;getFoo&amp;#34;&lt;/span> p:delete=&lt;span style="color:#2aa198">&amp;#34;removeFoo&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>方法名建议和 redis 的标准方法名相同，即：get(key), set(key, value), delete(key)。&lt;/p>
-&lt;p>如果方法名和 redis 的标准方法名不相同，则需要配置映射关系：&lt;/p></description></item><item><title>Docs3-V2: Hessian协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/hessian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/hessian/</guid><description>
+&lt;p>如果方法名和 redis 的标准方法名不相同，则需要配置映射关系：&lt;/p></description></item><item><title>Docs3-V2: Hessian协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/hessian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/hessian/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>Hessian 协议用于集成 Hessian 的服务，Hessian 底层采用 Http 通讯，采用 Servlet 暴露服务，Dubbo 缺省内嵌 Jetty 作为服务器实现。&lt;/p>
 &lt;p>&lt;a href="http://hessian.caucho.com">Hessian&lt;/a> 是 Caucho 开源的一个 RPC 框架，其通讯效率高于 WebService 和 Java 自带的序列化。&lt;/p>
@@ -952,7 +952,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;p>hessian是一个轻量级的RPC服务，是基于Binary-RPC协议实现的，序列化与反序列化实例。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="依赖">依赖&lt;/h3>
-&lt;p>从 Dubbo 3 开始，Hessian 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
+&lt;p>从 Dubbo 3 开始，Hessian 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://static.dubbo.apache.org/next/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo.extensions&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo-rpc-hessian&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -974,7 +974,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;hessian2&amp;#34;&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;hessian&amp;#34;&lt;/span> port=&lt;span style="color:#2aa198">&amp;#34;8081&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="直连">直连&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;helloService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;HelloWorld&amp;#34;&lt;/span> url=&lt;span style="color:#2aa198">&amp;#34;hessian://10.20.153.10:8080/helloWorld&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Webservice协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/webservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/webservice/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: Webservice协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/webservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/webservice/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>基于 WebService 的远程调用协议，基于 &lt;a href="http://cxf.apache.org">Apache CXF&lt;/a> 的 &lt;code>frontend-simple&lt;/code> 和 &lt;code>transports-http&lt;/code> 实现。&lt;code>2.3.0&lt;/code> 以上版本支持。&lt;/p>
 &lt;p>CXF 是 Apache 开源的一个 RPC 框架，由 Xfire 和 Celtix 合并而来。&lt;/p>
@@ -1000,7 +1000,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;p>发布一个服务（对内/对外），不考虑客户端类型，不考虑性能，建议使用webservice。服务端已经确定使用webservice，客户端不能选择，必须使用webservice。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="依赖">依赖&lt;/h3>
-&lt;p>从 Dubbo 3 开始，Webservice 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
+&lt;p>从 Dubbo 3 开始，Webservice 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://static.dubbo.apache.org/next/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo.extensions&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo-rpc-webservice&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -1049,7 +1049,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;li>协议的端口 &lt;code>&amp;lt;dubbo:protocol port=&amp;quot;8080&amp;quot; /&amp;gt;&lt;/code> 必须与 servlet 容器的端口相同。&lt;/li>
 &lt;li>协议的上下文路径 &lt;code>&amp;lt;dubbo:protocol contextpath=&amp;quot;foo&amp;quot; /&amp;gt;&lt;/code> 必须与 servlet 应用的上下文路径相同。&lt;/li>
 &lt;/ul>
-&lt;/blockquote></description></item><item><title>Docs3-V2: Memcached协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/memcached/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/memcached/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: Memcached协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/memcached/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/memcached/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>基于 memcached 实现的 RPC 协议。 &lt;code>2.3.0&lt;/code> 以上版本支持。&lt;/p>
 &lt;p>&lt;a href="http://memcached.org/">Memcached&lt;/a> 是一个高效的 KV 缓存服务器。&lt;/p>
@@ -1057,7 +1057,7 @@ gRPC 的优势由HTTP2 和 Protobuf 继承而来。&lt;/p>
 &lt;p>缓解数据库压力，提高交互速度等。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="引入依赖">引入依赖&lt;/h3>
-&lt;p>从 Dubbo 3 开始，Memcached 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
+&lt;p>从 Dubbo 3 开始，Memcached 协议已经不再内嵌在 Dubbo 中，需要单独引入独立的&lt;a href="https://static.dubbo.apache.org/next/zh/release/dubbo-spi-extensions/#dubbo-rpc">模块&lt;/a>。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.dubbo.extensions&lt;span style="color:#268bd2">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>dubbo-rpc-memcached&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>

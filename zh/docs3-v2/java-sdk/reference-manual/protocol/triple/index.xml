@@ -1,6 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Triple协议</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/</link><description>Recent content in Triple协议 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 协议概述</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Triple协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/</link><description>Recent content in Triple协议 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 协议概述</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/overview/</guid><description>
 &lt;h2 id="triple-概述">Triple 概述&lt;/h2>
-&lt;p>&lt;code>Triple&lt;/code> 协议的格式和原理请参阅 &lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/concepts/rpc-protocol/">RPC 通信协议&lt;/a>&lt;/p>
+&lt;p>&lt;code>Triple&lt;/code> 协议的格式和原理请参阅 &lt;a href="https://static.dubbo.apache.org/next/zh/docs/concepts/rpc-protocol/">RPC 通信协议&lt;/a>&lt;/p>
 &lt;p>根据 Triple 设计的目标，&lt;code>Triple&lt;/code> 协议有以下优势&lt;/p>
 &lt;ul>
 &lt;li>具备跨语言交互的能力，传统的多语言多 SDK 模式和 Mesh 化跨语言模式都需要一种更通用易扩展的数据传输协议。&lt;/li>
@@ -22,7 +22,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;artifactId&amp;gt;&lt;/span>protobuf-java&lt;span style="color:#268bd2">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>3.19.4&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: IDL 方式使用 Triple</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/idl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/idl/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: IDL 方式使用 Triple</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/idl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/idl/</guid><description>
 &lt;p>这篇教程会通过从零构建一个简单的工程来演示如何基于 IDL 方式使用 Dubbo Triple&lt;/p>
 &lt;h2 id="前置条件">前置条件&lt;/h2>
 &lt;ul>
@@ -223,7 +223,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="11-打开新的终端启动客户端">11. 打开新的终端，启动客户端&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$ mvn org.codehaus.mojo:exec-maven-plugin:3.0.0:java -Dexec.mainClass=&amp;#34;org.apache.dubbo.MyDubboClient&amp;#34;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Received reply:message: &amp;#34;Hello,Demo!&amp;#34;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: POJO 方式使用 Triple</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/pojo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/pojo/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: POJO 方式使用 Triple</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/pojo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/pojo/</guid><description>
 &lt;p>这篇教程会通过从零构建一个简单的工程来演示如何基于 POJO 方式使用 Dubbo Triple, 在应用不改变已有接口定义的同时升级到 Triple 协议。&lt;/p>
 &lt;h3 id="实现原理">实现原理&lt;/h3>
 &lt;p>通过上面介绍的升级过程，我们可以很简单的通过修改协议类型来完成升级。框架是怎么帮我们做到这些的呢？&lt;/p>
@@ -399,7 +399,7 @@
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$ mvn org.codehaus.mojo:exec-maven-plugin:3.0.0:java -Dexec.mainClass=&amp;#34;org.apache.dubbo.MyDubboClient&amp;#34;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Received reply:message: &amp;#34;Hello,Demo!&amp;#34;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用说明</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/guide/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 使用说明</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/guide/</guid><description>
 &lt;p>Triple 协议是 Dubbo3 的主力协议，完整兼容 gRPC over HTTP/2，并在协议层面扩展了负载均衡和流量控制相关机制。本文档旨在指导用户正确的使用 Triple 协议。&lt;/p>
 &lt;p>在开始前，需要决定服务使用的序列化方式，如果为新服务，推荐使用 protobuf 作为默认序列化，在性能和跨语言上的效果都会更好。如果是原有服务想进行协议升级，Triple 协议也已经支持其他序列化方式，如 Hessian / JSON 等&lt;/p>
 &lt;h3 id="protobuf">Protobuf&lt;/h3>
@@ -659,7 +659,7 @@ onCompleted&lt;/p>
 &lt;h3 id="其他序列化方式">其他序列化方式&lt;/h3>
 &lt;p>省略上文中的 1-3 步，指定 Provider 和 Consumer 使用的协议即可完成协议升级。&lt;/p>
 &lt;h3 id="示例程序">示例程序&lt;/h3>
-&lt;p>本文的示例程序可以在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple">triple-samples&lt;/a> 找到&lt;/p></description></item><item><title>Docs3-V2: Dubbo2 协议迁移</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/migration/</guid><description>
+&lt;p>本文的示例程序可以在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple">triple-samples&lt;/a> 找到&lt;/p></description></item><item><title>Docs3-V2: Dubbo2 协议迁移</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/migration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/migration/</guid><description>
 &lt;h2 id="dubbo2-协议迁移流程">Dubbo2 协议迁移流程&lt;/h2>
 &lt;p>Dubbo2 的用户使用 dubbo 协议 + 自定义序列化，如 hessian2 完成远程调用。&lt;/p>
 &lt;p>而 Grpc 的默认仅支持 Protobuf 序列化，对于 Java 语言中的多参数以及方法重载也无法支持。&lt;/p>
@@ -698,24 +698,24 @@ onCompleted&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="仅使用-dubbo-协议">仅使用 dubbo 协议&lt;/h3>
 &lt;p>为保证兼容性，我们先将部分 provider 升级到 &lt;code>dubbo3&lt;/code> 版本并使用 &lt;code>dubbo&lt;/code> 协议。&lt;/p>
 &lt;p>使用 &lt;code>dubbo&lt;/code> 协议启动一个 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/migration/ApiMigrationDubboProvider.java">&lt;code>Provider&lt;/code>&lt;/a> 和 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/migration/ApiMigrationDubboConsumer.java">&lt;code>Consumer&lt;/code>&lt;/a> ,完成调用，输出如下:
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/tri/dubbo3-tri-migration-dubbo-dubbo-result.png" alt="result">&lt;/p>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/tri/dubbo3-tri-migration-dubbo-dubbo-result.png" alt="result">&lt;/p>
 &lt;h3 id="同时使用-dubbo-和-triple-协议">同时使用 dubbo 和 triple 协议&lt;/h3>
 &lt;p>对于线上服务的升级，不可能一蹴而就同时完成 provider 和 consumer 升级, 需要按步操作，保证业务稳定。
 第二步, provider 提供双协议的方式同时支持 dubbo + tri 两种协议的客户端。&lt;/p>
 &lt;p>结构如图所示:
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/tri/migrate-dubbo-tri-strust.png" alt="strust">&lt;/p>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/tri/migrate-dubbo-tri-strust.png" alt="strust">&lt;/p>
 &lt;blockquote>
 &lt;p>按照推荐升级步骤，provider 已经支持了tri协议，所以 dubbo3的 consumer 可以直接使用 tri 协议&lt;/p>
 &lt;/blockquote>
 &lt;p>使用&lt;code>dubbo&lt;/code>协议和&lt;code>triple&lt;/code>协议启动&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/migration/ApiMigrationBothProvider.java">&lt;code>Provider&lt;/code>&lt;/a>和&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/migration/ApiMigrationBothConsumer.java">&lt;code>Consumer&lt;/code>&lt;/a>,完成调用，输出如下:&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/tri/dubbo3-tri-migration-both-dubbo-tri-result.png" alt="result">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/tri/dubbo3-tri-migration-both-dubbo-tri-result.png" alt="result">&lt;/p>
 &lt;h3 id="仅使用-triple-协议">仅使用 triple 协议&lt;/h3>
 &lt;p>当所有的 consuemr 都升级至支持 &lt;code>Triple&lt;/code> 协议的版本后，provider 可切换至仅使用 &lt;code>Triple&lt;/code> 协议启动&lt;/p>
 &lt;p>结构如图所示:
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/tri/migrate-only-tri-strust.png" alt="strust">&lt;/p>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/tri/migrate-only-tri-strust.png" alt="strust">&lt;/p>
 &lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/migration/ApiMigrationTriProvider.java">Provider&lt;/a>
 和 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/migration/ApiMigrationTriConsumer.java">Consumer&lt;/a> 完成调用，输出如下:&lt;/p>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/tri/dubbo3-tri-migration-tri-tri-result.png" alt="result">&lt;/p></description></item><item><title>Docs3-V2: Streaming 通信</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/streaming/</guid><description>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/tri/dubbo3-tri-migration-tri-tri-result.png" alt="result">&lt;/p></description></item><item><title>Docs3-V2: Streaming 通信</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/protocol/triple/streaming/</guid><description>
 &lt;h2 id="流的实现原理">流的实现原理&lt;/h2>
 &lt;p>&lt;code>Triple&lt;/code>协议的流模式&lt;/p>
 &lt;ul>
@@ -737,11 +737,11 @@ onCompleted&lt;/p>
 &lt;p>Stream 分为以下三种:&lt;/p>
 &lt;ul>
 &lt;li>SERVER_STREAM(服务端流)
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/tri/migrate-server-stream.png" alt="SERVER_STREAM">&lt;/li>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/tri/migrate-server-stream.png" alt="SERVER_STREAM">&lt;/li>
 &lt;li>CLIENT_STREAM(客户端流)
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/tri/migrate-client-stream.png" alt="CLIENT_STREAM">&lt;/li>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/tri/migrate-client-stream.png" alt="CLIENT_STREAM">&lt;/li>
 &lt;li>BIDIRECTIONAL_STREAM(双向流)
-&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/migration/tri/migrate-bi-stream.png" alt="BIDIRECTIONAL_STREAM">&lt;/li>
+&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/migration/tri/migrate-bi-stream.png" alt="BIDIRECTIONAL_STREAM">&lt;/li>
 &lt;/ul>
 &lt;blockquote>
 &lt;p>由于 &lt;code>java&lt;/code> 语言的限制，BIDIRECTIONAL_STREAM 和 CLIENT_STREAM 的实现是一样的。&lt;/p>

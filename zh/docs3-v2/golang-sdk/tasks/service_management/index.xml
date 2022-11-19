@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 服务治理</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/service_management/</link><description>Recent content in 服务治理 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/service_management/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 自定义服务调用中间件</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/service_management/aop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/service_management/aop/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 服务治理</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/service_management/</link><description>Recent content in 服务治理 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/service_management/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 自定义服务调用中间件</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/service_management/aop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/service_management/aop/</guid><description>
 &lt;p>参考samples &lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/filter">dubbo-go-samples/filter&lt;/a>&lt;/p>
 &lt;h2 id="1-准备工作">1. 准备工作&lt;/h2>
 &lt;ul>
@@ -45,7 +45,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#268bd2">Println&lt;/span>(&lt;span style="color:#2aa198">&amp;#34;MyClientFilter OnResponse is called&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> result
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 基于Grpc的健康检查</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/service_management/triple-health-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/service_management/triple-health-check/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 基于Grpc的健康检查</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/service_management/triple-health-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/service_management/triple-health-check/</guid><description>
 &lt;h2 id="1-grpc健康检查">1. Grpc健康检查&lt;/h2>
 &lt;p>Grpc健康检查是通过一个普通的用户rpc调用进行实现，Grpc的健康检查定义了如下的protobuf，这样就能实现所有的Grpc协议健康检查的互通。&lt;/p>
 &lt;blockquote>
@@ -132,10 +132,10 @@
 &lt;ul>
 &lt;li>启动dubbo-go-samples中的&lt;a href="https://github.com/apache/dubbo-go-samples/tree/master/rpc/triple/pb/dubbogo-grpc/go-server">triple服务&lt;/a>，提供&lt;code>org.apache.dubbogo.samples.api.Greeter&lt;/code>服务。使用grpc-health-probe检查该服务的健康状态，&lt;code>grpc-health-probe -addr=localhost:20000 -service &amp;quot;org.apache.dubbogo.samples.api.Greeter&amp;quot;&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/docs3-v2/golang-sdk/tasks/service_management/triple-health-check/health-check.png" alt="image-health-check">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/docs3-v2/golang-sdk/tasks/service_management/triple-health-check/health-check.png" alt="image-health-check">&lt;/p>
 &lt;h4 id="参考">参考：&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">https://github.com/grpc/grpc/blob/master/doc/health-checking.md&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/grpc/grpc-go/tree/master/health">https://github.com/grpc/grpc-go/tree/master/health&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: 优雅上下线</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/service_management/graceful_shutdown/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/golang-sdk/tasks/service_management/graceful_shutdown/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: 优雅上下线</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/service_management/graceful_shutdown/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/golang-sdk/tasks/service_management/graceful_shutdown/</guid><description>
 &lt;h1 id="优雅上下线">优雅上下线&lt;/h1></description></item></channel></rss>

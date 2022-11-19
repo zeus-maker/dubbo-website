@@ -1,6 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 性能优化 &amp; 基准测试</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/performance/</link><description>Recent content in 性能优化 &amp; 基准测试 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs/performance/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 基准测试</title><link>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/performance/benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chickenlj.github.io/incubator-dubbo-website/zh/docs/performance/benchmarking/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 性能优化 &amp; 基准测试</title><link>https://static.dubbo.apache.org/next/zh/docs/performance/</link><description>Recent content in 性能优化 &amp; 基准测试 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs/performance/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 基准测试</title><link>https://static.dubbo.apache.org/next/zh/docs/performance/benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/performance/benchmarking/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://chickenlj.github.io/incubator-dubbo-website/zh/docs3-v2/java-sdk/reference-manual/performance/benchmarking/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/benchmarking/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;h2 id="1-benchmark-结论">1 Benchmark 结论&lt;/h2>
 &lt;p>对比 2.x 版本，Dubbo3 版本&lt;/p>
@@ -41,13 +41,13 @@
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="22-数据分析">2.2 数据分析&lt;/h3>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/performance/registry-mem.svg" alt="//imgs/v3/performance/registry-mem.svg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/registry-mem.svg" alt="//imgs/v3/performance/registry-mem.svg">&lt;/p>
 &lt;p>&lt;br />图一 服务发现模型内存占用变化&lt;br />&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>Dubbo3 接口级服务发现模型，常驻内存较 2.x 版本下降约 50%&lt;/li>
 &lt;li>Dubbo3 应用级服务发现模型，常驻内存较 2.x 版本下降约 75%&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/performance/registry-gc.svg" alt="//imgs/v3/performance/registry-gc.svg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/registry-gc.svg" alt="//imgs/v3/performance/registry-gc.svg">&lt;/p>
 &lt;p>&lt;br />图二 服务发现模型 GC 变化&lt;br />&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>Dubbo3 接口级服务发现模型，YGC 次数 2.x 版本大幅下降，从数百次下降到十几次&lt;/li>
@@ -123,13 +123,13 @@
 &lt;/tbody>
 &lt;/table>
 &lt;h4 id="321-dubbo-协议不同版本实现对比">3.2.1 Dubbo 协议不同版本实现对比&lt;/h4>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/performance/rpc-dubbo.svg" alt="//imgs/v3/performance/rpc-dubbo.svg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/rpc-dubbo.svg" alt="//imgs/v3/performance/rpc-dubbo.svg">&lt;/p>
 &lt;p>&lt;br />图三 Dubbo协议在不同版本的实现对比&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>就 Dubbo RPC + Hessian 的默认组合来说，Dubbo3 与 Dubbo2 在性能上在不同调用场景下基本持平&lt;/li>
 &lt;/ul>
 &lt;h4 id="322-dubbo协议-vs-triple协议">3.2.2 Dubbo协议 vs Triple协议&lt;/h4>
-&lt;p>&lt;img src="https://chickenlj.github.io/incubator-dubbo-website/imgs/v3/performance/rpc-triple.svg" alt="//imgs/v3/performance/rpc-triple.svg">&lt;/p>
+&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/rpc-triple.svg" alt="//imgs/v3/performance/rpc-triple.svg">&lt;/p>
 &lt;p>&lt;br />图四 Triple vs Dubbo&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>单纯看 Consumer &amp;lt;-&amp;gt; Provider 的点对点调用，可以看出 Triple 协议本身并不占优势，同样使用 Protobuf 序列化方式，Dubbo RPC 协议总体性能还是要优于 Triple。&lt;br />&lt;br />&lt;/li>
