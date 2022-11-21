@@ -1,15 +1,15 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Contributor 指南</title><link>https://static.dubbo.apache.org/next/zh/blog/contact/contributor/</link><description>Recent content in Contributor 指南 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/blog/contact/contributor/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: 如何成为 Dubbo Committer</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA-dubbo-committer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA-dubbo-committer/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Contributor 指南</title><link>http://static.dubbo.apache.org:8080/zh/blog/contact/contributor/</link><description>Recent content in Contributor 指南 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/blog/contact/contributor/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog: 如何成为 Dubbo Committer</title><link>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA-dubbo-committer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA-dubbo-committer/</guid><description>
 &lt;p>每个人都可以成为 Apache 项目的贡献者。作为一个贡献者只是意味着你对项目感兴趣并以某种方式做出贡献，从提出合理的问题（这些问题记录了项目并向开发人员提供反馈）到提供新的特性作为补丁。&lt;/p>
 &lt;p>如果你成为对一个项目有价值的贡献者，你有可能被邀请成为一个 Committer。Committer 是 ASF（Apache 软件基金会）中用来表示提交特定项目的人的术语。它给你带来对项目仓库和资源写的权限。&lt;/p>
 &lt;p>在 Dubbo 社区，如果一个 Committer 获得大量的优秀成绩，就可以被邀请加入项目管理委员会（PMC）。&lt;/p>
 &lt;p>当您不熟悉ASF使用的开源的开发过程时，有时难以理解的一点，就是我们更重视社区而不是代码。一个强大而健康的社区将受到尊重，成为一个有趣和有益的地方。更重要的是，一个多元化和健康的社区可以长时间的持续支持代码，即使个别公司在这个领域来来往往，也是如此。&lt;/p>
 &lt;p>更多详细信息可以在 &lt;a href="https://community.apache.org/contributors/">这里&lt;/a> 找到。&lt;/p>
 &lt;h3 id="我可以贡献什么">我可以贡献什么？&lt;/h3>
-&lt;p>请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%90%91%E5%AF%BC/">新的贡献者指南&lt;/a>。&lt;/p></description></item><item><title>Blog: 新贡献者向导</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%90%91%E5%AF%BC/</guid><description>
+&lt;p>请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%90%91%E5%AF%BC/">新的贡献者指南&lt;/a>。&lt;/p></description></item><item><title>Blog: 新贡献者向导</title><link>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%96%B0%E8%B4%A1%E7%8C%AE%E8%80%85%E5%90%91%E5%AF%BC/</guid><description>
 &lt;p>这篇向导旨在给正在准备向 Dubbo 提交贡献的新手提供指导。&lt;/p>
 &lt;h3 id="邮件列表描述">邮件列表描述&lt;/h3>
 &lt;p>邮件列表是 Dubbo 官方推荐的讨论方式，所有与 Dubbo 相关的内容都可以在这里讨论，请点击 &lt;a href="https://github.com/apache/dubbo/issues/1393">Issue&lt;/a> 了解更多关于邮件列表订阅的内容&lt;/p>
-&lt;p>如需订阅如下邮件列表，请参考 &lt;a href="https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E9%82%AE%E4%BB%B6%E5%88%97%E8%A1%A8%E8%AE%A2%E9%98%85%E5%90%91%E5%AF%BC/">邮件列表订阅向导&lt;/a>&lt;/p>
+&lt;p>如需订阅如下邮件列表，请参考 &lt;a href="http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E9%82%AE%E4%BB%B6%E5%88%97%E8%A1%A8%E8%AE%A2%E9%98%85%E5%90%91%E5%AF%BC/">邮件列表订阅向导&lt;/a>&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="mailto:dev@dubbo.apache.org">dev@dubbo.apache.org&lt;/a>：开发邮件列表，您在使用或者开发 Dubbo 的过程中遇到的任何问题，都可以在这里进行提问。&lt;/li>
 &lt;li>&lt;a href="mailto:commits@dubbo.apache.org">commits@dubbo.apache.org&lt;/a>：所有的提交内容都会推送到这个邮件列表，如果您对 Dubbo 的进展感兴趣，可以订阅这个邮件列表。&lt;/li>
@@ -98,10 +98,10 @@
 &lt;ol>
 &lt;li>安装 checkstyle 插件(IDEA可以在插件市场搜索)&lt;/li>
 &lt;li>插件安装好后，在IDEA的settings==&amp;gt;tool==&amp;gt;checkstyle中设置:
-&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/checkstyle1.png" alt="checkstyle1">
-&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/checkstyle2.png" alt="checkstyle2">
-&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/checkstyle3.png" alt="checkstyle3">
-&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/checkstyle4.png" alt="checkstyle4">&lt;/li>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/checkstyle1.png" alt="checkstyle1">
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/checkstyle2.png" alt="checkstyle2">
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/checkstyle3.png" alt="checkstyle3">
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/checkstyle4.png" alt="checkstyle4">&lt;/li>
 &lt;/ol>
 &lt;p>&lt;strong>注意事项&lt;/strong>&lt;/p>
 &lt;p>使用 dubbo_codestyle_for_idea.xml 为你的 IDEA 设置代码格式是贡献代码前至关重要的一个步骤，否则你将会无法通过 CI 的代码风格校验，下面几个步骤给你演示了如何配置代码格式：&lt;/p>
@@ -112,7 +112,7 @@
 设置完成后，IDEA 会帮助你自动 reformat 代码&lt;/li>
 &lt;/ol>
 &lt;h3 id="参与发布投票">参与发布投票&lt;/h3>
-&lt;p>参与发布投票是一种重要的贡献社区的方式，Dubbo 社区非常欢迎和鼓励任何人参与投票，每当一个版本需要正式发布的时候，会在开发者邮件列表上进行发布投票，只有当投票取得通过之后，才会正式发布，可以参考这个 &lt;a href="https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist">检查列表&lt;/a> 对源码进行合规性检查。如果有任何问题，可以在开发者邮件列表上提问。&lt;/p></description></item><item><title>Blog: 邮件列表订阅向导</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E9%82%AE%E4%BB%B6%E5%88%97%E8%A1%A8%E8%AE%A2%E9%98%85%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E9%82%AE%E4%BB%B6%E5%88%97%E8%A1%A8%E8%AE%A2%E9%98%85%E5%90%91%E5%AF%BC/</guid><description>
+&lt;p>参与发布投票是一种重要的贡献社区的方式，Dubbo 社区非常欢迎和鼓励任何人参与投票，每当一个版本需要正式发布的时候，会在开发者邮件列表上进行发布投票，只有当投票取得通过之后，才会正式发布，可以参考这个 &lt;a href="https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist">检查列表&lt;/a> 对源码进行合规性检查。如果有任何问题，可以在开发者邮件列表上提问。&lt;/p></description></item><item><title>Blog: 邮件列表订阅向导</title><link>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E9%82%AE%E4%BB%B6%E5%88%97%E8%A1%A8%E8%AE%A2%E9%98%85%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E9%82%AE%E4%BB%B6%E5%88%97%E8%A1%A8%E8%AE%A2%E9%98%85%E5%90%91%E5%AF%BC/</guid><description>
 &lt;p>Apache incubator 的 Dubbo 开发者邮件列表（dev@dubbo.apache.org）已经建立，请随时订阅并参考[^1]获取更多细节。&lt;/p>
 &lt;p>你也可以直接查看&lt;a href="https://lists.apache.org/list.html?dev@dubbo.apache.org">历史邮件&lt;/a>&lt;/p>
 &lt;p>下面是一个关于 Dubbo 邮件列表订阅的简短指南：&lt;/p>
@@ -188,7 +188,7 @@
 &lt;blockquote>
 &lt;p>请注意：dev@dubbo.apache.org是有效的。dev@dubbo.incubator.apache.org已经不再使用。&lt;/p>
 &lt;/blockquote>
-&lt;p>[^1] &lt;a href="https://apache.org/foundation/mailinglists.html#subscribing">https://apache.org/foundation/mailinglists.html#subscribing&lt;/a>&lt;/p></description></item><item><title>Blog: 报告安全问题</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%8A%A5%E5%91%8A%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%8A%A5%E5%91%8A%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</guid><description>
+&lt;p>[^1] &lt;a href="https://apache.org/foundation/mailinglists.html#subscribing">https://apache.org/foundation/mailinglists.html#subscribing&lt;/a>&lt;/p></description></item><item><title>Blog: 报告安全问题</title><link>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%8A%A5%E5%91%8A%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%8A%A5%E5%91%8A%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</guid><description>
 &lt;p>Apache Software Foundation 在消除其软件项目中的安全性问题方面采取严格的立场。Apache Dubbo 对与其功能和特性有关的问题非常敏感并很快提出。&lt;/p>
 &lt;h2 id="报告漏洞">报告漏洞&lt;/h2>
 &lt;p>如果您对 Dubbo 的安全性有担心，或者发现漏洞或潜在威胁，请发送电子邮件至 &lt;a href="mailto:security@dubbo.apache.org">security@dubbo.apache.org&lt;/a> 与 Apache Dubbo 安全团队联系。在邮件中，指定问题或潜在威胁的描述。还敦促您推荐重现和复制问题的方法。Dubbo 社区会在评估和分析调查结果之后与您联系。&lt;/p>
@@ -201,7 +201,7 @@
 &lt;li>制作了包含该修复程序的有关 Apache 产品的新版本。&lt;/li>
 &lt;li>该漏洞已公开宣布。&lt;/li>
 &lt;/ul>
-&lt;p>有关此过程的详细说明，请参见&lt;a href="https://www.apache.org/security/committers.html">此处&lt;/a>&lt;/p></description></item><item><title>Blog: 软件捐献向导</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E8%BD%AF%E4%BB%B6%E6%8D%90%E7%8C%AE%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E8%BD%AF%E4%BB%B6%E6%8D%90%E7%8C%AE%E5%90%91%E5%AF%BC/</guid><description>
+&lt;p>有关此过程的详细说明，请参见&lt;a href="https://www.apache.org/security/committers.html">此处&lt;/a>&lt;/p></description></item><item><title>Blog: 软件捐献向导</title><link>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E8%BD%AF%E4%BB%B6%E6%8D%90%E7%8C%AE%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E8%BD%AF%E4%BB%B6%E6%8D%90%E7%8C%AE%E5%90%91%E5%AF%BC/</guid><description>
 &lt;p>在您阅读这篇指南之前，请确保您已经向PMC确认了实际需要的 SGA。&lt;/p>
 &lt;p>如果您向 Apache Dubbo 捐赠了大量的代码或文档，则需要在合并代码或者文档之前签署&lt;a href="https://www.apache.org/licenses/#grants">软件授权书&lt;/a>。&lt;/p>
 &lt;h3 id="操作步骤">操作步骤&lt;/h3>
@@ -300,7 +300,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* Github address where your code is hosted
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* Pull request link
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: 扩展 Dubbo 向导</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%89%A9%E5%B1%95-dubbo-%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%89%A9%E5%B1%95-dubbo-%E5%90%91%E5%AF%BC/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Blog: 扩展 Dubbo 向导</title><link>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%89%A9%E5%B1%95-dubbo-%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%89%A9%E5%B1%95-dubbo-%E5%90%91%E5%AF%BC/</guid><description>
 &lt;p>Dubbo 使用微内核+插件的设计模式。内核只负责组装插件，Dubbo 的功能都是由扩展点（插件）实现，这就意味着 Dubbo 的所有功能都可以被用户定制的扩展所替代。&lt;/p>
 &lt;h3 id="dubbo-生态系统">Dubbo 生态系统&lt;/h3>
 &lt;p>我们建议您将扩展加入到 Dubbo 生态系统。使用这种模式，可以使 Dubbo 的核心仓库更干净，并且可以减少维护工作。更少的代码也可以提高核心仓库的构建速度。&lt;/p>
@@ -312,7 +312,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;version&amp;gt;&lt;/span>${dubbo.version}&lt;span style="color:#268bd2">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="src指导">Src指导&lt;/h3>
-&lt;p>通常，要实现特殊的扩展，只需要参考&lt;a href="https://static.dubbo.apache.org/next/zh/blog/contact/">开发者指南&lt;/a>，实现Dubbo必要的接口和合适的扩展即可。除此之外，还有一些其它的事项需要注意：&lt;/p>
+&lt;p>通常，要实现特殊的扩展，只需要参考&lt;a href="http://static.dubbo.apache.org:8080/zh/blog/contact/">开发者指南&lt;/a>，实现Dubbo必要的接口和合适的扩展即可。除此之外，还有一些其它的事项需要注意：&lt;/p>
 &lt;ol>
 &lt;li>良好的测试，您需要编写单元测试和冒烟测试以消除潜在的 bug。&lt;/li>
 &lt;li>没有警告，如有不可避免的警告，请使用 @SuppressWarnings 阻止它，但是请不要乱用。&lt;/li>
@@ -332,7 +332,7 @@
 &lt;li>dubbo 组的管理员会在 dubbo 组下新建一个项目并邀请您加入到这个项目。&lt;/li>
 &lt;li>一旦您接受邀请，您可以将您的项目转移到 dubbo 组下的新项目里。&lt;/li>
 &lt;li>dubbo 组的成员会对您的项目进行代码审查。随后，您可以对这些代码进行改进。&lt;/li>
-&lt;/ol></description></item><item><title>Blog: 测试覆盖率向导</title><link>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/blog/1/01/01/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87%E5%90%91%E5%AF%BC/</guid><description>
+&lt;/ol></description></item><item><title>Blog: 测试覆盖率向导</title><link>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87%E5%90%91%E5%AF%BC/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/blog/1/01/01/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87%E5%90%91%E5%AF%BC/</guid><description>
 &lt;h3 id="写单元测试的收益">写单元测试的收益&lt;/h3>
 &lt;ul>
 &lt;li>单元测试能帮助每个人深入代码细节，了解代码的功能。&lt;/li>

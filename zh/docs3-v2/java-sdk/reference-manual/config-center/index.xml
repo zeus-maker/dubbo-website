@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 配置中心</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config-center/</link><description>Recent content in 配置中心 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config-center/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: Zookeeper</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config-center/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config-center/zookeeper/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 配置中心</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config-center/</link><description>Recent content in 配置中心 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config-center/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: Zookeeper</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config-center/zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config-center/zookeeper/</guid><description>
 &lt;h2 id="1-前置条件">1 前置条件&lt;/h2>
 &lt;ul>
 &lt;li>了解 &lt;a href="../../../quick-start/spring-boot/">Dubbo 基本开发步骤&lt;/a>&lt;/li>
@@ -32,7 +32,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>config-file&lt;/code> - 外部化配置文件 key 值，默认 &lt;code>dubbo.properties&lt;/code>。&lt;code>config-file&lt;/code> 代表将 Dubbo 配置文件存储在远端注册中心时，文件在配置中心对应的 key 值，通常不建议修改此配置项。&lt;/p>
 &lt;p>&lt;strong>2. Zookeeper 配置中心增加配置&lt;/strong>
 外部化配置的存储结构如下图所示&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/zk-configcenter.jpg" alt="zk-configcenter.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/zk-configcenter.jpg" alt="zk-configcenter.jpg">&lt;/p>
 &lt;ul>
 &lt;li>namespace，用于不同配置的环境隔离。&lt;/li>
 &lt;li>config，Dubbo约定的固定节点，不可更改，所有配置和流量治理规则都存储在此节点下。&lt;/li>
@@ -51,13 +51,13 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>对配置中心而言，&lt;code>group&lt;/code> 与 &lt;code>namespace&lt;/code> 应该是全公司（集群）统一的，应该避免不同应用使用不同的值，外部化配置和治理规则也应该存放在对应的 group 与 namespace。&lt;/p>
 &lt;h2 id="4-流量治理规则">4 流量治理规则&lt;/h2>
 &lt;p>所有流量治理规则默认都存储在 &lt;code>/dubbo/config&lt;/code> 节点下，具体节点结构图如下。流量治理规则的增删改建议通过 dubbo-admin 完成，更多内容可查看 Dubbo 支持的具体流量治理能力&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/zk-configcenter-governance.jpg" alt="zk-configcenter-governance">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/zk-configcenter-governance.jpg" alt="zk-configcenter-governance">&lt;/p>
 &lt;ul>
 &lt;li>namespace，用于不同配置的环境隔离。&lt;/li>
 &lt;li>config，Dubbo 约定的固定节点，不可更改，所有配置和流量治理规则都存储在此节点下。&lt;/li>
 &lt;li>dubbo，所有服务治理规则都是全局性的，dubbo 为默认节点&lt;/li>
 &lt;li>configurators/tag-router/condition-router/migration，不同的服务治理规则类型，node value 存储具体规则内容&lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: Nacos</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config-center/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config-center/nacos/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: Nacos</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config-center/nacos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config-center/nacos/</guid><description>
 &lt;h2 id="1-前置条件">1 前置条件&lt;/h2>
 &lt;ul>
 &lt;li>了解 &lt;a href="../../../quick-start/spring-boot/">Dubbo 基本开发步骤&lt;/a>&lt;/li>
@@ -93,7 +93,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">config-file&lt;/span>: dubbo.properties &lt;span style="color:#586e75"># optional&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>config-file&lt;/code> - 全局外部化配置文件 key 值，默认 &lt;code>dubbo.properties&lt;/code>。&lt;code>config-file&lt;/code> 代表将 Dubbo 配置文件存储在远端注册中心时，文件在配置中心对应的 key 值，通常不建议修改此配置项。&lt;/p>
 &lt;p>&lt;strong>2. Nacos Server 增加配置&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/nacos-configcenter-global-properties.png" alt="nacos-configcenter-global-properties.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/nacos-configcenter-global-properties.png" alt="nacos-configcenter-global-properties.png">&lt;/p>
 &lt;p>dataId 是 &lt;code>dubbo.properties&lt;/code>，group 分组与 config-center 保持一致，如未设置则默认填 &lt;code>dubbo&lt;/code>。&lt;/p>
 &lt;h4 id="312-应用特有外部化配置">3.1.2 应用特有外部化配置&lt;/h4>
 &lt;p>&lt;strong>1. 应用开启 config-center 配置&lt;/strong>&lt;/p>
@@ -103,7 +103,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">app-config-file&lt;/span>: dubbo.properties &lt;span style="color:#586e75"># optional&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>app-config-file&lt;/code> - 当前应用特有的外部化配置文件 key 值，如 &lt;code>app-name-dubbo.properties&lt;/code>，仅在需要覆盖全局外部化配置文件 &lt;code>config-file&lt;/code> 时才配置。&lt;/p>
 &lt;p>&lt;strong>2. Nacos Server 增加配置&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/nacos-configcenter-application-properties.png" alt="nacos-configcenter-application-properties.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/nacos-configcenter-application-properties.png" alt="nacos-configcenter-application-properties.png">&lt;/p>
 &lt;p>dataId 是 &lt;code>dubbo.properties&lt;/code>，group 分组设置为应用名即 &lt;code>demo-provider&lt;/code>。&lt;/p>
 &lt;h3 id="32-设置-group-与-namespace">3.2 设置 group 与 namespace&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>dubbo
@@ -117,13 +117,13 @@
 &lt;h2 id="4-流量治理规则">4 流量治理规则&lt;/h2>
 &lt;p>对 Nacos 而言，所有流量治理规则和外部化配置都应该是全局可见的，因此相同逻辑集群内的应用都必须使用相同的 namespace 与 group。其中，namespace 的默认值是 &lt;code>public&lt;/code>，group 默认值是 &lt;code>dubbo&lt;/code>，应用不得擅自修改 namespace 与 group，除非能保持全局一致。&lt;/p>
 &lt;p>流量治理规则的增删改建议通过 dubbo-admin 完成，更多内容可查看 Dubbo 支持的流量治理能力。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/nacos-configcenter-governance.png" alt="nacos-configcenter-governance.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/nacos-configcenter-governance.png" alt="nacos-configcenter-governance.jpg">&lt;/p>
 &lt;p>流量治理规则有多种类型，不同类型的规则 dataId 的后缀是不同的：&lt;/p>
 &lt;ul>
 &lt;li>configurators，&lt;a href="../../../advanced-features-and-usage/traffic/config-rule/">覆盖规则&lt;/a>&lt;/li>
 &lt;li>tag-router，&lt;a href="../../../advanced-features-and-usage/traffic/routing-rule/#%E6%A0%87%E7%AD%BE%E8%B7%AF%E7%94%B1%E8%A7%84%E5%88%99">标签路由&lt;/a>&lt;/li>
 &lt;li>condition-router，&lt;a href="../../../advanced-features-and-usage/traffic/routing-rule/#%E6%9D%A1%E4%BB%B6%E8%B7%AF%E7%94%B1">条件路由&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: Apollo</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config-center/apollo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config-center/apollo/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: Apollo</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config-center/apollo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config-center/apollo/</guid><description>
 &lt;h2 id="1-前置条件">1 前置条件&lt;/h2>
 &lt;ul>
 &lt;li>了解 &lt;a href="../../../quick-start/spring-boot/">Dubbo 基本开发步骤&lt;/a>&lt;/li>
@@ -175,7 +175,7 @@
 2.2 group 值为任意值，则从对应的 namespace 读取配置，用户须将外部化配置写在该 namespace 下。&lt;/li>
 &lt;/ol>
 &lt;p>如以下示例是用的默认 group=&amp;lsquo;dubbo&amp;rsquo; 的全局外部化配置，即该配置可被所有应用读取到。
-&lt;img src="https://static.dubbo.apache.org/next/imgs/user/apollo-configcenter-dubbo.png" alt="apollo-configcenter-dubbo.png">&lt;/p>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/apollo-configcenter-dubbo.png" alt="apollo-configcenter-dubbo.png">&lt;/p>
 &lt;p>如果配置 group=&amp;lsquo;应用名&amp;rsquo; 则是应用特有配置，只有该应用可以读取到。&lt;/p>
 &lt;blockquote>
 &lt;p>关于外部化文件配置托管，相当于是把 &lt;code>dubbo.properties&lt;/code> 配置文件的内容存储在了 Apollo 中。每个应用都可以通过关联共享的 &lt;code>dubbo&lt;/code> namespace 继承公共配置, 进而可以单独覆盖个别配置项。&lt;/p>
@@ -189,7 +189,7 @@
 &lt;li>如果 namespace 不为空，则从对应的 namespace 值读取规则，须治理规则写在该 namespace 下。&lt;/li>
 &lt;/ol>
 &lt;p>如以下示例是通过 &lt;code>namespace='governance'&lt;/code> 将流量治理规则放在了 &lt;code>governance&lt;/code> namespace 下。
-&lt;img src="https://static.dubbo.apache.org/next/imgs/user/apollo-configcenter-governance-dubbo.png" alt="apollo-configcenter-governance-dubbo.png">&lt;/p>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/apollo-configcenter-governance-dubbo.png" alt="apollo-configcenter-governance-dubbo.png">&lt;/p>
 &lt;h3 id="33-更多-apollo-特有配置">3.3 更多 Apollo 特有配置&lt;/h3>
 &lt;p>当前 Dubbo 适配了 env、apollo.meta、apollo.cluster、apollo.id 等特有配置项，可通过 config-center 的扩展参数进行配置。&lt;/p>
 &lt;p>如&lt;/p>

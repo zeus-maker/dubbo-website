@@ -1,13 +1,13 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 附录</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/dubbo-go-pixiu/user/appendix/</link><description>Recent content in 附录 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/dubbo-go-pixiu/user/appendix/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: HTTP to Dubbo 默认转换协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/dubbo-go-pixiu/user/appendix/http-to-dubbo-default-stragety/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/dubbo-go-pixiu/user/appendix/http-to-dubbo-default-stragety/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 附录</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/dubbo-go-pixiu/user/appendix/</link><description>Recent content in 附录 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/docs3-v2/dubbo-go-pixiu/user/appendix/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: HTTP to Dubbo 默认转换协议</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/dubbo-go-pixiu/user/appendix/http-to-dubbo-default-stragety/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/dubbo-go-pixiu/user/appendix/http-to-dubbo-default-stragety/</guid><description>
 &lt;h1 id="背景">背景&lt;/h1>
 &lt;p>​ 通过 Http 提供一个统一的服务提供者视图，用户不用在乎后端Dubbo服务的版本差异，协议差异，通过简单地在Http请求中传递rpc调用的参数，完成一次Rpc调用，通过实现http调用后端dubbo服务，进一步简化后端服务设计的复杂性。&lt;/p>
 &lt;h1 id="目的">目的&lt;/h1>
 &lt;p>​ 统一Http调用后端dubbo服务的形式，方便网关产品实现 Http 调用转 dubbo 调用的实现，Dubbo能和网关更好的融合。&lt;/p>
 &lt;h1 id="conception">Conception&lt;/h1>
 &lt;h2 id="dubbo-rpc-调用的基本形式">Dubbo RPC 调用的基本形式&lt;/h2>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/pixiu/user/appendix/img1.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/pixiu/user/appendix/img1.png" alt="img">&lt;/p>
 &lt;p>希望通过提供Http调用Dubbo的方式简化 Consumer 的Rpc调用流程&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/pixiu/user/appendix/img2.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/pixiu/user/appendix/img2.png" alt="img">&lt;/p>
 &lt;p>网关会在整个服务调用的过程中承担更多的原本客户端的功能，比如负载均衡，服务治理，安全等能力，外部用户调用服务的时候将更多的关注与调用本身。&lt;/p>
 &lt;h2 id="http-request-和-http-response-的格式">Http request 和 Http response 的格式&lt;/h2>
 &lt;p>request的URL和Header中包含RPC调用的元信息，包含服务名，方法名，服务分组，服务版本，request 的 body 中包含请求的参数，参数是 &lt;strong>json list&lt;/strong> 的格式, 如果没有参数则为 &lt;em>&lt;strong>null&lt;/strong>&lt;/em>&lt;/p>
@@ -175,7 +175,7 @@
 &lt;h3 id="dubbo-协议的具体介绍-可以见文章">Dubbo 协议的具体介绍 可以见文章&lt;/h3>
 &lt;p>&lt;a href="https://dubbo.apache.org/en/blog/2018/10/05/introduction-to-the-dubbo-protocol/">https://dubbo.apache.org/en/blog/2018/10/05/introduction-to-the-dubbo-protocol/&lt;/a>&lt;/p>
 &lt;h3 id="dubbo-协议的-message-格式">Dubbo 协议的 message 格式&lt;/h3>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo_protocol_header.png" alt="img">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/dubbo_protocol_header.png" alt="img">&lt;/p>
 &lt;h4 id="dubbo-header的封装要求">Dubbo Header的封装要求&lt;/h4>
 &lt;table>
 &lt;thead>

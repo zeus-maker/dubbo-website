@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – SPI 扩展实现</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/</link><description>Recent content in SPI 扩展实现 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/index.xml" rel="self" type="application/rss+xml"/><item><title>Docsv2.7: 协议扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/protocol/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – SPI 扩展实现</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/</link><description>Recent content in SPI 扩展实现 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/index.xml" rel="self" type="application/rss+xml"/><item><title>Docsv2.7: 协议扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/protocol/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/protocol/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>RPC 协议扩展，封装远程调用细节。&lt;/p>
 &lt;p>契约：&lt;/p>
@@ -124,7 +124,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.Protocol：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxProtocol&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 调用拦截扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/filter/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 调用拦截扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/filter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/filter/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>服务提供方和服务消费方调用过程拦截，Dubbo 本身的大多功能均基于此扩展点实现，每次远程方法执行，该拦截都会被执行，请注意对性能的影响。&lt;/p>
 &lt;p>约定：&lt;/p>
@@ -192,7 +192,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.Filter：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxFilter&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 引用监听扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/invoker-listener/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/invoker-listener/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 引用监听扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/invoker-listener/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/invoker-listener/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>当有服务引用时，触发该事件。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -233,7 +233,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.InvokerListener：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxInvokerListener&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 暴露监听扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/exporter-listener/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/exporter-listener/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 暴露监听扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/exporter-listener/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/exporter-listener/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>当有服务暴露时，触发该事件。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -275,7 +275,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.ExporterListener：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxExporterListener&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 集群扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/cluster/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 集群扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/cluster/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>当有多个服务提供方时，将多个服务提供方组织成一个集群，并伪装成一个提供方。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -332,7 +332,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.cluster.Cluster：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxCluster&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 路由扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/router/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/router/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 路由扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/router/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/router/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>从多个服务提供方中选择一个进行调用。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -378,7 +378,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.cluster.RouterFactory：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxRouterFactory&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 负载均衡扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/load-balance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/load-balance/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 负载均衡扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/load-balance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/load-balance/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>从多个服务提供方中选择一个进行调用&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -422,7 +422,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.cluster.LoadBalance：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxLoadBalance&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 合并结果扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/merger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/merger/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 合并结果扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/merger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/merger/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>合并返回结果，用于分组聚合。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -468,7 +468,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.cluster.Merger：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxMerger&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 注册中心扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/registry/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 注册中心扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/registry/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>负责服务的注册与发现。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -635,7 +635,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.registry.RegistryFactory：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxRegistryFactory&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 监控中心扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/monitor/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 监控中心扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/monitor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/monitor/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>负责服务调用次和调用时间的监控。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -685,7 +685,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.monitor.MonitorFactory：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxMonitorFactory&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 扩展点加载扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/extension-factory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/extension-factory/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 扩展点加载扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/extension-factory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/extension-factory/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>扩展点本身的加载容器，可从不同容器加载扩展点。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -721,7 +721,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.common.extension.ExtensionFactory：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxExtensionFactory&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 动态代理扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/proxy-factory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/proxy-factory/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 动态代理扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/proxy-factory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/proxy-factory/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>将 &lt;code>Invoker&lt;/code> 接口转换成业务接口。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -765,7 +765,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.rpc.ProxyFactory：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxProxyFactory&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 编译器扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/compiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/compiler/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 编译器扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/compiler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/compiler/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>Java 代码编译器，用于动态生成字节码，加速调用。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -801,7 +801,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.common.compiler.Compiler：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxCompiler&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 配置中心扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/config-center/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/config-center/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 配置中心扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/config-center/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/config-center/</guid><description>
 &lt;h2 id="设计目的">设计目的&lt;/h2>
 &lt;p>配置中心的核心功能是作为 Key-Value 存储，Dubbo 框架告知配置中心其关心的 key，配置中心返回该key对应的 value 值。&lt;/p>
 &lt;p>按照应用场景划分，配置中心在 Dubbo 框架中主要承担以下职责：&lt;/p>
@@ -829,12 +829,12 @@
 &lt;h2 id="实现原理">实现原理&lt;/h2>
 &lt;h3 id="zookeeper">Zookeeper&lt;/h3>
 &lt;p>zookeeper提供了一个树状的存储模型，其实现原理如下：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/configcenter_zk_model.jpg" alt="image-20190127225608553">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/configcenter_zk_model.jpg" alt="image-20190127225608553">&lt;/p>
 &lt;p>namespace, group, key 等分别对应不同层级的 ZNode 节点，而 value 则作为根 ZNode 节点的值存储。&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>外部化配置中心 dubbo.properties&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/configcenter_zk_properties.jpg" alt="image-20190127225608553">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/configcenter_zk_properties.jpg" alt="image-20190127225608553">&lt;/p>
 &lt;p>上图展示了两个不同作用域的 dubbo.properties 文件在 zookeeper 中的存储结构：&lt;/p>
 &lt;ul>
 &lt;li>命名空间namespace都为：dubbo&lt;/li>
@@ -844,7 +844,7 @@
 &lt;/li>
 &lt;li>
 &lt;p>单个配置项&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/configcenter_zk_singleitem.jpg" alt="image-20190127225608553">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/configcenter_zk_singleitem.jpg" alt="image-20190127225608553">&lt;/p>
 &lt;p>设置优雅停机事件为15000：&lt;/p>
 &lt;ul>
 &lt;li>命名空间 namespace：dubbo&lt;/li>
@@ -855,7 +855,7 @@
 &lt;/li>
 &lt;li>
 &lt;p>服务治理规则&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/configcenter_zk_rule.jpg" alt="image-20190127225608553">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/configcenter_zk_rule.jpg" alt="image-20190127225608553">&lt;/p>
 &lt;p>上图展示了一条应用级别的条件路由规则：&lt;/p>
 &lt;ul>
 &lt;li>命名空间 namespace：dubbo&lt;/li>
@@ -878,7 +878,7 @@
 &lt;h3 id="nacos">Nacos&lt;/h3>
 &lt;p>Nacos 作为一个专业的第三方配置中心，拥有专门为配置中心设计的存储结构，包括内置的 namespace、group、dataid 等概念。并且这几个概念基本上与 Dubbo 框架抽象的配置中心是一一对应的。&lt;/p>
 &lt;p>与 Zookeeper 实现的对应关系如下：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/configcenter_nacos_model.jpg" alt="image-20190127225608553">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/configcenter_nacos_model.jpg" alt="image-20190127225608553">&lt;/p>
 &lt;p>参考上文关于 zookeeper 实现中描述的示例，这里的 dataid 可能为：&lt;/p>
 &lt;ul>
 &lt;li>外部化配置中心：dubbo.properties&lt;/li>
@@ -886,7 +886,7 @@
 &lt;li>服务治理规则：org.apache.dubbo.demo.DemoService:1.0.0:group1.configurators&lt;/li>
 &lt;/ul>
 &lt;h3 id="apollo">Apollo&lt;/h3>
-&lt;p>Apollo 与 Nacos 类似，请参考动态配置中心使用文档中关于 Apollo 部分的描述。&lt;/p></description></item><item><title>Docsv2.7: 消息派发扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/dispatcher/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/dispatcher/</guid><description>
+&lt;p>Apollo 与 Nacos 类似，请参考动态配置中心使用文档中关于 Apollo 部分的描述。&lt;/p></description></item><item><title>Docsv2.7: 消息派发扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/dispatcher/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/dispatcher/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>通道信息派发器，用于指定线程池模型。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -927,7 +927,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.remoting.Dispatcher：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxDispatcher&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 线程池扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/threadpool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/threadpool/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 线程池扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/threadpool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/threadpool/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>服务提供方线程池实现策略，当服务器收到一个请求时，需要在线程池中创建一个线程去执行服务提供方业务逻辑。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -966,7 +966,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.common.threadpool.ThreadPool：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxThreadPool&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 序列化扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/serialize/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/serialize/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 序列化扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/serialize/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/serialize/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>将对象转成字节流，用于网络传输，以及将字节流转为对象，用于在收到字节流数据后还原成对象。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1019,7 +1019,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.common.serialize.Serialization：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxSerialization&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 网络传输扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/remoting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/remoting/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 网络传输扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/remoting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/remoting/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>远程通讯的服务器及客户端传输实现。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1114,7 +1114,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.remoting.Transporter：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxTransporter&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 信息交换扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/exchanger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/exchanger/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 信息交换扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/exchanger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/exchanger/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>基于传输层之上，实现 Request-Response 信息交换语义。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1176,7 +1176,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.remoting.exchange.Exchanger：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxExchanger&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 组网扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/networker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/networker/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 组网扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/networker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/networker/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>对等网络节点组网器。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1214,7 +1214,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.remoting.p2p.Networker：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxNetworker&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: Telnet 命令扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/telnet-handler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/telnet-handler/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: Telnet 命令扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/telnet-handler/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/telnet-handler/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>所有服务器均支持 telnet 访问，用于人工干预。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1266,7 +1266,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="用法">用法&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>telnet 127.0.0.1 &lt;span style="color:#2aa198">20880&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo&amp;gt; xxx args
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 状态检查扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/status-checker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/status-checker/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 状态检查扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/status-checker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/status-checker/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>检查服务依赖各种资源的状态，此状态检查可同时用于 telnet 的 status 命令和 hosting 的 status 页面。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1309,7 +1309,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.common.status.StatusChecker：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxStatusChecker&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 容器扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/container/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/container/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 容器扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/container/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/container/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>服务容器扩展，用于自定义加载内容。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1350,7 +1350,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.container.Container：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxContainer&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 缓存扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/cache/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 缓存扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/cache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/cache/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>用请求参数作为 key，缓存返回结果。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1407,7 +1407,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.cache.CacheFactory：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxCacheFactory&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 验证扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/validation/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 验证扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/validation/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>参数验证扩展点。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1455,7 +1455,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.validation.Validation：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxValidation&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 日志适配扩展</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/logger-adapter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/logger-adapter/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7: 日志适配扩展</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/logger-adapter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/logger-adapter/</guid><description>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>日志输出适配扩展点。&lt;/p>
 &lt;h2 id="扩展接口">扩展接口&lt;/h2>
@@ -1510,7 +1510,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>META-INF/dubbo/org.apache.dubbo.common.logger.LoggerAdapter：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>xxx&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">com.xxx.XxxLoggerAdapter&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7:</title><link>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docsv2.7/dev/impls/page/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docsv2.7:</title><link>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docsv2.7/dev/impls/page/</guid><description>
 &lt;h1 id="页面扩展">页面扩展&lt;/h1>
 &lt;h2 id="扩展说明">扩展说明&lt;/h2>
 &lt;p>对等网络节点组网器。&lt;/p>

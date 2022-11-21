@@ -1,5 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 概念和架构</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/</link><description>Recent content in 概念和架构 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 总体架构</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/overall-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/overall-architecture/</guid><description>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-architecture.jpg" alt="dubbo-architucture">&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 概念和架构</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/</link><description>Recent content in 概念和架构 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 总体架构</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/overall-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/overall-architecture/</guid><description>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/dubbo-architecture.jpg" alt="dubbo-architucture">&lt;/p>
 &lt;h5 id="节点角色说明">节点角色说明&lt;/h5>
 &lt;table>
 &lt;thead>
@@ -68,7 +68,7 @@
 &lt;/ul>
 &lt;h2 id="升级性">升级性&lt;/h2>
 &lt;p>当服务集群规模进一步扩大，带动IT治理结构进一步升级，需要实现动态部署，进行流动计算，现有分布式服务架构不会带来阻力。下图是未来可能的一种架构：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-architecture-future.jpg" alt="dubbo-architucture-futures">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/dubbo-architecture-future.jpg" alt="dubbo-architucture-futures">&lt;/p>
 &lt;h5 id="节点角色说明-1">节点角色说明&lt;/h5>
 &lt;table>
 &lt;thead>
@@ -103,9 +103,9 @@
 &lt;td>统计服务的调用次数和调用时间的监控中心&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs3-V2: 代码架构</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/code-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/code-architecture/</guid><description>
+&lt;/table></description></item><item><title>Docs3-V2: 代码架构</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/code-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/code-architecture/</guid><description>
 &lt;h2 id="整体设计">整体设计&lt;/h2>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo-framework.jpg" alt="/dev-guide/images/dubbo-framework.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/dubbo-framework.jpg" alt="/dev-guide/images/dubbo-framework.jpg">&lt;/p>
 &lt;p>图例说明：&lt;/p>
 &lt;ul>
 &lt;li>图中左边淡蓝背景的为服务消费方使用的接口，右边淡绿色背景的为服务提供方使用的接口，位于中轴线上的为双方都用到的接口。&lt;/li>
@@ -135,7 +135,7 @@
 &lt;li>Registry 和 Monitor 实际上不算一层，而是一个独立的节点，只是为了全局概览，用层的方式画在一起。&lt;/li>
 &lt;/ul>
 &lt;h2 id="模块分包">模块分包&lt;/h2>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo-modules.jpg" alt="/dev-guide/images/dubbo-modules.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/dubbo-modules.jpg" alt="/dev-guide/images/dubbo-modules.jpg">&lt;/p>
 &lt;p>模块说明：&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>dubbo-common 公共逻辑模块&lt;/strong>：包括 Util 类和通用模型。&lt;/li>
@@ -155,7 +155,7 @@
 &lt;li>Serialize 层放在 common 模块中，以便更大程度复用。&lt;/li>
 &lt;/ul>
 &lt;h2 id="依赖关系">依赖关系&lt;/h2>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo-relation.jpg" alt="/dev-guide/images/dubbo-relation.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/dubbo-relation.jpg" alt="/dev-guide/images/dubbo-relation.jpg">&lt;/p>
 &lt;p>图例说明：&lt;/p>
 &lt;ul>
 &lt;li>图中小方块 Protocol, Cluster, Proxy, Service, Container, Registry, Monitor 代表层或模块，蓝色的表示与业务有交互，绿色的表示只对 Dubbo 内部交互。&lt;/li>
@@ -165,13 +165,13 @@
 &lt;/ul>
 &lt;h2 id="调用链">调用链&lt;/h2>
 &lt;p>展开总设计图的红色调用链，如下：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo-extension.jpg" alt="/dev-guide/images/dubbo-extension.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/dubbo-extension.jpg" alt="/dev-guide/images/dubbo-extension.jpg">&lt;/p>
 &lt;h2 id="暴露服务时序">暴露服务时序&lt;/h2>
 &lt;p>展开总设计图右边服务提供方暴露服务的蓝色初始化链，时序图如下：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo-export.jpg" alt="/dev-guide/images/dubbo-export.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/dubbo-export.jpg" alt="/dev-guide/images/dubbo-export.jpg">&lt;/p>
 &lt;h2 id="引用服务时序">引用服务时序&lt;/h2>
 &lt;p>展开总设计图左边服务消费方引用服务的绿色初始化链，时序图如下：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/dev/dubbo-refer.jpg" alt="/dev-guide/images/dubbo-refer.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/dev/dubbo-refer.jpg" alt="/dev-guide/images/dubbo-refer.jpg">&lt;/p>
 &lt;h2 id="领域模型">领域模型&lt;/h2>
 &lt;p>在 Dubbo 的核心领域模型中：&lt;/p>
 &lt;ul>
@@ -183,13 +183,13 @@
 &lt;ul>
 &lt;li>采用 Microkernel + Plugin 模式，Microkernel 只负责组装 Plugin，Dubbo 自身的功能也是通过扩展点实现的，也就是 Dubbo 的所有功能点都可被用户自定义扩展所替换。&lt;/li>
 &lt;li>采用 URL 作为配置信息的统一格式，所有扩展点都通过传递 URL 携带配置信息。&lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: 服务发现</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: 服务发现</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/service-discovery/</guid><description>
 &lt;p>服务发现，即消费端自动发现服务地址列表的能力，是微服务框架需要具备的关键能力，借助于自动化的服务发现，微服务之间可以在无需感知对端部署位置与 IP 地址的情况下实现通信。&lt;/p>
 &lt;h3 id="实现方式">实现方式&lt;/h3>
 &lt;p>实现服务发现的方式有很多种，Dubbo 提供的是一种 Client-Based 的服务发现机制，通常还需要部署额外的第三方注册中心组件来协调服务发现过程，如常用的 Nacos、Consul、Zookeeper 等，Dubbo 自身也提供了对多种注册中心组件的对接，用户可以灵活选择。&lt;/p>
 &lt;h3 id="工作原理">工作原理&lt;/h3>
 &lt;p>Dubbo 基于消费端的自动服务发现能力，其基本工作原理如下图：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/architecture.png" alt="//imgs/architecture.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/architecture.png" alt="//imgs/architecture.png">&lt;/p>
 &lt;p>服务发现的一个核心组件是注册中心，Provider 注册地址到注册中心，Consumer 从注册中心读取和订阅 Provider 地址列表。
 因此，要启用服务发现，需要为 Dubbo 增加注册中心配置：&lt;/p>
 &lt;p>以 dubbo-spring-boot-starter 使用方式为例，增加 registry 配置&lt;/p>
@@ -204,14 +204,14 @@
 &lt;li>提升性能与可伸缩性。支持超大规模集群的服务治理一直以来都是 Dubbo 的优势，通过引入应用级服务发现模型，从本质上解决了注册中心地址数据的存储与推送压力，相应的 Consumer 侧的地址计算压力也成数量级下降；集群规模也开始变得可预测、可评估（与 RPC 接口数量无关，只与实例部署规模相关）。&lt;/li>
 &lt;/ul>
 &lt;p>下图是 Dubbo2 的服务发现模型：Provider 注册服务地址，Consumer 经过注册中心协调并发现服务地址，进而对地址发起通信，这是被绝大多数微服务框架的经典服务发现流程。而 Dubbo2 的特殊之处在于，它把 “RPC 接口”的信息也融合在了地址发现过程中，而这部分信息往往是和具体的业务定义密切相关的。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/servicediscovery_old.png" alt="//imgs/v3/concepts/servicediscovery_old.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/servicediscovery_old.png" alt="//imgs/v3/concepts/servicediscovery_old.png">&lt;/p>
 &lt;p>而在接入云原生基础设施后，基础设施融入了微服务概念的抽象，容器化微服务被编排、调度的过程即完成了在基础设施层面的注册。如下图所示，基础设施既承担了注册中心的职责，又完成了服务注册的动作，而 “RPC 接口”这部分信息，由于与具体的业务相关，不可能也不适合被基础设施托管。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/servicediscovery_k8s.png" alt="//imgs/v3/concepts/servicediscovery_k8s.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/servicediscovery_k8s.png" alt="//imgs/v3/concepts/servicediscovery_k8s.png">&lt;/p>
 &lt;p>在这样的场景下，对 Dubbo3 的服务注册发现机制提出了两个要求：
 Dubbo3 需要在原有服务发现流程中抽象出通用的、与业务逻辑无关的地址映射模型，并确保这部分模型足够合理，以支持将地址的注册行为和存储委托给下层基础设施
 Dubbo3 特有的业务接口同步机制，是 Dubbo3 需要保留的优势，需要在 Dubbo3 中定义的新地址模型之上，通过框架内的自有机制予以解决。&lt;/p>
 &lt;p>这样设计的全新的服务发现模型，在架构兼容性、可伸缩性上都给 Dubbo3 带来了更大的优势。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/servicediscovery_mem.png" alt="//imgs/v3/concepts/servicediscovery_mem.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/servicediscovery_mem.png" alt="//imgs/v3/concepts/servicediscovery_mem.png">&lt;/p>
 &lt;p>在架构兼容性上，如上文所述，Dubbo3 复用下层基础设施的服务抽象能力成为了可能；另一方面，如 Spring Cloud 等业界其它微服务解决方案也沿用这种模型，
 在打通了地址发现之后，使得用户探索用 Dubbo 连接异构的微服务体系成为了一种可能。&lt;/p>
 &lt;p>Dubbo3 服务发现模型更适合构建可伸缩的服务体系，这点要如何理解？
@@ -220,8 +220,8 @@ Dubbo3 特有的业务接口同步机制，是 Dubbo3 需要保留的优势，�
 对于 Dubbo3 来说，新的注册发现模型只需要 1 个服务（只和应用有关和接口无关）， 只注册和机器实例数相等的 1 * 100 = 100 个虚拟节点到注册中心。
 在这个简单的示例中，Dubbo 所注册的地址数量下降到了原来的 1 / 100，对于注册中心、订阅方的存储压力都是一个极大的释放。更重要的是，
 地址发现容量彻底与业务 RPC 定义解耦开来，整个集群的容量评估对运维来说将变得更加透明：部署多少台机器就会有多大负载，不会像 Dubbo2 一样，
-因为业务 RPC 重构就会影响到整个集群服务发现的稳定性。&lt;/p></description></item><item><title>Docs3-V2: 服务调用扩展点</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/service-invocation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/service-invocation/</guid><description>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/invoke-arch.jpg" alt="dubbo-architucture">&lt;/p>
+因为业务 RPC 重构就会影响到整个集群服务发现的稳定性。&lt;/p></description></item><item><title>Docs3-V2: 服务调用扩展点</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/service-invocation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/service-invocation/</guid><description>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/invoke-arch.jpg" alt="dubbo-architucture">&lt;/p>
 &lt;p>如上图所示，从服务调用的角度来看，Dubbo 在链路中提供了丰富的扩展点，覆盖了负载均衡方式、选址前后的拦截器、服务端处理拦截器等。
 简单来说 Dubbo 发起远程调用的时候，主要工作流程可以分为消费端和服务端两个部分。&lt;/p>
 &lt;p>消费端的工作流程如下：&lt;/p>
@@ -248,7 +248,7 @@ Dubbo3 特有的业务接口同步机制，是 Dubbo3 需要保留的优势，�
 &lt;h2 id="filter拦截器">Filter（拦截器）&lt;/h2>
 &lt;p>拦截器可以实现服务提供方和服务消费方调用过程拦截，Dubbo 本身的大多功能均基于此扩展点实现，每次远程方法执行，该拦截都会被执行，请注意对性能的影响。
 其中在消费端侧，&lt;code>ClusterFilter&lt;/code> 用于选址前的拦截和 &lt;code>Filter&lt;/code> 用于选址后的拦截。如无特殊需要使用 &lt;code>ClusterFilter&lt;/code> 进行扩展拦截，以提高性能。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/filter-arch.jpg" alt="filter-architucture">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/filter-arch.jpg" alt="filter-architucture">&lt;/p>
 &lt;p>在 Dubbo 3 中，&lt;code>Filter&lt;/code> 和 &lt;code>ClusterFilter&lt;/code> 的接口签名被统一抽象到 &lt;code>BaseFilter&lt;/code> 中，开发者可以分别实现 &lt;code>Filter&lt;/code> 或 &lt;code>ClusterFilter&lt;/code> 的接口来实现自己的拦截器。
 如果需要拦截返回状态，可以直接实现 &lt;code>BaseFilter.Listener&lt;/code> 的接口，Dubbo 将自动识别，并进行调用。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">package&lt;/span> org.apache.dubbo.rpc&lt;span style="color:#719e07">;&lt;/span>
@@ -327,18 +327,18 @@ Dubbo 的路由主要需要实现 3 个接口，分别是负责每次调用筛�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">&amp;lt;&lt;/span>T&lt;span style="color:#719e07">&amp;gt;&lt;/span> Invoker&lt;span style="color:#719e07">&amp;lt;&lt;/span>T&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">select&lt;/span>&lt;span style="color:#719e07">(&lt;/span>List&lt;span style="color:#719e07">&amp;lt;&lt;/span>Invoker&lt;span style="color:#719e07">&amp;lt;&lt;/span>T&lt;span style="color:#719e07">&amp;gt;&amp;gt;&lt;/span> invokers&lt;span style="color:#719e07">,&lt;/span> URL url&lt;span style="color:#719e07">,&lt;/span> Invocation invocation&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#268bd2">throws&lt;/span> RpcException&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>具体调用拦截扩展方式请&lt;a href="../../reference-manual/spi/description/load-balance/">参考&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: Dubbo Mesh</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/mesh/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>具体调用拦截扩展方式请&lt;a href="../../reference-manual/spi/description/load-balance/">参考&lt;/a>&lt;/p></description></item><item><title>Docs3-V2: Dubbo Mesh</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/mesh/</guid><description>
 &lt;p>Dubbo Mesh 从设计理念上更强调控制面的统一管控、标准化与治理能力，而在数据面给出了更多的选择，包括 Sidecar Mesh 与 Proxyless Mesh 等部署模式。多种部署模型给企业提供了更多选择，通过混合部署的模型，在实现服务治理控制面的共享的同时，可以更好的应对不同场景的部署要求（性能、部署复杂性等），适应复杂的基础设施环境并从总体上提升架构的可用性。&lt;/p>
 &lt;h2 id="背景">背景&lt;/h2>
 &lt;p>在云原生背景下，如果我们将 Service Mesh 理解为底层基础设施，则在 Mesh 架构中，以往耦合在业务进程中的微服务治理部分能力正被 Mesh 接管，传统微服务框架更注重 RPC 协议与编程模型。以下是时下流行的 Mesh 产品 Istio 的架构图：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/mesh/istio.jpg" alt="istio">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/mesh/istio.jpg" alt="istio">&lt;/p>
 &lt;p>在 Mesh 架构下&lt;/p>
 &lt;ul>
 &lt;li>统一的控制面提供证书管理、可观测性、流量治理等能力&lt;/li>
 &lt;li>Sidecar 让 SDK 更轻量、侵入性更小，更好的实现透明升级、流量拦截等&lt;/li>
 &lt;/ul>
 &lt;h2 id="dubbo-mesh-总体架构">Dubbo Mesh 总体架构&lt;/h2>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/mesh/dubbo-mesh-arc.png" alt="istio">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/mesh/dubbo-mesh-arc.png" alt="istio">&lt;/p>
 &lt;ul>
 &lt;li>数据面基于 Triple 协议进行 RPC 通信；&lt;/li>
 &lt;li>地址发现模型采用应用级服务发现，支持超大规模实例集群的同时，提供更丰富的服务治理能力；&lt;/li>
@@ -352,7 +352,7 @@ Dubbo 的路由主要需要实现 3 个接口，分别是负责每次调用筛�
 &lt;h3 id="dubbo-sidecar-mesh">Dubbo Sidecar Mesh&lt;/h3>
 &lt;p>Dubbo 提供了 ThinSDK 的部署模式，在此模式下，Dubbo ThinSDK 将只提供面向业务应用的编程 API、RPC 传输通信能力，其余服务治理
 包括地址发现、负载均衡、路由寻址等都统一下沉到 Sidecar，Sidecar 负责与控制面直接通信并接收各种流量管控规则。以下是基本部署架构图，Dubbo ThinSDK 与 Sidecar 部署在同一个 Pod 或容器中，通过在外围部署一个独立的控制平面，实现对流量和治理的统一管控。控制面与 Sicecar 之间通过图中虚线所示的 xDS 协议进行配置分发，而 Dubbo 进程间的通信不再是直连模式，转而通过 Sidecar 代理，Sidecar 拦截所有进出流量，并完成路由寻址等服务治理任务。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/mesh/dubbo-sidecar.png" alt="dubbo-sidecar">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/mesh/dubbo-sidecar.png" alt="dubbo-sidecar">&lt;/p>
 &lt;p>社区推荐选型 Envoy 作为 Sidecar，通信协议使用 Triple 以获得更好的网关穿透性与性能体验。对于暂时无法升级 Triple 的仍在使用 Dubbo2 协议用户来说，可参考 Envoy、Aeraki Mesh 提供的 Dubbo2 协议支持方案。&lt;/p>
 &lt;p>ThinSDK + Sidecar 模式的 Mesh 架构有很多优势，如平滑升级、多语言、业务侵入小等，但也带来了一些额外的问题，比如：&lt;/p>
 &lt;ul>
@@ -362,12 +362,12 @@ Dubbo 的路由主要需要实现 3 个接口，分别是负责每次调用筛�
 &lt;/ul>
 &lt;p>详细方案设计与示例请参考&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://static.dubbo.apache.org/next/zh/overview/tasks/mesh/dubbo-mesh">Dubbo ThinSDK Proposal&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://static.dubbo.apache.org/next/zh/overview/tasks/mesh/dubbo-mesh">使用示例&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://static.dubbo.apache.org:8080/zh/overview/tasks/mesh/dubbo-mesh">Dubbo ThinSDK Proposal&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://static.dubbo.apache.org:8080/zh/overview/tasks/mesh/dubbo-mesh">使用示例&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="dubbo-proxyless-mesh">Dubbo Proxyless Mesh&lt;/h3>
 &lt;p>作为 ThinSDK + Sidecar 模式的补充，Dubbo 社区自很早之前就做了 Dubbo 直接对接到控制面的设想与思考，也就是当前所说的 Proxyless Mesh 模式。Proxyless 模式使得微服务又回到了 2.x 时代的部署架构。如下图所示，和我们上面看的 Dubbo 经典服务治理模式非常相似，所以说这个模式并不新鲜， Dubbo 从最开始就是这么样的设计模式。但相比于 Mesh 架构，Dubbo2 并没有强调控制面的统一管控，而这点恰好是 Service Mesh 所强调的，强调对流量、可观测性、证书等的标准化管控与治理，也是 Mesh 理念先进的地方。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/mesh/dubbo-proxyless.png" alt="dubbo-proxyless">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/mesh/dubbo-proxyless.png" alt="dubbo-proxyless">&lt;/p>
 &lt;p>通过不同语言版本的 Dubbo3 SDK 直接实现 xDS 协议解析，Dubbo 进程可以与控制面（Control Plane）直接通信，进而实现控制面对流量管控、服务治理、可观测性、安全等的统一管控，规避 Sidecar 模式带来的性能损耗与部署架构复杂性。&lt;/p>
 &lt;blockquote>
 &lt;p>Proxyless 模式同时支持 Dubbo2、Triple 协议，但只支持应用级服务发现的地址模型。&lt;/p>
@@ -381,12 +381,12 @@ Dubbo 的路由主要需要实现 3 个接口，分别是负责每次调用筛�
 &lt;/ul>
 &lt;p>详细方案设计与示例请参考&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://static.dubbo.apache.org/next/zh/overview/tasks/mesh/dubbo-mesh">Dubbo Proxyless Mesh&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://static.dubbo.apache.org/next/zh/overview/tasks/mesh/dubbo-mesh">使用示例&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://static.dubbo.apache.org:8080/zh/overview/tasks/mesh/dubbo-mesh">Dubbo Proxyless Mesh&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://static.dubbo.apache.org:8080/zh/overview/tasks/mesh/dubbo-mesh">使用示例&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="dubbo-控制面治理规则">Dubbo 控制面治理规则&lt;/h3>
 &lt;p>TBD&lt;/p>
-&lt;p>Dubbo SDK 提供了非常灵活的配置来控制服务治理行为，如接口粒度的服务地址发现能力、接口粒度的配置同步等，这些能力让应用的开发和部署更加灵活。而在通用的 Mesh 部署方案或产品下一些高级功能可能受限，从总体上影响了易用性与灵活性。为此 Dubbo 计划提供自研控制面产品，以最大化的在 Mesh 体系发挥 Dubbo3 能力。&lt;/p></description></item><item><title>Docs3-V2: Triple 协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/concepts-and-architecture/triple/</guid><description>
+&lt;p>Dubbo SDK 提供了非常灵活的配置来控制服务治理行为，如接口粒度的服务地址发现能力、接口粒度的配置同步等，这些能力让应用的开发和部署更加灵活。而在通用的 Mesh 部署方案或产品下一些高级功能可能受限，从总体上影响了易用性与灵活性。为此 Dubbo 计划提供自研控制面产品，以最大化的在 Mesh 体系发挥 Dubbo3 能力。&lt;/p></description></item><item><title>Docs3-V2: Triple 协议</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/triple/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/concepts-and-architecture/triple/</guid><description>
 &lt;h3 id="协议说明">协议说明&lt;/h3>
 &lt;p>Triple 是 Dubbo3 提出的基于 HTTP2 的开放协议，旨在解决 Dubbo2 私有协议带来的互通性问题。相比于原有 Dubbo2 协议，Triple 有以下优势:&lt;/p>
 &lt;ol>
@@ -397,11 +397,11 @@ Dubbo 的路由主要需要实现 3 个接口，分别是负责每次调用筛�
 &lt;/ol>
 &lt;p>&lt;strong>目前 Java 和 Go 的 Dubbo SDK 已全面支持 Triple 协议。&lt;/strong> 在阿里巴巴，Triple 协议广泛用于跨环境、跨语言、跨生态互通，已有数十万容器生产级使用。&lt;/p>
 &lt;h3 id="支持方式">支持方式&lt;/h3>
-&lt;p>Java SDK 支持 &lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/quick-start/idl">IDL 生成 Stub&lt;/a>
-和 &lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/quick-start/idl">Java Interface&lt;/a> 两种方式，多语言、生态互通、流式需求推荐使用 IDL 方式，现有服务平滑升级推荐使用
+&lt;p>Java SDK 支持 &lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/quick-start/idl">IDL 生成 Stub&lt;/a>
+和 &lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/quick-start/idl">Java Interface&lt;/a> 两种方式，多语言、生态互通、流式需求推荐使用 IDL 方式，现有服务平滑升级推荐使用
 Interface 方式。&lt;/p>
 &lt;ul>
 &lt;li>Dubbo2 老用户如何从现有协议升级至 Triple(TBD)&lt;/li>
-&lt;li>新用户或业务参考 &lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/quick-start/idl/">Dubbo3 Triple Quick Start&lt;/a>&lt;/li>
+&lt;li>新用户或业务参考 &lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/quick-start/idl/">Dubbo3 Triple Quick Start&lt;/a>&lt;/li>
 &lt;li>深入了解 Triple 协议: &lt;a href="https://github.com/apache/dubbo-awesome/blob/master/proposals/D0-triple.md">Dubbo3 Triple 协议设计与原理&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>

@@ -1,6 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Dubbo 配置</title><link>https://static.dubbo.apache.org/next/zh/docs/references/configuration/</link><description>Recent content in Dubbo 配置 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs/references/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 配置概述</title><link>https://static.dubbo.apache.org/next/zh/docs/references/configuration/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/configuration/overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Dubbo 配置</title><link>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/</link><description>Recent content in Dubbo 配置 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/docs/references/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: 配置概述</title><link>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/overview/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/overview/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config/overview/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>本文主要介绍Dubbo配置概况，包括配置组件、配置来源、配置方式及配置加载流程。&lt;/p>
 &lt;h2 id="配置组件">配置组件&lt;/h2>
@@ -47,7 +47,7 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;/ul>
 &lt;h3 id="覆盖关系">覆盖关系&lt;/h3>
 &lt;p>下图展示了配置覆盖关系的优先级，从上到下优先级依次降低：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/configuration.jpg" alt="覆盖关系">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/configuration.jpg" alt="覆盖关系">&lt;/p>
 &lt;p>请参考相关内容：&lt;a href="../properties#%E5%B1%9E%E6%80%A7%E8%A6%86%E7%9B%96">属性覆盖&lt;/a>。&lt;/p>
 &lt;h2 id="配置方式">配置方式&lt;/h2>
 &lt;p>按照驱动方式可以分为以下四种方式：&lt;/p>
@@ -67,7 +67,7 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;li>配置格式以 Properties 为主，在配置内容上遵循约定的 &lt;code>path-based&lt;/code> 的&lt;a href="../properties#%E9%85%8D%E7%BD%AE%E6%A0%BC%E5%BC%8F">命名规范&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;h2 id="配置加载流程">配置加载流程&lt;/h2>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/config/config-load.svg" alt="配置加载流程">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/config/config-load.svg" alt="配置加载流程">&lt;/p>
 &lt;p>从上图可以看出，配置加载大概分为两个阶段：&lt;/p>
 &lt;ul>
 &lt;li>第一阶段为DubboBootstrap初始化之前，在Spring context启动时解析处理XML配置/注解配置/Java-config 或者是执行API配置代码，创建config bean并且加入到ConfigManager中。&lt;/li>
@@ -149,9 +149,9 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;first-dubbo-provider is running.&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>in&lt;span style="color:#719e07">.&lt;/span>read&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: API 配置</title><link>https://static.dubbo.apache.org/next/zh/docs/references/configuration/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/configuration/api/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: API 配置</title><link>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/api/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/api/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config/api/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>通过API编码方式组装配置，启动Dubbo，发布及订阅服务。此方式可以支持动态创建ReferenceConfig/ServiceConfig，结合泛化调用可以满足API Gateway或测试平台的需要。&lt;/p>
 &lt;blockquote>
@@ -428,9 +428,9 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>reference&lt;span style="color:#719e07">.&lt;/span>setUrl&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;dubbo://10.20.130.230:20880/com.xxx.DemoService&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">...&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: XML 配置</title><link>https://static.dubbo.apache.org/next/zh/docs/references/configuration/xml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/configuration/xml/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: XML 配置</title><link>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/xml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/xml/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/xml/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config/xml/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>有关 XML 的详细配置项，请参见：&lt;a href="../../../references/xml">XML配置参考手册&lt;/a>。如果不想使用 Spring 配置，而希望通过 API 的方式进行调用，请参见：&lt;a href="../api">API配置&lt;/a>。想知道如何使用配置，请参见：&lt;a href="../../../quick-start">快速启动&lt;/a>。&lt;/p>
 &lt;p>请在此查看文档描述的&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-basic">完整示例&lt;/a>&lt;/p>
@@ -469,7 +469,7 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;jms&amp;#34;&lt;/span> p:queue=&lt;span style="color:#2aa198">&amp;#34;your_queue&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="配置之间的关系">配置之间的关系&lt;/h2>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-config.jpg" alt="dubbo-config">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/dubbo-config.jpg" alt="dubbo-config">&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -543,7 +543,7 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;li>如果级别一样，则消费方优先，提供方次之。&lt;/li>
 &lt;/ul>
 &lt;p>其中，服务提供方配置，通过 URL 经由注册中心传递给消费方。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-config-override.jpg" alt="dubbo-config-override">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/dubbo-config-override.jpg" alt="dubbo-config-override">&lt;/p>
 &lt;p>（建议由服务提供方设置超时，因为一个方法需要执行多长时间，服务提供方更清楚，如果一个消费方同时引用多个服务，就不需要关心每个服务的超时设置）。&lt;/p>
 &lt;p>理论上 ReferenceConfig 中除了&lt;code>interface&lt;/code>这一项，其他所有配置项都可以缺省不配置，框架会自动使用ConsumerConfig，ServiceConfig, ProviderConfig等提供的缺省配置。&lt;/p>
 &lt;div class="footnotes" role="doc-endnotes">
@@ -556,9 +556,9 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;p>引用缺省是延迟初始化的，只有引用被注入到其它 Bean，或被 &lt;code>getBean()&lt;/code> 获取，才会初始化。如果需要饥饿加载，即没有人引用也立即生成动态代理，可以配置：&lt;code>&amp;lt;dubbo:reference ... init=&amp;quot;true&amp;quot; /&amp;gt;&lt;/code>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs: 注解配置</title><link>https://static.dubbo.apache.org/next/zh/docs/references/configuration/annotation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/configuration/annotation/</guid><description>
+&lt;/div></description></item><item><title>Docs: 注解配置</title><link>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/annotation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/annotation/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/annotation/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config/annotation/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
@@ -618,9 +618,9 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">final&lt;/span> AnnotationAction annotationAction &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">(&lt;/span>AnnotationAction&lt;span style="color:#719e07">)&lt;/span> context&lt;span style="color:#719e07">.&lt;/span>getBean&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;annotationAction&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String hello &lt;span style="color:#719e07">=&lt;/span> annotationAction&lt;span style="color:#719e07">.&lt;/span>doSayHello&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;world&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 属性配置</title><link>https://static.dubbo.apache.org/next/zh/docs/references/configuration/properties/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/configuration/properties/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 属性配置</title><link>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/properties/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/properties/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/properties/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config/properties/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>Dubbo属性配置有两个职责：&lt;/p>
 &lt;ol>
@@ -668,7 +668,7 @@ provider的属性是service属性的默认值，覆盖规则类似上面的consu
 &lt;/ol>
 &lt;h3 id="覆盖关系">覆盖关系&lt;/h3>
 &lt;p>下图展示了配置覆盖关系的优先级，从上到下优先级依次降低：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/configuration.jpg" alt="覆盖关系">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/configuration.jpg" alt="覆盖关系">&lt;/p>
 &lt;p>请参考相关内容：&lt;a href="../properties#%E5%B1%9E%E6%80%A7%E8%A6%86%E7%9B%96">属性覆盖&lt;/a>。&lt;/p>
 &lt;h2 id="处理流程">处理流程&lt;/h2>
 &lt;p>属性配置处理流程请查看 &lt;a href="../overview#%E9%85%8D%E7%BD%AE%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B">配置加载流程&lt;/a>。&lt;/p>
@@ -812,7 +812,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.{config-type}.{config-item}&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">{config-item-value}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>属性覆盖处理流程：&lt;/p>
 &lt;p>按照优先级从高到低依次查找，如果找到此前缀开头的属性，则选定使用这个前缀提取属性，忽略后面的配置。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/config/properties-override.svg" alt="属性覆盖流程">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/config/properties-override.svg" alt="属性覆盖流程">&lt;/p>
 &lt;h2 id="单复数配置对照表">单复数配置对照表&lt;/h2>
 &lt;p>复数配置的命名与普通单词变复数的规则相同：&lt;/p>
 &lt;ol>
@@ -905,9 +905,9 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;td>无&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: 外部化配置</title><link>https://static.dubbo.apache.org/next/zh/docs/references/configuration/external-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/configuration/external-config/</guid><description>
+&lt;/table></description></item><item><title>Docs: 外部化配置</title><link>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/external-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/external-config/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/principle/#33-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config/principle/#33-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;h3 id="外部化配置">外部化配置&lt;/h3>
 &lt;p>外部化配置目的之一是实现配置的集中式管理，这部分业界已经有很多成熟的专业配置系统如 Apollo, Nacos 等，Dubbo 所做的主要是保证能配合这些系统正常工作。&lt;/p>
@@ -943,7 +943,7 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="zookeeper">Zookeeper&lt;/h4>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:config-center&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;zookeeper://127.0.0.1:2181&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>默认所有的配置都存储在 &lt;code>/dubbo/config&lt;/code> 节点，具体节点结构图如下：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/zk-configcenter.jpg" alt="zk-configcenter.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/zk-configcenter.jpg" alt="zk-configcenter.jpg">&lt;/p>
 &lt;ul>
 &lt;li>namespace，用于不同配置的环境隔离。&lt;/li>
 &lt;li>config，Dubbo约定的固定节点，不可更改，所有配置和服务治理规则都存储在此节点下。&lt;/li>
@@ -954,11 +954,11 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:config-center&lt;/span> protocol=&lt;span style="color:#2aa198">&amp;#34;apollo&amp;#34;&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;127.0.0.1:2181&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Apollo中的一个核心概念是命名空间 - namespace（和上面zookeeper的namespace概念不同），在这里全局和应用级别配置就是通过命名空间来区分的。&lt;/p>
 &lt;p>默认情况下，Dubbo会从名叫&lt;code>dubbo&lt;/code>（由于 Apollo 不支持特殊后缀 &lt;code>.properties&lt;/code> ）的命名空间中读取全局配置（&lt;code>&amp;lt;dubbo:config-center namespace=&amp;quot;your namespace&amp;quot;&amp;gt;&lt;/code>）&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/apollo-configcenter-dubbo.png" alt="apollo-configcenter-dubbo.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/apollo-configcenter-dubbo.png" alt="apollo-configcenter-dubbo.png">&lt;/p>
 &lt;p>由于 Apollo 也默认将会在 &lt;code>dubbo&lt;/code> namespace 中存储服务治理规则（如路由规则），建议通过单独配置 &lt;code>group&lt;/code> 将服务治理和配置文件托管分离开，以 XML 配置方式为例：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo&lt;/span> namespace=&lt;span style="color:#2aa198">&amp;#34;governance&amp;#34;&lt;/span> group =&lt;span style="color:#2aa198">&amp;#34;dubbo&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里，服务治理规则将存储在 governance namespace，而配置文件将存储在 dubbo namespace，如下图所示：
-&lt;img src="https://static.dubbo.apache.org/next/imgs/user/apollo-configcenter-governance-dubbo.png" alt="apollo-configcenter-governance-dubbo.png">&lt;/p>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/apollo-configcenter-governance-dubbo.png" alt="apollo-configcenter-governance-dubbo.png">&lt;/p>
 &lt;blockquote>
 &lt;p>关于文件配置托管，相当于是把 &lt;code>dubbo.properties&lt;/code> 配置文件的内容存储在了 Apollo 中，应用通过关联共享的 &lt;code>dubbo&lt;/code> namespace 继承公共配置,
 应用也可以按照 Apollo 的做法来覆盖个别配置项。&lt;/p>
@@ -969,9 +969,9 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Nacos虽然也存在命名空间 - namespace 的概念，但在 namespace 之下，还存在 group 概念。即通过 namespace 和 group 以及 dataId 去定位一个配置项，在不指定 namespace 的情况下，默认使用 &lt;code>public&lt;/code> 作为默认的命名空间。&lt;/p>
 &lt;p>在默认情况下，全局配置会读取 namespace : &lt;code>public&lt;/code>，dataId: &lt;code>dubbo.properties&lt;/code>，group: &lt;code>dubbo&lt;/code> 配置项中的内容作为全局配置。应用级别的 group 和全局级别的 group 存在一点差异， 应用级别会读取 namespace: &lt;code>public&lt;/code>，dataId: &lt;code>dubbo.properties&lt;/code>，group: &lt;code>your application name&lt;/code> 作为应用级别的配置。&lt;/p>
 &lt;p>全局：
-&lt;img src="https://static.dubbo.apache.org/next/imgs/user/nacos-configcenter-global-properties.png" alt="nacos-configcenter-global-properties.png">&lt;/p>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/nacos-configcenter-global-properties.png" alt="nacos-configcenter-global-properties.png">&lt;/p>
 &lt;p>应用级别：
-&lt;img src="https://static.dubbo.apache.org/next/imgs/user/nacos-configcenter-application-properties.png" alt="nacos-configcenter-application-properties.png">&lt;/p>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/nacos-configcenter-application-properties.png" alt="nacos-configcenter-application-properties.png">&lt;/p>
 &lt;h3 id="自己加载外部化配置">自己加载外部化配置&lt;/h3>
 &lt;p>所谓 Dubbo 对配置中心的支持，本质上就是把 &lt;code>.properties&lt;/code> 从远程拉取到本地，然后和本地的配置做一次融合。理论上只要 Dubbo 框架能拿到需要的配置就可以正常的启动，它并不关心这些配置是自己加载到的还是应用直接塞给它的，所以Dubbo还提供了以下API，让用户将自己组织好的配置塞给 Dubbo 框架（配置加载的过程是用户要完成的），这样 Dubbo 框架就不再直接和 Apollo 或 Zookeeper 做读取配置交互。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// 应用自行加载配置
@@ -982,9 +982,9 @@ Configuration lines are expected to be of the following form:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">//将组织好的配置塞给Dubbo框架
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>ConfigCenterConfig configCenter &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> ConfigCenterConfig&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>configCenter&lt;span style="color:#719e07">.&lt;/span>setExternalConfig&lt;span style="color:#719e07">(&lt;/span>dubboConfigurations&lt;span style="color:#719e07">);&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 自动加载环境变量</title><link>https://static.dubbo.apache.org/next/zh/docs/references/configuration/environment-variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs/references/configuration/environment-variables/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: 自动加载环境变量</title><link>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/environment-variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs/references/configuration/environment-variables/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/config/principle/#33-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/config/principle/#33-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>从 2.7.3 版本开始，Dubbo 会自动从约定 key 中读取配置，并将配置以 Key-Value 的形式写入到URL中。&lt;/p>
 &lt;p>支持的 key 有以下两个：&lt;/p>

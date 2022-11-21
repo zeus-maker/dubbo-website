@@ -1,10 +1,10 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 配置框架与服务行为</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/</link><description>Recent content in 配置框架与服务行为 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 端口协议复用</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/port-unification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/port-unification/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 配置框架与服务行为</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/</link><description>Recent content in 配置框架与服务行为 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 端口协议复用</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/port-unification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/port-unification/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>通过对protocol进行配置，dubbo3可以支持端口的协议复用。
 比如使用Triple协议启动端口复用后，可以在相同的端口上为服务增加
 Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个统一的端口复用
 服务器进行处理的，可以用于服务的协议迁移，并且可以节约端口以及相关的资源，减少运维的复杂性。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/pu-server/pu-server-flow.png" alt="pu-server-image1">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/pu-server/pu-server-flow.png" alt="pu-server-image1">&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>在服务的创建阶段，通过从Config层获取到服务导出的协议配置从而创建不同的Protocol对象进行导出。在导出的过程
@@ -60,7 +60,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;li>
 &lt;p>直接调用命令&lt;/p>
 &lt;p>直接调用telnet支持的命令也可以完成识别，在用户不熟悉的情况下可以调用help指令完成识别&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/pu-server/qos-telnet-directcall.png" alt="pu-server-image2">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/pu-server/qos-telnet-directcall.png" alt="pu-server-image2">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>发送telnet命令识别&lt;/p>
@@ -70,7 +70,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;li>调用 &amp;ldquo;send ayt&amp;rdquo; 向服务端发送特殊识别字段(为telnet协议的一个特殊字段)&lt;/li>
 &lt;li>回车完成消息发送并进入到dubbo的交互界面&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/pu-server/qos-telnet-sendayt.png" alt="pu-server-imgs3">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/pu-server/qos-telnet-sendayt.png" alt="pu-server-imgs3">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h3 id="服务引用">服务引用&lt;/h3>
@@ -81,7 +81,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reference&lt;span style="color:#719e07">.&lt;/span>setProtocol&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#719e07">this&lt;/span>&lt;span style="color:#719e07">.&lt;/span>protocol&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// reference.setProtocol(CommonConstants.DUBBO);
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// reference.setProtocol(CommonConstants.TRIPLE);
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/pu-server/reference-service.png" alt="pu-server-imgs4">&lt;/p></description></item><item><title>Docs3-V2: 分布式事务</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/transaction/</guid><description>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/pu-server/reference-service.png" alt="pu-server-imgs4">&lt;/p></description></item><item><title>Docs3-V2: 分布式事务</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/transaction/</guid><description>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="第一步">&lt;strong>第一步&lt;/strong>&lt;/h3>
 &lt;p>首先访问: &lt;a href="https://seata.io/zh-cn/blog/download.html">https://seata.io/zh-cn/blog/download.html&lt;/a>&lt;/p>
@@ -257,7 +257,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>store.db.lockTable&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">lock_table&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>store.db.maxWait&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">5000&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>打开 nacos 控制台,在对应的 namespace 下创建 dataId 为 seata.properties 的配置,并填写 group 为 SEATA_GROUP,并将以上内容填入选择类型为 properties 保存
-&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/Dingtalk_20220724021635.jpg" alt="Dingtalk_20220724021635.jpg.png" style="zoom:50%;" />&lt;/p>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/Dingtalk_20220724021635.jpg" alt="Dingtalk_20220724021635.jpg.png" style="zoom:50%;" />&lt;/p>
 &lt;h3 id="第六步">&lt;strong>第六步&lt;/strong>&lt;/h3>
 &lt;p>更改 server 中的 application.yml&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">server&lt;/span>:
@@ -391,7 +391,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>运行 seata-server,成功后,运行自己的服务 dubbo provider&amp;amp;consumer&lt;/p>
 &lt;h3 id="第八步高可用-seata-server-搭建">&lt;strong>第八步高可用 Seata-server 搭建&lt;/strong>&lt;/h3>
 &lt;p>由于 seata-server 支持计算与存储分离模式,并支持暴露服务地址至多种注册中心,仅需按照第六步配置完毕后水平扩展即可&lt;/p>
-&lt;p>详情请访问:https://seata.io/&lt;/p></description></item><item><title>Docs3-V2: 分组聚合</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/group-merger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/group-merger/</guid><description>
+&lt;p>详情请访问:https://seata.io/&lt;/p></description></item><item><title>Docs3-V2: 分组聚合</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/group-merger/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/group-merger/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>通过分组对结果进行聚合并返回聚合后的结果，比如菜单服务，用 group 区分同一接口的多种实现，现在消费方需从每种 group 中调用一次并返回结果，对结果进行合并之后返回，这样就可以实现聚合菜单项。&lt;/p>
 &lt;p>相关代码可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-merge">dubbo 项目中的示例&lt;/a>&lt;/p>
@@ -423,7 +423,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;getMenuItems&amp;#34;&lt;/span> merger=&lt;span style="color:#2aa198">&amp;#34;.addAll&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/dubbo:reference&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="提示">提示：&lt;/h4>
-&lt;p>从 &lt;code>2.1.0&lt;/code> 版本开始支持&lt;/p></description></item><item><title>Docs3-V2: 服务分版本</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-versions/</guid><description>
+&lt;p>从 &lt;code>2.1.0&lt;/code> 版本开始支持&lt;/p></description></item><item><title>Docs3-V2: 服务分版本</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-versions/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>&lt;strong>按照以下的步骤进行版本迁移&lt;/strong>&lt;/p>
 &lt;ol>
@@ -454,7 +454,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="不区分版本">不区分版本&lt;/h3>
 &lt;p>如果不需要区分版本，可以按照以下的方式配置&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;barService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.foo.BarService&amp;#34;&lt;/span> version=&lt;span style="color:#2aa198">&amp;#34;*&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 启动时检查</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/preflight-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/preflight-check/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 启动时检查</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/preflight-check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/preflight-check/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>Dubbo 缺省会在启动时检查依赖的服务是否可用，不可用时会抛出异常，阻止 Spring 初始化完成，以便上线时，能及早发现问题，默认 &lt;code>check=&amp;quot;true&amp;quot;&lt;/code>。&lt;/p>
 &lt;p>可以通过 &lt;code>check=&amp;quot;false&amp;quot;&lt;/code> 关闭检查，比如，测试时，有些服务不关心，或者出现了循环依赖，必须有一方先启动。&lt;/p>
@@ -487,7 +487,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="配置的含义">配置的含义&lt;/h2>
 &lt;p>&lt;code>dubbo.reference.com.foo.BarService.check&lt;/code>，覆盖 &lt;code>com.foo.BarService&lt;/code>的 reference 的 check 值，就算配置中有声明，也会被覆盖。&lt;/p>
 &lt;p>&lt;code>dubbo.consumer.check=false&lt;/code>，是设置reference的 &lt;code>check&lt;/code> 的缺省值，如果配置中有显式的声明，如：&lt;code>&amp;lt;dubbo:reference check=&amp;quot;true&amp;quot;/&amp;gt;&lt;/code>，不会受影响。&lt;/p>
-&lt;p>&lt;code>dubbo.registry.check=false&lt;/code>，前面两个都是指订阅成功，但提供者列表是否为空是否报错，如果注册订阅失败时，也允许启动，需使用此选项，将在后台定时重试。&lt;/p></description></item><item><title>Docs3-V2: 响应式编程</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/reactive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/reactive/</guid><description>
+&lt;p>&lt;code>dubbo.registry.check=false&lt;/code>，前面两个都是指订阅成功，但提供者列表是否为空是否报错，如果注册订阅失败时，也允许启动，需使用此选项，将在后台定时重试。&lt;/p></description></item><item><title>Docs3-V2: 响应式编程</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/reactive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/reactive/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>此特性基于 Triple 协议和 Project Reactor 实现，&lt;code>3.1.0&lt;/code> 版本以上支持。用户仅需编写 IDL 文件，并指定 protobuf 插件的相应 Generator，即可生成并使用支持响应式API的 Stub 代码。&lt;/p>
 &lt;p>有四种调用模式，分别是 OneToOne、OneToMany、ManyToOne、ManyToMany，分别对应 Unary调用、服务端流、客户端流、双向流。在 Reactor 的实现中，One 对应 Mono，Many 对应 Flux。&lt;/p>
@@ -684,7 +684,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;li>
 &lt;p>启动消费者端&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Docs3-V2: 参数校验</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/parameter-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/parameter-validation/</guid><description>
+&lt;/ol></description></item><item><title>Docs3-V2: 参数校验</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/parameter-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/parameter-validation/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>参数验证功能是基于 &lt;a href="https://jcp.org/en/jsr/detail?id=303">JSR303&lt;/a> 实现的，用户只需标识 JSR303 标准的验证 annotation，并通过声明 filter 来实现验证。&lt;/p>
 &lt;h4 id="maven-依赖">Maven 依赖&lt;/h4>
@@ -838,7 +838,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>验证方式可扩展，扩展方式参见开发者手册中的 &lt;a href="../../../reference-manual/spi/description/validation">验证扩展&lt;/a>&lt;/strong>&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: 服务分组</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/service-group/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/service-group/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: 服务分组</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/service-group/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/service-group/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>同一个接口针对不同的业务场景、不同的使用需求或者不同的功能模块等场景，可使用服务分组来区分不同的实现方式。同时，这些不同实现所提供的服务是可并存的，也支持互相调用。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -859,7 +859,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">...&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动 Dubbo 服务，可在注册中心看到相同服务名不同分组的服务，以 Nacos 作为注册中心为例，显示如下内容：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/service-group-1.png" alt="image-service-group-1.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/service-group-1.png" alt="image-service-group-1.png">&lt;/p>
 &lt;h4 id="服务消费端注解配置">服务消费端(注解配置)&lt;/h4>
 &lt;p>使用 @DubboReference 注解，添加 group 参数&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@DubboReference&lt;/span>&lt;span style="color:#719e07">(&lt;/span>group &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;demo&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
@@ -872,7 +872,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#268bd2">@DubboReference&lt;/span>&lt;span style="color:#719e07">(&lt;/span>group &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;*&amp;#34;&lt;/span>&lt;span style="color:#719e07">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">private&lt;/span> DemoService demoService2&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>同样启动 Dubbo 服务后，可在注册中心看到相同服务名不同分组的引用者，以 Nacos 作为注册中心为例，显示如下内容：
-&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/service-group-2.png" alt="image-service-group-2.png">&lt;/p>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/service-group-2.png" alt="image-service-group-2.png">&lt;/p>
 &lt;h3 id="xml配置">xml配置&lt;/h3>
 &lt;h4 id="服务提供端-xml-配置">服务提供端( xml 配置)&lt;/h4>
 &lt;p>使用 &amp;lt;dubbo:service /&amp;gt; 标签，添加 group 参数&lt;/p>
@@ -891,7 +891,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动 Dubbo 服务，可在注册中心看到相同服务名不同分组的服务，以 Nacos 作为注册中心为例，显示如下内容：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/service-group-1.png" alt="image-service-group-1.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/service-group-1.png" alt="image-service-group-1.png">&lt;/p>
 &lt;h4 id="服务消费端-xml-配置">服务消费端( xml 配置)&lt;/h4>
 &lt;p>使用 &lt;a href="dubbo:reference/">dubbo:reference/&lt;/a> 注解，添加 group 参数&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
@@ -913,7 +913,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>同样启动 Dubbo 服务后，可在注册中心看到相同服务名不同分组的引用者，以 Nacos 作为注册中心为例，显示如下内容：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/service-group-2.png" alt="image-service-group-2.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/service-group-2.png" alt="image-service-group-2.png">&lt;/p>
 &lt;h3 id="api配置">API配置&lt;/h3>
 &lt;h4 id="服务提供端-api-配置">服务提供端( API 配置)&lt;/h4>
 &lt;p>使用 org.apache.dubbo.config.ServiceConfig 类，添加 group 参数&lt;/p>
@@ -929,7 +929,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>service&lt;span style="color:#719e07">.&lt;/span>setGroup&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;demo2&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">...&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动 Dubbo 服务，可在注册中心看到相同服务名不同分组的服务，以 Nacos 作为注册中心为例，显示如下内容：&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/service-group-1.png" alt="image-service-group-1.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/service-group-1.png" alt="image-service-group-1.png">&lt;/p>
 &lt;h4 id="服务消费端-api-配置">服务消费端( API 配置)&lt;/h4>
 &lt;p>使用 org.apache.dubbo.config.ReferenceConfig，添加 group 参数&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// ReferenceConfig为重对象，内部封装了与注册中心的连接，以及开启服务端口
@@ -949,12 +949,12 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reference3&lt;span style="color:#719e07">.&lt;/span>setGroup&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;*&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">...&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>同样启动 Dubbo 服务后，可在注册中心看到相同服务名不同分组的引用者，以 Nacos 作为注册中心为例，显示如下内容：
-&lt;img src="https://static.dubbo.apache.org/next/imgs/blog/service-group-2.png" alt="image-service-group-2.png">&lt;/p>
+&lt;img src="http://static.dubbo.apache.org:8080/imgs/blog/service-group-2.png" alt="image-service-group-2.png">&lt;/p>
 &lt;blockquote>
 &lt;p>总是 &lt;strong>只调&lt;/strong> 一个可用组的实现&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: 集群容错</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/fault-tolerent-strategy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/fault-tolerent-strategy/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: 集群容错</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/fault-tolerent-strategy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/fault-tolerent-strategy/</guid><description>
 &lt;p>在集群调用失败时，Dubbo 提供了多种容错方案，缺省为 failover 重试。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/cluster.jpg" alt="cluster">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/cluster.jpg" alt="cluster">&lt;/p>
 &lt;p>各节点关系：&lt;/p>
 &lt;ul>
 &lt;li>这里的 &lt;code>Invoker&lt;/code> 是 &lt;code>Provider&lt;/code> 的一个可调用 &lt;code>Service&lt;/code> 的抽象，&lt;code>Invoker&lt;/code> 封装了 &lt;code>Provider&lt;/code> 地址及 &lt;code>Service&lt;/code> 接口信息&lt;/li>
@@ -1030,9 +1030,9 @@ broadcast.fail.percent 只是控制的当失败后是否继续调用其他节点
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> cluster=&lt;span style="color:#2aa198">&amp;#34;failsafe&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> cluster=&lt;span style="color:#2aa198">&amp;#34;failsafe&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 服务降级</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/service-downgrade/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/service-downgrade/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 服务降级</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/service-downgrade/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/service-downgrade/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
-&lt;p>推荐使用相关限流降级组件（如 &lt;a href="https://sentinelguard.io/zh-cn/docs/open-source-framework-integrations.html">Sentinel&lt;/a>）以达到最佳体验。参考示例实践：&lt;a href="https://static.dubbo.apache.org/next/zh/overview/tasks/ecosystem/rate-limit/">微服务治理/限流降级&lt;/a>&lt;/p>
+&lt;p>推荐使用相关限流降级组件（如 &lt;a href="https://sentinelguard.io/zh-cn/docs/open-source-framework-integrations.html">Sentinel&lt;/a>）以达到最佳体验。参考示例实践：&lt;a href="http://static.dubbo.apache.org:8080/zh/overview/tasks/ecosystem/rate-limit/">微服务治理/限流降级&lt;/a>&lt;/p>
 &lt;p>服务降级是指服务在非正常情况下进行降级应急处理。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;ul>
@@ -1086,12 +1086,12 @@ broadcast.fail.percent 只是控制的当失败后是否继续调用其他节点
 &lt;li>
 &lt;p>类型找不到错误，如自定义 mock 类、throw 自定义异常，请检查类型是否存在或是否有拼写错误&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs3-V2: 异步调用</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/async-call/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/async-call/</guid><description>
+&lt;/ul></description></item><item><title>Docs3-V2: 异步调用</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/async-call/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/async-call/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;h4 id="背景">背景&lt;/h4>
 &lt;p>从 2.7.0 开始，Dubbo 的所有异步编程接口开始以 &lt;a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html">CompletableFuture&lt;/a> 为基础&lt;/p>
 &lt;p>基于 NIO 的非阻塞实现并行调用，客户端不需要启动多线程即可完成并行调用多个远程服务，相对多线程开销较小。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/future.jpg" alt="/user-guide/images/future.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/future.jpg" alt="/user-guide/images/future.jpg">&lt;/p>
 &lt;h2 id="参考用例">参考用例&lt;/h2>
 &lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-async">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-async&lt;/a>&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -1206,7 +1206,7 @@ broadcast.fail.percent 只是控制的当失败后是否继续调用其他节点
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;findFoo&amp;#34;&lt;/span> async=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> sent=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果你只是想异步，完全忽略返回值，可以配置 &lt;code>return=&amp;quot;false&amp;quot;&lt;/code>，以减少 Future 对象的创建和管理成本&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:method&lt;/span> name=&lt;span style="color:#2aa198">&amp;#34;findFoo&amp;#34;&lt;/span> async=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> return=&lt;span style="color:#2aa198">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 泛化调用（客户端泛化）</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-reference/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 泛化调用（客户端泛化）</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-reference/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>泛化调用是指在调用方没有服务方提供的API（SDK）的情况下，对服务方进行调用，并且可以正常拿到调用结果。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -1527,8 +1527,8 @@ broadcast.fail.percent 只是控制的当失败后是否继续调用其他节点
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>student&lt;span style="color:#719e07">.&lt;/span>put&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;age&amp;#34;&lt;/span>&lt;span style="color:#719e07">,&lt;/span> &lt;span style="color:#2aa198">&amp;#34;xxx&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
 &lt;li>对于其他序列化格式，需要特殊配置&lt;/li>
-&lt;/ol></description></item><item><title>Docs3-V2: 流式通信</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/streaming/</guid><description>
-&lt;p>TBD&lt;/p></description></item><item><title>Docs3-V2: 线程池隔离</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/isolation-executor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/isolation-executor/</guid><description>
+&lt;/ol></description></item><item><title>Docs3-V2: 流式通信</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/streaming/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/streaming/</guid><description>
+&lt;p>TBD&lt;/p></description></item><item><title>Docs3-V2: 线程池隔离</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/isolation-executor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/isolation-executor/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>一种新的线程池管理方式，使得提供者应用内各个服务的线程池隔离开来，互相独立，某个服务的线程池资源耗尽不会影响其他正常服务。支持线程池可配置化，由用户手动指定。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -1731,7 +1731,7 @@ broadcast.fail.percent 只是控制的当失败后是否继续调用其他节点
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#2aa198">&amp;#34;server hello&amp;#34;&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 调用链路传递隐式参数</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/attachment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/attachment/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 调用链路传递隐式参数</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/attachment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/attachment/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>可以通过 &lt;code>RpcContext&lt;/code> 上的 &lt;code>setAttachment&lt;/code> 和 &lt;code>getAttachment&lt;/code> 在服务消费方和提供方之间进行参数的隐式传递。&lt;/p>
 &lt;h4 id="背景">背景&lt;/h4>
@@ -1745,7 +1745,7 @@ Dubbo 中的 RpcContext 是一个 ThreadLocal 的临时状态记录器，当接�
 &lt;li>ServerAttachment：在 Server 端使用，从 ServerAttachment 中读取的参数是从 Client 中传递过来的&lt;/li>
 &lt;li>ServerContext：在 Client 端和 Server 端使用，用于从 Server 端回传 Client 端使用，Server 端写入到 ServerContext 的参数在调用结束后可以在 Client 端的 ServerContext 获取到&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/concepts/rpccontext.png" alt="/imgs/v3/concepts/rpccontext.png">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/rpccontext.png" alt="/imgs/v3/concepts/rpccontext.png">&lt;/p>
 &lt;p>如上图所示，消费端发起调用的时候可以直接通过 Method Invoke 向远程的服务发起调用，同时消费端往 RpcClientAttachment 写入的数据会连同 Invoke 的参数信息写入到 Invocation 中。
 消费端的 Invocation 经过序列化后通过网络传输发送给服务端，服务端解析 Invocation 生成 Method Invoke 的参数和 RpcServerAttachment，然后发起真实调用。
 在服务端处理结束之后，Method Response 结果会连同 RpcServiceContext 一起生成 Result 对象。
@@ -1799,7 +1799,7 @@ Dubbo 3 对 RpcContext 进行了重构，支持可选参数透传，默认开启
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Map&lt;span style="color:#719e07">&amp;lt;&lt;/span>String&lt;span style="color:#719e07">,&lt;/span> Object&lt;span style="color:#719e07">&amp;gt;&lt;/span> &lt;span style="color:#268bd2">select&lt;/span>&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 动态指定 IP 调用</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/specify-ip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/specify-ip/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 动态指定 IP 调用</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/specify-ip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/specify-ip/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>使用 Dubbo 的扩展，实现指定 IP 调用。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -1871,12 +1871,12 @@ Dubbo 3 对 RpcContext 进行了重构，支持可选参数透传，默认开启
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>必须每次都设置，而且设置后必须马上发起调用&lt;/strong>，如果出现拦截器报错（Dubbo 框架内 remove 此值是在选址过程进行的）建议设置 null 以避免 ThreadLocal 内存泄漏导致影响后续调用。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: 直连提供者</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/explicit-target/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/explicit-target/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: 直连提供者</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/explicit-target/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/explicit-target/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/specify-ip/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/specify-ip/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>在开发及测试环境下，经常需要绕过注册中心，只测试指定服务提供者，这时候可能需要点对点直连，点对点直连方式，将以服务接口为单位，忽略注册中心的提供者列表，A 接口配置点对点，不影响 B 接口从注册中心获取列表。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/dubbo-directly.jpg" alt="/user-guide/images/dubbo-directly.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/dubbo-directly.jpg" alt="/user-guide/images/dubbo-directly.jpg">&lt;/p>
 &lt;h2 id="通过-xml-配置">通过 XML 配置&lt;/h2>
 &lt;p>如果是线上需求需要点对点，可在 &lt;code>&amp;lt;dubbo:reference&amp;gt;&lt;/code> 中配置 url 指向提供者，将绕过注册中心，多个地址用分号隔开，配置如下：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;xxxService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.alibaba.xxx.XxxService&amp;#34;&lt;/span> url=&lt;span style="color:#2aa198">&amp;#34;dubbo://localhost:20890&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
@@ -1906,7 +1906,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">注意&lt;/h4>
 为了避免复杂化线上环境，不要在线上使用这个功能，只应在测试阶段使用。
-&lt;/div></description></item><item><title>Docs3-V2: RPC调用上下文</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/context/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/context/</guid><description>
+&lt;/div></description></item><item><title>Docs3-V2: RPC调用上下文</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/context/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/context/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>上下文中存放的是当前调用过程中所需的环境信息。所有配置信息都将转换为 URL 的参数，参见 &lt;a href="../../../reference-manual/config/properties/">schema 配置参考手册&lt;/a> 中的&lt;strong>对应URL参数&lt;/strong>一列。&lt;/p>
 &lt;p>RpcContext 是一个 ThreadLocal 的临时状态记录器，当接收到 RPC 请求，或发起 RPC 请求时，RpcContext 的状态都会变化。比如：A 调 B，B 再调 C，则 B 机器上，在 B 调 C 之前，RpcContext 记录的是 A 调 B 的信息，在 B 调 C 之后，RpcContext 记录的是 B 调 C 的信息。&lt;/p>
@@ -1940,9 +1940,9 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#dc322f">boolean&lt;/span> isProviderSide &lt;span style="color:#719e07">=&lt;/span> RpcContext&lt;span style="color:#719e07">.&lt;/span>getServiceContext&lt;span style="color:#719e07">().&lt;/span>isProviderSide&lt;span style="color:#719e07">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 一致性哈希选址</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/consistent-hash/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/consistent-hash/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 一致性哈希选址</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/consistent-hash/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/consistent-hash/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
-&lt;p>&lt;a href="https://static.dubbo.apache.org/next/zh/blog/2019/05/01/dubbo-%E4%B8%80%E8%87%B4%E6%80%A7hash%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%AE%9E%E7%8E%B0%E5%89%96%E6%9E%90/">Dubbo 一致性Hash负载均衡实现剖析&lt;/a>&lt;/p>
+&lt;p>&lt;a href="http://static.dubbo.apache.org:8080/zh/blog/2019/05/01/dubbo-%E4%B8%80%E8%87%B4%E6%80%A7hash%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%AE%9E%E7%8E%B0%E5%89%96%E6%9E%90/">Dubbo 一致性Hash负载均衡实现剖析&lt;/a>&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>在有多台服务端的时候根据请求参数的进行一致性哈希散列选择服务端。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
@@ -1972,18 +1972,18 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>referenceConfig&lt;span style="color:#719e07">.&lt;/span>setParameters&lt;span style="color:#719e07">(&lt;/span>parameters&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>referenceConfig&lt;span style="color:#719e07">.&lt;/span>setLoadBalance&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;consistenthash&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>referenceConfig&lt;span style="color:#719e07">.&lt;/span>get&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 只订阅</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/subscribe-only/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/subscribe-only/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 只订阅</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/subscribe-only/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/subscribe-only/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>为方便开发测试，经常会在线下共用一个所有服务可用的注册中心，这时，如果一个正在开发中的服务提供者注册，可能会影响消费者不能正常运行。&lt;/p>
 &lt;p>可以让服务提供者开发方，只订阅服务(开发的服务可能依赖其它服务)，而不注册正在开发的服务，通过直连测试正在开发的服务。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/subscribe-only.jpg" alt="/user-guide/images/subscribe-only.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/subscribe-only.jpg" alt="/user-guide/images/subscribe-only.jpg">&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="禁用注册配置">禁用注册配置&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;10.20.153.10:9090&amp;#34;&lt;/span> register=&lt;span style="color:#2aa198">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>或者&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;10.20.153.10:9090?register=false&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 调用触发事件通知</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/events-notify/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/events-notify/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 调用触发事件通知</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/events-notify/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/events-notify/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>在调用之前、调用之后、出现异常时，会触发 &lt;code>oninvoke&lt;/code>、&lt;code>onreturn&lt;/code>、&lt;code>onthrow&lt;/code> 三个事件，可以配置当事件发生时，通知哪个类的哪个方法。&lt;/p>
 &lt;h2 id="参考用例">参考用例&lt;/h2>
@@ -2053,7 +2053,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Assert&lt;span style="color:#719e07">.&lt;/span>assertEquals&lt;span style="color:#719e07">(&lt;/span>requestId&lt;span style="color:#719e07">,&lt;/span> notify&lt;span style="color:#719e07">.&lt;/span>ret&lt;span style="color:#719e07">.&lt;/span>get&lt;span style="color:#719e07">(&lt;/span>requestId&lt;span style="color:#719e07">).&lt;/span>getId&lt;span style="color:#719e07">());&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 多协议</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-protocols/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-protocols/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 多协议</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-protocols/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-protocols/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>Dubbo 允许配置多协议，在不同服务上支持不同协议或者同一服务上同时支持多种协议。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -2090,7 +2090,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">&amp;lt;!-- 使用多个协议暴露服务 --&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:service&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;helloService&amp;#34;&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.alibaba.hello.api.HelloService&amp;#34;&lt;/span> version=&lt;span style="color:#2aa198">&amp;#34;1.0.0&amp;#34;&lt;/span> protocol=&lt;span style="color:#2aa198">&amp;#34;dubbo,hessian&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 服务端对客户端进行回调</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/callback-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/callback-parameter/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 服务端对客户端进行回调</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/callback-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/callback-parameter/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>参数回调方式与调用本地 callback 或 listener 相同，只需要在 Spring 的配置文件中声明哪个参数是 callback 类型即可。Dubbo 将基于长连接生成反向代理，这样就可以从服务器端调用客户端逻辑。可以参考 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-callback">dubbo 项目中的示例代码&lt;/a>。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -2178,7 +2178,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System&lt;span style="color:#719e07">.&lt;/span>out&lt;span style="color:#719e07">.&lt;/span>println&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;callback1:&amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> msg&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">});&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 本地伪装</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-mock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-mock/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 本地伪装</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-mock/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-mock/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>在 Dubbo3 中有一种机制可以实现轻量级的服务降级，也就是本地伪装 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -2277,7 +2277,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;p>自定义异常必须拥有一个入参为 &lt;code>String&lt;/code> 的构造函数，该构造函数将用于接受异常信息。&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs3-V2: 多注册中心</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-registry/</guid><description>
+&lt;/div></description></item><item><title>Docs3-V2: 多注册中心</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/multi-registry/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>Dubbo 支持同一服务向多注册中心同时注册，或者不同服务分别注册到不同的注册中心上去，甚至可以同时引用注册在不同注册中心上的同名服务。另外，注册中心是支持自定义扩展的 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -2347,10 +2347,10 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;p>可以自行扩展注册中心，参见：&lt;a href="../../../reference-manual/spi/description/registry">注册中心扩展&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs3-V2: 本地存根</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-stub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-stub/</guid><description>
+&lt;/div></description></item><item><title>Docs3-V2: 本地存根</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-stub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-stub/</guid><description>
 &lt;h2 id="特性说明">特性说明：&lt;/h2>
 &lt;p>远程服务后，客户端通常只剩下接口，而实现全在服务器端，但提供方有些时候想在客户端也执行部分逻辑。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/stub.jpg" alt="/user-guide/images/stub.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/stub.jpg" alt="/user-guide/images/stub.jpg">&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>做 ThreadLocal 缓存，提前验证参数，调用失败后伪造容错数据等等，此时就需要在 API 中带上 Stub，客户端生成 Proxy 实例，会把 Proxy 通过构造函数传给 Stub &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>，然后把 Stub 暴露给用户，Stub 可以决定要不要去调 Proxy。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
@@ -2388,7 +2388,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;p>在 interface 旁边放一个 Stub 实现，它实现 BarService 接口，并有一个传入远程 BarService 实例的构造函数。&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs3-V2: 回声测试</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/echo-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/echo-service/</guid><description>
+&lt;/div></description></item><item><title>Docs3-V2: 回声测试</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/echo-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/echo-service/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>回声测试用于检测服务是否可用，回声测试按照正常请求流程执行，能够测试整个调用是否通畅，可用于监控。&lt;/p>
 &lt;h2 id="参考用例">参考用例&lt;/h2>
@@ -2408,7 +2408,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>String status &lt;span style="color:#719e07">=&lt;/span> echoService&lt;span style="color:#719e07">.&lt;/span>$echo&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;OK&amp;#34;&lt;/span>&lt;span style="color:#719e07">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">assert&lt;/span>&lt;span style="color:#719e07">(&lt;/span>status&lt;span style="color:#719e07">.&lt;/span>equals&lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#2aa198">&amp;#34;OK&amp;#34;&lt;/span>&lt;span style="color:#719e07">));&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 调用信息记录</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/accesslog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/accesslog/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 调用信息记录</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/accesslog/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/accesslog/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>在 dubbo3 日志分为日志适配和访问日志，如果想记录每一次请求信息，可开启访问日志，类似于 apache 的访问日志。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -2422,7 +2422,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:protocol&lt;/span> accesslog=&lt;span style="color:#2aa198">&amp;#34;http://10.20.160.198/wiki/display/dubbo/foo/bar.log&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>此日志量比较大，请注意磁盘容量。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: 实现泛化实现（服务端泛化）</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-service/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: 实现泛化实现（服务端泛化）</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/generic-service/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>泛接口实现方式主要用于服务器端没有 API 接口及模型类元的情况，参数及返回值中的所有 POJO 均用 Map 表示，通常用于框架集成，比如：实现一个通用的远程服务 Mock 框架，可通过实现 GenericService 接口处理所有服务请求。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -2456,9 +2456,9 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// 暴露及注册服务
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>service&lt;span style="color:#719e07">.&lt;/span>export&lt;span style="color:#719e07">();&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 异步执行</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/async-execute-on-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/async-execute-on-provider/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 异步执行</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/async-execute-on-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/async-execute-on-provider/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/attachment/">最新版本&lt;/a>。&lt;/p>
+&lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/attachment/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>Provider端异步执行将阻塞的业务从Dubbo内部线程池切换到业务自定义线程，避免Dubbo线程池的过度占用，有助于避免不同服务间的互相影响。异步执行无异于节省资源或提升RPC响应性能，因为如果业务执行需要阻塞，则始终还是要有线程来负责执行。&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
@@ -2521,7 +2521,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>&lt;span style="color:#719e07">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 本地调用</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-call/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-call/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 本地调用</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-call/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/local-call/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>本地调用使用了 injvm 协议，是一个伪协议，它不开启端口，不发起远程调用，只在 JVM 内直接关联，但执行 Dubbo 的 Filter 链。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -2544,7 +2544,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;h3 id="自动暴露">自动暴露&lt;/h3>
 &lt;p>从 &lt;code>2.2.0&lt;/code> 开始，每个服务默认都会在本地暴露。在引用服务的时候，默认优先引用本地服务。如果希望引用远程服务可以使用一下配置强制引用远程服务。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> ... scope=&lt;span style="color:#2aa198">&amp;#34;remote&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 延迟暴露</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/delay-publish/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/delay-publish/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 延迟暴露</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/delay-publish/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/delay-publish/</guid><description>
 &lt;p>如果你的服务需要预热时间，比如初始化缓存，等待相关资源就位等，可以使用 delay 进行延迟暴露。我们在 Dubbo 2.6.5 版本中对服务延迟暴露逻辑进行了细微的调整，将需要延迟暴露（delay &amp;gt; 0）服务的倒计时动作推迟到了 Spring 初始化完成后进行。你在使用 Dubbo 的过程中，并不会感知到此变化，因此请放心使用。&lt;/p>
 &lt;h2 id="dubbo-265-之前版本">Dubbo 2.6.5 之前版本&lt;/h2>
 &lt;p>延迟到 Spring 初始化完成后，再暴露服务&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p>
@@ -2561,11 +2561,11 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;ol>
 &lt;li>
 &lt;p>请求线程的 applicationContext.getBean() 调用，先同步 singletonObjects 判断 Bean 是否存在，不存在就同步 beanDefinitionMap 进行初始化，并再次同步 singletonObjects 写入 Bean 实例缓存。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/lock-get-bean.jpg" alt="deadlock">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/lock-get-bean.jpg" alt="deadlock">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>而 Spring 初始化线程，因不需要判断 Bean 的存在，直接同步 beanDefinitionMap 进行初始化，并同步 singletonObjects 写入 Bean 实例缓存。&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/lock-init-context.jpg" alt="/user-guide/images/lock-init-context.jpg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/lock-init-context.jpg" alt="/user-guide/images/lock-init-context.jpg">&lt;/p>
 &lt;p>这样就导致 getBean 线程，先锁 singletonObjects，再锁 beanDefinitionMap，再次锁 singletonObjects。&lt;br>
 而 Spring 初始化线程，先锁 beanDefinitionMap，再锁 singletonObjects。反向锁导致线程死锁，不能提供服务，启动不了。&lt;/p>
 &lt;/li>
@@ -2584,7 +2584,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;p>基于 Spring 的 ContextRefreshedEvent 事件触发暴露&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Docs3-V2: 只注册</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/registry-only/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/registry-only/</guid><description>
+&lt;/div></description></item><item><title>Docs3-V2: 只注册</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/registry-only/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/registry-only/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>如果有两个镜像环境，两个注册中心，有一个服务只在其中一个注册中心有部署，另一个注册中心还没来得及部署，而两个注册中心的其它应用都需要依赖此服务。这个时候，可以让服务提供者方只注册服务到另一注册中心，而不从另一注册中心订阅服务。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
@@ -2595,8 +2595,8 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>或者&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;hzRegistry&amp;#34;&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;10.20.153.10:9090&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> id=&lt;span style="color:#2aa198">&amp;#34;qdRegistry&amp;#34;&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;10.20.141.150:9090?subscribe=false&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 分布式事务支持</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/distributed-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/distributed-transaction/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 分布式事务支持</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/distributed-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/distributed-transaction/</guid><description>
 &lt;p>分布式事务基于 JTA/XA 规范实现。&lt;/p>
 &lt;p>&lt;strong>两阶段提交&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/user/jta-xa.jpg" alt="/user-guide/images/jta-xa.jpg">&lt;/p>
-&lt;p>在 Dubbo 中，可以采用 &lt;a href="https://static.dubbo.apache.org/next/zh/blog/2019/01/17/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8seata%E4%BF%9D%E8%AF%81dubbo%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%97%B4%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7/">seata&lt;/a> 来完成对分布式事务的支持。&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/user/jta-xa.jpg" alt="/user-guide/images/jta-xa.jpg">&lt;/p>
+&lt;p>在 Dubbo 中，可以采用 &lt;a href="http://static.dubbo.apache.org:8080/zh/blog/2019/01/17/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8seata%E4%BF%9D%E8%AF%81dubbo%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%97%B4%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7/">seata&lt;/a> 来完成对分布式事务的支持。&lt;/p></description></item></channel></rss>

@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 0 - Common 层</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/</link><description>Recent content in 0 - Common 层 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 0-1 - 线程池资源枯竭</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/1/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 0 - Common 层</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/</link><description>Recent content in 0 - Common 层 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: 0-1 - 线程池资源枯竭</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/1/</guid><description>
 &lt;p>服务端的线程资源耗尽了。
 默认情况下，Dubbo 服务端的业务线程数是 200 个。如果多个并发请求量超过了 200，就会拒绝新的请求，抛出此错误。&lt;/p>
 &lt;h3 id="可能的原因">可能的原因&lt;/h3>
@@ -16,12 +16,12 @@
 &lt;blockquote>
 &lt;p>这个错误码的 FAQ 页面参考了空冥同学的 &lt;a href="https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/plugin/rpc/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%94%E2%80%94Dubbo%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md">《Dubbo 常见错误及解决方法》&lt;/a> 。
 所引文章通过 &lt;a href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0&lt;/a> 协议赋予了汇编的权利。在此向原作者表示感谢。&lt;/p>
-&lt;/blockquote></description></item><item><title>Docs3-V2: 0-2 - 非法属性值</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/2/</guid><description>
+&lt;/blockquote></description></item><item><title>Docs3-V2: 0-2 - 非法属性值</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/2/</guid><description>
 &lt;h3 id="可能的原因">可能的原因&lt;/h3>
 &lt;p>这个提示是指用户配置的值与属性本身所需的数据类型并不匹配。比如 &lt;code>dubbo.comsumer.threads&lt;/code> 属性只能接受数值属性，但是用户所输入的值混入了字母。&lt;/p>
 &lt;h3 id="排查和解决步骤">排查和解决步骤&lt;/h3>
 &lt;p>根据&lt;a href="../../../reference-manual/config/properties">配置项参考手册&lt;/a>，查找出错的配置项，检查该项指定的类型，检查是否出现类型不一致的情况。&lt;/p>
-&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 0-3 - 无法访问缓存路径</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/3/</guid><description>
+&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 0-3 - 无法访问缓存路径</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/3/</guid><description>
 &lt;p>其它模块复用了 Common 层的基于文件的缓存机制（目前是元数据模块），而 Common 层的文件缓存机制无法访问它指定的目录。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>2022-08-29 00:35:00,189 ERROR [org.apache.dubbo.common.cache.FileCacheStoreFactory:?] - [DUBBO] Cache store path can&amp;#39;t be created: , dubbo version: , current host: 10.0.1.1, error code: 0-3. This may be caused by inaccessible of cache path, go to https://dubbo.apache.org/faq/0/3 to find instructions.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>java.nio.file.FileAlreadyExistsException: [Path]
@@ -44,7 +44,7 @@
 &lt;li>根据下面显示的实际异常找到访问不了的目录，确定下它的文件访问权限。&lt;/li>
 &lt;li>确定下是否有别的 Dubbo 实例正在访问这个路径。&lt;/li>
 &lt;li>尝试配置 &lt;strong>Java System Property（用 -D 配置的 Java 系统属性）&lt;/strong> &lt;code>dubbo.meta.cache.filePath&lt;/code> 和 &lt;code>dubbo.mapping.cache.filePath&lt;/code>，将它指定成一个当前用户能够完全控制的目录下。&lt;/li>
-&lt;/ol></description></item><item><title>Docs3-V2: 0-4 - 缓存条目超限</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/4/</guid><description>
+&lt;/ol></description></item><item><title>Docs3-V2: 0-4 - 缓存条目超限</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/4/</guid><description>
 &lt;p>其它模块复用了 Common 层的基于文件的缓存机制（目前是元数据模块），而 Common 层的文件缓存机制 “发觉” 条目超限。&lt;/p>
 &lt;h3 id="可能的原因">可能的原因&lt;/h3>
 &lt;p>用户不合理地配置了 &lt;strong>Java System Property&lt;/strong> （用 -D 配置的 Java 系统属性） &lt;code>dubbo.mapping.cache.entrySize&lt;/code> 或者 &lt;code>dubbo.meta.cache.entrySize&lt;/code>&lt;/p>
@@ -80,7 +80,7 @@ background: #cccccc;
 &lt;ol>
 &lt;li>尝试重新配置上述 &lt;strong>Java System Property（用 -D 配置的 Java 系统属性）&lt;/strong>。&lt;/li>
 &lt;li>如果确实没有配置这些 &lt;strong>System Property&lt;/strong>，请到 &lt;a href="https://github.com/apache/dubbo/issues">GitHub Issue Tracker&lt;/a> 下发 Issue。&lt;/li>
-&lt;/ol></description></item><item><title>Docs3-V2: 0-5 - 缓存文件大小超限</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/faq/0/5/</guid><description>
+&lt;/ol></description></item><item><title>Docs3-V2: 0-5 - 缓存文件大小超限</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/faq/0/5/</guid><description>
 &lt;p>其它模块复用了 Common 层的基于文件的缓存机制（目前是元数据模块），而 Common 层的文件缓存机制 “发觉” 文件大小超限。&lt;/p>
 &lt;h3 id="可能的原因">可能的原因&lt;/h3>
 &lt;ol>

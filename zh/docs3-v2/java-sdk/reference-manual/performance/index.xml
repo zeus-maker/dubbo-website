@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 性能参考手册</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/</link><description>Recent content in 性能参考手册 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: RPC 协议 Triple&amp;Dubbo 基准测试</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 性能参考手册</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/performance/</link><description>Recent content in 性能参考手册 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/performance/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs3-V2: RPC 协议 Triple&amp;Dubbo 基准测试</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</guid><description>
 &lt;ul>
 &lt;li>Dubbo3 的 _Dubbo协议 _实现与 Dubbo2 版本在性能上基本持平。&lt;/li>
 &lt;li>由于 Triple协议 本身是基于 HTTP/2 构建，因此在单条链路上的 RPC 调用并未比基于 TCP 的 Dubbo2 有提升，反而在某些调用场景出现一定下降。但 _Triple协议 _更大的优势在于网关穿透性、通用性，以及 Stream 通信模型带来的总体吞吐量提升。&lt;/li>
@@ -68,13 +68,13 @@
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="121-dubbo-协议不同版本实现对比">1.2.1 Dubbo 协议不同版本实现对比&lt;/h3>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/rpc-dubbo.svg" alt="//imgs/v3/performance/rpc-dubbo.svg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/performance/rpc-dubbo.svg" alt="//imgs/v3/performance/rpc-dubbo.svg">&lt;/p>
 &lt;p>&lt;br />图三 Dubbo协议在不同版本的实现对比&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>就 Dubbo RPC + Hessian 的默认组合来说，Dubbo3 与 Dubbo2 在性能上在不同调用场景下基本持平&lt;/li>
 &lt;/ul>
 &lt;h3 id="122-dubbo协议-vs-triple协议">1.2.2 Dubbo协议 vs Triple协议&lt;/h3>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/rpc-triple.svg" alt="//imgs/v3/performance/rpc-triple.svg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/performance/rpc-triple.svg" alt="//imgs/v3/performance/rpc-triple.svg">&lt;/p>
 &lt;p>&lt;br />图四 Triple vs Dubbo&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>单纯看 Consumer &amp;lt;-&amp;gt; Provider 的点对点调用，可以看出 Triple 协议本身并不占优势，同样使用 Protobuf 序列化方式，Dubbo RPC 协议总体性能还是要优于 Triple。&lt;br />&lt;br />&lt;/li>
@@ -83,7 +83,7 @@
 &lt;h3 id="123-补充网关场景">1.2.3 补充网关场景&lt;/h3>
 &lt;p>TBD&lt;br />&lt;br />&lt;/p>
 &lt;h3 id="124-模拟-stream-通信场景的吞吐量提升">1.2.4 模拟 Stream 通信场景的吞吐量提升&lt;/h3>
-&lt;p>TBD&lt;/p></description></item><item><title>Docs3-V2: 应用级服务发现基准测试</title><link>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://static.dubbo.apache.org/next/zh/docs3-v2/java-sdk/reference-manual/performance/benchmarking/</guid><description>
+&lt;p>TBD&lt;/p></description></item><item><title>Docs3-V2: 应用级服务发现基准测试</title><link>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/performance/benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/performance/benchmarking/</guid><description>
 &lt;h2 id="1-benchmark-结论">1 Benchmark 结论&lt;/h2>
 &lt;p>对比 2.x 版本，Dubbo3 版本&lt;/p>
 &lt;ul>
@@ -117,13 +117,13 @@
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="22-数据分析">2.2 数据分析&lt;/h3>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/registry-mem.svg" alt="//imgs/v3/performance/registry-mem.svg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/performance/registry-mem.svg" alt="//imgs/v3/performance/registry-mem.svg">&lt;/p>
 &lt;p>&lt;br />图一 服务发现模型内存占用变化&lt;br />&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>Dubbo3 接口级服务发现模型，常驻内存较 2.x 版本下降约 50%&lt;/li>
 &lt;li>Dubbo3 应用级服务发现模型，常驻内存较 2.x 版本下降约 75%&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://static.dubbo.apache.org/next/imgs/v3/performance/registry-gc.svg" alt="//imgs/v3/performance/registry-gc.svg">&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/performance/registry-gc.svg" alt="//imgs/v3/performance/registry-gc.svg">&lt;/p>
 &lt;p>&lt;br />图二 服务发现模型 GC 变化&lt;br />&lt;br />&lt;/p>
 &lt;ul>
 &lt;li>Dubbo3 接口级服务发现模型，YGC 次数 2.x 版本大幅下降，从数百次下降到十几次&lt;/li>
