@@ -376,4 +376,11 @@
 &lt;ol start="7">
 &lt;li>不需要开启注入&lt;/li>
 &lt;/ol>
-&lt;p>Proxyless 模式下 pod 不需要再开启 envoy 注入，请确认 namespace 中没有 &lt;code>istio-injection=enabled&lt;/code> 的标签。&lt;/p></description></item></channel></rss>
+&lt;p>Proxyless 模式下 pod 不需要再开启 envoy 注入，请确认 namespace 中没有 &lt;code>istio-injection=enabled&lt;/code> 的标签。&lt;/p>
+&lt;ol start="8">
+&lt;li>明文连接istiod&lt;/li>
+&lt;/ol>
+&lt;p>Proxyless 模式下默认通过ssl方式连接istiod，同时也支持通过明文的方式连接istiod。&lt;/p>
+&lt;p>明文连接参考配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>dubbo.registry.secure&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">plaintext&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
