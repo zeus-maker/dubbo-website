@@ -1,25 +1,113 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – 核心特性</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/</link><description>Recent content in 核心特性 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://static.dubbo.apache.org:8080/zh/overview/what/advantages/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 易用性</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/usability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/usability/</guid><description>
-&lt;p>Dubbo提供了简单易用的配置方式，支持XML、Properties、Annotation、Yaml等格式的配置文件。以Dubbo Java SDK为例，Dubbo支持Spring Boot + Annotation的方式来开发应用。开发者只需要使用@DubboService和 @EnableDubbo来暴露服务，通过@DubboReference和@EnableDubbo即可调用暴露的服务，通过application.properties或application.yml来定义服务相关的配置信息。&lt;/p>
-&lt;p>Dubbo提供了丰富的samples，开发者可以根据具体情况选择合适的脚手架来构建自己的项目。&lt;/p>
-&lt;p>Java SDK：dubbo-samples
-Golang SDK：dubbo-go-samples
-Rust SDK：dubbo-rust-samples
-Dubbo从开发者的角度出发，提供了一系列能力降低开发者在调试、部署和调用等环节的复杂度：&lt;/p>
-&lt;p>本地调用：当在本地开发时，无需配置注册中心也可以实现服务注册发现功能，减少了对注册中心的依赖。
-泛化调用：可以将开发的服务用Http协议对外进行暴露，能够满足在多语言场景下服务调用的需求。
-依赖检查：在服务部署的过程中，Dubbo可以检测依赖的服务是否部署成功。
-延迟暴露：部署的服务可以经过一段时间以后再对外暴露，可以满足服务需要预热的需求。
-异步调用：可以通过Dubbo提供的异步调用功能来提供系统的吞吐量。
-关键词
-支持多种格式的配置文件：支持XML、Properties、Annotation、Yaml等格式的配置文件。
-提供了丰富的脚手架：不同的开发语言提供了对应的开发脚手架。目前已经支持Java、Golang和Rust。
-降低调试、部署和调用等环节的复杂度：支持本地调用、泛化调用、异步调用、依赖检查和延迟暴露。&lt;/p></description></item><item><title>Overview: 高性能</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/performance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/performance/</guid><description>
-&lt;p>Triple 是基于 HTTP/2 开发的新一代 RPC 协议，在网关穿透性和通用性以及 Stream 通信模型都具备优势。&lt;/p>
-&lt;p>Streaming 通信：基于 Triple 协议进行 Stream 流模式。
-响应式编程：基于 Triple 协议流式调用。
-流式通信：基于 Triple 协议进行流式通信。
-应用级服务发现是基于应用粒度的服务发现机制，适配云原生微服务变革。在大规模集群展现极致性能以及大幅降低系统资源的利用率。&lt;/p>
-&lt;p>应用级服务发现：提升性能与可伸缩性。&lt;/p></description></item><item><title>Overview: 流量治理</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/traffic-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/traffic-management/</guid><description/></item><item><title>Overview: 可观测性</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/observability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/observability/</guid><description>
+&lt;p>Dubbo 通过提供面向开发开发侧的编程框架和一系列服务治理套件，极大的简化了微服务构建的复杂度。从开发层面，Dubbo 通过针对不同语言实现定义了一套微服务开发范式，并提供了配套脚手架用于快速搭建微服务项目骨架；从部署上来说，Dubbo 应用可以打包部署，Dubbo 提供了多种；Dubbo 服务治理是真正从解决微服务生产实践问题的角度出发，提供了除服务发现等能力之外的高阶特性。&lt;/p>
+&lt;h2 id="开发">开发&lt;/h2>
+&lt;p>Dubbo 提供了用于快速生成微服务项目脚手架的配套工具（浏览器页面或命令行工具），只需要告诉脚手架你期望包含的功能或组件，脚手架最终可以帮助开发者生成具有合理和必要依赖的工程，里面包含必要的第三方依赖、默认配置等，开发者只需要在特定的位置编写业务逻辑，并通过 Dubbo 特有的方式定义和发布服务即可。&lt;/p>
+&lt;p>&lt;img src="" alt="脚手架示例图">&lt;/p>
+&lt;p>Dubbo 并没有发明一套全新的应用开发模式，而是与业界主流的应用开发框架整合，让开发者可以用流行的应用开发框架开发 Dubbo 应用 &amp;mdash; Dubbo 提供了与应用开发框架模式相匹配的 RPC 服务开发模式。&lt;/p>
+&lt;p>这点我们通过 Java 体系的 Spring Boot 解释过，如果开发者选择基于 Spring/Spring Boot 开发微服务，则 Dubbo 就是构建在 Spring Boot 之上的服务开发框架，这里还是以 Spring Boot 为基础的 Dubbo 应用开发为例，只需要增加相应的注解和配置文件就可以了。&lt;/p>
+&lt;p>增加 Spring Boot 风格的注解：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@SpringBootApplication&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@EnableDubbo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">ProviderApplication&lt;/span> &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@DubboService&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">DemoServiceImpl&lt;/span> &lt;span style="color:#268bd2">implements&lt;/span> DemoService &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 &lt;code>application.yml&lt;/code> 配置文件中增加配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">dubbo&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">application&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">name&lt;/span>: dubbo-demo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">protocol&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">name&lt;/span>: dubbo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">port&lt;/span>: -&lt;span style="color:#2aa198">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">registry&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">address&lt;/span>: zookeeper://127.0.0.1:2181
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>关于具体语言的脚手架、开发体验可参见：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="">Dubbo Java 开发指南&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">Dubbo Golang 开发指南&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>分布式系统中服务组件由不同团队负责开发，服务间如何透明、高效协作是非常影响开发效率的问题，这包括 API 管理、服务测试、服务静态观测等，Dubbo 对此类场景都提供了一些有用的配套工具。关于服务 API 管理，服务查询、测试、Mock 等，可参加 &lt;a href="">Dubbo-Amin&lt;/a> 的详细描述。&lt;/p>
+&lt;ul>
+&lt;li>Dubbo 提供了类似 Swagger 的 API 管理工具，而对于 IDL 也将开源对应的管理工具&lt;/li>
+&lt;li>支持服务测试&lt;/li>
+&lt;li>支持服务 Mock&lt;/li>
+&lt;li>Admin 服务查询&lt;/li>
+&lt;/ul>
+&lt;h2 id="部署">部署&lt;/h2>
+&lt;p>Dubbo 原生服务可打包部署到 Docker 容器、Kubernetes、Service Mesh 等云原生基础设施和微服务架构。&lt;/p>
+&lt;p>对 Docker 部署环境，Dubbo 服务最需要解决的就是注册 IP 地址与通信 IP 地址统一的问题，对于这点&lt;/p>
+&lt;p>对于 Kubernetes 部署环境，有两种模式
+Kubernetes Native Service&lt;/p>
+&lt;p>对于 Service Mesh 架构，&lt;/p>
+&lt;p>关于不同环境的部署示例，可参考：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="">部署 Dubbo 服务到 Docker 容器&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">部署 Dubbo 服务到 Kubernetes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">部署 Dubbo 服务到 Service Mesh&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="治理">治理&lt;/h2>
+&lt;p>Dubbo 提供了丰富的服务治理能力，对于绝大多数用户来说，Dubbo 原生提供的服务治理定义与实现 (服务发现、负载均衡等) 就能满足微服务实践诉求，开发者只需要做两步使用服务治理&lt;/p>
+&lt;p>&lt;strong>1. 配置一条注册中心地址&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">dubbo&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">registry&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">address&lt;/span>: zookeeper://127.0.0.1:2181
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>服务消费端、提供端都在 dubbo 配置文件中增加以上配置（以 yaml 格式为例），消费端就能自动发现并对提供端地址发起服务调用，将默认采用基于权重的随机负载均衡，且包含超时、失败重试等默认策略。&lt;/p>
+&lt;p>&lt;strong>2. 打开 Dubbo Admin 观测服务运行状态&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="" alt="Dubbo Admin 运行状态截图">&lt;/p>
+&lt;p>服务的基本信息、调用数据等会如上图展示在 Dubbo Admin 之上。&lt;/p>
+&lt;p>对于更复杂的微服务实践场景，Dubbo 还提供了更多高级的服务治理特性，包括&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="">流量治理&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">动态配置&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">限流降级&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">数据一致性&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">可观测性&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">多协议&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">多注册中心&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">Dubbo Mesh&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Overview: 高性能</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/performance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/performance/</guid><description>
+&lt;p>Dubbo 被设计用于解决阿里巴巴超大规模的电商微服务集群实践，并在各个行业头部企业经过多年的十万、百万规模的微服务实践检验，因此，Dubbo 在通信性能、稳定性方面具有无可比拟的优势，非常适合构建近乎无限水平伸缩的微服务集群，这也是 Dubbo 从实践层面优于业界很多同类的产品的一大巨大优势。&lt;/p>
+&lt;h2 id="高性能数据传输">高性能数据传输&lt;/h2>
+&lt;p>Dubbo 内置支持 Dubbo2、Triple (兼容 gRPC) 两款高性能通信协议。其中&lt;/p>
+&lt;ul>
+&lt;li>Dubbo2 是基于 TCP 传输协议之上构建的二进制私有 RPC 通信协议，是一款非常简单、紧凑、高效的通信协议。&lt;/li>
+&lt;li>Triple 是基于 HTTP/2 应用层协议之上构建新一代 RPC 通信协议，在网关穿透性、通用性以及 Streaming 通信上都具备优势，同时 Triple 在完全兼容 gRPC 协议的同时，在实现上更具性能优势。&lt;/li>
+&lt;/ul>
+&lt;p>Dubbo2 benchmark 性能指标&lt;/p>
+&lt;p>&lt;img src="" alt="Dubbo2">&lt;/p>
+&lt;p>Triple benchmark 性能指标&lt;/p>
+&lt;p>&lt;img src="" alt="Triple">&lt;/p>
+&lt;p>通过以下内容了解更多协议详情：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../../../core-features/protocols">Dubbo 协议支持详情&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="构建可伸缩的微服务集群">构建可伸缩的微服务集群&lt;/h2>
+&lt;p>业务增长带来了集群规模的快速增长，而集群规模的增长会对服务治理架构带来挑战，这包括注册中心的存储容量、节点动态变化带来的地址推送与解析效率、高效的网络链接管理、高峰期的流量无损上下线、异常节点的自动节点管理、消费端存储大量网络地址的资源开销等。&lt;/p>
+&lt;p>以上很多点都直接关系到了微服务集群的稳定性，因此很容易成为影响集群和业务增长的瓶颈，当集群规模变得越大，问题带来的影响面也就越会被进一步放大。很多开发者可能会想只有几个应用而已，当前不需要并不关心集群规模，但作为技术架构选型的关键因素之一，我们还是要充分考虑微服务集群。并且基于我们对业界大量微服务架构和框架实现的调研，大部分产品的性能瓶颈点可能很快就会到来（一些产品所能高效支持的瓶颈节点规模阈值都是非常低的，比如几十个应用、数百个节点）。&lt;/p>
+&lt;p>&lt;img src="" alt="一份对比的 Dubbo、Spring Cloud、Go-Micro、Istio 在不同集群规模下的资源咋用 benchmark，比如模拟10个节点、100个节点、1000 个节点情况下的资源占用情况">&lt;/p>
+&lt;p>Dubbo 的优势在于&lt;/p>
+&lt;p>通过以下内容了解 Dubbo 构建生产可用的、可伸缩的大规模微服务集群背后的原理：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="">Dubbo3 服务发现模型&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">流量管理&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">源码解析&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Overview: 流量治理</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/traffic-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/traffic-management/</guid><description>
+&lt;p>按标签的条件路由&lt;/p>
+&lt;p>Service Mesh 路由&lt;/p>
+&lt;p>路由规则可扩展&lt;/p>
+&lt;ul>
+&lt;li>超时&lt;/li>
+&lt;li>重试&lt;/li>
+&lt;li>限流&lt;/li>
+&lt;li>降级&lt;/li>
+&lt;li>Mock&lt;/li>
+&lt;li>集群容错&lt;/li>
+&lt;li>无损上下线&lt;/li>
+&lt;li>异常链接管理&lt;/li>
+&lt;/ul></description></item><item><title>Overview: 可观测性</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/observability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/observability/</guid><description>
+&lt;p>Istio generates detailed telemetry for all service communications within a mesh. This telemetry provides observability of service behavior, empowering operators to troubleshoot, maintain, and optimize their applications – without imposing any additional burdens on service developers. Through Istio, operators gain a thorough understanding of how monitored services are interacting, both with other services and with the Istio components themselves.&lt;/p>
 &lt;p>可观测性分为三个维度度量、链路追踪以及日志，Dubbo从这三个方面为开发者提供了全面的可观测性解决方案。&lt;/p>
 &lt;p>Metrics：Dubbo集成了prometheus监控系统，在指标数据上Dubbo支持多维度的RT指标数据，包括Max、Min、Avg、P99、P95等维度，支持多维度的请求量指标数据，包括QPS、调用成功的请求量、调用失败的请求量等。除此之外，Dubbo还能够通过SPI扩展来完成集成其他监控系统。&lt;/p>
 &lt;p>Tracing：Dubbo提供了链路追踪所需的必备数据，为Dubbo集成各类链路追踪系统提供了便捷，以辅助用户完成更加强大的链路追踪能力。目前流行的skywalking、zipkin、jaeger都支持Dubbo服务的链路追踪。&lt;/p>
