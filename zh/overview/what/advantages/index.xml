@@ -48,7 +48,7 @@ Kubernetes Native Service&lt;/p>
 &lt;li>&lt;a href="">部署 Dubbo 服务到 Service Mesh&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="治理">治理&lt;/h2>
-&lt;p>Dubbo 提供了丰富的服务治理能力，对于绝大多数用户来说，Dubbo 原生提供的服务治理定义与实现 (服务发现、负载均衡等) 就能满足微服务实践诉求，开发者只需要做两步使用服务治理&lt;/p>
+&lt;p>对于绝大多数用户来说，Dubbo 原生提供的服务治理定义与实现 (服务发现、负载均衡等) 就能满足微服务实践诉求，开发者只需要做两步使用服务治理&lt;/p>
 &lt;p>&lt;strong>1. 配置一条注册中心地址&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">dubbo&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">registry&lt;/span>:
@@ -57,7 +57,7 @@ Kubernetes Native Service&lt;/p>
 &lt;p>&lt;strong>2. 打开 Dubbo Admin 观测服务运行状态&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="" alt="Dubbo Admin 运行状态截图">&lt;/p>
 &lt;p>服务的基本信息、调用数据等会如上图展示在 Dubbo Admin 之上。&lt;/p>
-&lt;p>对于更复杂的微服务实践场景，Dubbo 还提供了更多高级的服务治理特性，包括&lt;/p>
+&lt;p>对于更复杂的微服务实践场景，Dubbo 还提供了更多高级的服务治理特性，包括：&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="">流量治理&lt;/a>&lt;/li>
 &lt;li>&lt;a href="">动态配置&lt;/a>&lt;/li>
