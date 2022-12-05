@@ -50,7 +50,7 @@
 &lt;li>安装并启动 &lt;a href="https://zookeeper.apache.org/">Zookeeper&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="2-使用说明">2 使用说明&lt;/h2>
-&lt;p>在此查看&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-zookeeper">完整示例代码&lt;/a>&lt;/p>
+&lt;p>在此查看&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/registry/dubbo-samples-zookeeper">完整示例代码&lt;/a>&lt;/p>
 &lt;h3 id="21-增加-maven-依赖">2.1 增加 Maven 依赖&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;properties&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo.version&amp;gt;&lt;/span>3.0.8&lt;span style="color:#268bd2">&amp;lt;/dubbo.version&amp;gt;&lt;/span>
@@ -177,7 +177,7 @@
 &lt;p>当Dubbo使用&lt;code>3.0.0&lt;/code>及以上版本时，需要使用Nacos &lt;code>2.0.0&lt;/code>及以上版本。&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="2-使用说明">2 使用说明&lt;/h2>
-&lt;p>在此查看&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-nacos/dubbo-samples-nacos-registry/">完整示例代码&lt;/a>&lt;/p>
+&lt;p>在此查看&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/registry/dubbo-samples-nacos/dubbo-samples-nacos-registry">完整示例代码&lt;/a>&lt;/p>
 &lt;h3 id="21-增加依赖">2.1 增加依赖&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dependencies&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dependency&amp;gt;&lt;/span>
