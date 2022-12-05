@@ -35,6 +35,9 @@
 &lt;li>支持服务 Mock&lt;/li>
 &lt;li>Admin 服务查询&lt;/li>
 &lt;/ul>
+&lt;h3 id="grpc-over-dubbo">gRPC over Dubbo&lt;/h3>
+&lt;h3 id="dubbo-与-spring-cloud-互通">Dubbo 与 Spring Cloud 互通&lt;/h3>
+&lt;h3 id="dubbo-http">Dubbo HTTP&lt;/h3>
 &lt;h2 id="部署">部署&lt;/h2>
 &lt;p>Dubbo 原生服务可打包部署到 Docker 容器、Kubernetes、Service Mesh 等云原生基础设施和微服务架构。&lt;/p>
 &lt;p>对 Docker 部署环境，Dubbo 服务最需要解决的就是注册 IP 地址与通信 IP 地址统一的问题，对于这点&lt;/p>
@@ -83,6 +86,7 @@ Kubernetes Native Service&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="../../../core-features/protocols">Dubbo 协议支持详情&lt;/a>&lt;/li>
 &lt;/ul>
+&lt;h2 id="流式通信">流式通信&lt;/h2>
 &lt;h2 id="构建可伸缩的微服务集群">构建可伸缩的微服务集群&lt;/h2>
 &lt;p>业务增长带来了集群规模的快速增长，而集群规模的增长会对服务治理架构带来挑战，这包括注册中心的存储容量、节点动态变化带来的地址推送与解析效率、高效的网络链接管理、高峰期的流量无损上下线、异常节点的自动节点管理、消费端存储大量网络地址的资源开销等。&lt;/p>
 &lt;p>以上很多点都直接关系到了微服务集群的稳定性，因此很容易成为影响集群和业务增长的瓶颈，当集群规模变得越大，问题带来的影响面也就越会被进一步放大。很多开发者可能会想只有几个应用而已，当前不需要并不关心集群规模，但作为技术架构选型的关键因素之一，我们还是要充分考虑微服务集群。并且基于我们对业界大量微服务架构和框架实现的调研，大部分产品的性能瓶颈点可能很快就会到来（一些产品所能高效支持的瓶颈节点规模阈值都是非常低的，比如几十个应用、数百个节点）。&lt;/p>
@@ -94,9 +98,17 @@ Kubernetes Native Service&lt;/p>
 &lt;li>&lt;a href="">流量管理&lt;/a>&lt;/li>
 &lt;li>&lt;a href="">源码解析&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Overview: 流量治理</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/traffic-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/traffic-management/</guid><description>
-&lt;p>按标签的条件路由&lt;/p>
-&lt;p>Service Mesh 路由&lt;/p>
-&lt;p>路由规则可扩展&lt;/p>
+&lt;p>bla bla bla &amp;hellip;&lt;/p>
+&lt;h2 id="1-如何配置规则">1 如何配置规则&lt;/h2>
+&lt;ul>
+&lt;li>dubboctl&lt;/li>
+&lt;li>dubbo admin&lt;/li>
+&lt;li>kubectl&lt;/li>
+&lt;/ul>
+&lt;h3 id="21-传统部署架构">2.1 传统部署架构&lt;/h3>
+&lt;h3 id="22-云原生部署架构">2.2 云原生部署架构&lt;/h3>
+&lt;h2 id="2-支持的规则">2 支持的规则&lt;/h2>
+&lt;h2 id="3-流量管控支持的场景">3 流量管控支持的场景&lt;/h2>
 &lt;ul>
 &lt;li>超时&lt;/li>
 &lt;li>重试&lt;/li>
@@ -107,72 +119,63 @@ Kubernetes Native Service&lt;/p>
 &lt;li>无损上下线&lt;/li>
 &lt;li>异常链接管理&lt;/li>
 &lt;/ul></description></item><item><title>Overview: 可观测性</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/observability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/observability/</guid><description>
-&lt;p>Istio generates detailed telemetry for all service communications within a mesh. This telemetry provides observability of service behavior, empowering operators to troubleshoot, maintain, and optimize their applications – without imposing any additional burdens on service developers. Through Istio, operators gain a thorough understanding of how monitored services are interacting, both with other services and with the Istio components themselves.&lt;/p>
-&lt;p>可观测性分为三个维度度量、链路追踪以及日志，Dubbo从这三个方面为开发者提供了全面的可观测性解决方案。&lt;/p>
-&lt;p>Metrics：Dubbo集成了prometheus监控系统，在指标数据上Dubbo支持多维度的RT指标数据，包括Max、Min、Avg、P99、P95等维度，支持多维度的请求量指标数据，包括QPS、调用成功的请求量、调用失败的请求量等。除此之外，Dubbo还能够通过SPI扩展来完成集成其他监控系统。&lt;/p>
-&lt;p>Tracing：Dubbo提供了链路追踪所需的必备数据，为Dubbo集成各类链路追踪系统提供了便捷，以辅助用户完成更加强大的链路追踪能力。目前流行的skywalking、zipkin、jaeger都支持Dubbo服务的链路追踪。&lt;/p>
-&lt;p>Logging：Dubbo支持多种的日志框架的适配。包括常见的slf4j、log4j2、log4j、jcl等。用户可以在这些框架中自由切换。&lt;/p></description></item><item><title>Overview: 可扩展性</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/extensibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/extensibility/</guid><description>
-&lt;h2 id="扩展设计理念">扩展设计理念&lt;/h2>
-&lt;p>可扩展性是任何一个系统所追求的，对于 Dubbo 来说是同样适用。&lt;/p>
-&lt;h3 id="什么是可扩展性">什么是可扩展性&lt;/h3>
-&lt;p>可扩展性是一种设计理念，代表了我们对未来的一种预想，我们希望在现有的架构或设计基础上，当未来某些方面发生变化的时候，我们能够以最小的改动来适应这种变化。&lt;/p>
-&lt;h3 id="可扩展性的优点">可扩展性的优点&lt;/h3>
-&lt;p>可扩展性的优点主要表现模块之间解耦，它符合开闭原则，对扩展开放，对修改关闭。当系统增加新功能时，不需要对现有系统的结构和代码进行修改，仅仅新增一个扩展即可。&lt;/p>
-&lt;h3 id="扩展实现方式">扩展实现方式&lt;/h3>
-&lt;p>一般来说，系统会采用 Factory、IoC、OSGI 等方式管理扩展(插件)生命周期。考虑到 Dubbo 的适用面，不想强依赖 Spring 等 IoC 容器。
-而自己造一个小的 IoC 容器，也觉得有点过度设计，所以选择最简单的 Factory 方式管理扩展(插件)。在 Dubbo 中，所有内部实现和第三方实现都是平等的。&lt;/p>
-&lt;h3 id="dubbo-中的可扩展性">Dubbo 中的可扩展性&lt;/h3>
+&lt;p>Dubbo 内部维护了多个纬度的可观测指标，并且支持多种方式的可视化监测。可观测性指标从总体上来说分为三个度量纬度：&lt;/p>
 &lt;ul>
-&lt;li>平等对待第三方的实现。在 Dubbo 中，所有内部实现和第三方实现都是平等的，用户可以基于自身业务需求，替换 Dubbo 提供的原生实现。&lt;/li>
-&lt;li>每个扩展点只封装一个变化因子，最大化复用。每个扩展点的实现者，往往都只是关心一件事。如果用户有需求需要进行扩展，那么只需要对其关注的扩展点进行扩展就好，极大的减少用户的工作量。&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Metrics。&lt;/strong> Dubbo 统计了一系列的流量指标如 QPS、RT、成功请求数、失败请求数等，还包括一系列的内部组件状态如线程池数、服务健康状态等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Tracing。&lt;/strong> Dubbo 与业界主流的链路追踪工作做了适配，包括 Skywalking、Zipkin、Jaeger 都支持 Dubbo 服务的链路追踪。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Logging。&lt;/strong> Dubbo 支持多种日志框架适配。以 Java 体系为例，支持包括 Slf4j、Log4j2、Log4j、Logback、Jcl 等，用户可以基于业务需要选择合适的框架；同时 Dubbo 还支持 Access Log 记录请求踪迹。&lt;/p>
+&lt;/li>
 &lt;/ul>
-&lt;h2 id="dubbo-扩展的特性">Dubbo 扩展的特性&lt;/h2>
-&lt;p>Dubbo 中的扩展能力是从 JDK 标准的 SPI 扩展点发现机制加强而来，它改进了 JDK 标准的 SPI 以下问题：&lt;/p>
+&lt;h2 id="metrics">Metrics&lt;/h2>
+&lt;p>Dubbo 运行时统计了包括 qps、rt、调用总数、成功数、失败数，失败原因统计等在内的核心服务指标，同时，为了更好的监测服务运行状态，Dubbo 还提供了对核心组件状态的监控，如线程池数量、服务健康状态等。&lt;/p>
+&lt;p>可以通过 Dubbo Admin 可视化的查看 Metrics 指标&lt;/p>
+&lt;p>&lt;img src="" alt="Admin 效果图">&lt;/p>
+&lt;p>也可以使用 Grafana、Prometheus 等实现可视化指标监测，具体请参考以下可视化任务示例：&lt;/p>
 &lt;ul>
-&lt;li>JDK 标准的 SPI 会一次性实例化扩展点所有实现，如果有扩展实现初始化很耗时，但如果没用上也加载，会很浪费资源。&lt;/li>
-&lt;li>如果扩展点加载失败，连扩展点的名称都拿不到了。比如：JDK 标准的 ScriptEngine，通过 getName() 获取脚本类型的名称，但如果 RubyScriptEngine 因为所依赖的 jruby.jar 不存在，导致 RubyScriptEngine 类加载失败，这个失败原因被吃掉了，和 ruby 对应不起来，当用户执行 ruby 脚本时，会报不支持 ruby，而不是真正失败的原因。&lt;/li>
+&lt;li>&lt;a href="">Admin 任务链接&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">Grafana 任务链接&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">Prometheus 任务链接&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>用户能够基于 Dubbo 提供的扩展能力，很方便基于自身需求扩展其他协议、过滤器、路由等。下面介绍下 Dubbo 扩展能力的特性。&lt;/p>
+&lt;h2 id="tracing">Tracing&lt;/h2>
+&lt;p>全链路追踪对于监测分布式系统运行状态具有非常重要的价值，Dubbo 通过 Filter 拦截器实现了请求运行时的埋点跟踪，通过将跟踪数据导出到一些主流实现如 Zipkin、Skywalking、Jaeger 等，可以实现全链路跟踪数据的分析与可视化展示。&lt;/p>
+&lt;p>只需要简单的一行配置即可切换链路跟踪的后端实现，并且，你可以随时通过 Dubbo Admin 等治理平台动态调整 Dubbo 的链路追踪采样率，对于问题排查都非常有价值。&lt;/p>
 &lt;ul>
-&lt;li>按需加载。Dubbo 的扩展能力不会一次性实例化所有实现，而是用哪个扩展类则实例化哪个扩展类，减少资源浪费。&lt;/li>
-&lt;li>增加扩展类的 IOC 能力。Dubbo 的扩展能力并不仅仅只是发现扩展服务实现类，而是在此基础上更进一步，如果该扩展类的属性依赖其他对象，则 Dubbo 会自动的完成该依赖对象的注入功能。&lt;/li>
-&lt;li>增加扩展类的 AOP 能力。Dubbo 扩展能力会自动的发现扩展类的包装类，完成包装类的构造，增强扩展类的功能。&lt;/li>
-&lt;li>具备动态选择扩展实现的能力。Dubbo 扩展会基于参数，在运行时动态选择对应的扩展类，提高了 Dubbo 的扩展能力。&lt;/li>
-&lt;li>可以对扩展实现进行排序。能够基于用户需求，指定扩展实现的执行顺序。&lt;/li>
-&lt;li>提供扩展点的 Adaptive 能力。该能力可以使的一些扩展类在 consumer 端生效，一些扩展类在 provider 端生效。&lt;/li>
+&lt;li>&lt;a href="">基于 Skywalking 实现全链路追踪&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">基于 Zipkin 实现全链路追踪&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>从 Dubbo 扩展的设计目标可以看出，Dubbo 实现的一些例如动态选择扩展实现、IOC、AOP 等特性，能够为用户提供非常灵活的扩展能力。&lt;/p>
-&lt;h2 id="dubbo-扩展加载流程">Dubbo 扩展加载流程&lt;/h2>
-&lt;p>Dubbo 加载扩展的整个流程如下：&lt;/p>
-&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/extension-load.png" alt="//imgs/v3/concepts/extension-load.png">&lt;/p>
-&lt;p>主要步骤为 4 个：&lt;/p>
+&lt;h2 id="logging">Logging&lt;/h2>
+&lt;p>访问日志可以帮助分析系统的流量情况，在有些场景下，开启访问日志对于排查问题也非常有帮助。&lt;/p>
 &lt;ul>
-&lt;li>读取并解析配置文件&lt;/li>
-&lt;li>缓存所有扩展实现&lt;/li>
-&lt;li>基于用户执行的扩展名，实例化对应的扩展实现&lt;/li>
-&lt;li>进行扩展实例属性的 IOC 注入以及实例化扩展的包装类，实现 AOP 特性&lt;/li>
+&lt;li>&lt;a href="">开启 Access Log&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Overview: 可扩展性</title><link>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/extensibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://static.dubbo.apache.org:8080/zh/overview/what/advantages/extensibility/</guid><description>
+&lt;p>Dubbo 在设计上是高度可扩展的，通过这些扩展点你可以做到：&lt;/p>
+&lt;ul>
+&lt;li>拦截流量并控制流量行为&lt;/li>
+&lt;li>按需调优 Dubbo 的一些默认策略与实现&lt;/li>
+&lt;li>将 Dubbo 服务适配到自己内部微服务集群或其他主流的开源组件&lt;/li>
 &lt;/ul>
-&lt;h2 id="如何使用-dubbo-扩展能力进行扩展">如何使用 Dubbo 扩展能力进行扩展&lt;/h2>
-&lt;p>下面以扩展协议为例进行说明如何利用 Dubbo 提供的扩展能力扩展 Triple 协议。&lt;/p>
-&lt;p>(1) 在协议的实现 jar 包内放置文本文件：META-INF/dubbo/org.apache.dubbo.remoting.api.WireProtocol&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>tri=org.apache.dubbo.rpc.protocol.tri.TripleHttp2Protocol
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(2) 实现类内容&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">@Activate&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">public&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> &lt;span style="color:#268bd2">TripleHttp2Protocol&lt;/span> &lt;span style="color:#268bd2">extends&lt;/span> Http2WireProtocol &lt;span style="color:#719e07">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">// ...
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>&lt;span style="color:#719e07">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>说明下：Http2WireProtocol 实现了 WireProtocol 接口&lt;/p>
-&lt;p>(3) Dubbo 配置模块中，扩展点均有对应配置属性或标签，通过配置指定使用哪个扩展实现。比如：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>&amp;lt;dubbo:protocol name=&amp;#34;tri&amp;#34; /&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>从上面的扩展步骤可以看出，用户基本在黑盒下就完成了扩展。&lt;/p>
-&lt;h2 id="dubbo-扩展的应用">Dubbo 扩展的应用&lt;/h2>
-&lt;p>Dubbo 的扩展能力非常灵活，在自身功能的实现上无处不在。&lt;/p>
-&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/extension-use.png" alt="//imgs/v3/concepts/extension-use.png">&lt;/p>
+&lt;h2 id="扩展点定义">扩展点定义&lt;/h2>
 &lt;p>Dubbo 扩展能力使得 Dubbo 项目很方便的切分成一个一个的子模块，实现热插拔特性。用户完全可以基于自身需求，替换 Dubbo 原生实现，来满足自身业务需求。&lt;/p>
-&lt;h2 id="使用场景">使用场景&lt;/h2>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/extension-use.png" alt="/imgs/v3/concepts/extension-use.png">&lt;/p>
+&lt;p>基于以上扩展点定义，可以实现如下功能的灵活拓展：通信协议、序列化编码协议、流量统计、集群容错策略、路由规则、负载均衡、注册中心、线程池策略、配置中心、分布式事务实现、全链路追踪、监控系统、熔断策略、限流降级等。&lt;/p>
+&lt;h2 id="部分官方扩展实现">部分官方扩展实现&lt;/h2>
+&lt;p>以下是官方或官方生态项目提供的一些默认实现，更多实现可以在 &lt;a href="">apache/dubbo-spi-extensions&lt;/a> 中了解。&lt;/p>
+&lt;p>&lt;img src="http://static.dubbo.apache.org:8080/imgs/v3/concepts/extensibility-echosystem.png" alt="extensibility-echosystem.png">&lt;/p>
+&lt;h2 id="扩展示例">扩展示例&lt;/h2>
+&lt;p>以下演示了如何扩展 Dubbo 来解决实际问题，可以跟随示例学习。&lt;/p>
 &lt;ul>
-&lt;li>如果你需要自定义负载均衡策略，你可以使用 Dubbo 扩展能力。&lt;/li>
-&lt;li>如果你需要实现自定义的注册中心，你可以使用 Dubbo 扩展能力。&lt;/li>
-&lt;li>如果你需要实现自定义的过滤器，你可以使用 Dubbo 扩展能力。&lt;/li>
+&lt;li>&lt;a href="">自定义负载均衡策略&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">自定义的注册中心&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">拦截流量&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>Dubbo 扩展平等的对待内部实现和第三方实现。更多使用场景，参见 &lt;a href="http://static.dubbo.apache.org:8080/zh/docs3-v2/java-sdk/reference-manual/spi/description/">SPI 扩展实现&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>还有如下一些高级扩展示例：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="">全链路追踪&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">数据一致性&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">限流降级&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
