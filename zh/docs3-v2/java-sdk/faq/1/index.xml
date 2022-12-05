@@ -107,13 +107,14 @@
 &lt;h2 id="另请参阅">另请参阅&lt;/h2>
 &lt;p>&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/config/properties/#registry">注册中心的配置项参考手册&lt;/a>&lt;/p>
 &lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-11 - 注册服务实例创建失败</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/11/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/11/</guid><description>
-&lt;h2 id="可能的原因">可能的原因&lt;/h2>
+&lt;h3 id="可能的原因">可能的原因&lt;/h3>
 &lt;p>可能是 Registry 的 SPI/IOC 配置出错导致。&lt;/p>
-&lt;h2 id="排查和解决步骤">排查和解决步骤&lt;/h2>
+&lt;h3 id="排查和解决步骤">排查和解决步骤&lt;/h3>
 &lt;p>该错误为 Dubbo 内部错误，如果您遇到可以在 github 创建 Issue 并提供错误信息以及复现步骤，我们将协助您解决问题。&lt;/p>
-&lt;h2 id="dubbo社区">Dubbo社区&lt;/h2>
-&lt;p>&lt;a href="https://github.com/apache/dubbo">github&lt;/a>&lt;/p>
-&lt;p style="margin-top: 3rem;"> &lt;/p></description></item><item><title>Docs3-V2: 1-12 - “注册服务” 的实例均已销毁</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</guid><description>
+&lt;blockquote>
+&lt;p>另请参阅
+&lt;a href="https://github.com/apache/dubbo">Dubbo社区&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>Docs3-V2: 1-12 - “注册服务” 的实例均已销毁</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/faq/1/12/</guid><description>
 &lt;h3 id="可能的原因">可能的原因&lt;/h3>
 &lt;p>在 Dubbo 优雅停机的过程中，通过调用 &lt;code>AbstractRegistryFactory&lt;/code> 的 &lt;code>destroyAll&lt;/code> 进行解注册。&lt;/p>
 &lt;p>销毁 &lt;code>Registryprotocol&lt;/code> 的 &lt;code>unexport&lt;/code> 的过程中，会通过 &lt;code>AbstractRegistryFactory&lt;/code> 的 &lt;code>getRegistry&lt;/code> 来试图获得已经被销毁的 registry ，这导致了 “注册服务” 的实例均已销毁。&lt;/p>
