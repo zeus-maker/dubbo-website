@@ -5,7 +5,7 @@
 &lt;li>安装并启动 &lt;a href="https://zookeeper.apache.org/">Zookeeper&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="2-使用说明">2 使用说明&lt;/h2>
-&lt;p>在此查看&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-configcenter/dubbo-samples-configcenter-annotation">完整示例代码&lt;/a>&lt;/p>
+&lt;p>在此查看&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/configcenter/dubbo-samples-configcenter-annotation">完整示例代码&lt;/a>&lt;/p>
 &lt;h3 id="21-增加-maven-依赖">2.1 增加 Maven 依赖&lt;/h3>
 &lt;p>如果项目已经启用 Zookeeper 作为注册中心，则无需增加任何额外配置。&lt;/p>
 &lt;p>如果未使用 Zookeeper 注册中心，则请参考 &lt;a href="../../registry/zookeeper/#21-%E5%A2%9E%E5%8A%A0-maven-%E4%BE%9D%E8%B5%96">为注册中心增加 Zookeeper 相关依赖&lt;/a>。&lt;/p>
