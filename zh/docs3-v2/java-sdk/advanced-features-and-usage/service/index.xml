@@ -439,7 +439,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>当一个接口实现，出现不兼容升级时，可以用版本号过渡，版本号不同的服务相互间不引用。&lt;/p>
 &lt;h2 id="参考用例">参考用例&lt;/h2>
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-version">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-version&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-version">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-version&lt;/a>&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="服务提供者">服务提供者&lt;/h3>
 &lt;p>老版本服务提供者配置&lt;/p>
@@ -844,7 +844,7 @@ Dubbo协议支持，以及Qos协议支持。这些协议的识别都是由一个
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>当一个接口有多种实现时，可以用 group 区分。&lt;/p>
 &lt;h2 id="参考用例">参考用例&lt;/h2>
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-group">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-group&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-group">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-group&lt;/a>&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;h3 id="注解配置">注解配置&lt;/h3>
 &lt;h4 id="服务提供端注解配置">服务提供端(注解配置)&lt;/h4>
@@ -2092,7 +2092,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;/beans&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: 服务端对客户端进行回调</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/callback-parameter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/callback-parameter/</guid><description>
 &lt;h2 id="特性说明">特性说明&lt;/h2>
-&lt;p>参数回调方式与调用本地 callback 或 listener 相同，只需要在 Spring 的配置文件中声明哪个参数是 callback 类型即可。Dubbo 将基于长连接生成反向代理，这样就可以从服务器端调用客户端逻辑。可以参考 &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-callback">dubbo 项目中的示例代码&lt;/a>。&lt;/p>
+&lt;p>参数回调方式与调用本地 callback 或 listener 相同，只需要在 Spring 的配置文件中声明哪个参数是 callback 类型即可。Dubbo 将基于长连接生成反向代理，这样就可以从服务器端调用客户端逻辑。可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-callback">dubbo 项目中的示例代码&lt;/a>。&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;p>回调函数通知客户端执行结果，或发送通知，在方法执行时间比较长时，类似异步调用，审批工作流中回调客户端审批结果。&lt;/p>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
@@ -2392,7 +2392,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;h2 id="特性说明">特性说明&lt;/h2>
 &lt;p>回声测试用于检测服务是否可用，回声测试按照正常请求流程执行，能够测试整个调用是否通畅，可用于监控。&lt;/p>
 &lt;h2 id="参考用例">参考用例&lt;/h2>
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-echo">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-echo&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-echo">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-echo&lt;/a>&lt;/p>
 &lt;h2 id="使用场景">使用场景&lt;/h2>
 &lt;h2 id="使用方式">使用方式&lt;/h2>
 &lt;p>所有服务自动实现 &lt;code>EchoService&lt;/code> 接口，只需将任意服务引用强制转型为 &lt;code>EchoService&lt;/code>，即可使用。&lt;/p>
