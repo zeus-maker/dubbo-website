@@ -2,7 +2,7 @@
 &lt;p>服务是 Dubbo 中的核心概念，一个服务代表一组 RPC 方法的集合，服务是面向用户编程、服务发现机制等的基本单位。Dubbo 开发的基本流程是：用户定义 RPC 服务，通过约定的配置
 方式将 RPC 声明为 Dubbo 服务，然后就可以基于服务 API 进行编程了。对服务提供者来说是提供 RPC 服务的具体实现，而对服务消费者来说则是使用特定数据发起服务调用。&lt;/p>
 &lt;p>下面从定义服务、编译服务、配置并加载服务三个方面说明如何快速的开发 Dubbo 服务。&lt;/p>
-&lt;p>具体用例可以参考：&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/stub">dubbo-samples-triple/stub&lt;/a>;&lt;/p>
+&lt;p>具体用例可以参考：&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/protocol/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/stub">dubbo-samples-triple/stub&lt;/a>;&lt;/p>
 &lt;h2 id="定义服务">定义服务&lt;/h2>
 &lt;p>Dubbo3 推荐使用 IDL 定义跨语言服务，如您更习惯使用特定语言的服务定义方式，请移步&lt;a href="https://dubbo.apache.org/zh/docs3-v2/">多语言 SDK&lt;/a>查看。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>syntax = &amp;#34;proto3&amp;#34;;
@@ -187,7 +187,7 @@ IDL 格式的服务依赖 Protobuf 编译器，用来生成可以被用户调用
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Overview: Pojo 序列化兼容模式</title><link>https://dubbo.apache.org/zh/overview/tasks/triple/wrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/triple/wrap/</guid><description>
 &lt;p>这篇教程会通过从零构建一个简单的工程来演示如何基于 POJO 方式使用 Dubbo Triple, 在应用不改变已有接口定义的同时升级到 Triple 协议。&lt;strong>此模式下 Triple 使用方式与 Dubbo 协议一样。&lt;/strong>&lt;/p>
-&lt;p>具体用例可以参考：&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/pojo">dubbo-samples-triple/pojo&lt;/a>;&lt;/p>
+&lt;p>具体用例可以参考：&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/protocol/dubbo-samples-triple/src/main/java/org/apache/dubbo/sample/tri/pojo">dubbo-samples-triple/pojo&lt;/a>;&lt;/p>
 &lt;h3 id="前置条件">前置条件&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://jdk.java.net/">JDK&lt;/a> 版本 &amp;gt;= 8&lt;/li>

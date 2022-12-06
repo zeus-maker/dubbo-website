@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Kubernetes 部署方案</title><link>https://dubbo.apache.org/zh/overview/tasks/kubernetes/</link><description>Recent content in Kubernetes 部署方案 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/overview/tasks/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: 部署到 Kubernetes</title><link>https://dubbo.apache.org/zh/overview/tasks/kubernetes/deploy-on-k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/kubernetes/deploy-on-k8s/</guid><description>
-&lt;p>可以按照下文步骤，将 Dubbo 服务轻松部署到 Kubernetes 集群，此查看文章用到的 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-kubernetes/">完整代码示例地址&lt;/a>&lt;/p>
+&lt;p>可以按照下文步骤，将 Dubbo 服务轻松部署到 Kubernetes 集群，此查看文章用到的 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/registry/dubbo-samples-kubernetes">完整代码示例地址&lt;/a>&lt;/p>
 &lt;h2 id="1-总体目标">1 总体目标&lt;/h2>
 &lt;ul>
 &lt;li>部署 Dubbo 应用到 Kubernetes&lt;/li>
@@ -9,7 +9,7 @@
 &lt;h2 id="2-基本流程">2 基本流程&lt;/h2>
 &lt;ol>
 &lt;li>创建一个 Dubbo
-应用( &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-kubernetes">dubbo-samples-kubernetes&lt;/a> )&lt;/li>
+应用( &lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/registry/dubbo-samples-kubernetes">dubbo-samples-kubernetes&lt;/a> )&lt;/li>
 &lt;li>构建容器镜像并推送到镜像仓库（ &lt;a href="https://hub.docker.com/r/apache/dubbo-demo">dubbo-demo 示例例镜像&lt;/a> ）&lt;/li>
 &lt;li>分别部署 Dubbo Provider 与 Dubbo Consumer 到 Kubernetes&lt;/li>
 &lt;li>验证服务发现与调用正常&lt;/li>
@@ -68,7 +68,7 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">[&lt;/span>&lt;span style="color:#2aa198">22&lt;/span>&lt;span style="color:#719e07">/&lt;/span>&lt;span style="color:#2aa198">04&lt;/span>&lt;span style="color:#719e07">/&lt;/span>&lt;span style="color:#2aa198">22&lt;/span> &lt;span style="color:#2aa198">01&lt;/span>&lt;span style="color:#719e07">:&lt;/span>&lt;span style="color:#2aa198">10&lt;/span>&lt;span style="color:#719e07">:&lt;/span>&lt;span style="color:#2aa198">24&lt;/span>&lt;span style="color:#719e07">:&lt;/span>&lt;span style="color:#2aa198">024&lt;/span>UTC&lt;span style="color:#719e07">]&lt;/span>main INFO deploy&lt;span style="color:#719e07">.&lt;/span>DefaultApplicationDeployer&lt;span style="color:#719e07">:[&lt;/span>DUBBO&lt;span style="color:#719e07">]&lt;/span>Dubbo Application&lt;span style="color:#719e07">[&lt;/span>&lt;span style="color:#2aa198">1.1&lt;/span>&lt;span style="color:#719e07">](&lt;/span>dubbo&lt;span style="color:#719e07">-&lt;/span>samples&lt;span style="color:#719e07">-&lt;/span>apiserver&lt;span style="color:#719e07">-&lt;/span>consumer&lt;span style="color:#719e07">)&lt;/span>is ready&lt;span style="color:#719e07">.,&lt;/span>dubbo version&lt;span style="color:#719e07">:&lt;/span>&lt;span style="color:#2aa198">3.0.7&lt;/span>&lt;span style="color:#719e07">,&lt;/span>current host&lt;span style="color:#719e07">:&lt;/span>&lt;span style="color:#2aa198">172.17.0.6&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#719e07">:&lt;/span>hello&lt;span style="color:#719e07">,&lt;/span>Kubernetes Api Server
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="34-修改项目并打包可跳过">3.4 修改项目并打包（可跳过）&lt;/h3>
-&lt;p>示例项目及相关镜像均已就绪，此小节仅面向需要修改示例并查看部署效果的用户。在此查看&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-kubernetes/">完整代码示例地址&lt;/a>&lt;/p>
+&lt;p>示例项目及相关镜像均已就绪，此小节仅面向需要修改示例并查看部署效果的用户。在此查看&lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/registry/dubbo-samples-kubernetes">完整代码示例地址&lt;/a>&lt;/p>
 &lt;p>设置 Dubbo 项目使用 Kubernetes 作为注册中心，这里通过 DEFAULT_MASTER_HOST指定使用默认 API-SERVER 集群地址 kubernetes.default.srv，同时还指定了
 namespace、trustCerts 两个参数&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>dubbo.application.name&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">dubbo-samples-apiserver-provider&lt;/span>
