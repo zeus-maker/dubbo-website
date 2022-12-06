@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apache Dubbo – Mesh 部署方案</title><link>https://dubbo.apache.org/zh/overview/tasks/mesh/</link><description>Recent content in Mesh 部署方案 on Apache Dubbo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://dubbo.apache.org/zh/overview/tasks/mesh/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview: Dubbo proxy mesh using Envoy &amp; Istio</title><link>https://dubbo.apache.org/zh/overview/tasks/mesh/dubbo-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/overview/tasks/mesh/dubbo-mesh/</guid><description>
-&lt;p>遵循以下步骤，可以轻松掌握如何开发符合 Service Mesh 架构的 Dubbo 服务，并将其部署到 Kubernetes 并接入 Istio 的流量治理体系。在此查看 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mesh-k8s">完整示例源码&lt;/a>&lt;/p>
+&lt;p>遵循以下步骤，可以轻松掌握如何开发符合 Service Mesh 架构的 Dubbo 服务，并将其部署到 Kubernetes 并接入 Istio 的流量治理体系。在此查看 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/registry/dubbo-samples-mesh-k8s">完整示例源码&lt;/a>&lt;/p>
 &lt;h2 id="1-总体目标">1 总体目标&lt;/h2>
 &lt;ul>
 &lt;li>部署 Dubbo 应用到 Kubernetes&lt;/li>
@@ -11,7 +11,7 @@
 &lt;p>&lt;img src="https://dubbo.apache.org/imgs/v3/mesh/thinsdk-envoy.png" alt="thinsdk">&lt;/p>
 &lt;p>完成示例将需要的步骤如下：&lt;/p>
 &lt;ol>
-&lt;li>创建一个 Dubbo 应用( &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-mesh-k8s">dubbo-samples-mesh-k8s&lt;/a> )&lt;/li>
+&lt;li>创建一个 Dubbo 应用( &lt;a href="https://github.com/apache/dubbo-samples/tree/master/3-extensions/registry/dubbo-samples-mesh-k8s">dubbo-samples-mesh-k8s&lt;/a> )&lt;/li>
 &lt;li>构建容器镜像并推送到镜像仓库（ &lt;a href="https://hub.docker.com/r/apache/dubbo-demo">本示例官方镜像&lt;/a> ）&lt;/li>
 &lt;li>分别部署 Dubbo Provider 与 Dubbo Consumer 到 Kubernetes 并验证 Envoy 代理注入成功&lt;/li>
 &lt;li>验证 Envoy 发现服务地址、正常拦截 RPC 流量并实现负载均衡&lt;/li>
@@ -63,7 +63,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 部署 Deployment&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl apply -f https://raw.githubusercontent.com/apache/dubbo-samples/master/dubbo-samples-mesh-k8s/deploy/consumer/Deployment.yml
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>部署 consumer 与 provider 是一样的，这里也保持了 K8S Service 与 Dubbo consumer application name(在 &lt;a href="https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-mesh-k8s/dubbo-samples-mesh-consumer/src/main/resources/spring/dubbo-consumer.properties">dubbo.properties&lt;/a> 中定义) 一致： &lt;code>dubbo.application.name=dubbo-samples-mesh-consumer&lt;/code>。&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>部署 consumer 与 provider 是一样的，这里也保持了 K8S Service 与 Dubbo consumer application name(在 &lt;a href="https://github.com/apache/dubbo-samples/blob/master/3-extensions/registry//dubbo-samples-mesh-k8s/dubbo-samples-mesh-consumer/src/main/resources/spring/dubbo-consumer.properties">dubbo.properties&lt;/a> 中定义) 一致： &lt;code>dubbo.application.name=dubbo-samples-mesh-consumer&lt;/code>。&lt;/p>
 &lt;blockquote>
 &lt;p>Dubbo Consumer 服务声明中还指定了消费的 Provider 服务（应用）名 &lt;code>@DubboReference(version = &amp;quot;1.0.0&amp;quot;, providedBy = &amp;quot;dubbo-samples-mesh-provider&amp;quot;, lazy = true)&lt;/code>&lt;/p>
 &lt;/blockquote>
