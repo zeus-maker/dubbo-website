@@ -127,7 +127,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ul>
 &lt;p>关于治理规则更多详细说明，请参考&lt;a href="../../examples/routing-rule">路由规则&lt;/a>和&lt;a href="../../examples/config-rule">覆盖规则&lt;/a>用户文档。&lt;/p>
-&lt;p>也可继续了解&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-governance">使用示例&lt;/a>。&lt;/p>
+&lt;p>也可继续了解&lt;a href="https://github.com/apache/dubbo-samples/tree/master/4-governance">使用示例&lt;/a>。&lt;/p>
 &lt;h4 id="使用异步api">使用异步API&lt;/h4>
 &lt;p>这部分的接口和低版本同样是完全兼容的，你仅须在打算使用CompletableFuture&lt;T>提供的回调或者异步组装能力时，再考虑升级这部分内容即可。&lt;/p>
 &lt;ul>
