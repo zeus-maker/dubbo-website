@@ -833,7 +833,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">提示&lt;/h4>
 &lt;p>&lt;code>2.1.0&lt;/code> 以上版本支持。&lt;/p>
-&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-cache">示例代码&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-cache">示例代码&lt;/a>&lt;/p>
 &lt;/div></description></item><item><title>Docsv2.7: 收集Dubbo广播响应</title><link>https://dubbo.apache.org/zh/docsv2.7/user/examples/broadcast-resp-collect/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docsv2.7/user/examples/broadcast-resp-collect/</guid><description>
 &lt;p>适用场景：对于一个dubbo消费者，广播调用多个dubbo 提供者，该消费者可以收集所有服务提供者的响应结果。&lt;/p>
 &lt;div class="alert alert-primary" role="alert">

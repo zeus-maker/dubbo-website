@@ -506,7 +506,7 @@ key 为服务名，value 为服务提供者 url，此配置优先级最高，&lt
 &lt;p>此文档已经不再维护。您当前查看的是快照版本。如果想要查看最新版本的文档，请参阅&lt;a href="https://dubbo.apache.org/zh/docs3-v2/java-sdk/advanced-features-and-usage/service/group-merger/">最新版本&lt;/a>。&lt;/p>
 &lt;/div>
 &lt;p>通过分组对结果进行聚合并返回聚合后的结果，比如菜单服务，用group区分同一接口的多种实现，现在消费方需从每种group中调用一次并返回结果，对结果进行合并之后返回，这样就可以实现聚合菜单项。&lt;/p>
-&lt;p>相关代码可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-merge">dubbo 项目中的示例&lt;/a>&lt;/p>
+&lt;p>相关代码可以参考 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-merge">dubbo 项目中的示例&lt;/a>&lt;/p>
 &lt;h2 id="配置">配置&lt;/h2>
 &lt;p>搜索所有分组&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&amp;lt;dubbo:reference&lt;/span> interface=&lt;span style="color:#2aa198">&amp;#34;com.xxx.MenuService&amp;#34;&lt;/span> group=&lt;span style="color:#2aa198">&amp;#34;*&amp;#34;&lt;/span> merger=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
