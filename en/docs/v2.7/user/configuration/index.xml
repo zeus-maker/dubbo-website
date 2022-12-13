@@ -249,7 +249,7 @@
 &lt;/ol>
 &lt;/div></description></item><item><title>Docs: Annotation Configuration</title><link>https://dubbo.apache.org/en/docs/v2.7/user/configuration/annotation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/docs/v2.7/user/configuration/annotation/</guid><description>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>Requires&lt;code>2.6.3&lt;/code> or higher, click here to view the &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-annotation">complete sample&lt;/a>&lt;/p>
+&lt;p>Requires&lt;code>2.6.3&lt;/code> or higher, click here to view the &lt;a href="https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-annotation">complete sample&lt;/a>&lt;/p>
 &lt;/div>
 &lt;h2 id="provider-side">Provider Side&lt;/h2>
 &lt;p>k&lt;/p>
