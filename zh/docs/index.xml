@@ -7200,6 +7200,11 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;td>支持的远端主机ip地址（段）&lt;/td>
 &lt;td>(无)&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>qos-anonymous-access-permission-level&lt;/td>
+&lt;td>支持的匿名访问的权限级别&lt;/td>
+&lt;td>PUBLIC(1)&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;blockquote>
@@ -7237,7 +7242,59 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;p>设置 JVM 参数:&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-accept-foreign-ip-whitelist=123.12.10.13,132.12.10.13/24
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="协议">协议&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="权限">权限&lt;/h2>
+&lt;p>为了对生命周期探针的默认支持，QoS 提供了匿名访问的能力以及对权限级别的设置，目前支持的权限级别有：&lt;/p>
+&lt;ul>
+&lt;li>PUBLIC(1)&lt;br>
+默认支持匿名访问的命令权限级别，目前只支持生命周期探针相关的命令&lt;/li>
+&lt;li>PROTECTED(2)&lt;br>
+命令默认的权限级别&lt;/li>
+&lt;li>PRIVATE(3)&lt;br>
+保留的最高权限级别，目前未支持&lt;/li>
+&lt;li>NONE&lt;br>
+最低权限级别，即不支持匿名访问&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>权限级别 &lt;code>PRIVATE&lt;/code>&amp;gt; &lt;code>PROTECTED&lt;/code>&amp;gt; &lt;code>PUBLIC&lt;/code>&amp;gt; &lt;code>NONE&lt;/code>, 高级别权限可访问同级别和低级别权限命令。
+当前以下命令权限为&lt;code>PUBLIC&lt;/code>, 其它命令默认权限别为&lt;code>PROTECTED&lt;/code>。&lt;/p>
+&lt;/blockquote>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>权限等级&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Live&lt;/td>
+&lt;td>PUBLIC (1)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Startup&lt;/td>
+&lt;td>PUBLIC (1)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ready&lt;/td>
+&lt;td>PUBLIC (1)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Quit&lt;/td>
+&lt;td>PUBLIC (1)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>默认情况下，dubbo 允许匿名主机发起匿名访问，只有&lt;code>PUBLIC&lt;/code>权限级别的命令可以执行，其他更高权限的命令会被拒绝。&lt;/p>
+&lt;p>&lt;strong>关闭匿名访问&lt;/strong>&lt;br>
+可以通过设置&lt;code>qos-anonymous-access-permission-level=NONE&lt;/code>来关闭匿名访问。&lt;/p>
+&lt;p>&lt;strong>设置权限级别&lt;/strong>&lt;br>
+可以通过配置文件&lt;code>dubbo.properties&lt;/code> 修改:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qos-anonymous-access-permission-level=PROTECTED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或者&lt;br>
+可以通过设置 JVM 参数:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-anonymous-access-permission-level=PROTECTED
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>来允许匿名访问更高级别的权限的命令。&lt;/p>
+&lt;h2 id="协议">协议&lt;/h2>
 &lt;h3 id="telnet-与-http-协议">telnet 与 http 协议&lt;/h3>
 &lt;p>telnet 模块现在同时支持 http 协议和 telnet 协议，方便各种情况的使用
 示例：&lt;/p>
@@ -7287,12 +7344,14 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-port=33333
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-accept-foreign-ip=false
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-accept-foreign-ip-whitelist=123.12.10.13,132.12.10.13/24
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-Ddubbo.application.qos-anonymous-access-permission-level=PUBLIC
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="使用-dubboproperties-文件配置">使用 dubbo.properties 文件配置&lt;/h3>
 &lt;p>在项目的&lt;code>src/main/resources&lt;/code>目录下添加 dubbo.properties文件，内容如下:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dubbo.application.qos-enable=true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-port=33333
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-accept-foreign-ip=false
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-accept-foreign-ip-whitelist=123.12.10.13, 132.12.10.13/24
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-anonymous-access-permission-level=PUBLIC
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="使用xml方法配置">使用XML方法配置&lt;/h3>
 &lt;p>如果要通过 XML 配置响应的QoS相关的参数，可以进行如下配置：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
@@ -7306,6 +7365,7 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:parameter&lt;/span> key=&lt;span style="color:#2aa198">&amp;#34;qos-enable&amp;#34;&lt;/span> value=&lt;span style="color:#2aa198">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:parameter&lt;/span> key=&lt;span style="color:#2aa198">&amp;#34;qos-accept-foreign-ip&amp;#34;&lt;/span> value=&lt;span style="color:#2aa198">&amp;#34;false&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:parameter&lt;/span> key=&lt;span style="color:#2aa198">&amp;#34;qos-accept-foreign-ip-whitelist&amp;#34;&lt;/span> value=&lt;span style="color:#2aa198">&amp;#34;123.12.10.13,132.12.10.13/24&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:parameter&lt;/span> key=&lt;span style="color:#2aa198">&amp;#34;qos-anonymous-access-permission-level&amp;#34;&lt;/span> value=&lt;span style="color:#2aa198">&amp;#34;NONE&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:parameter&lt;/span> key=&lt;span style="color:#2aa198">&amp;#34;qos-port&amp;#34;&lt;/span> value=&lt;span style="color:#2aa198">&amp;#34;33333&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;/dubbo:application&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">&amp;lt;dubbo:registry&lt;/span> address=&lt;span style="color:#2aa198">&amp;#34;multicast://224.5.6.7:1234&amp;#34;&lt;/span>&lt;span style="color:#268bd2">/&amp;gt;&lt;/span>
@@ -7319,6 +7379,7 @@ Pixiu 的整体设计遵守以下原则：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-port=33333
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-accept-foreign-ip=false
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-accept-foreign-ip-whitelist=123.12.10.13, 132.12.10.13/24
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dubbo.application.qos-anonymous-access-permission-level=NONE
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs3-V2: RPC 协议 Triple&amp;Dubbo 基准测试</title><link>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/zh/docs3-v2/java-sdk/reference-manual/performance/rpc-benchmarking/</guid><description>
 &lt;ul>
 &lt;li>Dubbo3 的 _Dubbo协议 _实现与 Dubbo2 版本在性能上基本持平。&lt;/li>

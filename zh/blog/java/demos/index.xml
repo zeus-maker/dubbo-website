@@ -7644,7 +7644,7 @@ DubboComponentScanRegistrar-85]-[main]-[INFO] 0 annotated @Service Components { 
 &lt;li>打印返回结果 &lt;em>hi, dubbo&lt;/em>。&lt;/li>
 &lt;/ol>
 &lt;h3 id="运行">运行&lt;/h3>
-&lt;p>完整的示例在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api&lt;/a> 上提供。在完整的示例中，由于配置了 &lt;em>exec-maven-plugin&lt;/em>，可以很方便的在命令行下通过 maven 的方式执行。当然，您也可以在 IDE 里直接执行，但是需要注意的是，由于使用了组播的方式来发现服务，运行时需要指定 &lt;em>-Djava.net.preferIPv4Stack=true&lt;/em>。&lt;/p>
+&lt;p>完整的示例在 &lt;a href="https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-api">https://github.com/apache/dubbo-samples/tree/master/1-basic/dubbo-samples-api&lt;/a> 上提供。在完整的示例中，由于配置了 &lt;em>exec-maven-plugin&lt;/em>，可以很方便的在命令行下通过 maven 的方式执行。当然，您也可以在 IDE 里直接执行，但是需要注意的是，由于使用了组播的方式来发现服务，运行时需要指定 &lt;em>-Djava.net.preferIPv4Stack=true&lt;/em>。&lt;/p>
 &lt;h4 id="构建示例">构建示例&lt;/h4>
 &lt;p>通过以下的命令来同步示例代码并完成构建：&lt;/p>
 &lt;ol>
