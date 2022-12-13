@@ -1886,7 +1886,7 @@ dubbo2.7.3默认开启qos功能，导致一些混部在物理机的dubbo服务�
 &lt;li>&lt;a href="https://github.com/apache/dubbo">https://github.com/apache/dubbo&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="spring-boot应用">Spring Boot应用&lt;/h2>
-&lt;p>Demo地址： &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-spring-boot-hystrix">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-spring-boot-hystrix&lt;/a>&lt;/p>
+&lt;p>Demo地址： &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/4-governance/dubbo-samples-spring-boot-hystrix">https://github.com/dubbo/dubbo-samples/tree/master/4-governance/dubbo-samples-spring-boot-hystrix&lt;/a>&lt;/p>
 &lt;h3 id="生成dubbo集成spring-boot的应用">生成dubbo集成spring boot的应用&lt;/h3>
 &lt;p>对于不熟悉dubbo 集成spring boot应用的同学，可以在这里直接生成dubbo + spring boot的工程： &lt;a href="http://start.dubbo.io/">http://start.dubbo.io/&lt;/a>&lt;/p>
 &lt;h3 id="配置spring-cloud-starter-netflix-hystrix">配置spring-cloud-starter-netflix-hystrix&lt;/h3>
@@ -1928,7 +1928,7 @@ dubbo2.7.3默认开启qos功能，导致一些混部在物理机的dubbo服务�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过上面的配置，很简单地就完成了Spring Boot里Dubbo + Hystrix的集成。&lt;/p>
 &lt;h2 id="传统spring-annotation应用">传统Spring Annotation应用&lt;/h2>
-&lt;p>Demo地址： &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-spring-hystrix">https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-spring-hystrix&lt;/a>&lt;/p>
+&lt;p>Demo地址： &lt;a href="https://github.com/dubbo/dubbo-samples/tree/master/4-governance/dubbo-samples-spring-hystrix">https://github.com/dubbo/dubbo-samples/tree/master/4-governance/dubbo-samples-spring-hystrix&lt;/a>&lt;/p>
 &lt;p>传统spring annotation应用的配置其实也很简单，和spring boot应用不同的是：&lt;/p>
 &lt;ol>
 &lt;li>显式配置Spring AOP支持：&lt;code>@EnableAspectJAutoProxy&lt;/code>&lt;/li>
