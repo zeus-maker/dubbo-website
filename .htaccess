@@ -26,7 +26,6 @@
 
   RewriteRule ^/?(index\.html)?$ "/en/index.html" [L,R=302]
 
-  # special redirection for examples & handbook
   RewriteCond "%{HTTP:Accept-Language}" ^zh [NC]
   RewriteRule ^/?faq/?([\w\-/]+)?$ "/zh/docs3-v2/java-sdk/faq/$1" [L,R=302]
 
