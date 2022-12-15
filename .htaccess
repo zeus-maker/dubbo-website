@@ -15,8 +15,8 @@
   RewriteEngine On
   <IfModule mod_geoip.c>
     GeoIPEnable On
-    RewriteCond %{ENV:GEOIP_COUNTRY_CODE} !^CN$
-    RewriteRule ^(.*)$ https://dubbo.apache.org/$1 [L,R=302]
+    RewriteCond %{ENV:GEOIP_COUNTRY_CODE} ^CN$
+    RewriteRule ^(.*)$ https://cn.dubbo.apache.org/$1 [L,R=302]
   </IfModule>
 
   RewriteCond %{SERVER_PORT} !^443$
