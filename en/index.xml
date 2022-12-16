@@ -5007,7 +5007,7 @@ It can be seen that the return value &lt;code>user&lt;/code> is a HashMap, which
 &lt;h2 id="others">Others&lt;/h2>
 &lt;ul>
 &lt;li>The generic invoke and generic interface implementations introduced in this article are all based on the native Dubbo protocol. Prior to version 2.6.2, other protocols such as http/hessian don&amp;rsquo;t support generic invoke. Version 2.6.3 will support the generic invoke of these two protocols.&lt;/li>
-&lt;li>The relevant sample codes mentioned in this article can be found in dubbo-samples: &lt;a href="https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-generic">https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-generic&lt;/a>&lt;/li>
+&lt;li>The relevant sample codes mentioned in this article can be found in dubbo-samples: &lt;a href="https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-generic">https://github.com/apache/dubbo-samples/tree/master/2-advanced/dubbo-samples-generic&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Blog: Native Image using GraalVM</title><link>https://dubbo.apache.org/en/blog/2018/08/14/native-image-using-graalvm/</link><pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate><guid>https://dubbo.apache.org/en/blog/2018/08/14/native-image-using-graalvm/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This document will show you how to access GraalVM with a dubbo project and how to compile the project to a binary executable using native-image. The document also introduces the efforts we made in achieving this.&lt;/p>
